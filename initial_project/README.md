@@ -1,6 +1,6 @@
 # Vivado Tutorial
 
-
+Based on [Tutorial Vivado 2013](https://www.xilinx.com/support/documentation/university/Vivado-Teaching/HDL-Design/2013x/Nexys4/Verilog/docs-pdf/Vivado_tutorial.pdf)
 
 
 ## Requirements
@@ -44,7 +44,24 @@
 ## I/O constraints  
 
 1. Select `I/O Planning` on upper right corner `Default Layout`
-2. 
+
+## Add sources
+
+1. On sources menu, use right click to open menu
+2. Select `Add Sources`
+3. Select option that you want:
+
+    3.1. If you add **testbench** file: `Add or create simulation sources`
+4. Select file and `Add`
+5. Click on `Finish`
+
+If you add testbench file:
+
+- On menu of sources ws created a menu `Simulation Sources` with `sim_1` and inside of that you can find file of testbench.
+
+**Testbench**: 
+
+The VHDL testbench has the same structure as any VHDL design source code. There are a few exceptions that need some explanation. After the library declarations, note that the Entity declaration is left empty on Lines 16 and 17. The Unit Under Test (UUT; or the VHDL code being simulated) is instantiated as a component declaration from Lines 20 to 25.To generate the expected results during simulation, Lines 38 through 48 emulate the behavior of the UUT. Lines 49 to 52 is the port declaration for the UUT. Lines 56 through 86 define the stimuli generation and compares the expected output against the UUT output. Line 87 ends the testbench. 
 
 ## Authors
 

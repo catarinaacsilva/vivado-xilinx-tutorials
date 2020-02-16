@@ -8,7 +8,7 @@ The idea is to learn more about that and provides some ways to implement project
 ## Requirements
 
 - Vivado 2019.2
-- Nexys4 Digilent Xilinx
+- Nexys4 Digilent Xilinx (FPGA)
 - Vhdl
 
 ## Struct of this tutorials
