@@ -64,6 +64,40 @@ If you add testbench file:
 1. On lateral menu, click on `Settings` and change the `Simulation time` to 1000ns on `Simulation` tag. Cick `Apply` and then `OK`.
 2.  Select tutorial_tb and click on `Run Simulation` under the `Flow Navigator`pane. select `Run Behavioral Simulation`.
 
+## Synthesize the Design
+
+1. Click on Run Synthesis under the `Synthesis tasks` of the `Flow Navigator` pane.
+2. Select the `Open Synthesized` Design option and click `OK` as we want to look at the synthesis output before progressing to the implementation stage.
+3. Select the `Project Summary` tab and understand various windows 
+4. Click on the `Dashboard` link in the Project Summary tab.
+5. Click on Schematic under the Synthesized Design tasks of Synthesis tasks of the Flow Navigatorpane to view the synthesized design in schematic view
+
+## Implement the Design
+
+1. Select `tutorial` under the `Design Sources `group, and click on `Run Implementation` under the `Implementation` tasks of the `Flow Navigator` pane.
+2. Select `Open Implemented Design` and click `OK` as we want to look at the implementation output.
+3. Select the `Project Summary` tab and observe the results.  
+
+## Perform Timing Simulation 
+
+1. Click on `Run Simulation` under `Simulation` in the `Flow Navigator` pane.
+2. Select `Run Post-ImplementationTiming Simulation`
+3. lick on the `Zoom Fit` button to see the waveform window from 0 to 1000 ns.
+4. Left click at 110 ns (where the switch input changes to 0000010b. Click on the Add Markerbutton. 
+5. Drag the marker to where `leds` change (at the 114 ns mark).
+6. Click on the `Add Marker` button again and move to where led_exp_out changes (180 ns).
+7. Close the simulator by selecting `File > Close simulation` without saving any changes. 
+
+
+## Generate the Bitstream and Verify Functionality 
+
+1. Make sure that the power supply source jumper is set to USB
+2. Connect the board and power it ON. 
+3. Power ON the switch on the board.
+4. Click on the `Generate Bitstream` entry under the `Program and Debug` tasks of the `Flow Navigator` pane.
+5. Select the `Open Hardware Manager` option and click `OK`.
+6. Click on the Open target link
+
 ## Authors
 
 * **Catarina Silva** - [catarinaacsilva](https://github.com/catarinaacsilva)
@@ -71,3 +105,7 @@ If you add testbench file:
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+
+Ativos low
+segmentos
