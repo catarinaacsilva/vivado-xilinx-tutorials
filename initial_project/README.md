@@ -96,7 +96,12 @@ If you add testbench file:
 3. Power ON the switch on the board.
 4. Click on the `Generate Bitstream` entry under the `Program and Debug` tasks of the `Flow Navigator` pane.
 5. Select the `Open Hardware Manager` option and click `OK`.
-6. Click on the Open target link
+6. Click on the `Open target` link
+7. Select `Auto Connect`
+8. lick on the `Program device` and select the unique option should be available
+9. Verify the functionality by flipping switches and observing the output on the LEDs.
+10. Close the hardware session by selecting `File > Close Hardware Manager`.
+11. Power OFF the board. 
 
 ## Authors
 
