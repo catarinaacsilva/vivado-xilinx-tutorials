@@ -11,6 +11,10 @@ The idea is to learn more about that and provides some ways to implement project
 - Nexys4 Digilent Xilinx (FPGA)
 - Vhdl
 
+## Create project
+
+- `xc7a100tcsg324-1`
+
 ## Struct of this tutorials
 
 Each directory is a different project with new challenges.
