@@ -13,6 +13,7 @@ entity Nexys4DispDriver is
     port(   reset : in std_logic;
             clkIn : in std_logic;
             clkOut : out std_logic;
+            an: std_logic_vector(3 downto 0); -- confirmar
             input: std_logic_vector(3 downto 0);
             output: std_logic_vector(6 downto 0));
 
@@ -57,6 +58,13 @@ begin
             when "1111" => output <= "0111000"; -- F
         end case;
     end proces;
+
+    process(an)
+    begin   
+        if(an(0) = '0' and an(1) = '0' and an(2)='0' and an(3)='0' )
+            
+    end proces
+
 
     
 end Behavioral;
