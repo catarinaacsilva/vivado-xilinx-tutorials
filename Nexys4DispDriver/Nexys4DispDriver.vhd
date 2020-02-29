@@ -10,32 +10,26 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 
 entity Nexys4DispDriver is
-    port(   reset : in std_logic;
-            clkIn : in std_logic;
-            clkOut : out std_logic;
-            an: std_logic_vector(3 downto 0); -- confirmar
-            input: std_logic_vector(3 downto 0);
-            output: std_logic_vector(6 downto 0));
+    port(   clk       : in std_logic;   
+            digitEn   : in std_logic_vector(7 downto 0);
+            digVal0   : in std_logic_vector(3 downto 0);
+            digVal1   : in std_logic_vector(3 downto 0);
+            digVal2   : in std_logic_vector(3 downto 0);
+            digVal3   : in std_logic_vector(3 downto 0);
+            digVal4   : in std_logic_vector(3 downto 0);
+            digVal5   : in std_logic_vector(3 downto 0);
+            digVal6   : in std_logic_vector(3 downto 0);
+            digVal7   : in std_logic_vector(3 downto 0);
+            decPtEn   : in std_logic_vector(7 downto 0);
+            dispEn_n  : out std_logic_vector(7 downto 0);
+            dispSeg_n : out std_logic_vector(6 downto 0);
+            dispPt_n  : out std_logic);
 
 end Nexys4DispDriver;
 
 architecture Behavioral of Nexys4DispDriver is
     signal s_counter : natural;
 begin
-    process(clkIn)
-    begin
-        if rising_edge(clkIn) then
-            if ((reset = '1') or (s_counter = K - 1)) then
-                clkOut<= '0';
-                s_counter <= 0;
-            else
-                if (s_counter = K/2 - 1) then
-                    clkOut<= '1';
-                end if;
-                s_counter <= s_counter + 1;
-            end if;
-        end if;
-    end process;
     
     process(input)
     begin   
@@ -57,14 +51,7 @@ begin
             when "1110" => output <= "0110000"; -- E
             when "1111" => output <= "0111000"; -- F
         end case;
-    end proces;
-
-    process(an)
-    begin   
-        if(an(0) = '0' and an(1) = '0' and an(2)='0' and an(3)='0' )
-            
-    end proces
-
+    end process;
 
     
 end Behavioral;
