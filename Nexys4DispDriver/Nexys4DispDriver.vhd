@@ -7,7 +7,8 @@
 
 
 library IEEE;
-use IEEE.STD_LOGIC_1164.all;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.all;
 
 entity Nexys4DispDriver is
     port(   clk       : in std_logic;   
@@ -34,9 +35,9 @@ architecture Behavioral of Nexys4DispDriver is
 begin
 
     -- Counter 3 bits
-    process (clk, clkEnable)
+    process (clk)
     begin  
-        if(rising_edge(clk) and clkEnable='1') then
+        if(rising_edge(clk)) then
             s_counter <= s_counter + 1;
         end if;
     end process;

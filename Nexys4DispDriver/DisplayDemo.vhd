@@ -26,7 +26,7 @@ begin
 	   port map(clkIn	=> clk,
 		        clkOut	=> s_clk800);
 
-    display_driver : entity work.Nexys4DisplayDriver(Behavioral)
+    display_driver : entity work.Nexys4DispDriver(Behavioral)
         port map(clk       => s_clk800,
                  digitEn   => sw(7 downto 0), 
                  digVal0   => "0000",
