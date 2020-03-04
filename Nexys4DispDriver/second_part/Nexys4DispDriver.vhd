@@ -12,6 +12,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity Nexys4DispDriver is
     port(   clk       : in std_logic;   
+            enable    : in std_logic;
             digitEn   : in std_logic_vector(7 downto 0);
             digVal0   : in std_logic_vector(3 downto 0);
             digVal1   : in std_logic_vector(3 downto 0);
@@ -37,7 +38,7 @@ begin
     -- Counter 3 bits
     process (clk)
     begin  
-        if(rising_edge(clk)) then
+        if(rising_edge(clk) and enable = '1') then
             s_counter <= s_counter + 1;
         end if;
     end process;
