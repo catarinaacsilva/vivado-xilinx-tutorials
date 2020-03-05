@@ -1,3 +1,10 @@
+--------------------------------------------
+-- Module Name: Nexys4DispDriver
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt
+-- Email: c.alexandracorreia@av.it.pt
+--------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
@@ -25,8 +32,9 @@ begin
 				pulse1Hz     <= '0';
 		        blink1Hz     <= '0';
 				s_counter    <= 0;
-		    else
-		        if (s_counter rem 125000 = 0) then
+		    else  
+		        -- Remove 12500 and put 65536 to avoid warning
+		        if (s_counter rem 65536 = 0) then
 		            pulseDisplay <= '1';
 		        else
 		            pulseDisplay <= '0';
