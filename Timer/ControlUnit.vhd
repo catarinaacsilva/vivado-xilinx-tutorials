@@ -1,3 +1,6 @@
+
+-- Finite State Machine
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
@@ -27,5 +30,100 @@ end ControlUnit;
 
 
 architecture Behavioral of ControlUnit is
+    -- Cada um dos estados representa representa caa uma dos displays
+    -- ST_START: começar a contagem
+    type TState is (ST_START, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
+    signal s_currentState, s_nextState  :   TState;
 
+    signal s_couter : natural;
+
+    begin
+        process(clk)
+        begin
+            if(rising_edge(clk) and upDownEn = '1') then
+                if(reset = '1') then
+                    s_currentState <= ST_FIRSTD;
+                else
+                    s_currentState <= s_nextState;
+                end if;
+            end if;
+        end process;
+
+        process(s_currentState, btnUp, btnDown, btnSet, btnStart)
+        begin
+
+            -- cada saida corresponde a cada um dos digitos e pode ser incrmenatda ou decrementada
+            -- numeros so para auxiliar
+            secLSSetInc <= '0'; --0
+            secLSSetDec <= '0'; --1
+            secMSSetInc <= '0'; --2
+            secMSSetDec <= '0'; --3
+            minLSSetInc <= '0'; --4
+            minLSSetDec <= '0'; --5
+            minMSSetInc <= '0'; --6
+            minMSSetDec <= '0'; --7
+
+            case s_currentState is
+                when ST_START =>
+                    if(btnStart = '1') then -- inicia a contagem normal
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        s_couter <= s_counter + 1;
+                        s_nextState <= ST_FIRSTD;
+                    end if;
+
+                when ST_FIRSTD =>
+                    if(btnStart = '1') then -- inicia a contagem normal
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        s_couter <= s_counter + 1;
+                        s_nextState <= ST_SECONDD;
+                        if (btnUp = '1') then
+                            secLSSetInc <= '1';
+                        elsif (btnDown = '1') then
+                            secLSSetDec <= '1';
+                        end if;
+                    end if;
+
+                when ST_SECONDD =>
+                    if(btnStart = '1') then -- inicia a contagem normal
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        s_couter <= s_counter + 1;
+                        s_nextState <= ST_THIRDD;
+                        if (btnUp = '1') then
+                            secMSSetInc <= '1';
+                        elsif (btnDown = '1') then
+                            secMSSetDec <= '1';
+                        end if;
+                    end if;
+                
+                when ST_THIRDD =>
+                    if(btnStart = '1') then -- inicia a contagem normal
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        s_couter <= s_counter + 1;
+                        s_nextState <= ST_FOURTHD;
+                        if (btnUp = '1') then
+                            minLSSetInc <= '1';
+                        elsif (btnDown = '1') then
+                            minLSSetDec <= '1';
+                        end if;
+                    end if;
+
+                when ST_FOURTHD =>
+                    if(btnStart = '1') then -- inicia a contagem normal
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        s_couter <= s_counter + 1;
+                        if (s_counter = 4) then
+                            s_nextState <= ST_FIRSTD;
+                        elsif (btnUp = '1') then
+                            minMSSetInc <= '1';
+                        elsif (btnDown = '1') then
+                            minMSSetDec <= '1';
+                        end if;
+                    end if;
+            end case;
+        end process;
 end Behavioral;

@@ -25,5 +25,5 @@ entity CountDatapath is
 end CountDatapath;
 
 architecture Behavioral of CountDatapath is
-
+   
 end Behavioral;

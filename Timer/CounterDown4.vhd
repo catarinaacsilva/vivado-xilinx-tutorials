@@ -6,10 +6,10 @@ entity CounterDown4 is
 	generic(MAX_VAL : positive);
 	port(reset      : in  std_logic;
 		 clk        : in  std_logic;
-		 clkEnable  : in  std_logic;
-		 cntEnable  : in  std_logic;
-		 setIncrem  : in  std_logic;
-		 setDecrem  : in  std_logic;
+		 clkEnable  : in  std_logic; -- clock temporal
+		 cntEnable  : in  std_logic; -- clock funcional
+		 setIncrem  : in  std_logic; -- acerto
+		 setDecrem  : in  std_logic; -- contagem normal
 		 valOut     : out std_logic_vector(3 downto 0);
 		 termCnt    : out std_logic);
 end CounterDown4;
