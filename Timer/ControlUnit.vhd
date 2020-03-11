@@ -32,15 +32,14 @@ end ControlUnit;
 architecture Behavioral of ControlUnit is
     -- Cada um dos estados representa representa caa uma dos displays
     -- ST_START: começar a contagem
-    type TState is (ST_START, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
+    type TState is (ST_START, ST_STOPPED, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
     signal s_currentState, s_nextState  :   TState;
 
-    signal s_counter : natural;
 
     begin
         process(clk)
         begin
-            if(rising_edge(clk) and upDownEn = '1') then
+            if(rising_edge(clk)) then
                 if(reset = '1') then
                     s_currentState <= ST_FIRSTD;
                 else
@@ -49,143 +48,72 @@ architecture Behavioral of ControlUnit is
             end if;
         end process;
 
-        process(s_currentState, btnUp, btnDown, btnSet, btnStart)
+        process(s_currentState, setFlags, btnStart, btnSet)
         begin
-
-            -- cada saida corresponde a cada um dos digitos e pode ser incrmenatda ou decrementada
-            -- numeros so para auxiliar
-            secLSSetInc <= '0'; --0
-            secLSSetDec <= '0'; --1
-            secMSSetInc <= '0'; --2
-            secMSSetDec <= '0'; --3
-            minLSSetInc <= '0'; --4
-            minLSSetDec <= '0'; --5
-            minMSSetInc <= '0'; --6
-            minMSSetDec <= '0'; --7
-
             case s_currentState is
                 when ST_START =>
-                    if(btnStart = '1') then -- inicia a contagem normal
+                    if(btnStart = '1') then
                         s_nextState <= ST_START;
                         runFlag = '1';
+                    elsif(start = '1'):
+                        s_nextState <= ST_STOPPED;
+                        runFlag = '0';
                     elsif (btnSet = '1') then
                         runFlag = '0';
-                        s_counter <= s_counter + 1;
+                        setFlags = '0000';
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_FIRSTD =>
-                    if(btnStart = '1') then -- inicia a contagem normal
-                        s_nextState <= ST_START;
-                    elsif (btnSet = '1') then
+                    if (btnSet = '1') then
                         runFlag = '0';
-                        s_counter <= s_counter + 1;
                         s_nextState <= ST_SECONDD;
-                        if (btnUp = '1') then
-                            secLSSetInc <= '1';
-                            secLSSetDec <= '0';
-                            secMSSetInc <= '0';
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0';
-                            minMSSetDec <= '0'; 
-                        elsif (btnDown = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '1'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '0';
-                        end if;
+                        setFlags = '0001';
+                    else
+                        s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_SECONDD =>
-                    if(btnStart = '1') then -- inicia a contagem normal
-                        s_nextState <= ST_START;
-                    elsif (btnSet = '1') then
-                        runFlag = '0';
-                        s_counter <= s_counter + 1;
+                    if (btnSet = '1') then
                         s_nextState <= ST_THIRDD;
-                        if (btnUp = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '1'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '0';
-                        elsif (btnDown = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '1'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '0';
-                        end if;
+                        setFlags = '0010';
+                    else
+                        s_nextState <= ST_SECONDD;
                     end if;
                 
                 when ST_THIRDD =>
-                    if(btnStart = '1') then -- inicia a contagem normal
-                        s_nextState <= ST_START;
-                    elsif (btnSet = '1') then
-                        runFlag = '0';
-                        s_counter <= s_counter + 1;
+                    if (btnSet = '1') then
                         s_nextState <= ST_FOURTHD;
-                        if (btnUp = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '1'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '0';
-                        elsif (btnDown = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '1'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '0';
-                        end if;
+                        setFlags = '0100';
+                    else
+                        s_nextState <= ST_THIRDD;
                     end if;
 
                 when ST_FOURTHD =>
-                    if(btnStart = '1') then -- inicia a contagem normal
+                    if (btnSet = '1') then
                         s_nextState <= ST_START;
-                    elsif (btnSet = '1') then
-                        runFlag = '0';
-                        s_counter <= s_counter + 1;
-                        if (s_counter = 4) then
-                            s_nextState <= ST_FIRSTD;
-                        elsif (btnUp = '1') then
-                            secLSSetInc <= '0';
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '1'; 
-                            minMSSetDec <= '0';
-                        elsif (btnDown = '1') then
-                            secLSSetInc <= '0'; 
-                            secLSSetDec <= '0'; 
-                            secMSSetInc <= '0'; 
-                            secMSSetDec <= '0'; 
-                            minLSSetInc <= '0'; 
-                            minLSSetDec <= '0'; 
-                            minMSSetInc <= '0'; 
-                            minMSSetDec <= '1';
-                        end if;
+                        setFlags = '1000';
+                    elsif (btnStart = '1') then
+                        s_nextState <= ST_STOPPED;
+                    end if;
+
+                when ST_STOPPED =>
+                    if (btnStart = '1') then
+                        s_nextState <= ST_START;
+                        setFlags = '0000';
+                    else
+                        s_nextState <= ST_STOPPED;
                     end if;
             end case;
         end process;
+
+        secLSSetInc <= setFlags(0) and btnUp and upDownEn; 
+        secLSSetDec <= setFlags(0) and btnDown and upDownEn; 
+        secMSSetInc <= setFlags(1) and btnUp and upDownEn;
+        secMSSetDec <= setFlags(1) and btnDown and upDownEn; 
+        minLSSetInc <= setFlags(2) and btnUp and upDownEn; 
+        minLSSetDec <= setFlags(2) and btnDown and upDownEn; 
+        minMSSetInc <= setFlags(3) and btnUp and upDownEn;
+        minMSSetDec <= setFlags(3) and btnDown and upDownEn;
+
 end Behavioral;

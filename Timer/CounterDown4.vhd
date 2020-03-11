@@ -23,7 +23,7 @@ architecture Behavioral of CounterDown4 is
 begin
 	process(clk)
 	begin	
-		if (rising_edge(clk)) then --falta clkEnable e o cntEnable??? if a seguir a este???
+		if (rising_edge(clk)) then
 			if (reset = '1') then
 				s_value <= MAX_VAL;
 			elsif (setIncrem = '1') then
@@ -32,7 +32,7 @@ begin
 				else
 					s_counter <= s_counter + 1;
 				end if;
-			elsif (setDecrem = '1') then
+			elsif (setDecrem = '1' or (clkEnable = '1' and cntEnable = '1')) then
 				if(s_value = 0) then
 					s_counter <= MAX_VAL;
 				else
