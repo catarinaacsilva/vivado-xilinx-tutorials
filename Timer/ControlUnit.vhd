@@ -55,7 +55,7 @@ architecture Behavioral of ControlUnit is
                     if(btnStart = '1') then
                         s_nextState <= ST_START;
                         runFlag = '1';
-                    elsif(start = '1'):
+                    elsif(start = '1' or zeroFlag = '1') then 
                         s_nextState <= ST_STOPPED;
                         runFlag = '0';
                     elsif (btnSet = '1') then
