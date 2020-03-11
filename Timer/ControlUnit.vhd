@@ -30,8 +30,7 @@ end ControlUnit;
 
 
 architecture Behavioral of ControlUnit is
-    -- Cada um dos estados representa representa caa uma dos displays
-    -- ST_START: começar a contagem
+    -- ST_START: start count
     type TState is (ST_START, ST_STOPPED, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
     signal s_currentState, s_nextState  :   TState;
 
@@ -52,47 +51,45 @@ architecture Behavioral of ControlUnit is
         begin
             case s_currentState is
                 when ST_START =>
-                    if(btnStart = '1') then
-                        s_nextState <= ST_START;
                         runFlag = '1';
-                    elsif(start = '1' or zeroFlag = '1') then 
+                        setFlags = '0000';
+                    elsif(btnStart = '1' or zeroFlag = '1') then 
                         s_nextState <= ST_STOPPED;
                         runFlag = '0';
                     elsif (btnSet = '1') then
                         runFlag = '0';
-                        setFlags = '0000';
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_FIRSTD =>
                     if (btnSet = '1') then
                         runFlag = '0';
-                        s_nextState <= ST_SECONDD;
                         setFlags = '0001';
+                        s_nextState <= ST_SECONDD;
                     else
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_SECONDD =>
                     if (btnSet = '1') then
-                        s_nextState <= ST_THIRDD;
                         setFlags = '0010';
+                        s_nextState <= ST_THIRDD;
                     else
                         s_nextState <= ST_SECONDD;
                     end if;
                 
                 when ST_THIRDD =>
                     if (btnSet = '1') then
-                        s_nextState <= ST_FOURTHD;
                         setFlags = '0100';
+                        s_nextState <= ST_FOURTHD;
                     else
                         s_nextState <= ST_THIRDD;
                     end if;
 
                 when ST_FOURTHD =>
                     if (btnSet = '1') then
-                        s_nextState <= ST_START;
                         setFlags = '1000';
+                        s_nextState <= ST_FIRSTD;
                     elsif (btnStart = '1') then
                         s_nextState <= ST_STOPPED;
                     end if;

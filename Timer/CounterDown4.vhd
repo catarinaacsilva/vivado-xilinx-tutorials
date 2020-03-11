@@ -6,8 +6,8 @@ entity CounterDown4 is
 	generic(MAX_VAL : positive);
 	port(reset      : in  std_logic;
 		 clk        : in  std_logic;
-		 clkEnable  : in  std_logic; -- clock temporal
-		 cntEnable  : in  std_logic; -- clock funcional
+		 clkEnable  : in  std_logic; -- enable temporal
+		 cntEnable  : in  std_logic; -- enable funcional
 		 setIncrem  : in  std_logic; -- acerto
 		 setDecrem  : in  std_logic; -- acerto
 		 valOut     : out std_logic_vector(3 downto 0); -- valor que vai para a saida
