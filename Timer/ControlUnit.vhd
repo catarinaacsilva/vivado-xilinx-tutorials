@@ -35,7 +35,7 @@ architecture Behavioral of ControlUnit is
     type TState is (ST_START, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
     signal s_currentState, s_nextState  :   TState;
 
-    signal s_couter : natural;
+    signal s_counter : natural;
 
     begin
         process(clk)
@@ -67,8 +67,10 @@ architecture Behavioral of ControlUnit is
                 when ST_START =>
                     if(btnStart = '1') then -- inicia a contagem normal
                         s_nextState <= ST_START;
+                        runFlag = '1';
                     elsif (btnSet = '1') then
-                        s_couter <= s_counter + 1;
+                        runFlag = '0';
+                        s_counter <= s_counter + 1;
                         s_nextState <= ST_FIRSTD;
                     end if;
 
@@ -76,7 +78,8 @@ architecture Behavioral of ControlUnit is
                     if(btnStart = '1') then -- inicia a contagem normal
                         s_nextState <= ST_START;
                     elsif (btnSet = '1') then
-                        s_couter <= s_counter + 1;
+                        runFlag = '0';
+                        s_counter <= s_counter + 1;
                         s_nextState <= ST_SECONDD;
                         if (btnUp = '1') then
                             secLSSetInc <= '1';
@@ -89,7 +92,8 @@ architecture Behavioral of ControlUnit is
                     if(btnStart = '1') then -- inicia a contagem normal
                         s_nextState <= ST_START;
                     elsif (btnSet = '1') then
-                        s_couter <= s_counter + 1;
+                        runFlag = '0';
+                        s_counter <= s_counter + 1;
                         s_nextState <= ST_THIRDD;
                         if (btnUp = '1') then
                             secMSSetInc <= '1';
@@ -102,7 +106,8 @@ architecture Behavioral of ControlUnit is
                     if(btnStart = '1') then -- inicia a contagem normal
                         s_nextState <= ST_START;
                     elsif (btnSet = '1') then
-                        s_couter <= s_counter + 1;
+                        runFlag = '0';
+                        s_counter <= s_counter + 1;
                         s_nextState <= ST_FOURTHD;
                         if (btnUp = '1') then
                             minLSSetInc <= '1';
@@ -115,7 +120,8 @@ architecture Behavioral of ControlUnit is
                     if(btnStart = '1') then -- inicia a contagem normal
                         s_nextState <= ST_START;
                     elsif (btnSet = '1') then
-                        s_couter <= s_counter + 1;
+                        runFlag = '0';
+                        s_counter <= s_counter + 1;
                         if (s_counter = 4) then
                             s_nextState <= ST_FIRSTD;
                         elsif (btnUp = '1') then
