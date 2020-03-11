@@ -83,8 +83,22 @@ architecture Behavioral of ControlUnit is
                         s_nextState <= ST_SECONDD;
                         if (btnUp = '1') then
                             secLSSetInc <= '1';
+                            secLSSetDec <= '0';
+                            secMSSetInc <= '0';
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0';
+                            minMSSetDec <= '0'; 
                         elsif (btnDown = '1') then
-                            secLSSetDec <= '1';
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '1'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0'; 
+                            minMSSetDec <= '0';
                         end if;
                     end if;
 
@@ -96,9 +110,23 @@ architecture Behavioral of ControlUnit is
                         s_counter <= s_counter + 1;
                         s_nextState <= ST_THIRDD;
                         if (btnUp = '1') then
-                            secMSSetInc <= '1';
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '1'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0'; 
+                            minMSSetDec <= '0';
                         elsif (btnDown = '1') then
-                            secMSSetDec <= '1';
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '1'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0'; 
+                            minMSSetDec <= '0';
                         end if;
                     end if;
                 
@@ -110,9 +138,23 @@ architecture Behavioral of ControlUnit is
                         s_counter <= s_counter + 1;
                         s_nextState <= ST_FOURTHD;
                         if (btnUp = '1') then
-                            minLSSetInc <= '1';
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '1'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0'; 
+                            minMSSetDec <= '0';
                         elsif (btnDown = '1') then
-                            minLSSetDec <= '1';
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '1'; 
+                            minMSSetInc <= '0'; 
+                            minMSSetDec <= '0';
                         end if;
                     end if;
 
@@ -125,8 +167,22 @@ architecture Behavioral of ControlUnit is
                         if (s_counter = 4) then
                             s_nextState <= ST_FIRSTD;
                         elsif (btnUp = '1') then
-                            minMSSetInc <= '1';
+                            secLSSetInc <= '0';
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '1'; 
+                            minMSSetDec <= '0';
                         elsif (btnDown = '1') then
+                            secLSSetInc <= '0'; 
+                            secLSSetDec <= '0'; 
+                            secMSSetInc <= '0'; 
+                            secMSSetDec <= '0'; 
+                            minLSSetInc <= '0'; 
+                            minLSSetDec <= '0'; 
+                            minMSSetInc <= '0'; 
                             minMSSetDec <= '1';
                         end if;
                     end if;
