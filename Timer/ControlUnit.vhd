@@ -15,7 +15,7 @@ entity ControlUnit is
             upDownEn    :   in std_logic;
             zeroFlag    :   in std_logic;
             runFlag     :   out std_logic;
-            setFlags    :   out std_logic;
+            setFlags    :   out std_logic_vector(3 downto 0);
             secLSSetInc :   out std_logic;
             secLSSetDec :   out std_logic;
             secMSSetInc :   out std_logic;
@@ -33,8 +33,8 @@ architecture Behavioral of ControlUnit is
     -- ST_START: start count
     type TState is (ST_START, ST_STOPPED, ST_FIRSTD, ST_SECONDD, ST_THIRDD, ST_FOURTHD);
     signal s_currentState, s_nextState  :   TState;
-
-
+    signal s_setFlags : std_logic_vector(3 downto 0);
+   
     begin
         process(clk)
         begin
@@ -47,24 +47,24 @@ architecture Behavioral of ControlUnit is
             end if;
         end process;
 
-        process(s_currentState, setFlags, btnStart, btnSet)
+        process(s_currentState, s_setFlags, btnStart, btnSet)
         begin
             case s_currentState is
                 when ST_START =>
-                        runFlag = '1';
-                        setFlags = '0000';
-                    elsif(btnStart = '1' or zeroFlag = '1') then 
+                        runFlag <= '1';
+                        s_setFlags <= "0000";
+                    if (btnStart = '1' or zeroFlag = '1') then 
                         s_nextState <= ST_STOPPED;
-                        runFlag = '0';
+                        runFlag <= '0';
                     elsif (btnSet = '1') then
-                        runFlag = '0';
+                        runFlag <= '0';
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_FIRSTD =>
                     if (btnSet = '1') then
-                        runFlag = '0';
-                        setFlags = '0001';
+                        runFlag <= '0';
+                        s_setFlags <= "0001";
                         s_nextState <= ST_SECONDD;
                     else
                         s_nextState <= ST_FIRSTD;
@@ -72,7 +72,7 @@ architecture Behavioral of ControlUnit is
 
                 when ST_SECONDD =>
                     if (btnSet = '1') then
-                        setFlags = '0010';
+                        s_setFlags <= "0010";
                         s_nextState <= ST_THIRDD;
                     else
                         s_nextState <= ST_SECONDD;
@@ -80,7 +80,7 @@ architecture Behavioral of ControlUnit is
                 
                 when ST_THIRDD =>
                     if (btnSet = '1') then
-                        setFlags = '0100';
+                        s_setFlags <= "0100";
                         s_nextState <= ST_FOURTHD;
                     else
                         s_nextState <= ST_THIRDD;
@@ -88,7 +88,7 @@ architecture Behavioral of ControlUnit is
 
                 when ST_FOURTHD =>
                     if (btnSet = '1') then
-                        setFlags = '1000';
+                        s_setFlags <= "1000";
                         s_nextState <= ST_FIRSTD;
                     elsif (btnStart = '1') then
                         s_nextState <= ST_STOPPED;
@@ -97,20 +97,22 @@ architecture Behavioral of ControlUnit is
                 when ST_STOPPED =>
                     if (btnStart = '1') then
                         s_nextState <= ST_START;
-                        setFlags = '0000';
+                        s_setFlags <= "0000";
                     else
                         s_nextState <= ST_STOPPED;
                     end if;
             end case;
         end process;
 
-        secLSSetInc <= setFlags(0) and btnUp and upDownEn; 
-        secLSSetDec <= setFlags(0) and btnDown and upDownEn; 
-        secMSSetInc <= setFlags(1) and btnUp and upDownEn;
-        secMSSetDec <= setFlags(1) and btnDown and upDownEn; 
-        minLSSetInc <= setFlags(2) and btnUp and upDownEn; 
-        minLSSetDec <= setFlags(2) and btnDown and upDownEn; 
-        minMSSetInc <= setFlags(3) and btnUp and upDownEn;
-        minMSSetDec <= setFlags(3) and btnDown and upDownEn;
+        secLSSetInc <= s_setFlags(0) and btnUp and upDownEn; 
+        secLSSetDec <= s_setFlags(0) and btnDown and upDownEn; 
+        secMSSetInc <= s_setFlags(1) and btnUp and upDownEn;
+        secMSSetDec <= s_setFlags(1) and btnDown and upDownEn; 
+        minLSSetInc <= s_setFlags(2) and btnUp and upDownEn; 
+        minLSSetDec <= s_setFlags(2) and btnDown and upDownEn; 
+        minMSSetInc <= s_setFlags(3) and btnUp and upDownEn;
+        minMSSetDec <= s_setFlags(3) and btnDown and upDownEn;
+        
+        setFlags <= s_setFlags;
 
 end Behavioral;

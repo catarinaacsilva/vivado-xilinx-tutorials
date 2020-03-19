@@ -19,6 +19,8 @@ architecture Behavioral of CounterDown4 is
     subtype TCount is positive range 0 to MAX_VAL;
 	
 	signal s_value : TCount;
+	
+	signal s_counter: natural;
 
 begin
 	process(clk)

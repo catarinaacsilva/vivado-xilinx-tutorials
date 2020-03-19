@@ -30,17 +30,19 @@ architecture Behavioral of CountDatapath is
 begin
     -- digito mais à direita
     counter0:    entity work.CounterDown4(Behavioral)
-                generic map(reset      => reset,
+                generic map (MAX_Val   => 9)
+                port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
                             cntEnable  => runFlag, --inicia o processo da contagem
                             setIncrem  => secLSSetInc,
                             setDecrem  => secLSSetDec,
-                            valOut     => secLSCntVal,
+                            valOut     => "00" & secLSCntVal & '0',
                             termCnt    => s_termCount0);
 
     counter1:   entity work.CounterDown4(Behavioral)
-                generic map(reset      => reset,
+                generic map (MAX_Val   => 9)
+                port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
                             cntEnable  => s_termCount0,
@@ -50,7 +52,8 @@ begin
                             termCnt    => s_termCount1);
 
     counter2:    entity work.CounterDown4(Behavioral)
-                generic map(reset      => reset,
+                generic map (MAX_Val   => 9)
+                port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
                             cntEnable  => s_termCount1,
@@ -61,7 +64,8 @@ begin
                             
     -- Digito mais à esquerda
     counter3:    entity work.CounterDown4(Behavioral)
-                generic map(reset      => reset,
+                generic map (MAX_Val   => 9)
+                port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
                             cntEnable  => s_termCount2,
@@ -71,6 +75,6 @@ begin
                             termCnt    => s_termCount3);
 
     -- Zero flag fica ativo quando o último s_termCout3 chegou ao fim da contagem
-    zeroFlag = s_termCount3;
+    zeroFlag <= s_termCount3;
     
 end Behavioral;
