@@ -64,7 +64,7 @@ begin
                                     outPolarity     => '1')
                         port map(refClk     => clk,
                                  dirtyIn    => btnR,
-                                 pulsedOut  => );
+                                 pulsedOut  => s_btnStart);
                                  
     set_but_debouncer : entity work.DebounceUnit(Behavioral)
                         generic map(kHzClkFreq      => 100000,
@@ -73,25 +73,25 @@ begin
                                     outPolarity     => '1')
                         port map(refClk     => clk,
                                  dirtyIn    => btnC,
-                                 pulsedOut  => );
+                                 pulsedOut  => s_btnSet);
     
     process(clk)
     begin
         if (rising_edge(clk)) then
-            s_btnU <= ;
-            s_btnD <= ;
+            s_btnU <= s_btnU;
+            s_btnD <= s_btnD;
         end if;
     end process;
     
     control_unit : entity work.ControlUnit(Behavioral)
                        port map(reset       => s_reset,
                                 clk         => clk,
-                                btnStart    => ,
-                                btnSet      => ,
-                                btnUp       => , 
-                                btnDown     => ,
-                                upDownEn    => ,
-                                zeroFlag    => ,
+                                btnStart    => s_btnStart,
+                                btnSet      => s_btnSet,
+                                btnUp       => s_btnU, 
+                                btnDown     => s_btnD,
+                                upDownEn    => s_2HzEn,
+                                zeroFlag    => s_zeroFlag,
                                 runFlag     => s_runFlag,
                                 setFlags    => s_setFlags,
                                 secLSSetInc => s_secLSSetInc,
@@ -106,35 +106,35 @@ begin
     count_datapath : entity work.CountDatapath(Behavioral)
                     port map(reset          => s_reset,
                              clk            => clk,
-                             clkEnable      => ,
-                             runFlag        => ,
-                             secLSSetInc    => ,
-                             secLSSetDec    => ,
-                             secMSSetInc    => ,
-                             secMSSetDec    => ,
-                             minLSSetInc    => ,
-                             minLSSetDec    => ,
-                             minMSSetInc    => ,
-                             minMSSetDec    => ,
-                             secLSCntVal    => ,
-                             secMSCntVal    => ,
-                             minLSCntVal    => ,
-                             minMSCntVal    => ,
+                             clkEnable      => s_1HzEn,
+                             runFlag        => s_runFlag,
+                             secLSSetInc    => s_secLSSetInc,
+                             secLSSetDec    => s_secLSSetDec,
+                             secMSSetInc    => s_secMSSetInc,
+                             secMSSetDec    => s_secMSSetDec,
+                             minLSSetInc    => s_minLSSetInc,
+                             minLSSetDec    => s_minLSSetDec,
+                             minMSSetInc    => s_minMSSetInc,
+                             minMSSetDec    => s_minMSSetDec,
+                             secLSCntVal    => s_secLSCntVal,
+                             secMSCntVal    => s_secMSCntVal,
+                             minLSCntVal    => s_minLSCntVal,
+                             minMSCntVal    => s_minMSCntVal,
                              zeroFlag       => s_zeroFlag);
 
-    s_digitEn <= ;
-    s_decPtEn <= ;
+    s_digitEn <= s_setFlags or s_blink2Hz;
+    s_decPtEn <= s_blink1Hz;
 
     display_driver : entity work.Nexys4DisplayDriver(Behavioral)
                         port map(clk        => clk,
-                                 enable     => , 
+                                 enable     => s_dispRefEn, 
                                  digitEn    => s_digitEn,     
                                  digVal0    => "0000",
                                  digVal1    => "0000",
-                                 digVal2    => ,
-                                 digVal3    => ,
-                                 digVal4    => ,
-                                 digVal5    => ,
+                                 digVal2    => s_secLSCntVal,
+                                 digVal3    => s_secMSCntVal,
+                                 digVal4    => s_minLSCntVal,
+                                 digVal5    => s_minMSCntVal,
                                  digVal6    => "0000",
                                  digVal7    => "0000",
                                  decPtEn    => s_decPtEn,
@@ -142,5 +142,5 @@ begin
                                  dispSeg_n  => seg(6 downto 0),
                                  dispPt_n   => dp);
                                  
-    led(0) <= ;
+    led(0) <= s_zeroFlag;
 end Structural;
