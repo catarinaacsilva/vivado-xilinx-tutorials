@@ -15,10 +15,10 @@ entity CountDatapath is
             minLSSetDec :   in std_logic;
             minMSSetInc :   in std_logic;
             minMSSetDec :   in std_logic;
-            secLSCntVal :   out std_logic;      
-            secMSCntVal :   out std_logic;  
-            minLSCntVal :   out std_logic;  
-            minMSCntVal :   out std_logic;  
+            secLSCntVal :   out std_logic_vector(3 downto 0);      
+            secMSCntVal :   out std_logic_vector(3 downto 0);  
+            minLSCntVal :   out std_logic_vector(3 downto 0);  
+            minMSCntVal :   out std_logic_vector(3 downto 0);  
             zeroFlag    :   out std_logic
         );
 
@@ -37,11 +37,11 @@ begin
                             cntEnable  => runFlag, --inicia o processo da contagem
                             setIncrem  => secLSSetInc,
                             setDecrem  => secLSSetDec,
-                            valOut     => "00" & secLSCntVal & '0',
+                            valOut     => secLSCntVal,
                             termCnt    => s_termCount0);
 
     counter1:   entity work.CounterDown4(Behavioral)
-                generic map (MAX_Val   => 9)
+                generic map (MAX_Val   => 5)
                 port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
@@ -64,13 +64,13 @@ begin
                             
     -- Digito mais à esquerda
     counter3:    entity work.CounterDown4(Behavioral)
-                generic map (MAX_Val   => 9)
+                generic map (MAX_Val   => 5)
                 port map(reset      => reset,
                             clk        => clk,
                             clkEnable  => clkEnable,
                             cntEnable  => s_termCount2,
                             setIncrem  => minMSSetInc,
-                            setDecrem  => minMSCntVal,
+                            setDecrem  => minMSSetDec,
                             valOut     => minMSCntVal,
                             termCnt    => s_termCount3);
 
