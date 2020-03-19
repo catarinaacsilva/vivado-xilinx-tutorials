@@ -5,6 +5,7 @@
 -- Email: c.alexandracorreia@av.it.pt
 --------------------------------------------
 
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
@@ -13,8 +14,8 @@ entity PulseGenerator is
 	port(clk100MHz    : in  std_logic;
 	     pulse2Hz     : out  std_logic;
 	     pulse1Hz     : out std_logic;
-	     blink2Hz     : out std_logic_vector(3 downto 0);
-	     blink1Hz     : out std_logic_vector(7 downto 0);
+	     blink2Hz     : out std_logic;
+	     blink1Hz     : out std_logic;
 	     dispRefEn    : out  std_logic);
 end PulseGenerator;
 
@@ -32,7 +33,7 @@ begin
 			if (s_counter >= 100000000) then
 				dispRefEn <= '0';
 				pulse1Hz     <= '0';
-		        blink1Hz     <= "00000000";
+		        blink1Hz     <= '0';
 				s_counter    <= 0;
 		    else    
 		        -- Remove 12500 and put 65536 to avoid warning
@@ -44,11 +45,11 @@ begin
 		        
 		        if (s_counter = 0) then
 		            pulse1Hz <= '1';
-		            blink1Hz <= "11111111";
+		            blink1Hz <= '1';
 		        else
 		            pulse1Hz <= '0';
 		            if (s_counter = 50000000) then
-		                blink1Hz <= "00000000";
+		                blink1Hz <= '0';
 		            end if;
 		        end if;
 		        
@@ -61,9 +62,9 @@ begin
 		        
 		        -- 2 Hz Blink
 		        if ((s_counter mod 25000000) rem 2 = 0) then
-		            blink2Hz <= "1111";
+		            blink2Hz <= '1';
 		        else
-		            blink2Hz <= "0000";
+		            blink2Hz <= '0';
 		        end if;
 		        		        
 				s_counter <= s_counter + 1;

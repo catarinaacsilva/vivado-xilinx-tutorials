@@ -1,3 +1,10 @@
+--------------------------------------------
+-- Module Name: Nexys4DispDriver
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt
+-- Email: c.alexandracorreia@av.it.pt
+--------------------------------------------
+
 
 -- Finite State Machine
 

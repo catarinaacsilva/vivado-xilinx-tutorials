@@ -1,3 +1,10 @@
+--------------------------------------------
+-- Module Name: Nexys4DispDriver
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt
+-- Email: c.alexandracorreia@av.it.pt
+--------------------------------------------
+
 
 -- Top Level
 
@@ -23,8 +30,7 @@ architecture Structural of CountDownTimer is
     
     signal s_dispRefEn                  : std_logic;
     signal s_1HzEn, s_2HzEn             : std_logic;
-    signal s_blink2Hz                   : std_logic_vector(3 downto 0);
-    signal s_blink1Hz                   : std_logic_vector(7 downto 0);
+    signal s_blink2Hz, s_blink1Hz       : std_logic;
     
     signal s_btnStart, s_btnSet         : std_logic;
     signal s_btnU, s_btnD               : std_logic;
@@ -126,7 +132,7 @@ begin
     s_digitEn <= s_setFlags or s_blink2Hz;
     s_decPtEn <= s_blink1Hz;
 
-    display_driver : entity work.Nexys4DisplayDriver(Behavioral)
+    display_driver : entity work.Nexys4DispDriver(Behavioral)
                         port map(clk        => clk,
                                  enable     => s_dispRefEn, 
                                  digitEn    => s_digitEn,     
