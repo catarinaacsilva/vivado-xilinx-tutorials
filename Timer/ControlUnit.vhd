@@ -40,7 +40,7 @@ architecture Behavioral of ControlUnit is
         begin
             if(rising_edge(clk)) then
                 if(reset = '1') then
-                    s_currentState <= ST_FIRSTD;
+                    s_currentState <= ST_STOPPED;
                 else
                     s_currentState <= s_nextState;
                 end if;
@@ -51,63 +51,77 @@ architecture Behavioral of ControlUnit is
         begin
             case s_currentState is
                 when ST_START =>
+                    if (btnStart = '1' or zeroFlag = '1') then 
+                        s_setFlags <= "0000";
+                        runFlag <= '0';
+                        s_nextState <= ST_STOPPED;
+                    else
                         runFlag <= '1';
                         s_setFlags <= "0000";
-                    if (btnStart = '1' or zeroFlag = '1') then 
-                        s_nextState <= ST_STOPPED;
-                        runFlag <= '0';
-                    elsif (btnSet = '1') then
-                        runFlag <= '0';
-                        s_nextState <= ST_FIRSTD;
+                        s_nextState <= ST_START;
+                    --elsif (btnSet = '1') then
+                        --runFlag <= '0';
+                        --s_setFlags <= "0000";
+                        --s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_FIRSTD =>
                     if (btnSet = '1') then
                         runFlag <= '0';
-                        s_setFlags <= "0001";
+                        s_setFlags <= "0010";
                         s_nextState <= ST_SECONDD;
                     else
                         runFlag <= '0';
+                        s_setFlags <= "0001";
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_SECONDD =>
                     if (btnSet = '1') then
                         runFlag <= '0';
-                        s_setFlags <= "0010";
+                        s_setFlags <= "0100";
                         s_nextState <= ST_THIRDD;
                     else
                         runFlag <= '0';
+                        s_setFlags <= "0010";
                         s_nextState <= ST_SECONDD;
                     end if;
                 
                 when ST_THIRDD =>
                     if (btnSet = '1') then
                         runFlag <= '0';
-                        s_setFlags <= "0100";
+                        s_setFlags <= "1000";
                         s_nextState <= ST_FOURTHD;
                     else
                         runFlag <= '0';
+                        s_setFlags <= "0100";
                         s_nextState <= ST_THIRDD;
                     end if;
 
                 when ST_FOURTHD =>
                     if (btnSet = '1') then
                         runFlag <= '0';
-                        s_setFlags <= "1000";
-                        s_nextState <= ST_FIRSTD;
-                    elsif (btnStart = '1') then
-                        runFlag <= '0';
+                        s_setFlags <= "0000";
                         s_nextState <= ST_STOPPED;
+                    --elsif (btnStart = '1') then
+                    else
+                        runFlag <= '0';
+                        s_setFlags <= "1000";
+                        s_nextState <= ST_FOURTHD;
                     end if;
 
                 when ST_STOPPED =>
                     if (btnStart = '1') then
-                        runFlag <= '0';
-                        s_nextState <= ST_START;
+                        runFlag <= '1';
                         s_setFlags <= "0000";
+                        s_nextState <= ST_START;
+                    elsif (btnSet = '1') then
+                        runFlag <= '0';
+                        s_setFlags <= "0001";
+                        s_nextState <= ST_FIRSTD;
                     else
                         runFlag <= '0';
+                        s_setFlags <= "0000";
                         s_nextState <= ST_STOPPED;
                     end if;
             end case;

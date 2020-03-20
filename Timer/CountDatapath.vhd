@@ -1,11 +1,3 @@
---------------------------------------------
--- Module Name: Nexys4DispDriver
--- Author: Catarina Silva
--- Email: c.alexandracorreia@ua.pt
--- Email: c.alexandracorreia@av.it.pt
---------------------------------------------
-
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
@@ -69,7 +61,6 @@ begin
                             setDecrem  => minLSSetDec,
                             valOut     => minLSCntVal,
                             termCnt    => s_termCount2);
-                            
                             
     -- Digito mais à esquerda
     counter3:    entity work.CounterDown4(Behavioral)
