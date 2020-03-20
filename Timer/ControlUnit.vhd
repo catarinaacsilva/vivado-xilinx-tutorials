@@ -1,10 +1,3 @@
---------------------------------------------
--- Module Name: Nexys4DispDriver
--- Author: Catarina Silva
--- Email: c.alexandracorreia@ua.pt
--- Email: c.alexandracorreia@av.it.pt
---------------------------------------------
-
 
 -- Finite State Machine
 
@@ -74,38 +67,47 @@ architecture Behavioral of ControlUnit is
                         s_setFlags <= "0001";
                         s_nextState <= ST_SECONDD;
                     else
+                        runFlag <= '0';
                         s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_SECONDD =>
                     if (btnSet = '1') then
+                        runFlag <= '0';
                         s_setFlags <= "0010";
                         s_nextState <= ST_THIRDD;
                     else
+                        runFlag <= '0';
                         s_nextState <= ST_SECONDD;
                     end if;
                 
                 when ST_THIRDD =>
                     if (btnSet = '1') then
+                        runFlag <= '0';
                         s_setFlags <= "0100";
                         s_nextState <= ST_FOURTHD;
                     else
+                        runFlag <= '0';
                         s_nextState <= ST_THIRDD;
                     end if;
 
                 when ST_FOURTHD =>
                     if (btnSet = '1') then
+                        runFlag <= '0';
                         s_setFlags <= "1000";
                         s_nextState <= ST_FIRSTD;
                     elsif (btnStart = '1') then
+                        runFlag <= '0';
                         s_nextState <= ST_STOPPED;
                     end if;
 
                 when ST_STOPPED =>
                     if (btnStart = '1') then
+                        runFlag <= '0';
                         s_nextState <= ST_START;
                         s_setFlags <= "0000";
                     else
+                        runFlag <= '0';
                         s_nextState <= ST_STOPPED;
                     end if;
             end case;
