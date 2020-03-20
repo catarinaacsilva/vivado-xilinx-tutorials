@@ -5,7 +5,6 @@
 -- Email: c.alexandracorreia@av.it.pt
 --------------------------------------------
 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;
@@ -46,26 +45,20 @@ begin
 		        if (s_counter = 0) then
 		            pulse1Hz <= '1';
 		            blink1Hz <= '1';
+		            pulse2Hz <= '1';
+		            blink2Hz <= '1';
 		        else
 		            pulse1Hz <= '0';
 		            if (s_counter = 50000000) then
-		                blink1Hz <= '0';
+		                pulse1Hz <= '1';
+                        blink1Hz <= '1';
+                        pulse2Hz <= '0';
+                        blink2Hz <= '0';
+		            elsif (s_counter <= 25000000 or s_counter <= 75000000) then
+		                blink2Hz <= '1'; 
 		            end if;
 		        end if;
 		        
-		        -- 2 Hz Pulse
-		        if (s_counter rem 50000000 = 0) then
-		            pulse2Hz <= '1';
-		        else
-		            pulse2Hz <= '0';
-		        end if;
-		        
-		        -- 2 Hz Blink
-		        if ((s_counter mod 25000000) rem 2 = 0) then
-		            blink2Hz <= '1';
-		        else
-		            blink2Hz <= '0';
-		        end if;
 		        		        
 				s_counter <= s_counter + 1;
 			end if;

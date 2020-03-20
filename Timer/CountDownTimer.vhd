@@ -129,8 +129,8 @@ begin
                              minMSCntVal    => s_minMSCntVal,
                              zeroFlag       => s_zeroFlag);
 
-    s_digitEn <= s_setFlags or s_blink2Hz;
-    s_decPtEn <= s_blink1Hz;
+    s_digitEN <= "00" & ((not s_setFlags) or (s_blink2Hz & s_blink2Hz & s_blink2Hz & s_blink2Hz)) & "00";
+    s_decPtEn <=  "000" & s_blink1Hz & "0000";
 
     display_driver : entity work.Nexys4DispDriver(Behavioral)
                         port map(clk        => clk,

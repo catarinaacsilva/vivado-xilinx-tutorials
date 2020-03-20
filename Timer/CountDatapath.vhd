@@ -70,6 +70,7 @@ begin
                             valOut     => minLSCntVal,
                             termCnt    => s_termCount2);
                             
+                            
     -- Digito mais à esquerda
     counter3:    entity work.CounterDown4(Behavioral)
                 generic map (MAX_Val   => 5)
