@@ -1,3 +1,12 @@
+---------------------------------------------------------------------------------------------------
+-- CountDatapath
+-- Description: The 4 counters represents each one of the displays (digits); Datapath
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
+
+-- Version 1.0
+---------------------------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;

@@ -1,5 +1,12 @@
+---------------------------------------------------------------------------------------------------
+-- ControlUnit
+-- Description: Finite State Machine
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
 
--- Finite State Machine
+-- Version 1.0
+---------------------------------------------------------------------------------------------------
+
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -47,7 +54,7 @@ architecture Behavioral of ControlUnit is
             end if;
         end process;
 
-        process(s_currentState, s_setFlags, btnStart, btnSet)
+        process(s_currentState, s_setFlags, btnStart, btnSet, zeroFlag)
         begin
             case s_currentState is
                 when ST_START =>

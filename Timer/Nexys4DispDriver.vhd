@@ -1,3 +1,12 @@
+---------------------------------------------------------------------------------------------------
+-- Nexys4DispDriver
+-- Description: Driver to use display of 7 segments
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
+
+-- Version 1.0
+---------------------------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
@@ -28,7 +37,7 @@ architecture Behavioral of Nexys4DispDriver is
 begin
 
     -- Counter 3 bits
-    process (clk)
+    process (clk, enable)
     begin  
         if(rising_edge(clk) and enable = '1') then
             s_counter <= s_counter + 1;

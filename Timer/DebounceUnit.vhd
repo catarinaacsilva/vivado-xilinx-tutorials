@@ -1,3 +1,12 @@
+---------------------------------------------------------------------------------------------------
+-- DebounceUnit
+-- Description: Debouncer
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
+
+-- Version 1.0
+---------------------------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
 use IEEE.NUMERIC_STD.all;

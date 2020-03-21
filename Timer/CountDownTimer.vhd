@@ -1,5 +1,11 @@
+---------------------------------------------------------------------------------------------------
+-- CountDownTimer
+-- Description: Top Level
+-- Author: Catarina Silva
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
 
--- Top Level
+-- Version 1.0
+---------------------------------------------------------------------------------------------------
 
 library IEEE;
 use IEEE.STD_LOGIC_1164.all;
