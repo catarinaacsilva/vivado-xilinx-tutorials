@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="/home/calexandra/git/vivado-xilinx-tutorials/Timer/timer/timer.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="af9559f5fdcd4edcbb6eff4aa35dc2ec"/>
+    <Option Name="Id" Val="219761262ab34cdab7ce633a2f3665e9"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -63,7 +63,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/ControlUnit.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../ControlUnit.vhd"/>
-          <Attr Name="ImportTime" Val="1583942551"/>
+          <Attr Name="ImportTime" Val="1584787154"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -71,7 +71,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/CounterDown4.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../CounterDown4.vhd"/>
-          <Attr Name="ImportTime" Val="1583941870"/>
+          <Attr Name="ImportTime" Val="1584787232"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -79,7 +79,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/CountDatapath.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../CountDatapath.vhd"/>
-          <Attr Name="ImportTime" Val="1583944347"/>
+          <Attr Name="ImportTime" Val="1584787208"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -87,7 +87,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/ResetModule.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../ResetModule.vhd"/>
-          <Attr Name="ImportTime" Val="1583411549"/>
+          <Attr Name="ImportTime" Val="1584787004"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -95,7 +95,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/PulseGenerator.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../PulseGenerator.vhd"/>
-          <Attr Name="ImportTime" Val="1583411473"/>
+          <Attr Name="ImportTime" Val="1584787102"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -103,7 +103,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/DebounceUnit.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../DebounceUnit.vhd"/>
-          <Attr Name="ImportTime" Val="1583943078"/>
+          <Attr Name="ImportTime" Val="1584787128"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -111,7 +111,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/Nexys4DispDriver.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Nexys4DispDriver.vhd"/>
-          <Attr Name="ImportTime" Val="1583318234"/>
+          <Attr Name="ImportTime" Val="1584750626"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -119,7 +119,7 @@
       <File Path="$PSRCDIR/sources_1/imports/Timer/CountDownTimer.vhd">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../CountDownTimer.vhd"/>
-          <Attr Name="ImportTime" Val="1584612695"/>
+          <Attr Name="ImportTime" Val="1584786970"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
@@ -135,18 +135,16 @@
       <File Path="$PSRCDIR/constrs_1/imports/Timer/Nexys4_Master.xdc">
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Nexys4_Master.xdc"/>
-          <Attr Name="ImportTime" Val="1378301182"/>
+          <Attr Name="ImportTime" Val="1584732830"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>
       </File>
       <Config>
-        <Option Name="TargetConstrsFile" Val="$PSRCDIR/constrs_1/imports/Timer/Nexys4_Master.xdc"/>
         <Option Name="ConstrsType" Val="XDC"/>
       </Config>
     </FileSet>
     <FileSet Name="sim_1" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/sim_1">
-      <Filter Type="Srcs"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="CountDownTimer"/>
@@ -192,7 +190,9 @@
   <Runs Version="1" Minor="11">
     <Run Id="synth_1" Type="Ft3:Synth" SrcSet="sources_1" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Vivado Synthesis Defaults" AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019"/>
+        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2019">
+          <Desc>Vivado Synthesis Defaults</Desc>
+        </StratHandle>
         <Step Id="synth_design"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
@@ -202,7 +202,9 @@
     </Run>
     <Run Id="impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="constrs_1" Description="Default settings for Implementation." AutoIncrementalCheckpoint="false" WriteIncrSynthDcp="false" State="current" Dir="$PRUNDIR/impl_1" SynthRun="synth_1" IncludeInArchive="true" GenFullBitstream="true">
       <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019"/>
+        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2019">
+          <Desc>Default settings for Implementation.</Desc>
+        </StratHandle>
         <Step Id="init_design"/>
         <Step Id="opt_design"/>
         <Step Id="power_opt_design"/>

@@ -2,7 +2,7 @@
 -- PulseGenerator
 -- Description: Generate differents clock signal with just one input clock signal
 -- Author: Catarina Silva
--- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt
+-- Email: c.alexandracorreia@ua.pt; c.alexandracorreia@av.it.pt 
 
 -- Version 1.0
 ---------------------------------------------------------------------------------------------------

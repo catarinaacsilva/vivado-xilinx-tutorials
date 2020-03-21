@@ -7,7 +7,6 @@
 -- Version 1.0
 ---------------------------------------------------------------------------------------------------
 
-
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
@@ -66,10 +65,6 @@ architecture Behavioral of ControlUnit is
                         runFlag <= '1';
                         s_setFlags <= "0000";
                         s_nextState <= ST_START;
-                    --elsif (btnSet = '1') then
-                        --runFlag <= '0';
-                        --s_setFlags <= "0000";
-                        --s_nextState <= ST_FIRSTD;
                     end if;
 
                 when ST_FIRSTD =>
@@ -110,7 +105,6 @@ architecture Behavioral of ControlUnit is
                         runFlag <= '0';
                         s_setFlags <= "0000";
                         s_nextState <= ST_STOPPED;
-                    --elsif (btnStart = '1') then
                     else
                         runFlag <= '0';
                         s_setFlags <= "1000";
