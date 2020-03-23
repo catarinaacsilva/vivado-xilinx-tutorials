@@ -36,7 +36,7 @@ architecture Behavioral of Nexys4DispDriver is
 begin
 
     -- Counter 3 bits
-    process (clk)
+    process (clk, enable)
     begin  
         if(rising_edge(clk) and enable = '1') then
             s_counter <= s_counter + 1;
