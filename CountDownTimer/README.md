@@ -28,6 +28,83 @@
 
 2. Run: `sudo ./install_drivers`
 
+
+## Create project
+
+1. Open Vivado
+
+2. File -> Project -> New
+
+3. Sign a name to project and the directory to storage the project.
+
+4. At `Default Part` select `Boards` and write on seach field `Nexys4`.
+
+5. `Create Block Design` on right panel.
+
+6. Add (+) `Microblaze`
+
+7. `Run Block Automation`
+
+8. Double clock on Interrupt controller and insert 64kb on Local Memory
+
+9. `Run connection Automation` and select all the options
+
+10. The reset must be shared by the components (like photo)
+
+11. Double click on clocking wizard, then click on output clocks and finnaly set reset active low
+
+12. Add reset like on photo
+
+13. Fix error on the name of clk on clocking wizard: double click, then on board and change clk_in1 to sysclk
+
+14. `Run connection Automation` again
+
+15. Click on + and add gpio
+
+16. `Run connection Automation` and select all the options
+
+17. GPIO connect a switches
+
+18. Change name of the axi_gpio_ to axi_gpio_switches
+
+19. Add more 3 GPIO
+
+        19.1 gpio0 - leds
+        19.2 gpio1 - push_buttons_5bits
+        19.3 gpio2 - seven_seg_led_an
+
+20. Double click on gpio connected to display. The gpio2 must be connected to segs: `dual seven`
+
+21. `Run connection Atumation`
+
+22. Chane name of these 3 gpio:
+
+        22.1 gpio0 - axi_gpio_leds
+        22.2 gpio1 - axi_gpio_buttons
+        22.3 gpio2 - axi_gpio_display
+
+23. Click on + and add a UART: `UARTLITE`
+
+24. Click on + and add a timer: `AXI Timer`
+
+25. `Run connection Atumation`
+
+26. Double click on timer and deactivate `Timer2` (remove enable)
+
+27. Double click on UART:
+
+    - baudrate = 9600
+    - no parity
+    - 8 bits data
+
+28. Connect to ground: Add a constant
+
+29. Right buttom on mb_desing (on design sources) and click on `Create HDL wrapper`
+
+30. mb_desing_i: mb_design (...) click on `Generate Output Products` and then `Generate`
+
+31. File - Export - Export hardware - Include bitstream - Ok - Tools - Launch vitis
+
 ## Authors
 
 * **Catarina Silva** - [catarinaacsilva](https://github.com/catarinaacsilva)
