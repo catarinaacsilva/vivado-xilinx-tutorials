@@ -11,7 +11,7 @@ The idea is to learn more about that and provides some ways to implement project
 - Nexys4 Digilent Xilinx (FPGA)
 - Vhdl
 
-## Create project
+## Create project - FPGA
 
 - `xc7a100tcsg324-1`
 
