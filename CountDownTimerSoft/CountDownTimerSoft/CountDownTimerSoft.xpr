@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="/home/calexandra/git/vivado-xilinx-tutorials/CountDownTImerSoft/CountDownTImerSoft.xpr">
+<Project Version="7" Minor="44" Path="/home/calexandra/git/vivado-xilinx-tutorials/CountDownTimerSoft/CountDownTimerSoft/CountDownTimerSoft.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="ee6b282c13ab48928bce7e578f681abe"/>
+    <Option Name="Id" Val="f067193bdbb7406481c8c79f5e2b8f92"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
