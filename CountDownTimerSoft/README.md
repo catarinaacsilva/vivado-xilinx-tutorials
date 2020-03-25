@@ -41,11 +41,11 @@
 
 5. `Create Block Design` on right panel.
 
-6. Add (+) `Microblaze`
+6. Add (+) `Microblaze` and insert 64kb on Local Memory
 
 7. `Run Block Automation`
 
-8. Double clock on Interrupt controller and insert 64kb on Local Memory
+8. Add Interrupt controller
 
 9. `Run connection Automation` and select all the options
 
@@ -67,7 +67,7 @@
 
 18. Change name of the axi_gpio_ to axi_gpio_switches
 
-19. Add more 3 GPIO
+19. Add more 3 GPIO and double click to edit gpi01 to leds, push_buttons and seven_seg_led_an.
 
         19.1 gpio0 - leds
         19.2 gpio1 - push_buttons_5bits
@@ -75,9 +75,9 @@
 
 20. Double click on gpio connected to display. The gpio2 must be connected to segs: `dual seven`
 
-21. `Run connection Atumation`
+21. `Run connection Automation`
 
-22. Chane name of these 3 gpio:
+22. Change name of these 3 gpio:
 
         22.1 gpio0 - axi_gpio_leds
         22.2 gpio1 - axi_gpio_buttons
@@ -87,17 +87,17 @@
 
 24. Click on + and add a timer: `AXI Timer`
 
-25. `Run connection Atumation`
+25. `Run connection Automation`
 
 26. Double click on timer and deactivate `Timer2` (remove enable)
 
-27. Double click on UART:
+27. Double click on UART to check:
 
     - baudrate = 9600
     - no parity
     - 8 bits data
 
-28. Connect to ground: Add a constant
+28. Connect to ground: Add a constant and concat and connect like on [mb_design_1.pdf](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf)
 
 29. Right buttom on mb_desing (on design sources) and click on `Create HDL wrapper`
 
