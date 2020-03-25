@@ -10,7 +10,7 @@
     - 77GB of the disk during the instalation
     - 37GB of the disk at the end of instalation
 
-- Ubuntu 20.04
+- Windows 10
 
 ## Installation of Vitis 2019.2
 
