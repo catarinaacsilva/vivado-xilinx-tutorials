@@ -29,7 +29,7 @@
 2. Run: `sudo ./install_drivers`
 
 
-## Create project
+## Create project -  Vivado
 
 1. Open Vivado
 
@@ -103,7 +103,21 @@
 
 30. mb_desing_i: mb_design (...) click on `Generate Output Products` and then `Generate`
 
+31. Store asx file on Vivado project directory.
+
 31. File - Export - Export hardware - Include bitstream - Ok - Tools - Launch vitis
+
+## Create project - Vitis
+
+1. Select a directory as workspace: Choose dircetory of vivado project
+
+2. Select Vitis Application Project and write a project name.
+
+3. Select `Create from hardware`
+
+4. Import de asx file resulting form vivado and stored on Vivado project directory: Use `+` on menu.
+
+5. It isn't necessary change anything.
 
 ## Authors
 
