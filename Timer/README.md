@@ -12,7 +12,7 @@ Interaction with the system:
 - Display
 - Leds
 
-Control Unit (Finite State Machine)
+**Control Unit (Finite State Machine):**
 
 ![](fsm.png)
 
