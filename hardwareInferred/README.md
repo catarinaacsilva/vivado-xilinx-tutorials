@@ -1,11 +1,17 @@
-# Nexys4DispDriver
+# Hardware Inferred
 
-Driver to use displays
+- Clock divider
+- Combinational shift
+- Decoder
+- Mux2_1
+- Register
+- Shift register
 
 ## Requirements
 
 - Vivado 2019.2
 - FPGA
+
 
 ## Installation
 
