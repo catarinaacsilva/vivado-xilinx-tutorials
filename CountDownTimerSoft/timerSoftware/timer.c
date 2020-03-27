@@ -41,13 +41,13 @@ static unsigned int hasStarted = 0;
 
 
 /**
- * Displays
+ * Displays 
  * 
  * */
 unsigned char Bin2Hex(unsigned char value) {
-	static unsigned char disp7SegMapTable[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+	static unsigned char displayMap[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
 
-	return disp7SegMapTable[value];
+	return displayMap[value];
 }
 
 /**
@@ -62,40 +62,60 @@ int DetectRisingEdge(unsigned int oldValue, unsigned int newValue, unsigned char
 	return ((~oldValue & mask) & (newValue & mask)) == mask;
 }
 
+
+/**
+ * 
+ * Send to displays the value of counter
+ * 
+ * digit - digit sends to display
+ * an    - select the display
+ * */
+void send2Displays(digit, an){
+    XGpio_WriteReg(XPAR_AXI_GPIO_DISP_AN_BASEADDR, XGPIO_DATA_OFFSET, an);
+    XGpio_WriteReg(XPAR_AXI_GPIO_DISP_SEG_BASEADDR, XGPIO_DATA_OFFSET, displayMap[digit]);
+}
+
 /**
  * Logic of timer - normal count
  *  */
 void countDownTimer(){
-
-}
-
-int state_an(){
-    
+    while(digit0 <= )
 }
 
 
+/**
+ * 
+ * When button set is pressed
+ * */
 void button_set(){
-    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
-    if(value & 1<<1){
+    if((set == 1) && (hasStarted == 0)){
 	    state = (state+1) % 4; // circular
 	}
 }
 
+
+/**
+ * 
+ * When button reset is pressed
+ * */
 void button_reset(){
-    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
-    if(value & 1){
-        value0 = 9;
-        value1 = 5;
-        value2 = 9;
-        value3 = 5;
+    if((reset == 1) && (hasStarted == 1)){
+        digit0 = 9;
+        digit1 = 5;
+        digit2 = 9;
+        digit3 = 5;
         start  = 0;
         stop   = 1; // quando faz reset fica no estado stop
     }
 }
 
+/**
+ * 
+ * When button down is pressed
+ * */
 void button_down(){
-    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
-    if(value & 1 & (down == 1)){
+    unsigned int an = 0, digit = 0;
+    if(down == 1){
         if(!hasStarted){
             if(state == 0){ //seg less significant
                 if(digit0 <= 9 && digit0 >= 0){
@@ -104,6 +124,7 @@ void button_down(){
                 else{
                     digit0 = 9;
                 }
+                digit = digit0;
             }
             else if(state==1){
                 if(digit1 <= 9 && digit1 >= 0){
@@ -112,6 +133,7 @@ void button_down(){
                 else{
                     digit1 = 9;
                 }
+                digit = digit1;
             }
             else if(state==2){
                if(digit2 <= 9 && digit2 >= 0){
@@ -120,6 +142,7 @@ void button_down(){
                 else{
                     digit2 = 9;
                 }
+                digit = digit2;
             }
             else if(state==3){
                 if(digit3 <= 9 && digit3 >= 0){
@@ -128,56 +151,66 @@ void button_down(){
                 else{
                     digit3 = 9;
                 }
+                digit = digit3;
             }
-            value0 = digit0;
-            value1 = digit1;
-            value2 = digit2;
-            value3 = digit3;
+
+            // send to diplays
+            send2Displays(digit, an);
         }
     }
 }
 
-
+/**
+ * 
+ * When button up is pressed
+ * */
 void button_up(){
-    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
-    if(value & 1 & (up == 1)){
+    unsigned int an = 0, digit = 0;
+    if(up == 1){
         if(!hasStarted){
             if(state == 0){ //seg less significant
+                an = 0xFE;
                 if(digit0 <= 9 && digit0 >= 0){
                     digit0 ++;
                 }
                 else{
                     digit0 = 0;
                 }
+                digit = digit0;
             }
             else if(state==1){
+                an = 0xFD;
                 if(digit1 <= 9 && digit1 >= 0){
                     digit1 ++;
                 }
                 else{
                     digit1 = 0;
                 }
+                digit = digit1;
             }
             else if(state==2){
+                an = 0xFB;
                 if(digit2 <= 9 && digit2 >= 0){
                     digit2 ++;
                 }
                 else{
                     digit2 = 0;
                 }
+                digit = digit2;
             }
             else if(state==3){
+                an = 0xF7;
                 if(digit3 <= 9 && digit3 >= 0){
                     digit3 ++;
                 }
                 else{
                     digit3 = 0;
                 }
+                digit = digit3;
             }
-            value0 = digit0;
-            value1 = digit1;
-            value2 = digit2;
-            value3 = digit3;
+            
+            // send to diplays
+            send2Displays(digit, an);
         }
     }
 }
