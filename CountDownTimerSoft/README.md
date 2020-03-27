@@ -1,5 +1,7 @@
 # Count Down Timer - Software
 
+Count Down Timer based on software implementation.
+
 
 ## Requirements
 
@@ -97,7 +99,7 @@
     - no parity
     - 8 bits data
 
-28. Connect to ground: Add a constant and concat and connect like on [mb_design_1.pdf](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf)
+28. Connect to ground: Add a constant and concat and connect like on [mb_design_1.pdf](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf). The output of constante must be 0.
 
 29. Right buttom on mb_desing (on design sources) and click on `Create HDL wrapper`
 
@@ -118,6 +120,12 @@
 4. Import de asx file resulting form vivado and stored on Vivado project directory: Use `+` on menu.
 
 5. It isn't necessary change anything.
+
+## Deploy
+
+When you are finished the vivado project and before the init the vitis project you must be this [architecture](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf).
+
+[helloworld](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/helloworld.c) is a intitial file to test and it should be used as tutorial to first experience with the system. You can uncomment some parts of the code to test on FPGA and terminal.
 
 ## Authors
 
