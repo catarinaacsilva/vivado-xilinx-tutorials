@@ -79,7 +79,26 @@ void send2Displays(digit, an){
  * Logic of timer - normal count
  *  */
 void countDownTimer(){
-    while(digit0 <= )
+    unsigned int value = 0, tmpValue = 0;
+
+    while(start == 1){
+        if(value == 0)
+            tmpValue = 5959;
+        else{
+            value = digit3*1000 + digit2*100 + digit1*10 + digit0;
+            tmpValue = value - 1;
+            digit3 = tmpValue/1000;
+            digit2 = (tmpValue - digit3*1000)/100;
+            digit1 = (tmpValue-digit3*1000-digit2*100)/10;
+            digit0 = tmpValue-(digit3*1000+digit2*100+digit1*10);
+        }
+        send2Displays(digit3, 0xFE);
+        send2Displays(digit2, 0xFD);
+        send2Displays(digit1, 0xFB);
+        send2Displays(digit0, 0xF7);
+        
+    }
+
 }
 
 
