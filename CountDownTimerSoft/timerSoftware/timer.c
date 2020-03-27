@@ -1,20 +1,43 @@
+/**
+ * ----------------------------------Timer----------------------------------
+ * 
+ * Count Down Timer only based on Software
+ * 
+ * Author: Catarina Silva
+ * Email: c.alexandracorreia@ua.pt
+ * 
+ * Version 1.0
+ * 
+ * */
+
+
+
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
 #include "xgpio_l.h"
 #include "xtmrctr_l.h"
 
-
-static unsigned int initialMinutes = 59;
-static unsigned int initialSeconds = 59;
-static unsigned int minutes;
-static unsigned int seconds;
-//static unsigned int enable = 1;
+//-----------------digits-----------------
+static unsigned int digit0 = 9;
+static unsigned int digit1 = 5;
+static unsigned int digit2 = 9;
+static unsigned int digit3 = 5;
+static unsigned int value0 = 9;
+static unsigned int value1 = 5;
+static unsigned int value2 = 9;
+static unsigned int value3 = 5;
+// ---------------end digits----------------
+// -----------------Buttons-----------------
+static unsigned int reset = 0;
 static unsigned int start_stop = 0;
 static unsigned int set = 0;
-//static unsigned int digitPosition = 0; conseguimos controlar com o an?
+static unsigned int up, down = 0;
+// ---------------end buttons---------------
+// ------------Vars like booleans-----------
 static unsigned int hasStarted = 0;
-static unsigned int reset = 0;
+//-----------end vars like booleans---------
+
 
 /**
  * Displays
@@ -49,56 +72,112 @@ int state_an(){
     
 }
 
-/**
- * Increment or decremente based on button.
- * state: should be 0, 1, 2, 3 (each of the displays)
- * */
-void Button_update_values(int state){
-    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
 
-    // Button up
+void button_set(){
+    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
+    if(value & 1<<1){
+	    state = (state+1) % 4; // circular
+	}
+}
+
+void button_reset(){
+    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
     if(value & 1){
+        value0 = 9;
+        value1 = 5;
+        value2 = 9;
+        value3 = 5;
+        start_stop = 0; // reset -> state = stop
+    }
+}
+
+void button_down(){
+    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
+    if(value & 1 & (down == 1)){
         if(!hasStarted){
             if(state == 0){ //seg less significant
-                if(initialSeconds % 10!=9){
-                    initialSeconds = initialSeconds + 1;
+                if(digit0 <= 9 && digit0 >= 0){
+                    digit0 --;
                 }
                 else{
-                    initialSeconds = initialSeconds - 9;
+                    digit0 = 9;
                 }
             }
             else if(state==1){
-                if (initialSeconds<50)
-                    initialSeconds = initialSeconds + 10;
-                else
-                    initialSeconds = initialSeconds % 10;
+                if(digit1 <= 9 && digit1 >= 0){
+                    digit1 --;
+                }
+                else{
+                    digit1 = 9;
+                }
             }
             else if(state==2){
-                if(initialMinutes % 10 != 9)
-                    initialMinutes = initialMinutes + 1;
-                else
-                    initialMinutes = initialMinutes - 9;
+               if(digit2 <= 9 && digit2 >= 0){
+                    digit2 --;
+                }
+                else{
+                    digit2 = 9;
+                }
             }
             else if(state==3){
-                if(initialMinutes<50)
-                    initialMinutes = initialMinutes + 10;
-                else
-                    initialMinutes = initialMinutes % 10;
+                if(digit3 <= 9 && digit3 >= 0){
+                    digit3 --;
+                }
+                else{
+                    digit3 = 9;
+                }
             }
-            minutes = initialMinutes;
-		    seconds = initialSeconds; 
+            value0 = digit0;
+            value1 = digit1;
+            value2 = digit2;
+            value3 = digit3;
         }
     }
-
-    //
-
-    // set button
-    if(value & 1<<1){
-	    digitPosition = (digitPosition+1) % 4; // circular
-	}
+}
 
 
-
+void button_up(){
+    unsigned int value = XGpio_ReadReg(XPAR_AXI_GPIO_PUSH_BUT_BASEADDR, XGPIO_DATA_OFFSET);
+    if(value & 1 & (up == 1)){
+        if(!hasStarted){
+            if(state == 0){ //seg less significant
+                if(digit0 <= 9 && digit0 >= 0){
+                    digit0 ++;
+                }
+                else{
+                    digit0 = 0;
+                }
+            }
+            else if(state==1){
+                if(digit1 <= 9 && digit1 >= 0){
+                    digit1 ++;
+                }
+                else{
+                    digit1 = 0;
+                }
+            }
+            else if(state==2){
+                if(digit2 <= 9 && digit2 >= 0){
+                    digit2 ++;
+                }
+                else{
+                    digit2 = 0;
+                }
+            }
+            else if(state==3){
+                if(digit3 <= 9 && digit3 >= 0){
+                    digit3 ++;
+                }
+                else{
+                    digit3 = 0;
+                }
+            }
+            value0 = digit0;
+            value1 = digit1;
+            value2 = digit2;
+            value3 = digit3;
+        }
+    }
 }
 
 /**
