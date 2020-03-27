@@ -30,7 +30,8 @@ static unsigned int value3 = 5;
 // ---------------end digits----------------
 // -----------------Buttons-----------------
 static unsigned int reset = 0;
-static unsigned int start_stop = 0;
+static unsigned int start = 0;
+static unsigned int stop = 0;
 static unsigned int set = 0;
 static unsigned int up, down = 0;
 // ---------------end buttons---------------
@@ -62,7 +63,7 @@ int DetectRisingEdge(unsigned int oldValue, unsigned int newValue, unsigned char
 }
 
 /**
- * Logic of timer
+ * Logic of timer - normal count
  *  */
 void countDownTimer(){
 
@@ -87,7 +88,8 @@ void button_reset(){
         value1 = 5;
         value2 = 9;
         value3 = 5;
-        start_stop = 0; // reset -> state = stop
+        start  = 0;
+        stop   = 1; // quando faz reset fica no estado stop
     }
 }
 
@@ -183,31 +185,28 @@ void button_up(){
 /**
  * Control Unit
  * The timer starts on stop mode
- * start_stop =  1 -> start
- * start_stop =  0 -> stop
+ * 
  * */
 void fsm(){
-    int nextState = 0;
-    while(start_stop == 1){
-        countDownTimer(); 
-        if (reset = 1 || start_stop = 1)
-            start_stop = 0;
+    while(start == 1){
+        countDownTimer();
+        hasStarted = 1;
+        if (stop == 1)
+            break;
+    }       
+    while(stop == 1){
+        hasStarted = 0;
+        // TODO: rising_edge
+        while(set == 1){
+            if(up == 1)
+                button_up();
+            else if(down == 1)
+                button_down();
+            else if(start == 1)
+                break;
+        }
+        break;
     }
-    while(start_stop == 0){
-        for(int i=0; i<4; i++){
-            if(set==1)
-                nextState ++;
-        }
-        if(button_up == 1){
-
-        }
-
-        if(button_down == 1){
-
-        }
-
-    }
-
 
 
 }
