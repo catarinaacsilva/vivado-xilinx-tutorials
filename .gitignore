@@ -9,3 +9,7 @@ compile_simlib
 *.srcs
 Nexys4DispDriver.ip_user_files/
 *.bit
+*.log
+.metadata
+.analytics
+*.cache

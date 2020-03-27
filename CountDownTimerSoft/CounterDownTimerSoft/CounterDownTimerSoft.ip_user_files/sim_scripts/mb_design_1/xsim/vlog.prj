@@ -1,0 +1,11 @@
+verilog xil_defaultlib --include "../../../../CounterDownTimerSoft.srcs/sources_1/bd/mb_design_1/ipshared/4fba" --include "../../../../CounterDownTimerSoft.srcs/sources_1/bd/mb_design_1/ipshared/ec67/hdl" \
+"../../../bd/mb_design_1/ip/mb_design_1_lmb_bram_0/sim/mb_design_1_lmb_bram_0.v" \
+"../../../bd/mb_design_1/ip/mb_design_1_clk_wiz_1_0/mb_design_1_clk_wiz_1_0_clk_wiz.v" \
+"../../../bd/mb_design_1/ip/mb_design_1_clk_wiz_1_0/mb_design_1_clk_wiz_1_0.v" \
+"../../../bd/mb_design_1/ip/mb_design_1_xbar_0/sim/mb_design_1_xbar_0.v" \
+"../../../bd/mb_design_1/ip/mb_design_1_xlconstant_0_1/sim/mb_design_1_xlconstant_0_1.v" \
+"../../../bd/mb_design_1/ip/mb_design_1_xlconcat_0_2/sim/mb_design_1_xlconcat_0_2.v" \
+
+verilog xil_defaultlib "glbl.v"
+
+nosort
