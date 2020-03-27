@@ -53,7 +53,6 @@ unsigned char Bin2Hex(unsigned char value) {
 /**
  * Detect rising edge to use buttons
  * return 1 - rising_edge
- * return 0 - no rising_edge
  * 
  * */
 int DetectRisingEdge(unsigned int oldValue, unsigned int newValue, unsigned char bitIndex) {
@@ -105,11 +104,15 @@ void countDownTimer(){
 /**
  * 
  * When button set is pressed
+ * 
+ * return the state of fsm
  * */
-void button_set(){
+unsigned int button_set(){
+    unsigned int state = 0; // state of fsm
     if((set == 1) && (hasStarted == 0)){
 	    state = (state+1) % 4; // circular
 	}
+    return state;
 }
 
 
@@ -134,6 +137,7 @@ void button_reset(){
  * */
 void button_down(){
     unsigned int an = 0, digit = 0;
+    unsigned int state = button_set();
     if(down == 1){
         if(!hasStarted){
             if(state == 0){ //seg less significant
@@ -185,6 +189,7 @@ void button_down(){
  * */
 void button_up(){
     unsigned int an = 0, digit = 0;
+    unsigned int state = button_set();
     if(up == 1){
         if(!hasStarted){
             if(state == 0){ //seg less significant
@@ -248,19 +253,19 @@ void fsm(){
     }       
     while(stop == 1){
         hasStarted = 0;
-        // TODO: rising_edge
-        while(set == 1){
-            if(up == 1)
-                button_up();
-            else if(down == 1)
-                button_down();
-            else if(start == 1)
-                break;
+        //	Buttons rising-edge detection
+        unsigned int set_oldValue = 0xFF;
+        for(int i=0; i<=4; i++){
+            if(DetectRisingEdge(set_oldValue, set, i)){
+                //	Buttons rising-edge detection
+                unsigned int up_oldValue = 0xFF;
+                unsigned int down_oldValue = 0xFF;
+                if(DetectRisingEdge(up_oldValue, up, i))
+                    button_up();
+                else if(DetectRisingEdge(down_oldValue, down, i))
+                    button_down();
+            }
         }
-        break;
-    }
-
-
 }
 
 
