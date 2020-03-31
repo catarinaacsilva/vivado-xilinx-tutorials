@@ -294,7 +294,7 @@ void main(){
         // TODO: enviar o valor para os displays
   		if (tmrCtrlStatReg & XTC_CSR_INT_OCCURED_MASK) {
   			//Enviar o valor para os displays
-
+        
 			XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, tmrCtrlStatReg | XTC_CSR_INT_OCCURED_MASK);
 		}
    	}
