@@ -155,9 +155,14 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 	pButtonStatus->startPressed = buttonsPattern & BUTTON_RIGHT_MASK;
 }
 
-void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags)
-{
-	// Insert your code here...
+/**
+ * Control Unit
+ * The timer starts on stop mode
+ * 
+ * */
+
+void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags) {
+	
 	
 }
 
@@ -166,9 +171,25 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 	// Insert your code here...
 }
 
-void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
-{
-	// Insert your code here...
+/**
+ * Logic of timer - normal count
+ *  */
+void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
+	unsigned int tmpValue = 0, digitValues[8];
+
+	while(fsmState == Started){
+		if(pTimerValue == 0)
+			tmpValue = 5959;
+		else{
+			pTimerValue = digitValues[2]*1000 + digitValues[3]*100 + digitValues[4]*10 + digitValues[5];
+			tmpValue = pTimerValue - 1;
+			digitValues[2] = tmpValue/1000;
+			digitValues[3] = (tmpValue - digitValues[2]*1000)/100;
+			digitValues[4] = (tmpValue-digitValues[2]*1000-digitValues[3]*100)/10;
+			digitValues[5] = tmpValue-(digitValues[2]*1000+digitValues[3]*100+digitValues[4]*10);
+		}
+		TimerValue2DigitValues(pTimerValue, digitValues);
+	}
 }
 
 int main()
