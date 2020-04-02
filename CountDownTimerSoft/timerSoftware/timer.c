@@ -11,232 +11,176 @@
  * */
 
 
-
 #include <stdio.h>
 #include "platform.h"
 #include "xil_printf.h"
+#include "sleep.h"
 #include "xgpio_l.h"
 #include "xtmrctr_l.h"
 
-//-----------------digits-----------------
-static unsigned int digit0 = 9;
-static unsigned int digit1 = 5;
-static unsigned int digit2 = 9;
-static unsigned int digit3 = 5;
-static unsigned int value0 = 9;
-static unsigned int value1 = 5;
-static unsigned int value2 = 9;
-static unsigned int value3 = 5;
-// ---------------end digits----------------
-// -----------------Buttons-----------------
-static unsigned int reset = 0;
-static unsigned int start = 0;
-static unsigned int stop = 0;
-static unsigned int set = 0;
-static unsigned int up, down = 0;
-// ---------------end buttons---------------
-// ------------Vars like booleans-----------
-static unsigned int hasStarted = 0;
-//-----------end vars like booleans---------
+/******************************************
+	Data types
+*******************************************/
 
+// Boolean data type (not defined in standard C)
+typedef int bool;
 
-/**
- * Displays 
- * 
- * */
-unsigned char Bin2Hex(unsigned char value) {
-	static unsigned char displayMap[10] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78, 0x00, 0x10};
+// State machine status
+typedef enum {Stopped, Started, SetLSSec, SetMSSec, SetLSMin, SetMSMin} TFSMState;
 
-	return displayMap[value];
+// Buttons GPIO masks
+#define BUTTON_UP_MASK		0x01
+#define BUTTON_DOWN_MASK	0x04
+#define BUTTON_RIGHT_MASK	0x08
+#define BUTTON_CENTER_MASK	0x10
+
+// Data structure to store buttons status
+typedef struct SButtonStatus
+{
+	bool upPressed;
+	bool downPressed;
+	bool setPressed;
+	bool startPressed;
+
+	bool setPrevious;
+	bool startPrevious;
+} TButtonStatus;
+
+// Data structure to store countdown timer value
+typedef struct STimerValue
+{
+	int minMSValue;
+	int minLSValue;
+	int secMSValue;
+	int secLSValue;
+} TTimerValue;
+
+/******************************************
+	Helper functions
+*******************************************/
+
+// 7 segment decoder
+unsigned char Bin2Hex(int value)
+{
+	static char bin2HexLUT[] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78,
+			                    0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E};
+	return bin2HexLUT[value];
 }
 
-/**
- * Detect rising edge to use buttons
- * return 1 - rising_edge
- * 
- * */
-int DetectRisingEdge(unsigned int oldValue, unsigned int newValue, unsigned char bitIndex) {
-	unsigned int mask = 1 << bitIndex;
+// Rising edge detection and clear
+bool DetectAndClearRisingEdge(bool* pOldValue, bool newValue)
+{
+	bool retValue;
 
-	return ((~oldValue & mask) & (newValue & mask)) == mask;
+	retValue = (!(*pOldValue)) && newValue;
+	*pOldValue = newValue;
+	return retValue;
 }
 
+// Modular increment
+bool ModularInc(int* pValue, unsigned int modulo)
+{
+	(*pValue)++;
 
-/**
- * 
- * Send to displays the value of counter
- * 
- * digit - digit sends to display
- * an    - select the display
- * */
-void send2Displays(digit, an){
-    XGpio_WriteReg(XPAR_AXI_GPIO_DISP_AN_BASEADDR, XGPIO_DATA_OFFSET, an);
-    XGpio_WriteReg(XPAR_AXI_GPIO_DISP_SEG_BASEADDR, XGPIO_DATA_OFFSET, displayMap[digit]);
-}
-
-/**
- * Logic of timer - normal count
- *  */
-void countDownTimer(){
-    unsigned int value = 0, tmpValue = 0;
-
-    while(start == 1){
-        if(value == 0)
-            tmpValue = 5959;
-        else{
-            value = digit3*1000 + digit2*100 + digit1*10 + digit0;
-            tmpValue = value - 1;
-            digit3 = tmpValue/1000;
-            digit2 = (tmpValue - digit3*1000)/100;
-            digit1 = (tmpValue-digit3*1000-digit2*100)/10;
-            digit0 = tmpValue-(digit3*1000+digit2*100+digit1*10);
-        }
-        send2Displays(digit3, 0xFE);
-        send2Displays(digit2, 0xFD);
-        send2Displays(digit1, 0xFB);
-        send2Displays(digit0, 0xF7);
-        
-    }
-
-}
-
-
-/**
- * 
- * When button set is pressed
- * 
- * return the state of fsm
- * */
-unsigned int button_set(){
-    unsigned int state = 0; // state of fsm
-    if((set == 1) && (hasStarted == 0)){
-	    state = (state+1) % 4; // circular
+	if (*pValue >= modulo)
+	{
+		*pValue = 0;
+		return TRUE;
 	}
-    return state;
+	else
+	{
+		return FALSE;
+	}
 }
 
+// Modular decrement
+bool ModularDec(int* pValue, unsigned int modulo)
+{
+	(*pValue)--;
 
-/**
- * 
- * When button reset is pressed
- * */
-void button_reset(){
-    if((reset == 1) && (hasStarted == 1)){
-        digit0 = 9;
-        digit1 = 5;
-        digit2 = 9;
-        digit3 = 5;
-        start  = 0;
-        stop   = 1; // quando faz reset fica no estado stop
-    }
+	if (*pValue < 0)
+	{
+		*pValue = modulo - 1;
+		return TRUE;
+	}
+	else
+	{
+		return FALSE;
+	}
+}
+
+bool IsTimerValueZero(const TTimerValue* pTimerValue)
+{
+    return ((pTimerValue->secLSValue == 0) && (pTimerValue->secMSValue == 0) &&
+            (pTimerValue->minLSValue == 0) && (pTimerValue->minMSValue == 0));
+}
+
+// Conversion of the countdown timer values stored in a structure to an array of digits
+void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitValues[8])
+{
+	digitValues[0] = 0;
+	digitValues[1] = 0;
+	digitValues[2] = pTimerValue->secLSValue;
+	digitValues[3] = pTimerValue->secMSValue;
+	digitValues[4] = pTimerValue->minLSValue;
+	digitValues[5] = pTimerValue->minMSValue;
+	digitValues[6] = 0;
+	digitValues[7] = 0;
+}
+
+/******************************************
+	Countdown timer operations functions
+*******************************************/
+
+void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables)
+{
+	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
+
+	switch (digitRefreshIdx) {
+		case 0x2:
+			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFB);
+    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[2]));
+		break;
+
+		case 0x3:
+			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xF7);
+    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[3]));
+		break;
+
+		case 0x4:
+			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xEF);
+    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]));
+		break;
+
+		case 0x5:
+			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xDF);
+    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[5]));
+		break;
+
+		default:
+			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
+    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(0));
+	}
+
+	digitRefreshIdx++;
+	digitRefreshIdx &= 0x07;
 }
 
 /**
+ * Buttons Values (format 0xFFFFFFFF)
  * 
- * When button down is pressed
  * */
-void button_down(){
-    unsigned int an = 0, digit = 0;
-    unsigned int state = button_set();
-    if(down == 1){
-        if(!hasStarted){
-            if(state == 0){ //seg less significant
-                if(digit0 <= 9 && digit0 >= 0){
-                    digit0 --;
-                }
-                else{
-                    digit0 = 9;
-                }
-                digit = digit0;
-            }
-            else if(state==1){
-                if(digit1 <= 9 && digit1 >= 0){
-                    digit1 --;
-                }
-                else{
-                    digit1 = 9;
-                }
-                digit = digit1;
-            }
-            else if(state==2){
-               if(digit2 <= 9 && digit2 >= 0){
-                    digit2 --;
-                }
-                else{
-                    digit2 = 9;
-                }
-                digit = digit2;
-            }
-            else if(state==3){
-                if(digit3 <= 9 && digit3 >= 0){
-                    digit3 --;
-                }
-                else{
-                    digit3 = 9;
-                }
-                digit = digit3;
-            }
 
-            // send to diplays
-            send2Displays(digit, an);
-        }
-    }
-}
+void ReadButtons(TButtonStatus* pButtonStatus)
+{
+	unsigned int buttonsPattern;
 
-/**
- * 
- * When button up is pressed
- * */
-void button_up(){
-    unsigned int an = 0, digit = 0;
-    unsigned int state = button_set();
-    if(up == 1){
-        if(!hasStarted){
-            if(state == 0){ //seg less significant
-                an = 0xFE;
-                if(digit0 <= 9 && digit0 >= 0){
-                    digit0 ++;
-                }
-                else{
-                    digit0 = 0;
-                }
-                digit = digit0;
-            }
-            else if(state==1){
-                an = 0xFD;
-                if(digit1 <= 9 && digit1 >= 0){
-                    digit1 ++;
-                }
-                else{
-                    digit1 = 0;
-                }
-                digit = digit1;
-            }
-            else if(state==2){
-                an = 0xFB;
-                if(digit2 <= 9 && digit2 >= 0){
-                    digit2 ++;
-                }
-                else{
-                    digit2 = 0;
-                }
-                digit = digit2;
-            }
-            else if(state==3){
-                an = 0xF7;
-                if(digit3 <= 9 && digit3 >= 0){
-                    digit3 ++;
-                }
-                else{
-                    digit3 = 0;
-                }
-                digit = digit3;
-            }
-            
-            // send to diplays
-            send2Displays(digit, an);
-        }
-    }
+	buttonsPattern = XGpio_ReadReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_DATA_OFFSET);
+
+	pButtonStatus->upPressed    = buttonsPattern & BUTTON_UP_MASK;
+	pButtonStatus->downPressed  = buttonsPattern & BUTTON_DOWN_MASK;
+	pButtonStatus->setPressed   = buttonsPattern & BUTTON_CENTER_MASK;
+	pButtonStatus->startPressed = buttonsPattern & BUTTON_RIGHT_MASK;
 }
 
 /**
@@ -244,61 +188,238 @@ void button_up(){
  * The timer starts on stop mode
  * 
  * */
-void fsm(){
-    while(start == 1){
-        countDownTimer();
-        hasStarted = 1;
-        if (stop == 1)
-            break;
-    }       
-    while(stop == 1){
-        hasStarted = 0;
-        //	Buttons rising-edge detection
-        unsigned int set_oldValue = 0xFF;
-        for(int i=0; i<=4; i++){
-            if(DetectRisingEdge(set_oldValue, set, i)){
-                //	Buttons rising-edge detection
-                unsigned int up_oldValue = 0xFF;
-                unsigned int down_oldValue = 0xFF;
-                if(DetectRisingEdge(up_oldValue, up, i))
-                    button_up();
-                else if(DetectRisingEdge(down_oldValue, down, i))
-                    button_down();
-            }
-        }
+
+void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags) {
+	switch (pFSMState) {
+		case Stopped:
+			pSetFlags = 0x0;
+			if(DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
+				pFSMState = Started;
+			} else if (DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
+				pFSMState = SetLSSec;
+			} else {
+				pFSMState = Stopped;
+			}
+		break;
+
+		case Started:
+			pSetFlags = 0x0;
+			if (zeroFlag == TRUE || DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
+				pFSMState = Stopped;
+			} else {
+				pFSMState = Started;
+			}
+		break;
+
+		case SetLSSec:
+			pSetFlags = 0x1;
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
+				pFSMState = SetMSSec;
+			} else {
+				pFSMState = SetLSSec;
+			}
+		break;
+
+		case SetMSSec:
+			pSetFlags = 0x2;
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
+				pFSMState = SetLSMin;
+			} else {
+				pFSMState = SetMSSec;
+			}
+		break;
+
+		case SetLSMin:
+			pSetFlags = 0x4;
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
+				pFSMState = SetMSMin;
+			} else {
+				pFSMState = SetLSMin;
+			}
+		break;
+
+		case SetMSMin:
+			pSetFlags = 0x8;
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
+				pFSMState = Stopped;
+			} else {
+				pFSMState = SetMSMin;
+			}
+		break;
+	}
+	
 }
 
+/**
+ * Update values (up and down)
+ * 
+ * */
 
-void main(){
-    // Disable timer
- 	//XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 0x0);
+void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
+	unsigned int digitValues[8];
 
-	// Set timer load value
-    //XTmrCtr_SetLoadReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 500000000);
-    //XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_LOAD_MASK);
+	switch(fsmState){
+		case SetLSSec:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->secLSValue, 9);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->secLSValue, 9);
+			break;
+		case SetMSSec:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->secMSValue, 5);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->secMSValue, 5);
+			break;
+		case SetLSMin:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->minLSValue, 9);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->minLSValue, 9);
+			break;
+		case SetMSMin:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->minMSValue, 5);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->minMSValue, 5);
+			break;
+	}
 
-	// Enable timer, down counting with auto reload
-    //XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK | XTC_CSR_AUTO_RELOAD_MASK | XTC_CSR_DOWN_COUNT_MASK);
+}
 
-    //TODO: processo de contagem
+/**
+ * Logic of timer - normal count
+ *  */
+void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
+	unsigned int tmpValue = 0, digitValues[8];
 
-    countDownTimer();
+	switch (fsmState) {
+	case SetLSSec:
+		ModularDec(pTimerValue->secLSValue, 9);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->secMSValue, 5);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->minLSValue, 9);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->minMSValue, 5);
+		break;
+	}
+	
+}
 
-  	while (1) {
-  		// Print current count register
-  		xil_printf("\r\n%09d", XTmrCtr_GetTimerCounterReg(XPAR_AXI_TIMER_0_BASEADDR, 0));
+int main()
+{
+    init_platform();
+    print("\n\rCount down timer started\n\r");
 
-		// Detection using polling of timer event
+    //	GPIO tri-state configuration
+    //	Inputs
+    XGpio_WriteReg(XPAR_AXI_GPIO_SWITCHES_BASEADDR, XGPIO_TRI_OFFSET,  0xFFFFFFFF);
+    XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFFFF);
+
+    //	Outputs
+    XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR,     XGPIO_TRI_OFFSET,  0xFFFF0000);
+    XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFF00);
+    XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI2_OFFSET, 0xFFFFFF00);
+
+ 	// Disable hardware timer
+ 	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 0x00000000);
+	// Set hardware timer load value
+    XTmrCtr_SetLoadReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 125000); // Counter will wrap around every 1.25 ms
+    XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_LOAD_MASK);
+	// Enable hardware timer, down counting with auto reload
+    XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK | XTC_CSR_AUTO_RELOAD_MASK | XTC_CSR_DOWN_COUNT_MASK);
+
+    // Timer event software counter
+    unsigned hwTmrEventCount = 0;
+
+    TFSMState     fsmState       = Stopped;
+    unsigned char setFlags       = 0x0;
+    TButtonStatus buttonStatus   = {FALSE, FALSE, FALSE, FALSE, FALSE, FALSE};
+    TTimerValue   timerValue     = {5, 9, 5, 9};
+    bool          zeroFlag       = FALSE;
+
+    unsigned char digitEnables   = 0x3C;
+    unsigned int  digitValues[8] = {0, 0, 5, 9, 5, 9, 0, 0};
+    unsigned char decPtEnables   = 0x00;
+
+    bool          blink1HzStat   = FALSE;
+	bool          blink2HzStat   = FALSE;
+
+  	while (1)
+  	{
   		unsigned int tmrCtrlStatReg = XTmrCtr_GetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0);
 
-        // TODO: enviar o valor para os displays
-  		if (tmrCtrlStatReg & XTC_CSR_INT_OCCURED_MASK) {
-  			//Enviar o valor para os displays
-        
+  		if (tmrCtrlStatReg & XTC_CSR_INT_OCCURED_MASK)
+		{
+  			// Clear hardware timer event (interrupt request flag)
 			XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, tmrCtrlStatReg | XTC_CSR_INT_OCCURED_MASK);
-		}
-   	}
+			hwTmrEventCount++;
 
-    cleanup_platform();
-    return 0;
+			// Put here operations that must be performed at 800Hz rate
+			// Refresh displays
+			RefreshDisplays(digitEnables, digitValues, decPtEnables);
+
+
+			if (hwTmrEventCount % 100 == 0) // 8Hz
+			{
+				// Put here operations that must be performed at 8Hz rate
+				// Read push buttons
+				ReadButtons(&buttonStatus);
+				// Update state machine
+				UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
+				if ((setFlags == 0x0) || (blink2HzStat))
+				{
+					digitEnables = 0x3C;
+				}
+				else
+				{
+					digitEnables = (~(setFlags << 2)) & 0x3C;
+				}
+
+
+				if (hwTmrEventCount % 200 == 0) // 4Hz
+				{
+					// Put here operations that must be performed at 4Hz rate
+					// Switch digit set 2Hz blink status
+					blink2HzStat = !blink2HzStat;
+
+
+					if (hwTmrEventCount % 400 == 0) // 2Hz
+					{
+						// Put here operations that must be performed at 2Hz rate
+						// Switch point 1Hz blink status
+						blink1HzStat = !blink1HzStat;
+						decPtEnables = (blink1HzStat ? 0x10 : 0x00);
+
+						// Digit set increment/decrement
+						SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
+						TimerValue2DigitValues(&timerValue, digitValues);
+
+						if (hwTmrEventCount == 800) // 1Hz
+						{
+							// Put here operations that must be performed at 1Hz rate
+							// Count down timer normal operation
+							DecCountDownTimer(fsmState, &timerValue);
+							zeroFlag = IsTimerValueZero(&timerValue);
+							TimerValue2DigitValues(&timerValue, digitValues);
+
+							// Reset hwTmrEventCount every second
+							hwTmrEventCount = 1;
+						}
+					}
+				}
+			}
+		}
+
+  		// Put here operations that are performed whenever possible
+
+
+   }
+
+	cleanup_platform();
+	return 0;
 }
