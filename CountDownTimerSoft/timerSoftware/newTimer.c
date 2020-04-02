@@ -162,7 +162,63 @@ void ReadButtons(TButtonStatus* pButtonStatus)
  * */
 
 void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags) {
-	
+	switch (pFSMState) {
+		case Stopped:
+			pSetFlags = 0x0;
+			if(pButtonStatus->startPressed == TRUE && pButtonStatus->startPrevious == FALSE) {
+				pFSMState = Started;
+			} else if (pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+				pFSMState = SetLSSec;
+			} else {
+				pFSMState = Stopped;
+			}
+		break;
+
+		case Started:
+			pSetFlags = 0x0;
+			if (zeroFlag == TRUE || (pButtonStatus->startPressed == TRUE && pButtonStatus->startPrevious == FALSE)) {
+				pFSMState = Stopped;
+			} else {
+				pFSMState = Started;
+			}
+		break;
+
+		case SetLSSec:
+			pSetFlags = 0x1;
+			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+				pFSMState = SetMSSec;
+			} else {
+				pFSMState = SetLSSec;
+			}
+		break;
+
+		case SetMSSec:
+			pSetFlags = 0x2;
+			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+				pFSMState = SetLSMin;
+			} else {
+				pFSMState = SetMSSec;
+			}
+		break;
+
+		case SetLSMin:
+			pSetFlags = 0x4;
+			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+				pFSMState = SetMSMin;
+			} else {
+				pFSMState = SetLSMin;
+			}
+		break;
+
+		case SetMSMin:
+			pSetFlags = 0x8;
+			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+				pFSMState = Stopped;
+			} else {
+				pFSMState = SetMSMin;
+			}
+		break;
+	}
 	
 }
 
@@ -171,7 +227,7 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 
 	switch(fsmState){
 		case Stopped:
-			if()
+			if(pButtonStatus->setPressed == TRUE)
 		break;
 
 
