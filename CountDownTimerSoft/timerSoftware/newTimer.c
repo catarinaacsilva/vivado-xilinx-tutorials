@@ -111,8 +111,8 @@ bool ModularDec(int* pValue, unsigned int modulo)
 
 bool IsTimerValueZero(const TTimerValue* pTimerValue)
 {
-	return ((pTimerValue->secLSValue == 0) && (pTimerValue->secMSValue == 0) &&
-			(pTimerValue->minLSValue == 0) && (pTimerValue->minMSValue));
+    return ((pTimerValue->secLSValue == 0) && (pTimerValue->secMSValue == 0) &&
+            (pTimerValue->minLSValue == 0) && (pTimerValue->minMSValue == 0));
 }
 
 // Conversion of the countdown timer values stored in a structure to an array of digits
@@ -166,9 +166,35 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 	
 }
 
-void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue)
-{
-	// Insert your code here...
+void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
+	unsigned int digitValues[8];
+
+	switch(fsmState){
+		case Stopped:
+			if()
+		break;
+
+
+	}
+
+	if(fsmState == Stopped){
+		if(pButtonStatus.setPressed == TRUE){
+			if(pButtonStatus.upPressed == TRUE){
+				if(fsmState == SetLSSec){
+					if(ModularInc( STimerValue.minMSValue, 9) == TRUE){
+						
+				}
+				}
+			}
+			else if(pButtonStatus.downPressed == TRUE){
+				pTimerValue --;
+			}
+		}
+		if(pButtonStatus.startPressed == TRUE){
+			pTimerValue = pTimerValue;
+		}
+	}
+	TimerValue2DigitValues(pTimerValue, digitValues);
 }
 
 /**
