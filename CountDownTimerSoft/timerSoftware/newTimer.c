@@ -222,41 +222,41 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 	
 }
 
+/**
+ * 
+ * 
+ * */
+
 void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
 	unsigned int digitValues[8];
 
-
 	switch(fsmState){
-		case Stopped:
-			if(pButtonStatus->setPressed == TRUE){
-				if(pButtonStatus->upPressed == TRUE){
-
-				}
-			}
-
+		case SetLSSec:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->secLSValue, 9);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->secLSValue, 0);
 		break;
-
-
+		case SetMSSec:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->secMSValue, 5);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->secMSValue, 0);
+		break;
+		case SetLSMin:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->minLSValue, 9);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->minLSValue, 0);
+		break;
+		case SetMSMin:
+			if(pButtonStatus->upPressed == TRUE)
+				ModularInc(pTimerValue->minMSValue, 5);
+			else if (pButtonStatus->downPressed == TRUE)
+				ModularDec(pTimerValue->minMSValue, 0);
+		break;
 	}
 
-	if(fsmState == Stopped){
-		if(pButtonStatus.setPressed == TRUE){
-			if(pButtonStatus.upPressed == TRUE){
-				if(fsmState == SetLSSec){
-					if(ModularInc( STimerValue.minMSValue, 9) == TRUE){
-						
-				}
-				}
-			}
-			else if(pButtonStatus.downPressed == TRUE){
-				pTimerValue --;
-			}
-		}
-		if(pButtonStatus.startPressed == TRUE){
-			pTimerValue = pTimerValue;
-		}
-	}
-	TimerValue2DigitValues(pTimerValue, digitValues);
 }
 
 /**
