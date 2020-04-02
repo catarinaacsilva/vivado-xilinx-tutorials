@@ -236,25 +236,25 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 				ModularInc(pTimerValue->secLSValue, 9);
 			else if (pButtonStatus->downPressed == TRUE)
 				ModularDec(pTimerValue->secLSValue, 0);
-		break;
+			break;
 		case SetMSSec:
 			if(pButtonStatus->upPressed == TRUE)
 				ModularInc(pTimerValue->secMSValue, 5);
 			else if (pButtonStatus->downPressed == TRUE)
 				ModularDec(pTimerValue->secMSValue, 0);
-		break;
+			break;
 		case SetLSMin:
 			if(pButtonStatus->upPressed == TRUE)
 				ModularInc(pTimerValue->minLSValue, 9);
 			else if (pButtonStatus->downPressed == TRUE)
 				ModularDec(pTimerValue->minLSValue, 0);
-		break;
+			break;
 		case SetMSMin:
 			if(pButtonStatus->upPressed == TRUE)
 				ModularInc(pTimerValue->minMSValue, 5);
 			else if (pButtonStatus->downPressed == TRUE)
 				ModularDec(pTimerValue->minMSValue, 0);
-		break;
+			break;
 	}
 
 }
@@ -265,19 +265,21 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 	unsigned int tmpValue = 0, digitValues[8];
 
-	while(fsmState == Started){
-		if(pTimerValue == 0)
-			tmpValue = 5959;
-		else{
-			pTimerValue = digitValues[2]*1000 + digitValues[3]*100 + digitValues[4]*10 + digitValues[5];
-			tmpValue = pTimerValue - 1;
-			digitValues[2] = tmpValue/1000;
-			digitValues[3] = (tmpValue - digitValues[2]*1000)/100;
-			digitValues[4] = (tmpValue-digitValues[2]*1000-digitValues[3]*100)/10;
-			digitValues[5] = tmpValue-(digitValues[2]*1000+digitValues[3]*100+digitValues[4]*10);
-		}
-		TimerValue2DigitValues(pTimerValue, digitValues);
+	switch (fsmState) {
+	case SetLSSec:
+		ModularDec(pTimerValue->secLSValue, 0);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->secMSValue, 0);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->minLSValue, 0);
+		break;
+	case SetLSSec:
+		ModularDec(pTimerValue->minMSValue, 0);
+		break;
 	}
+	
 }
 
 int main()
