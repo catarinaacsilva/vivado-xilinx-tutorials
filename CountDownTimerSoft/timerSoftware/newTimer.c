@@ -223,7 +223,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 }
 
 /**
- * 
+ * Update values (up and down)
  * 
  * */
 
