@@ -165,9 +165,9 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 	switch (pFSMState) {
 		case Stopped:
 			pSetFlags = 0x0;
-			if(pButtonStatus->startPressed == TRUE && pButtonStatus->startPrevious == FALSE) {
+			if(DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
 				pFSMState = Started;
-			} else if (pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+			} else if (DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
 				pFSMState = SetLSSec;
 			} else {
 				pFSMState = Stopped;
@@ -176,7 +176,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case Started:
 			pSetFlags = 0x0;
-			if (zeroFlag == TRUE || (pButtonStatus->startPressed == TRUE && pButtonStatus->startPrevious == FALSE)) {
+			if (zeroFlag == TRUE || DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
 				pFSMState = Stopped;
 			} else {
 				pFSMState = Started;
@@ -185,7 +185,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case SetLSSec:
 			pSetFlags = 0x1;
-			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
 				pFSMState = SetMSSec;
 			} else {
 				pFSMState = SetLSSec;
@@ -194,7 +194,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case SetMSSec:
 			pSetFlags = 0x2;
-			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
 				pFSMState = SetLSMin;
 			} else {
 				pFSMState = SetMSSec;
@@ -203,7 +203,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case SetLSMin:
 			pSetFlags = 0x4;
-			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
 				pFSMState = SetMSMin;
 			} else {
 				pFSMState = SetLSMin;
@@ -212,7 +212,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case SetMSMin:
 			pSetFlags = 0x8;
-			if(pButtonStatus->setPressed == TRUE && pButtonStatus->setPrevious == FALSE) {
+			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
 				pFSMState = Stopped;
 			} else {
 				pFSMState = SetMSMin;
@@ -225,9 +225,15 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
 	unsigned int digitValues[8];
 
+
 	switch(fsmState){
 		case Stopped:
-			if(pButtonStatus->setPressed == TRUE)
+			if(pButtonStatus->setPressed == TRUE){
+				if(pButtonStatus->upPressed == TRUE){
+
+				}
+			}
+
 		break;
 
 
