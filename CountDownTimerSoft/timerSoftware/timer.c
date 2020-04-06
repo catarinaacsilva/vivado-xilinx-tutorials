@@ -195,7 +195,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 
 /**
  * Buttons Values (format 0xFFFFFFFF)
- * 
+ *
  * */
 
 void ReadButtons(TButtonStatus* pButtonStatus)
@@ -213,102 +213,105 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 /**
  * Control Unit
  * The timer starts on stop mode
- * 
+ *
  * */
 
 void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags) {
-	switch (pFSMState) {
+	switch (*pFSMState) {
 		case Stopped:
-			pSetFlags = 0x0;
-			if(DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
-				pFSMState = Started;
-			} else if (DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
-				pFSMState = SetLSSec;
+			*pSetFlags = 0x0;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) {
+				*pFSMState = Started;
+			} else if (DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
+				*pFSMState = SetLSSec;
 			} else {
-				pFSMState = Stopped;
+				*pFSMState = Stopped;
 			}
 		break;
 
 		case Started:
-			pSetFlags = 0x0;
-			if (zeroFlag == TRUE || DetectAndClearRisingEdge(startPrevious, startPressed) == TRUE) {
-				pFSMState = Stopped;
+			*pSetFlags = 0x0;
+			if (zeroFlag == TRUE || DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) {
+				*pFSMState = Stopped;
 			} else {
-				pFSMState = Started;
+				*pFSMState = Started;
 			}
 		break;
 
 		case SetLSSec:
-			pSetFlags = 0x1;
-			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
-				pFSMState = SetMSSec;
+			*pSetFlags = 0x1;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
+				*pFSMState = SetMSSec;
 			} else {
-				pFSMState = SetLSSec;
+				*pFSMState = SetLSSec;
 			}
 		break;
 
 		case SetMSSec:
-			pSetFlags = 0x2;
-			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
-				pFSMState = SetLSMin;
+			*pSetFlags = 0x2;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
+				*pFSMState = SetLSMin;
 			} else {
-				pFSMState = SetMSSec;
+				*pFSMState = SetMSSec;
 			}
 		break;
 
 		case SetLSMin:
-			pSetFlags = 0x4;
-			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
-				pFSMState = SetMSMin;
+			*pSetFlags = 0x4;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
+				*pFSMState = SetMSMin;
 			} else {
-				pFSMState = SetLSMin;
+				*pFSMState = SetLSMin;
 			}
 		break;
 
 		case SetMSMin:
-			pSetFlags = 0x8;
-			if(DetectAndClearRisingEdge(setPrevious, setPressed) == TRUE) {
-				pFSMState = Stopped;
+			*pSetFlags = 0x8;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
+				*pFSMState = Stopped;
 			} else {
-				pFSMState = SetMSMin;
+				*pFSMState = SetMSMin;
 			}
 		break;
+		default:
+			break;
 	}
-	
+
 }
 
 /**
  * Update values (up and down)
- * 
+ *
  * */
 
 void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
-	unsigned int digitValues[8];
 
 	switch(fsmState){
 		case SetLSSec:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(pTimerValue->secLSValue, 9);
+				ModularInc(&(pTimerValue->secLSValue), 9);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(pTimerValue->secLSValue, 9);
+				ModularDec(&(pTimerValue->secLSValue), 9);
 			break;
 		case SetMSSec:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(pTimerValue->secMSValue, 5);
+				ModularInc(&(pTimerValue->secMSValue), 5);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(pTimerValue->secMSValue, 5);
+				ModularDec(&(pTimerValue->secMSValue), 5);
 			break;
 		case SetLSMin:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(pTimerValue->minLSValue, 9);
+				ModularInc(&(pTimerValue->minLSValue), 9);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(pTimerValue->minLSValue, 9);
+				ModularDec(&(pTimerValue->minLSValue), 9);
 			break;
 		case SetMSMin:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(pTimerValue->minMSValue, 5);
+				ModularInc(&(pTimerValue->minMSValue), 5);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(pTimerValue->minMSValue, 5);
+				ModularDec(&(pTimerValue->minMSValue), 5);
+			break;
+		default:
 			break;
 	}
 
@@ -318,23 +321,24 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
  * Logic of timer - normal count
  *  */
 void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
-	unsigned int tmpValue = 0, digitValues[8];
 
 	switch (fsmState) {
 	case SetLSSec:
-		ModularDec(pTimerValue->secLSValue, 9);
+		ModularDec(&(pTimerValue->secLSValue), 9);
 		break;
-	case SetLSSec:
-		ModularDec(pTimerValue->secMSValue, 5);
+	case SetMSSec:
+		ModularDec(&(pTimerValue->secMSValue), 5);
 		break;
-	case SetLSSec:
-		ModularDec(pTimerValue->minLSValue, 9);
+	case SetLSMin:
+		ModularDec(&(pTimerValue->minLSValue), 9);
 		break;
-	case SetLSSec:
-		ModularDec(pTimerValue->minMSValue, 5);
+	case SetMSMin:
+		ModularDec(&(pTimerValue->minMSValue), 5);
+		break;
+	default:
 		break;
 	}
-	
+
 }
 /******************************* Main function *******************************/
 
@@ -342,7 +346,7 @@ int main()
 {
 	init_platform();
 	xil_printf("\n\n\rCount down timer - polling based version.\n\rConfiguring...");
-	
+
 	//	GPIO tri-state configuration
 	//	Inputs
 	XGpio_WriteReg(XPAR_AXI_GPIO_SWITCHES_BASEADDR, XGPIO_TRI_OFFSET,  0xFFFFFFFF);
@@ -368,7 +372,7 @@ int main()
 	xil_printf("\n\rHardware timer configured.");
 
 	xil_printf("\n\rSystem running.\n\r");
-	
+
 	// Timer event software counter
 	unsigned hwTmrEventCount = 0;
 
@@ -453,8 +457,8 @@ int main()
 		}
 
   		// Put here operations that are performed whenever possible
-		
-		
+
+
 	}
 
 	cleanup_platform();
