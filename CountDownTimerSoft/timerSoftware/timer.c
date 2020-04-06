@@ -1,26 +1,58 @@
-/**
- * ----------------------------------Timer----------------------------------
- * 
- * Count Down Timer only based on Software
- * 
- * Author: Catarina Silva
- * Email: c.alexandracorreia@ua.pt
- * 
- * Version 1.0
- * 
- * */
+/******************************************************************************
+*
+* Copyright (C) 2009 - 2014 Xilinx, Inc.  All rights reserved.
+*
+* Permission is hereby granted, free of charge, to any person obtaining a copy
+* of this software and associated documentation files (the "Software"), to deal
+* in the Software without restriction, including without limitation the rights
+* to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+* copies of the Software, and to permit persons to whom the Software is
+* furnished to do so, subject to the following conditions:
+*
+* The above copyright notice and this permission notice shall be included in
+* all copies or substantial portions of the Software.
+*
+* Use of the Software is limited solely to applications:
+* (a) running on a Xilinx device, or
+* (b) that interact with a Xilinx device through a bus or interconnect.
+*
+* THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+* IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+* FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+* XILINX  BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+* WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF
+* OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+* SOFTWARE.
+*
+* Except as contained in this notice, the name of the Xilinx shall not be used
+* in advertising or otherwise to promote the sale, use or other dealings in
+* this Software without prior written authorization from Xilinx.
+*
+******************************************************************************/
 
+/*
+ * helloworld.c: simple test application
+ *
+ * This application configures UART 16550 to baud rate 9600.
+ * PS7 UART (Zynq) is not initialized by this application, since
+ * bootrom/bsp configures it to baud rate 115200
+ *
+ * ------------------------------------------------
+ * | UART TYPE   BAUD RATE                        |
+ * ------------------------------------------------
+ *   uartns550   9600
+ *   uartlite    Configurable only in HW design
+ *   ps7_uart    115200 (configured by bootrom/bsp)
+ */
 
 #include <stdio.h>
-#include "platform.h"
 #include "xil_printf.h"
-#include "sleep.h"
+#include "platform.h"
+#include "xparameters.h"
 #include "xgpio_l.h"
 #include "xtmrctr_l.h"
 
-/******************************************
-	Data types
-*******************************************/
+/******************************** Data types *********************************/
 
 // Boolean data type (not defined in standard C)
 typedef int bool;
@@ -49,21 +81,19 @@ typedef struct SButtonStatus
 // Data structure to store countdown timer value
 typedef struct STimerValue
 {
-	int minMSValue;
-	int minLSValue;
-	int secMSValue;
-	int secLSValue;
+	unsigned int minMSValue;
+	unsigned int minLSValue;
+	unsigned int secMSValue;
+	unsigned int secLSValue;
 } TTimerValue;
 
-/******************************************
-	Helper functions
-*******************************************/
+/***************************** Helper functions ******************************/
 
 // 7 segment decoder
 unsigned char Bin2Hex(int value)
 {
-	static char bin2HexLUT[] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78,
-			                    0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E};
+	static const char bin2HexLUT[] = {0x40, 0x79, 0x24, 0x30, 0x19, 0x12, 0x02, 0x78,
+			                    	  0x00, 0x10, 0x08, 0x03, 0x46, 0x21, 0x06, 0x0E};
 	return bin2HexLUT[value];
 }
 
@@ -78,41 +108,40 @@ bool DetectAndClearRisingEdge(bool* pOldValue, bool newValue)
 }
 
 // Modular increment
-bool ModularInc(int* pValue, unsigned int modulo)
+bool ModularInc(unsigned int* pValue, unsigned int modulo)
 {
-	(*pValue)++;
-
-	if (*pValue >= modulo)
+	if (*pValue < modulo - 1)
+	{
+		(*pValue)++;
+		return FALSE;
+	}
+	else
 	{
 		*pValue = 0;
 		return TRUE;
 	}
-	else
-	{
-		return FALSE;
-	}
 }
 
 // Modular decrement
-bool ModularDec(int* pValue, unsigned int modulo)
+bool ModularDec(unsigned int* pValue, unsigned int modulo)
 {
-	(*pValue)--;
-
-	if (*pValue < 0)
+	if (*pValue > 0)
+	{
+		(*pValue)--;
+		return FALSE;
+	}
+	else
 	{
 		*pValue = modulo - 1;
 		return TRUE;
 	}
-	else
-	{
-		return FALSE;
-	}
 }
 
+// Tests if all timer digits are zero
 bool IsTimerValueZero(const TTimerValue* pTimerValue)
 {
-    return ((pTimerValue->secLSValue == 0) && (pTimerValue->secMSValue == 0) &&
-            (pTimerValue->minLSValue == 0) && (pTimerValue->minMSValue == 0));
+	return ((pTimerValue->secLSValue == 0) && (pTimerValue->secMSValue == 0) &&
+			(pTimerValue->minLSValue == 0) && (pTimerValue->minMSValue == 0));
 }
 
 // Conversion of the countdown timer values stored in a structure to an array of digits
@@ -128,9 +157,7 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 	digitValues[7] = 0;
 }
 
-/******************************************
-	Countdown timer operations functions
-*******************************************/
+/******************* Countdown timer operations functions ********************/
 
 void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables)
 {
@@ -309,44 +336,53 @@ void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 	}
 	
 }
+/******************************* Main function *******************************/
 
 int main()
 {
-    init_platform();
-    print("\n\rCount down timer started\n\r");
+	init_platform();
+	xil_printf("\n\n\rCount down timer - polling based version.\n\rConfiguring...");
+	
+	//	GPIO tri-state configuration
+	//	Inputs
+	XGpio_WriteReg(XPAR_AXI_GPIO_SWITCHES_BASEADDR, XGPIO_TRI_OFFSET,  0xFFFFFFFF);
+	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFFFF);
 
-    //	GPIO tri-state configuration
-    //	Inputs
-    XGpio_WriteReg(XPAR_AXI_GPIO_SWITCHES_BASEADDR, XGPIO_TRI_OFFSET,  0xFFFFFFFF);
-    XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFFFF);
+	//	Outputs
+	XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR,     XGPIO_TRI_OFFSET,  0xFFFF0000);
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFF00);
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI2_OFFSET, 0xFFFFFF00);
 
-    //	Outputs
-    XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR,     XGPIO_TRI_OFFSET,  0xFFFF0000);
-    XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFF00);
-    XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI2_OFFSET, 0xFFFFFF00);
+	xil_printf("\n\rIOs configured.");
 
  	// Disable hardware timer
  	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 0x00000000);
 	// Set hardware timer load value
-    XTmrCtr_SetLoadReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 125000); // Counter will wrap around every 1.25 ms
-    XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_LOAD_MASK);
+	XTmrCtr_SetLoadReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 125000); // Counter will wrap around every 1.25 ms
+	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_LOAD_MASK);
 	// Enable hardware timer, down counting with auto reload
-    XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK | XTC_CSR_AUTO_RELOAD_MASK | XTC_CSR_DOWN_COUNT_MASK);
+	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK  |
+															  XTC_CSR_AUTO_RELOAD_MASK |
+															  XTC_CSR_DOWN_COUNT_MASK);
 
-    // Timer event software counter
-    unsigned hwTmrEventCount = 0;
+	xil_printf("\n\rHardware timer configured.");
 
-    TFSMState     fsmState       = Stopped;
-    unsigned char setFlags       = 0x0;
-    TButtonStatus buttonStatus   = {FALSE, FALSE, FALSE, FALSE, FALSE, FALSE};
-    TTimerValue   timerValue     = {5, 9, 5, 9};
-    bool          zeroFlag       = FALSE;
+	xil_printf("\n\rSystem running.\n\r");
+	
+	// Timer event software counter
+	unsigned hwTmrEventCount = 0;
 
-    unsigned char digitEnables   = 0x3C;
-    unsigned int  digitValues[8] = {0, 0, 5, 9, 5, 9, 0, 0};
-    unsigned char decPtEnables   = 0x00;
+	TFSMState     fsmState       = Stopped;
+	unsigned char setFlags       = 0x0;
+	TButtonStatus buttonStatus   = {FALSE, FALSE, FALSE, FALSE, FALSE, FALSE};
+	TTimerValue   timerValue     = {5, 9, 5, 9};
+	bool          zeroFlag       = FALSE;
 
-    bool          blink1HzStat   = FALSE;
+	unsigned char digitEnables   = 0x3C;
+	unsigned int  digitValues[8] = {0, 0, 5, 9, 5, 9, 0, 0};
+	unsigned char decPtEnables   = 0x00;
+
+	bool          blink1HzStat   = FALSE;
 	bool          blink2HzStat   = FALSE;
 
   	while (1)
@@ -356,7 +392,8 @@ int main()
   		if (tmrCtrlStatReg & XTC_CSR_INT_OCCURED_MASK)
 		{
   			// Clear hardware timer event (interrupt request flag)
-			XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, tmrCtrlStatReg | XTC_CSR_INT_OCCURED_MASK);
+			XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0,
+										tmrCtrlStatReg | XTC_CSR_INT_OCCURED_MASK);
 			hwTmrEventCount++;
 
 			// Put here operations that must be performed at 800Hz rate
@@ -373,11 +410,11 @@ int main()
 				UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
 				if ((setFlags == 0x0) || (blink2HzStat))
 				{
-					digitEnables = 0x3C;
+					digitEnables = 0x3C; // All digits active
 				}
 				else
 				{
-					digitEnables = (~(setFlags << 2)) & 0x3C;
+					digitEnables = (~(setFlags << 2)) & 0x3C; // Setting digit inactive
 				}
 
 
@@ -416,9 +453,9 @@ int main()
 		}
 
   		// Put here operations that are performed whenever possible
-
-
-   }
+		
+		
+	}
 
 	cleanup_platform();
 	return 0;
