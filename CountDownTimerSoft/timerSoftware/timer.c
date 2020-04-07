@@ -220,7 +220,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 	switch (*pFSMState) {
 		case Stopped:
 			*pSetFlags = 0x0;
-			if(DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) {
+			if(DetectAndClearRisingEdge((&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) && (zeroFlag == 0)) {
 				*pFSMState = Started;
 			} else if (DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed) == TRUE) {
 				*pFSMState = SetLSSec;
@@ -231,7 +231,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 		case Started:
 			*pSetFlags = 0x0;
-			if (zeroFlag == TRUE || DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) {
+			if (zeroFlag == TRUE || DetectAndClearRisingEdge((&(pButtonStatus->startPrevious), pButtonStatus->startPressed) == TRUE) && (zeroFlag == 1)) {
 				*pFSMState = Stopped;
 			} else {
 				*pFSMState = Started;
@@ -274,6 +274,8 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 			}
 		break;
 		default:
+			*pSetFlags = 0x0; 	
+			*pFSMState = Stopped;
 			break;
 	}
 
