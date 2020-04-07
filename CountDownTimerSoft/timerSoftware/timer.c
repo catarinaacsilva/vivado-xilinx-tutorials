@@ -167,7 +167,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 		case 0x2:
 			if((digitEnables & 0x04) == 0x04) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFB);
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[2]));
+				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[2]) | 0x80);
 			} else {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
@@ -176,7 +176,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 		case 0x3:
 			if((digitEnables & 0x08) == 0x08) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xF7);
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[3]));
+				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[3]) | 0x80);
 			} else {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
@@ -185,7 +185,10 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 		case 0x4:
 			if((digitEnables & 0x10) == 0x10) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xEF);
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]));
+				if((decPtEnables & 0x10) == 0x10)
+					XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]) | 0x80);
+				else
+					XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]));
 			} else {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
@@ -194,7 +197,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 		case 0x5:
 			if((digitEnables & 0x20) == 0x20) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xDF);
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[5]));
+				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[5]) | 0x80);
 			} else {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
