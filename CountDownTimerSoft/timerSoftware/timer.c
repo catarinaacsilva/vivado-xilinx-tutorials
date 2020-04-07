@@ -289,27 +289,27 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 	switch(fsmState){
 		case SetLSSec:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(&(pTimerValue->secLSValue), 9);
+				ModularInc(&(pTimerValue->secLSValue), 10);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(&(pTimerValue->secLSValue), 9);
+				ModularDec(&(pTimerValue->secLSValue), 10);
 			break;
 		case SetMSSec:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(&(pTimerValue->secMSValue), 5);
+				ModularInc(&(pTimerValue->secMSValue), 6);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(&(pTimerValue->secMSValue), 5);
+				ModularDec(&(pTimerValue->secMSValue), 6);
 			break;
 		case SetLSMin:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(&(pTimerValue->minLSValue), 9);
+				ModularInc(&(pTimerValue->minLSValue), 10);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(&(pTimerValue->minLSValue), 9);
+				ModularDec(&(pTimerValue->minLSValue), 10);
 			break;
 		case SetMSMin:
 			if(pButtonStatus->upPressed == TRUE)
-				ModularInc(&(pTimerValue->minMSValue), 5);
+				ModularInc(&(pTimerValue->minMSValue), 6);
 			else if (pButtonStatus->downPressed == TRUE)
-				ModularDec(&(pTimerValue->minMSValue), 5);
+				ModularDec(&(pTimerValue->minMSValue), 6);
 			break;
 		default:
 			break;
@@ -322,21 +322,20 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
  *  */
 void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 
-	switch (fsmState) {
-	case SetLSSec:
-		ModularDec(&(pTimerValue->secLSValue), 9);
-		break;
-	case SetMSSec:
-		ModularDec(&(pTimerValue->secMSValue), 5);
-		break;
-	case SetLSMin:
-		ModularDec(&(pTimerValue->minLSValue), 9);
-		break;
-	case SetMSMin:
-		ModularDec(&(pTimerValue->minMSValue), 5);
-		break;
-	default:
-		break;
+	if (fsmState == Started) {													
+		bool count = ModularDec(&pTimerValue -> secLSValue, 10);		
+		if (count) {
+			count = ModularDec(&pTimerValue -> secMSValue, 6);		
+			if (count) {
+				count = ModularDec(&pTimerValue -> minLSValue, 10);	
+				if (count) {
+					ModularDec(&pTimerValue -> minMSValue, 6); 
+				}
+				else return;
+			}
+			else return;
+		}
+		else return;
 	}
 
 }
