@@ -197,7 +197,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 
 		default:
 			XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
-    		XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(0));
 	}
 
 	digitRefreshIdx++;
