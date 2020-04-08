@@ -168,8 +168,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 			if((digitEnables & 0x04) == 0x04) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFB);
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[2]) | 0x80);
-			} else {
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
 		break;
 
@@ -177,8 +175,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 			if((digitEnables & 0x08) == 0x08) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xF7);
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[3]) | 0x80);
-			} else {
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
 		break;
 
@@ -189,8 +185,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 					XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]) | 0x80);
 				else
 					XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[4]));
-			} else {
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
 		break;
 
@@ -198,8 +192,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 			if((digitEnables & 0x20) == 0x20) {
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xDF);
 				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(digitValues[5]) | 0x80);
-			} else {
-				XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
 			}
 		break;
 
@@ -370,7 +362,12 @@ void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 int main()
 {
 	init_platform();
+	//  Outputs Initial
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
+
 	xil_printf("\n\n\rCount down timer - polling based version.\n\rConfiguring...");
+
+
 
 	//	GPIO tri-state configuration
 	//	Inputs
@@ -382,9 +379,6 @@ int main()
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFF00);
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI2_OFFSET, 0xFFFFFF00);
 
-	//  Outputs Initial
-	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
-	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(0));
 
 	xil_printf("\n\rIOs configured.");
 
@@ -412,7 +406,7 @@ int main()
 	bool          zeroFlag       = FALSE;
 
 	unsigned char digitEnables   = 0x3C;
-	unsigned int  digitValues[8] = {0, 0, 9, 5, 9, 5, 0, 0};
+	unsigned int  digitValues[8] = {0, 0, 0, 0, 0, 0, 0, 0};
 	unsigned char decPtEnables   = 0x00;
 
 	bool          blink1HzStat   = FALSE;
