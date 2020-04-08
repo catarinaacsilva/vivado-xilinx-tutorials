@@ -239,6 +239,11 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 	switch (*pFSMState) {
 		case Stopped:
 			*pSetFlags = 0x0;
+			if(zeroFlag == 1) {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0001);
+			}else {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0000);
+			}
 			if((DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed)) && (zeroFlag == 0)) {
 				*pFSMState = Started;
 			} else if (DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
@@ -377,6 +382,10 @@ int main()
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI_OFFSET,  0xFFFFFF00);
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR,  XGPIO_TRI2_OFFSET, 0xFFFFFF00);
 
+	//  Outputs Initial
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  0xFF);
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, Bin2Hex(0));
+
 	xil_printf("\n\rIOs configured.");
 
  	// Disable hardware timer
@@ -403,7 +412,7 @@ int main()
 	bool          zeroFlag       = FALSE;
 
 	unsigned char digitEnables   = 0x3C;
-	unsigned int  digitValues[8] = {0, 0, 5, 9, 5, 9, 0, 0};
+	unsigned int  digitValues[8] = {0, 0, 9, 5, 9, 5, 0, 0};
 	unsigned char decPtEnables   = 0x00;
 
 	bool          blink1HzStat   = FALSE;
