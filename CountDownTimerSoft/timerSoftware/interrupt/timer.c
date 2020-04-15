@@ -161,17 +161,16 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables){
 
-	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
-
+	static unsigned int digitRefreshIdx = 0;
+	
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 
-	//unsigned int digit = (!(decPtEnables >> digitRefreshIdx)) << 7;
-	unsigned int digit = !(decPtEnables >> digitRefreshIdx);
-	if (digitEnables >> digitRefreshIdx) {
-		digit += Bin2Hex(digitValues[digitRefreshIdx]);
+	unsigned int digit = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
+	if ((digitEnables >> digitRefreshIdx) & 0x01) {
+		digit = digit + Bin2Hex(digitValues[digitRefreshIdx]);
 	}
 	else {
-		digit += 0x7F;
+		digit = digit + 0x7F;
 	}
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
 	
