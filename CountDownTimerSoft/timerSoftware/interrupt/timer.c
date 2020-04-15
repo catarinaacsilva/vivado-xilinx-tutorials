@@ -364,9 +364,7 @@ void TimerIntCallbackHandler(void* callbackParam) {
 
 	if (hwTmrEventCount % 100 == 0) // 8Hz
 	{
-		// Put here operations that must be performed at 8Hz rate
-		// Read push buttons
-		ReadButtons(&buttonStatus);
+		
 		// Update state machine
 		UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
 		if ((setFlags == 0x0) || (blink2HzStat)){
@@ -425,8 +423,8 @@ void TimerIntCallbackHandler(void* callbackParam) {
 // This function will be called back by the INTC ISR whenever a button is pressed or released
 void ButtonsIntCallbackHandler(void* callbackParam) {
 	// Read push buttons
-	// Insert your code here...
 
+	ReadButtons(&buttonStatus);
 
 	// Clear GPIO interrupt request flag
 	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_ISR_OFFSET, XGPIO_IR_CH1_MASK);
