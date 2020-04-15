@@ -358,40 +358,49 @@ void TimerIntCallbackHandler(void* callbackParam)
 
 
 	// Put here operations that must be performed at 800Hz rate
-	// Refresh displays
-    // Insert your code here...
-
+	RefreshDisplays(digitEnables, digitValues, decPtEnables);
 
 	if (hwTmrEventCount % 100 == 0) // 8Hz
 	{
 		// Put here operations that must be performed at 8Hz rate
+		// Read push buttons
+		ReadButtons(&buttonStatus);
 		// Update state machine
-		// Insert your code here...
-
+		UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
+		if ((setFlags == 0x0) || (blink2HzStat)){
+			digitEnables = 0x3C; // All digits active
+		}
+		else{
+			digitEnables = (~(setFlags << 2)) & 0x3C; // Setting digit inactive
+				}
 
 		if (hwTmrEventCount % 200 == 0) // 4Hz
 		{
 			// Put here operations that must be performed at 4Hz rate
 			// Switch digit set 2Hz blink status
-			// Insert your code here...
+			blink2HzStat = !blink2HzStat;
 
 
 			if (hwTmrEventCount % 400 == 0) // 2Hz
 			{
 				// Put here operations that must be performed at 2Hz rate
 				// Switch point 1Hz blink status
-				// Insert your code here...
-
+				blink1HzStat = !blink1HzStat;
+				decPtEnables = (blink1HzStat ? 0x10 : 0x00);
 
 				// Digit set increment/decrement
-				// Insert your code here...
+				SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
+				TimerValue2DigitValues(&timerValue, digitValues);
+
 
 
 				if (hwTmrEventCount == 800) // 1Hz
 				{
 					// Put here operations that must be performed at 1Hz rate
 					// Count down timer normal operation
-					// Insert your code here...
+					DecCountDownTimer(fsmState, &timerValue);
+					zeroFlag = IsTimerValueZero(&timerValue);
+					TimerValue2DigitValues(&timerValue, digitValues);
 
 
 					// JUST FOR DEMONSTRATION PURPOSES
