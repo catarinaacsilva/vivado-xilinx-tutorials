@@ -159,23 +159,31 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 /******************* Countdown timer operations functions ********************/
 
-void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8],
-					 unsigned char decPtEnables)
-{
+void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables){
+
 	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
 
-	// Insert your code here...
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 
+	//unsigned int digit = (!(decPtEnables >> digitRefreshIdx)) << 7;
+	unsigned int digit = !(decPtEnables >> digitRefreshIdx);
+	if (digitEnables >> digitRefreshIdx) {
+		digit += Bin2Hex(digitValues[digitRefreshIdx]);
+	}
+	else {
+		digit += 0x7F;
+	}
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
+	
 
 	digitRefreshIdx++;
 	digitRefreshIdx &= 0x07;
 }
 
-void ReadButtons(TButtonStatus* pButtonStatus)
-{
+void ReadButtons(TButtonStatus* pButtonStatus){
 	unsigned int buttonsPattern;
 
-	buttonsPattern = // Insert your code here...
+	buttonsPattern = XGpio_ReadReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_DATA_OFFSET);
 
 	pButtonStatus->upPressed    = buttonsPattern & BUTTON_UP_MASK;
 	pButtonStatus->downPressed  = buttonsPattern & BUTTON_DOWN_MASK;
@@ -184,9 +192,7 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 }
 
 
-void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus,
-						bool zeroFlag, unsigned char* pSetFlags)
-{
+void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags){
 	switch (*pFSMState) {
 		case Stopped:
 			*pSetFlags = 0x0;
@@ -256,8 +262,7 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus,
 
 }
 
-void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue)
-{
+void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
 	switch(fsmState){
 		case SetLSSec:
 			if(pButtonStatus->upPressed)
@@ -288,8 +293,7 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 	}
 }
 
-void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
-{
+void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 	if (fsmState == Started) {													
 		bool count = ModularDec(&pTimerValue->secLSValue, 10);		
 		if (count) {
@@ -338,8 +342,7 @@ void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
 ******************************************************************************/
 
 // This function will be called back by the INTC ISR at every timer IRQ
-void TimerIntCallbackHandler(void* callbackParam)
-{
+void TimerIntCallbackHandler(void* callbackParam) {
 	// Timer event software counter
 	static unsigned hwTmrEventCount = 0;
     hwTmrEventCount++;
@@ -421,8 +424,7 @@ void TimerIntCallbackHandler(void* callbackParam)
 }
 
 // This function will be called back by the INTC ISR whenever a button is pressed or released
-void ButtonsIntCallbackHandler(void* callbackParam)
-{
+void ButtonsIntCallbackHandler(void* callbackParam) {
 	// Read push buttons
 	// Insert your code here...
 
@@ -433,8 +435,7 @@ void ButtonsIntCallbackHandler(void* callbackParam)
 
 /************************* Interrupt Setup function **************************/
 
-int SetupInterrupts(u32 intcBaseAddress)
-{
+int SetupInterrupts(u32 intcBaseAddress) {
 	// Connect a callback handler that will be called by the ISR when
 	// an interrupt for the timer occurs, to perform the specific
 	// interrupt processing for that device
@@ -477,8 +478,7 @@ int SetupInterrupts(u32 intcBaseAddress)
 
 /******************************* Main function *******************************/
 
-int main()
-{
+int main() {
 	int status;
 
 	init_platform();
@@ -529,8 +529,7 @@ int main()
 
 	xil_printf("\n\rSystem running.\n\r");
 
-	while (1)
-	{
+	while (1) {
 		// Put here operations that are performed whenever possible
 
 		// JUST FOR DEMONSTRATION PURPOSES
