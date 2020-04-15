@@ -159,13 +159,14 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 /******************* Countdown timer operations functions ********************/
 
+// TODO: primeira versão com alteração no RefreshDisplays: o decPtEnables ainda não esta a ser usado
 void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables){
 
 	static unsigned int digitRefreshIdx = 0;
 	
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 
-	unsigned int digit = 0x00;
+	unsigned int digit = 0x01;
 	if ((digitEnables >> digitRefreshIdx) & 0x01) {
 		digit = digit + Bin2Hex(digitValues[digitRefreshIdx]);
 	}
