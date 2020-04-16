@@ -101,7 +101,7 @@
 
 28. Connect to ground: Add a constant and concat and connect like on [mb_design_1.pdf](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf). The output of constante must be 0.
 
-29. Right buttom on mb_desing (on design sources) and click on `Create HDL wrapper`
+29. Right buttom on mb_design (on design sources) and click on `Create HDL wrapper`
 
 30. mb_desing_i: mb_design (...) click on `Generate Output Products` and then `Generate`
 

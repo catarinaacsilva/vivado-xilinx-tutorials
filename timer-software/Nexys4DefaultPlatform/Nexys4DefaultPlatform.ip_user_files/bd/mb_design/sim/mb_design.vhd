@@ -1,8 +1,8 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Fri Mar 27 00:31:16 2020
---Host        : ASRO-NUC running 64-bit major release  (build 9200)
+--Date        : Thu Apr 16 21:05:46 2020
+--Host        : GreatAtuin running 64-bit major release  (build 9200)
 --Command     : generate_target mb_design.bd
 --Design      : mb_design
 --Purpose     : IP block netlist
@@ -2637,9 +2637,9 @@ architecture STRUCTURE of mb_design is
   component mb_design_clk_wiz_1_0 is
   port (
     resetn : in STD_LOGIC;
+    clk_in1 : in STD_LOGIC;
     clk_out1 : out STD_LOGIC;
-    locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC
+    locked : out STD_LOGIC
   );
   end component mb_design_clk_wiz_1_0;
   component mb_design_rst_clk_wiz_1_100M_0 is

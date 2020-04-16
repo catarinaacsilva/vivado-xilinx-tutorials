@@ -92,7 +92,7 @@ BEGIN
   U0 : fit_timer
     GENERIC MAP (
       C_FAMILY => "artix7",
-      C_NO_CLOCKS => 100000,
+      C_NO_CLOCKS => 125000,
       C_INACCURACY => 0,
       C_EXT_RESET_HIGH => 1
     )

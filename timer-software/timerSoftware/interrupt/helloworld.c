@@ -162,7 +162,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 
 	static unsigned int digitRefreshIdx = 0;
 	
-	
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 
 	unsigned int digit = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
 	if ((digitEnables >> digitRefreshIdx) & 0x01) {
@@ -172,7 +172,6 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 		digit = digit + 0x7F;
 	}
 
-	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
 	
 
