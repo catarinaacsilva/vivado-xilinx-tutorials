@@ -16,16 +16,16 @@ Count Down Timer based on software implementation.
 
 ## Installation
 
-Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/Nexys4DefaultPlatform)
+Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/nexys4DefaultPlatform)
 
 
 ## Create project -  Vivado
 
-Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/Nexys4DefaultPlatform)
+Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/nexys4DefaultPlatform)
 
 ## Create project - Vitis
 
-Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/Nexys4DefaultPlatform)
+Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/tree/master/nexys4DefaultPlatform)
 
 ## Deploy
 
