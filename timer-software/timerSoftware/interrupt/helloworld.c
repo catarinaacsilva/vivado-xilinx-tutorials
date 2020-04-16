@@ -162,7 +162,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 
 	static unsigned int digitRefreshIdx = 0;
 	
-	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
+	
 
 	unsigned int digit = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
 	if ((digitEnables >> digitRefreshIdx) & 0x01) {
@@ -171,6 +171,8 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 	else {
 		digit = digit + 0x7F;
 	}
+
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
 	
 
@@ -389,7 +391,7 @@ void TimerIntCallbackHandler(void* callbackParam) {
 
 				// Digit set increment/decrement
 				SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
-				TimerValue2DigitValues(&timerValue, digitValues);
+				//TimerValue2DigitValues(&timerValue, digitValues);
 
 
 
@@ -398,8 +400,8 @@ void TimerIntCallbackHandler(void* callbackParam) {
 					// Put here operations that must be performed at 1Hz rate
 					// Count down timer normal operation
 					DecCountDownTimer(fsmState, &timerValue);
-					zeroFlag = IsTimerValueZero(&timerValue);
-					TimerValue2DigitValues(&timerValue, digitValues);
+					
+					//TimerValue2DigitValues(&timerValue, digitValues);
 
 
 					// JUST FOR DEMONSTRATION PURPOSES
@@ -410,8 +412,10 @@ void TimerIntCallbackHandler(void* callbackParam) {
 				}
 			}
 		}
+		
 	}
-
+	zeroFlag = IsTimerValueZero(&timerValue);
+	TimerValue2DigitValues(&timerValue, digitValues);
 #ifdef __USE_AXI_HW_TIMER__
 	// Clear hardware timer event (interrupt request flag)
 	unsigned int tmrCtrlStatReg = XTmrCtr_GetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0);
