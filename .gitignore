@@ -13,3 +13,6 @@ Nexys4DispDriver.ip_user_files/
 .metadata
 .analytics
 *.cache
+*.backup.jou
+*.jou
+*.str
