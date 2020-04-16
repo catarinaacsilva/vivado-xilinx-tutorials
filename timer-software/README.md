@@ -29,9 +29,9 @@ Follow these [steps](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/
 
 ## Deploy
 
-When you are finished the vivado project and before the init the vitis project you must be this [architecture](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/mb_design_1.pdf).
+When you are finished the vivado project and before the init the vitis project you must be this [architecture](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/nexys4DefaultPlatform/mb_design.pdf).
 
-[helloworld](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/CountDownTimerSoft/helloworld.c) is a intitial file to test and it should be used as tutorial to first experience with the system. You can uncomment some parts of the code to test on FPGA and terminal.
+[helloworld](https://github.com/catarinaacsilva/vivado-xilinx-tutorials/blob/master/timer-software/helloworld.c) is a intitial file to test and it should be used as tutorial to first experience with the system. You can uncomment some parts of the code to test on FPGA and terminal.
 
 ## Authors
 
