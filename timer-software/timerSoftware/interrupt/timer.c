@@ -10,7 +10,6 @@
 *
 ******************************************************************************/
 
-
 #include <stdio.h>
 #include "xil_printf.h"
 #include "xstatus.h"
@@ -28,17 +27,18 @@
 
 /************************** Constant Definitions *****************************/
 
-// The following constants map to the XPAR parameters created in
-// the xparameters.h file. They are defined here such that a user
-// can easily change all the needed parameters in one place
+// The following constants map to the XPAR parameters created in the
+// xparameters.h file. They are defined here such that shorter names can be
+// used in the code below. IMPORTANT NOTE: they are dependent on the
+// conditional compilation based on the concrete hardware timer used.
 
 #define INTC_BASEADDR			XPAR_INTC_0_BASEADDR
 #define INTC_DEVICE_ID			XPAR_INTC_0_DEVICE_ID
 
-#ifdef __USE_AXI_HW_TIMER__			// use AXI hardware timer
+#ifdef __USE_AXI_HW_TIMER__				// if AXI hardware timer is used
 	#define HARDWARE_TIMER_INT_ID		XPAR_MICROBLAZE_0_AXI_INTC_AXI_TIMER_0_INTERRUPT_INTR
 	#define HARDWARE_TIMER_INT_MASK		XPAR_AXI_TIMER_0_INTERRUPT_MASK
-#else								// use FIT hardware timer
+#else									// if FIT hardware timer is used
 	#define HARDWARE_TIMER_INT_ID		XPAR_MICROBLAZE_0_AXI_INTC_FIT_TIMER_0_INTERRUPT_INTR
 	#define HARDWARE_TIMER_INT_MASK		XPAR_FIT_TIMER_0_INTERRUPT_MASK
 #endif
@@ -51,7 +51,7 @@
 // Boolean data type (not defined in standard C)
 typedef int bool;
 
-// State machine status
+// State machine data type
 typedef enum {Stopped, Started, SetLSSec, SetMSSec, SetLSMin, SetMSMin} TFSMState;
 
 // Buttons GPIO masks
@@ -159,28 +159,29 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 /******************* Countdown timer operations functions ********************/
 
-// TODO: primeira versão com alteração no RefreshDisplays: o decPtEnables ainda não esta a ser usado
-void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables){
+void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8],
+					 unsigned char decPtEnables)
+{
+	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
 
-	static unsigned int digitRefreshIdx = 0;
-	
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
 
-	unsigned int digitValue = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
+	unsigned int digit = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
 	if ((digitEnables >> digitRefreshIdx) & 0x01) {
 		digit = digit + Bin2Hex(digitValues[digitRefreshIdx]);
 	}
 	else {
 		digit = digit + 0x7F;
 	}
+
 	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
-	
 
 	digitRefreshIdx++;
 	digitRefreshIdx &= 0x07;
 }
 
-void ReadButtons(TButtonStatus* pButtonStatus){
+void ReadButtons(TButtonStatus* pButtonStatus)
+{
 	unsigned int buttonsPattern;
 
 	buttonsPattern = XGpio_ReadReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_DATA_OFFSET);
@@ -191,8 +192,9 @@ void ReadButtons(TButtonStatus* pButtonStatus){
 	pButtonStatus->startPressed = buttonsPattern & BUTTON_RIGHT_MASK;
 }
 
-
-void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags){
+void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus,
+						bool zeroFlag, unsigned char* pSetFlags)
+{
 	switch (*pFSMState) {
 		case Stopped:
 			*pSetFlags = 0x0;
@@ -262,7 +264,9 @@ void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool
 
 }
 
-void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, TTimerValue* pTimerValue) {
+void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus,
+					   TTimerValue* pTimerValue)
+{
 	switch(fsmState){
 		case SetLSSec:
 			if(pButtonStatus->upPressed)
@@ -291,9 +295,11 @@ void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus, T
 		default:
 			break;
 	}
+
 }
 
-void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
+void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
+{
 	if (fsmState == Started) {													
 		bool count = ModularDec(&pTimerValue->secLSValue, 10);		
 		if (count) {
@@ -333,16 +339,18 @@ void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue) {
 
   @note		None.
 
- IMPORTANT NOTE: time consuming operations must not be executed here!!!
- 	 	 	 	 ISR and interrupt callbacks must perform the strictly
- 	 	 	 	 necessary and return ASAP. Leave time consuming operations
- 	 	 	 	 for the main function (or functions invoked in the context
- 	 	 	 	 of the application) - not in the ISR or device driver context
+IMPORTANT NOTE: time consuming operations must not be executed here!!!
+ 	 	 	 	ISR and interrupt callbacks must perform the strictly
+ 	 	 	 	necessary operations and return as quick as possible.
+ 	 	 	 	Leave time consuming operations for the main function
+ 	 	 	 	(or functions invoked in the context of the application -
+ 	 	 	 	 not in the ISR or device driver context)
 
 ******************************************************************************/
 
 // This function will be called back by the INTC ISR at every timer IRQ
-void TimerIntCallbackHandler(void* callbackParam) {
+void TimerIntCallbackHandler(void* callbackParam)
+{
 	// Timer event software counter
 	static unsigned hwTmrEventCount = 0;
     hwTmrEventCount++;
@@ -361,19 +369,23 @@ void TimerIntCallbackHandler(void* callbackParam) {
 
 
 	// Put here operations that must be performed at 800Hz rate
-	RefreshDisplays(digitEnables, digitValues, decPtEnables);
+	// Refresh displays
+    RefreshDisplays(digitEnables, digitValues, decPtEnables);
+
 
 	if (hwTmrEventCount % 100 == 0) // 8Hz
 	{
-		
+		// Put here operations that must be performed at 8Hz rate
 		// Update state machine
 		UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
-		if ((setFlags == 0x0) || (blink2HzStat)){
+		if ((setFlags == 0x0) || (blink2HzStat))
+		{
 			digitEnables = 0x3C; // All digits active
 		}
-		else{
+		else
+		{
 			digitEnables = (~(setFlags << 2)) & 0x3C; // Setting digit inactive
-				}
+		}
 
 		if (hwTmrEventCount % 200 == 0) // 4Hz
 		{
@@ -389,10 +401,9 @@ void TimerIntCallbackHandler(void* callbackParam) {
 				blink1HzStat = !blink1HzStat;
 				decPtEnables = (blink1HzStat ? 0x10 : 0x00);
 
+
 				// Digit set increment/decrement
 				SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
-				TimerValue2DigitValues(&timerValue, digitValues);
-
 
 
 				if (hwTmrEventCount == 800) // 1Hz
@@ -400,12 +411,6 @@ void TimerIntCallbackHandler(void* callbackParam) {
 					// Put here operations that must be performed at 1Hz rate
 					// Count down timer normal operation
 					DecCountDownTimer(fsmState, &timerValue);
-					zeroFlag = IsTimerValueZero(&timerValue);
-					TimerValue2DigitValues(&timerValue, digitValues);
-
-
-					// JUST FOR DEMONSTRATION PURPOSES
-					timerValue.secLSValue++;
 
 					// Reset hwTmrEventCount every second
 					hwTmrEventCount = 1;
@@ -413,8 +418,10 @@ void TimerIntCallbackHandler(void* callbackParam) {
 			}
 		}
 	}
+	zeroFlag = IsTimerValueZero(&timerValue);
+	TimerValue2DigitValues(&timerValue, digitValues);
 
-#ifdef __USE_AXI_HW_TIMER__
+#ifdef __USE_AXI_HW_TIMER__		// if AXI hardware timer is used
 	// Clear hardware timer event (interrupt request flag)
 	unsigned int tmrCtrlStatReg = XTmrCtr_GetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0);
 	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, tmrCtrlStatReg | XTC_CSR_INT_OCCURED_MASK);
@@ -422,9 +429,9 @@ void TimerIntCallbackHandler(void* callbackParam) {
 }
 
 // This function will be called back by the INTC ISR whenever a button is pressed or released
-void ButtonsIntCallbackHandler(void* callbackParam) {
+void ButtonsIntCallbackHandler(void* callbackParam)
+{
 	// Read push buttons
-
 	ReadButtons(&buttonStatus);
 
 	// Clear GPIO interrupt request flag
@@ -433,29 +440,34 @@ void ButtonsIntCallbackHandler(void* callbackParam) {
 
 /************************* Interrupt Setup function **************************/
 
-int SetupInterrupts(u32 intcBaseAddress) {
+int SetupInterrupts(unsigned int intcBaseAddress)
+{
 	// Connect a callback handler that will be called by the ISR when
-	// an interrupt for the timer occurs, to perform the specific
-	// interrupt processing for that device
+	// an interrupt for the timer occurs,
+	// to perform the specific interrupt processing for that device
 	XIntc_RegisterHandler(intcBaseAddress, HARDWARE_TIMER_INT_ID,
 						  (XInterruptHandler)TimerIntCallbackHandler, (void *)0);
 
-	// Enable interrupts at the buttons GPIO
-	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_IER_OFFSET, XGPIO_IR_CH1_MASK);
-	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_GIE_OFFSET, XGPIO_GIE_GINTR_ENABLE_MASK);
-
+#ifdef __USE_AXI_HW_TIMER__		// if AXI hardware timer is used
+	// Enable interrupt requests at the AXI timer
+	unsigned int tmrCtrlStatReg = XTmrCtr_GetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0);
+	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, tmrCtrlStatReg | XTC_CSR_ENABLE_INT_MASK);
+#endif
 
 	// Connect a callback handler that will be called by the ISR when
-	// an interrupt for the buttons GPIO occurs, to perform the specific
-	// interrupt processing for that device
+	// an interrupt for the buttons GPIO occurs,
+	// to perform the specific interrupt processing for that device
 	XIntc_RegisterHandler(intcBaseAddress, BUTTONS_INT_ID,
 						  (XInterruptHandler)ButtonsIntCallbackHandler, (void *)0);
 
-	// Enable interrupts for all devices that cause interrupts, and enable
-	// the INTC master enable bit
+	// Enable interrupt requests at the buttons GPIO
+	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_IER_OFFSET, XGPIO_IR_CH1_MASK);
+	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_GIE_OFFSET, XGPIO_GIE_GINTR_ENABLE_MASK);
+
+	// Enable interrupts for all the peripheral devices that cause interrupts,
 	XIntc_EnableIntr(intcBaseAddress, HARDWARE_TIMER_INT_MASK | BUTTONS_INT_MASK);
 
-	// Set the hardware and the master interrupt enable bits
+	// Set the hardware and the master interrupt enable bits at the INTC
 	XIntc_Out32(intcBaseAddress + XIN_MER_OFFSET, XIN_INT_HARDWARE_ENABLE_MASK |
 												  XIN_INT_MASTER_ENABLE_MASK);
 
@@ -476,7 +488,8 @@ int SetupInterrupts(u32 intcBaseAddress) {
 
 /******************************* Main function *******************************/
 
-int main() {
+int main()
+{
 	int status;
 
 	init_platform();
@@ -495,16 +508,22 @@ int main() {
 
     xil_printf("\n\rIOs configured.");
 
-#ifdef __USE_AXI_HW_TIMER__
+#ifdef __USE_AXI_HW_TIMER__		// if AXI hardware timer is used
     // Disable hardware timer
 	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 0x00000000);
 	// Set hardware timer load value
 	XTmrCtr_SetLoadReg(XPAR_AXI_TIMER_0_BASEADDR, 0, 125000); // Counter will wrap around every 1.25 ms
 	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_LOAD_MASK);
+	// Enable hardware timer, down counting with auto reload
+	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK  |
+															  XTC_CSR_AUTO_RELOAD_MASK |
+															  XTC_CSR_DOWN_COUNT_MASK);
+	xil_printf("\n\rAXI timer configured.");
+#else							// if FIT hardware timer is used
+	xil_printf("\n\rUsing FIT timer.");
 #endif
 
-	// Run the low level example of Interrupt Controller, specify the Base
-	// Address generated in xparameters.h.
+	// Setup interrupts, pass the INTC Base Address specified in xparameters.h
 	status = SetupInterrupts(INTC_BASEADDR);
 	if (status != XST_SUCCESS)
 	{
@@ -514,26 +533,7 @@ int main() {
 	}
 	xil_printf("\n\rInterrupts setup successful.");
 
-#ifdef __USE_AXI_HW_TIMER__
-	// Enable hardware timer, down counting with auto reload
-	XTmrCtr_SetControlStatusReg(XPAR_AXI_TIMER_0_BASEADDR, 0, XTC_CSR_ENABLE_TMR_MASK  |
-															  XTC_CSR_ENABLE_INT_MASK  |
-															  XTC_CSR_AUTO_RELOAD_MASK |
-															  XTC_CSR_DOWN_COUNT_MASK);
-	xil_printf("\n\rAXI timer configured.");
-#else
-	xil_printf("\n\rUsing FIT timer.");
-#endif
-
 	xil_printf("\n\rSystem running.\n\r");
-
-	while (1) {
-		// Put here operations that are performed whenever possible
-
-		// JUST FOR DEMONSTRATION PURPOSES
-		xil_printf("\r%d", timerValue.secLSValue);
-		XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, timerValue.secLSValue);
-	}
 
     cleanup_platform();
     return XST_SUCCESS;
