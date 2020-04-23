@@ -1,9 +1,7 @@
 # Programmable SoCs with specialized hardware - examples with interface AXI4 Lite (memory-mapped)
 
+Two initial examples only to test and initiate the project.
 
-## Requirements
-
-## Installation
 
 ## Authors
 
