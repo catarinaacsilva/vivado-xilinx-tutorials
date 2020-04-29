@@ -157,7 +157,6 @@ vcom -work xil_defaultlib -64 -93 \
 "../../../bd/mb_design/ip/mb_design_axi_gpio_0_0/sim/mb_design_axi_gpio_0_0.vhd" \
 "../../../bd/mb_design/ip/mb_design_axi_gpio_1_0/sim/mb_design_axi_gpio_1_0.vhd" \
 "../../../bd/mb_design/ip/mb_design_axi_gpio_2_0/sim/mb_design_axi_gpio_2_0.vhd" \
-"../../../bd/mb_design/ip/mb_design_axi_gpio_3_0/sim/mb_design_axi_gpio_3_0.vhd" \
 
 vcom -work lib_pkg_v1_0_2 -64 -93 \
 "../../../../CustomTimerDemo.srcs/sources_1/bd/mb_design/ipshared/0513/hdl/lib_pkg_v1_0_rfs.vhd" \
@@ -182,6 +181,10 @@ vcom -work fit_timer_v2_0_10 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/mb_design/ip/mb_design_fit_timer_0_0/sim/mb_design_fit_timer_0_0.vhd" \
+"../../../bd/mb_design/ipshared/e8cc/src/Nexys4DispDriver.vhd" \
+"../../../bd/mb_design/ipshared/e8cc/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd" \
+"../../../bd/mb_design/ipshared/e8cc/hdl/Nexys4DisplayPort_v1_0.vhd" \
+"../../../bd/mb_design/ip/mb_design_Nexys4DisplayPort_0_0/sim/mb_design_Nexys4DisplayPort_0_0.vhd" \
 "../../../bd/mb_design/sim/mb_design.vhd" \
 
 vlog -work xil_defaultlib \
