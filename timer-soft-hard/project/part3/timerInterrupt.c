@@ -210,7 +210,7 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 {
 	unsigned int buttonsPattern;
 
-	buttonsPattern = // Insert your code here...
+	buttonsPattern = XGpio_ReadReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_DATA_OFFSET);
 
 	pButtonStatus->upPressed    = buttonsPattern & BUTTON_UP_MASK;
 	pButtonStatus->downPressed  = buttonsPattern & BUTTON_DOWN_MASK;
@@ -218,23 +218,127 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 	pButtonStatus->startPressed = buttonsPattern & BUTTON_RIGHT_MASK;
 }
 
-void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus,
-						bool zeroFlag, unsigned char* pSetFlags)
+void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus, bool zeroFlag, unsigned char* pSetFlags)
 {
-	// Insert your code here...
+	switch (*pFSMState) {
+		case Stopped:
+			*pSetFlags = 0x0;
+			if(zeroFlag == 1) {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0001);
+			}else {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0000);
+			}
+			if((DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed)) && (zeroFlag == 0)) {
+				*pFSMState = Started;
+			} else if (DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetLSSec;
+			} else {
+				*pFSMState = Stopped;
+			}
+		break;
+
+		case Started:
+			*pSetFlags = 0x0;
+			if ((DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed)) || (zeroFlag == 1)) {
+				*pFSMState = Stopped;
+			} else {
+				*pFSMState = Started;
+			}
+		break;
+
+		case SetLSSec:
+			*pSetFlags = 0x1;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetMSSec;
+			} else {
+				*pFSMState = SetLSSec;
+			}
+		break;
+
+		case SetMSSec:
+			*pSetFlags = 0x2;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetLSMin;
+			} else {
+				*pFSMState = SetMSSec;
+			}
+		break;
+
+		case SetLSMin:
+			*pSetFlags = 0x4;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetMSMin;
+			} else {
+				*pFSMState = SetLSMin;
+			}
+		break;
+
+		case SetMSMin:
+			*pSetFlags = 0x8;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = Stopped;
+			} else {
+				*pFSMState = SetMSMin;
+			}
+		break;
+		default:
+			*pSetFlags = 0x0; 	
+			*pFSMState = Stopped;
+			break;
+	}
 
 }
 
 void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus,
 					   TTimerValue* pTimerValue)
 {
-	// Insert your code here...
-
+	switch(fsmState){
+		case SetLSSec:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->secLSValue), 10);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->secLSValue), 10);
+			break;
+		case SetMSSec:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->secMSValue), 6);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->secMSValue), 6);
+			break;
+		case SetLSMin:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->minLSValue), 10);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->minLSValue), 10);
+			break;
+		case SetMSMin:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->minMSValue), 6);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->minMSValue), 6);
+			break;
+		default:
+			break;
+	}
 }
 
 void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
 {
-	// Insert your code here...
+	if (fsmState == Started) {													
+		bool count = ModularDec(&pTimerValue->secLSValue, 10);		
+		if (count) {
+			count = ModularDec(&pTimerValue->secMSValue, 6);		
+			if (count) {
+				count = ModularDec(&pTimerValue->minLSValue, 10);	
+				if (count) {
+					ModularDec(&pTimerValue->minMSValue, 6); 
+				}
+				else return;
+			}
+			else return;
+		}
+		else return;
+	}
 
 }
 
@@ -290,43 +394,47 @@ void TimerIntCallbackHandler(void* callbackParam)
 
 	// Put here operations that must be performed at 800Hz rate
 	// Refresh displays
-    // Insert your code here...
+    RefreshDisplays(digitEnables, digitValues, decPtEnables);
 
 
 	if (hwTmrEventCount % 100 == 0) // 8Hz
 	{
 		// Put here operations that must be performed at 8Hz rate
 		// Update state machine
-		// Insert your code here...
-
+		UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
+		if ((setFlags == 0x0) || (blink2HzStat))
+		{
+			digitEnables = 0x3C; // All digits active
+		}
+		else
+		{
+			digitEnables = (~(setFlags << 2)) & 0x3C; // Setting digit inactive
+		}
 
 		if (hwTmrEventCount % 200 == 0) // 4Hz
 		{
 			// Put here operations that must be performed at 4Hz rate
 			// Switch digit set 2Hz blink status
-			// Insert your code here...
+			blink2HzStat = !blink2HzStat;
 
 
 			if (hwTmrEventCount % 400 == 0) // 2Hz
 			{
 				// Put here operations that must be performed at 2Hz rate
 				// Switch point 1Hz blink status
-				// Insert your code here...
+				blink1HzStat = !blink1HzStat;
+				decPtEnables = (blink1HzStat ? 0x10 : 0x00);
 
 
 				// Digit set increment/decrement
-				// Insert your code here...
+				SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
 
 
 				if (hwTmrEventCount == 800) // 1Hz
 				{
 					// Put here operations that must be performed at 1Hz rate
 					// Count down timer normal operation
-					// Insert your code here...
-
-
-					// JUST FOR DEMONSTRATION PURPOSES
-					timerValue.secLSValue++;
+					DecCountDownTimer(fsmState, &timerValue);
 
 					// Reset hwTmrEventCount every second
 					hwTmrEventCount = 1;
@@ -334,6 +442,9 @@ void TimerIntCallbackHandler(void* callbackParam)
 			}
 		}
 	}
+
+	zeroFlag = IsTimerValueZero(&timerValue);
+	TimerValue2DigitValues(&timerValue, digitValues);
 
 #ifdef __USE_AXI_HW_TIMER__		// if AXI hardware timer is used
 	// Clear hardware timer event (interrupt request flag)
@@ -347,7 +458,7 @@ void ButtonsIntCallbackHandler(void* callbackParam)
 {
 	// Read push buttons
 	// Insert your code here...
-
+	ReadButtons(&buttonStatus);
 
 	// Clear GPIO interrupt request flag
 	XGpio_WriteReg(XPAR_AXI_GPIO_BUTTONS_BASEADDR, XGPIO_ISR_OFFSET, XGPIO_IR_CH1_MASK);
@@ -449,15 +560,6 @@ int main()
 	xil_printf("\n\rInterrupts setup successful.");
 
 	xil_printf("\n\rSystem running.\n\r");
-
-	while (1)
-	{
-		// Put here operations that are performed whenever possible
-
-		// JUST FOR DEMONSTRATION PURPOSES
-		xil_printf("\r%d", timerValue.secLSValue);
-		XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, timerValue.secLSValue);
-	}
 
     cleanup_platform();
     return XST_SUCCESS;

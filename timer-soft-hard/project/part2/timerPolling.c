@@ -159,10 +159,10 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 /******************* Countdown timer operations functions ********************/
 
-void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8],
-					 unsigned char decPtEnables)
+void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables)
 {
-	// Insert your code here...
+
+	//TODO: complete this function
 	
 }
 
