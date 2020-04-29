@@ -430,7 +430,7 @@ begin
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
                  digVal1   => slv_reg1(7 downto 4), 
-                 digVal2   => slv_reg1(11 downto 5),
+                 digVal2   => slv_reg1(11 downto 8),
                  digVal3   => slv_reg1(15 downto 12),
                  digVal4   => slv_reg1(19 downto 16),
                  digVal5   => slv_reg1(23 downto 20),
