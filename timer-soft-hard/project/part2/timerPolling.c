@@ -161,8 +161,17 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables)
 {
+	// ponto do meio acende fora do set??
+	unsigned int dgEnable = digitEnables;
+	dgEnable = decPtEnables | dgEnable; //ponto movimenta-se no set
+	
+	unsigned int dgValues = 0; //valores para o display
+	for (int i = 0; i < 8; i++) {
+		dgValues = digitValues[i];
+	}
 
-	//TODO: complete this function
+	XGpio_WriteReg(XPAR_NEXYS4DISPLAYDRIVER_0_S00_AXI_BASEADDR + 0, XGPIO_DATA_OFFSET, dgEnable);
+	XGpio_WriteReg(XPAR_NEXYS4DISPLAYDRIVER_0_S00_AXI_BASEADDR + 4, XGPIO_DATA_OFFSET, dgValues);
 	
 }
 
