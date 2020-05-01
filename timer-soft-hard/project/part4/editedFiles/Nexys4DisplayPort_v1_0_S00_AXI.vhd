@@ -139,7 +139,7 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
     end component Nexys4DispDriver;
 
     type TRefreshRateLUT is array (0 to 7) of integer;
-    constant REFRESH_RATE_LUT : TRefreshRateLUT (0 to 7) := (1999999, 999999, 499999, 249999, 124999, 62499, 31249, 15624);
+    constant REFRESH_RATE_LUT : TRefreshRateLUT := (1999999, 999999, 499999, 249999, 124999, 62499, 31249, 15624);
     -- constant ENABLE_COUNTER_MAX : integer := 124999 - 1;
     -- subtype TEnableCounter is integer range 0 to ENABLE_COUNTER_MAX;
     signal s_clkEnableCounter : integer;
