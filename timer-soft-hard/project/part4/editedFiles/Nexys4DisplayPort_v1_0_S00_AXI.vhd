@@ -5,7 +5,8 @@ use ieee.numeric_std.all;
 entity Nexys4DisplayPort_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-
+		constant REFRESH_RATE_LEVELS  : integer := 8;
+        constant BRIGHTNESS_LEVELS    : integer := 7;
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -138,13 +139,28 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
             dispPt_n  : out std_logic);
     end component Nexys4DispDriver;
 
+	-- refresh rates
     type TRefreshRateLUT is array (0 to 7) of integer;
     constant REFRESH_RATE_LUT : TRefreshRateLUT := (1999999, 999999, 499999, 249999, 124999, 62499, 31249, 15624);
     -- constant ENABLE_COUNTER_MAX : integer := 124999 - 1;
     -- subtype TEnableCounter is integer range 0 to ENABLE_COUNTER_MAX;
     signal s_clkEnableCounter : integer;
-    signal s_dispDriverEnable : std_logic;
-    
+	signal s_dispDriverEnable : std_logic;
+	signal s_brightControl : std_logic_vector(7 downto 0);
+	
+	-- brightness
+	type TBrightnessLut is array (0 to REFRESH_RATE_LEVELS-1, 0 to BRIGHTNESS_LEVELS-1) of integer;
+    constant BRIGTHNESS_LUT : TBrightnessLut := (
+        (285714,571428,857142,1142857,1428571,1714285,1999999),        
+        (142857,285714,428571,571428,714285,857142,999999),            
+        (71428,142857,214285,285714,357142,428571,499999),              
+        (35714,71428,107142,142857,178571,214285,249999),               
+        (17857,35714,53571,71428,89285,107142,124999),                  
+        (8928,17857,26785,35714,44642,53571,62499),                     
+        (4464,8928,13392,17857,22321,26785,31249),                    
+        (2232,4464,6696,8928,11160,13392,15624)
+    );
+	
 begin
 	-- I/O Connections assignments
 
@@ -417,14 +433,21 @@ begin
 	begin
 	   if (rising_edge(S_AXI_ACLK)) then
 	       if(S_AXI_ARESETN = '0') then
-	           s_clkEnableCounter <= 0;
-	           s_dispDriverEnable <= '0';
+	           	s_clkEnableCounter <= 0;
+			   	s_dispDriverEnable <= '0';
+			   	s_brightControl <= (others => '1');
 	       elsif (s_clkEnableCounter = REFRESH_RATE_LUT(to_integer(unsigned(slv_reg2(2 downto 0))))) then
-	           s_clkEnableCounter <= 0;
-	           s_dispDriverEnable <= '1';
+	           	s_clkEnableCounter <= 0;
+			   	s_dispDriverEnable <= '1';
+			   	s_brightControl <= (others => '0');
 	       else
-	           s_clkEnableCounter <= s_clkEnableCounter + 1;
-	           s_dispDriverEnable <= '0';
+	        	s_clkEnableCounter <= s_clkEnableCounter + 1;
+			   	s_dispDriverEnable <= '0';
+			   
+			   	if (s_clkEnbCnt >= BRIGTHNESS_LUT(to_integer(unsigned(slv_reg2(2 downto 0))), to_integer(unsigned(slv_reg2(5 downto 3))))) then
+					s_brightControl <= (others => '1');
+
+			end if;
 	       end if;
 	   end if;
 	 end process;
@@ -446,6 +469,7 @@ begin
                  dispSeg_n => p_dispSeg_n,
                  dispPt_n  => p_dispPt_n);
 
+	dispEn_n <= s_dispEn_n or s_brightControl;
 	-- User logic ends
 
 end arch_imp;
