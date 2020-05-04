@@ -5,8 +5,7 @@ use ieee.numeric_std.all;
 entity Nexys4DisplayPort_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
-		constant REFRESH_RATE_LEVELS  : integer := 8;
-        constant BRIGHTNESS_LEVELS    : integer := 7;
+
 		-- User parameters ends
 		-- Do not modify the parameters beyond this line
 
@@ -149,7 +148,7 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
 	signal s_brightControl : std_logic_vector(7 downto 0);
 	
 	-- brightness
-	type TBrightnessLut is array (0 to REFRESH_RATE_LEVELS-1, 0 to BRIGHTNESS_LEVELS-1) of integer;
+	type TBrightnessLut is array (0 to 7, 0 to 6) of integer;
     constant BRIGTHNESS_LUT : TBrightnessLut := (
         (285714,571428,857142,1142857,1428571,1714285,1999999),        
         (142857,285714,428571,571428,714285,857142,999999),            
@@ -438,14 +437,15 @@ begin
 			   	s_brightControl <= (others => '1');
 	       elsif (s_clkEnableCounter = REFRESH_RATE_LUT(to_integer(unsigned(slv_reg2(2 downto 0))))) then
 	           	s_clkEnableCounter <= 0;
-			   	s_dispDriverEnable <= '1';
-			   	s_brightControl <= (others => '0');
+				s_dispDriverEnable <= '1';
+
+				if (s_clkEnbCnt >= BRIGTHNESS_LUT(to_integer(unsigned(slv_reg2(2 downto 0))), to_integer(unsigned(slv_reg2(5 downto 3))))) then
+					s_brightControl <= (others => '1');
+				   
 	       else
 	        	s_clkEnableCounter <= s_clkEnableCounter + 1;
-			   	s_dispDriverEnable <= '0';
-			   
-			   	if (s_clkEnbCnt >= BRIGTHNESS_LUT(to_integer(unsigned(slv_reg2(2 downto 0))), to_integer(unsigned(slv_reg2(5 downto 3))))) then
-					s_brightControl <= (others => '1');
+				s_dispDriverEnable <= '0';
+				s_brightControl <= (others => '0');
 
 			end if;
 	       end if;
