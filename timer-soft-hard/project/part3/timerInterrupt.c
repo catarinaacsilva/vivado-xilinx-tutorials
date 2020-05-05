@@ -159,15 +159,19 @@ void TimerValue2DigitValues(const TTimerValue* pTimerValue, unsigned int digitVa
 
 /******************* Countdown timer operations functions ********************/
 
-void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8],
-					 unsigned char decPtEnables)
+void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[8], unsigned char decPtEnables)
 {
-	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
+	unsigned int dgEnable = 0;
+	dgEnable = (decPtEnables << 8 | digitEnables) & 0xFFFF;
+	
+	unsigned int dgValues = 0;
+	for (int i = 0; i < 8; i++) {
+		dgValues = (dgValues << 4 | digitValues[7-i]) & 0xFFFF;
+	}
 
-	//TODO: finish
-
-	digitRefreshIdx++;
-	digitRefreshIdx &= 0x07;
+	XGpio_WriteReg(XPAR_NEXYS4DISPLAYDRIVER_0_S00_AXI_BASEADDR + 0, XGPIO_DATA_OFFSET, dgEnable);
+	XGpio_WriteReg(XPAR_NEXYS4DISPLAYDRIVER_0_S00_AXI_BASEADDR + 4, XGPIO_DATA_OFFSET, dgValues);
+	
 }
 
 void ReadButtons(TButtonStatus* pButtonStatus)
