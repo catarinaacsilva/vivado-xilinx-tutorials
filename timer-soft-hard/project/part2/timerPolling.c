@@ -165,7 +165,7 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 	dgEnable = (decPtEnables << 8 | digitEnables) & 0xFFFF;
 	
 	unsigned int dgValues = 0;
-	for (int i = 0; i < 8; i--) {
+	for (int i = 0; i < 8; i++) {
 		dgValues = (dgValues << 4) | (digitValues[7-i] & 0xFFFF) ;
 	}
 
