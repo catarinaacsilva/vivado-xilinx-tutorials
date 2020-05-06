@@ -165,8 +165,8 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 	dgEnable = (decPtEnables << 8 | digitEnables) & 0xFFFF;
 	
 	unsigned int dgValues = 0;
-	for (int i = 0; i < 8; i++) {
-		dgValues = (dgValues << 4 | digitValues[7-i]) & 0xFFFF;
+	for (int i = 7; i >= 0; i--) {
+		dgValues = (dgValues << 4) | (digitValues[i] & 0xFFFF) ;
 	}
 
 	XGpio_WriteReg(XPAR_NEXYS4DISPLAYDRIVER_0_S00_AXI_BASEADDR + 0, XGPIO_DATA_OFFSET, dgEnable);
