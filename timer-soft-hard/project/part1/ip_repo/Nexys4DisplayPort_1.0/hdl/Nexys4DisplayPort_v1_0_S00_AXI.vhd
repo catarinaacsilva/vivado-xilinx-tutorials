@@ -120,12 +120,8 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
 	
-	-- signal  s_clkCntEnable: unsigned(C_S_AXI_DATA_WIDTH-1 downto 0);
-	
-	constant ENABLE_COUNTER_MAX : integer := 125000 - 1;
-	subtype TEnableCounter is integer range 0 to ENABLE_COUNTER_MAX;
-	signal s_clkEnableCounter : TEnableCounter;
-	signal s_dispDriverEnable : std_logic;
+	signal  s_clkCntEnable: unsigned(C_S_AXI_DATA_WIDTH-1 downto 0);
+	signal s_clkEnable: std_logic;
 	
 	component Nexys4DispDriver is
 	   port(   clk       : in std_logic;   
@@ -416,14 +412,14 @@ begin
 	begin
 	   if (rising_edge(S_AXI_ACLK)) then
 	       if(S_AXI_ARESETN = '0') then
-	           s_clkEnableCounter <= 0;
-	          s_dispDriverEnable <= '0';
-	       elsif (s_clkEnableCounter = ENABLE_COUNTER_MAX) then
-	           s_clkEnableCounter <= 0;
-	           s_dispDriverEnable <= '1';
+	           s_clkCntEnable <= (others => '0');
+	           s_clkEnable <= '0';
+	       elsif (s_clkCntEnable >= x"0001E847") then --count to 124999 (125000)
+	           s_clkCntEnable <= (others => '0');
+	           s_clkEnable <= '1';
 	       else
-	           s_clkEnableCounter <= s_clkEnableCounter + 1;
-	           s_dispDriverEnable <= '0';
+	           s_clkCntEnable <= s_clkCntEnable + 1;
+	           s_clkEnable <= '0';
 	       end if;
 	   end if;
 	 end process;
