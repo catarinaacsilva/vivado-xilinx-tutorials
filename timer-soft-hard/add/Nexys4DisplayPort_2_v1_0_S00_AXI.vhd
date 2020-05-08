@@ -450,7 +450,7 @@ begin
                  dispSeg_n => dispSeg_n,
                  dispPt_n  => dispPt_n);
 
-	dispEn_n <= s_dispEn_n or s_brightControl;
+	
 	-- User logic ends
 
 end arch_imp;

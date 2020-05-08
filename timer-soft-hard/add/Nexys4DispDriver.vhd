@@ -28,10 +28,13 @@ architecture Behavioral of Nexys4DispDriver is
     signal s_counter    :   unsigned (2 downto 0) := "000"; -- auxiliar signal to count: 3 bits
     signal s_digitEn    :   std_logic;
     signal s_binSeg     :   std_logic_vector(3 downto 0);
+    
     -- Add: software and hardware
     signal s_clkEnableCounter : integer;
     signal s_dispDriverEnable : std_logic;
     signal s_brightControl : std_logic_vector(7 downto 0);
+
+    signal s_dispEn_n : std_logic_vector(7 downto 0);
 
 begin
 
@@ -173,7 +176,7 @@ begin
         end if;
     end process;
 
-    -- software and hardware
+    -- refresh rate and brightness
     process(clk)
 	begin
 	   if (rising_edge(clk)) then
@@ -195,6 +198,8 @@ begin
 
 	       end if;
 	   end if;
-	 end process;
+     end process;
+     
+     dispEn_n <= s_dispEn_n or s_brightControl;
      
 end Behavioral;
