@@ -123,7 +123,10 @@ architecture arch_imp of Nexys4DisplayPort_2_v1_0_S00_AXI is
 	
 	component Nexys4DisplayDriver is
 	   port(clk       : in std_logic;  
-	        enable    : in std_logic;  
+			enable    : in std_logic;
+			refRate   : in std_logic_vector(2 downto 0);
+            brightL   : in std_logic_vector(2 downto 0);
+            reset     : in std_logic;  
             digitEn   : in std_logic_vector(7 downto 0);
             digVal0   : in std_logic_vector(3 downto 0);
             digVal1   : in std_logic_vector(3 downto 0);
@@ -138,29 +141,6 @@ architecture arch_imp of Nexys4DisplayPort_2_v1_0_S00_AXI is
             dispSeg_n : out std_logic_vector(6 downto 0);
             dispPt_n  : out std_logic);
     end component Nexys4DisplayDriver;
-
-	-- refresh rates
-    type TRefreshRateLUT is array (0 to 7) of integer;
-    constant REFRESH_RATE_LUT : TRefreshRateLUT := (1999999, 999999, 499999, 249999, 124999, 62499, 31249, 15624);
-    -- constant ENABLE_COUNTER_MAX : integer := 124999 - 1;
-    -- subtype TEnableCounter is integer range 0 to ENABLE_COUNTER_MAX;
-    signal s_clkEnableCounter : integer;
-	signal s_dispDriverEnable : std_logic;
-	signal s_brightControl : std_logic_vector(7 downto 0);
-	signal s_dispEn_n : std_logic_vector(7 downto 0);
-	
-	-- brightness
-	type TBrightnessLut is array (0 to 7, 0 to 6) of integer;
-    constant BRIGTHNESS_LUT : TBrightnessLut := (
-        (0, 285714,571428,857142,1142857,1428571,1714285,1999999),        
-        (0, 142857,285714,428571,571428,714285,857142,999999),            
-        (0, 71428,142857,214285,285714,357142,428571,499999),              
-        (0, 35714,71428,107142,142857,178571,214285,249999),               
-        (0, 17857,35714,53571,71428,89285,107142,124999),                  
-        (0, 8928,17857,26785,35714,44642,53571,62499),                     
-        (0, 4464,8928,13392,17857,22321,26785,31249),                    
-        (0, 2232,4464,6696,8928,11160,13392,15624)
-    );
 	
 begin
 	-- I/O Connections assignments
