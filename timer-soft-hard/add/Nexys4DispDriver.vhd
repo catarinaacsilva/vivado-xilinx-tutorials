@@ -3,7 +3,11 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.all;
 
 entity Nexys4DispDriver is
-    port(   clk       : in std_logic;   
+    port(   clk       : in std_logic;
+            enable    : in std_logic; 
+            refRate   : in std_logic_vector(2 downto 0);
+            brightL   : in std_logic_vector(2 downto 0);
+            reset     : in std_logic;
             digitEn   : in std_logic_vector(7 downto 0);
             digVal0   : in std_logic_vector(3 downto 0);
             digVal1   : in std_logic_vector(3 downto 0);
@@ -24,12 +28,17 @@ architecture Behavioral of Nexys4DispDriver is
     signal s_counter    :   unsigned (2 downto 0) := "000"; -- auxiliar signal to count: 3 bits
     signal s_digitEn    :   std_logic;
     signal s_binSeg     :   std_logic_vector(3 downto 0);
+    -- Add: software and hardware
+    signal s_clkEnableCounter : integer;
+    signal s_dispDriverEnable : std_logic;
+    signal s_brightControl : std_logic_vector(7 downto 0);
+
 begin
 
     -- Counter 3 bits
-    process (clk)
+    process (clk, enable)
     begin  
-        if(rising_edge(clk)) then
+        if(rising_edge(clk) and enable = '1') then
             s_counter <= s_counter + 1;
         end if;
     end process;
@@ -164,6 +173,28 @@ begin
         end if;
     end process;
 
-    
+    -- software and hardware
+    process(clk)
+	begin
+	   if (rising_edge(clk)) then
+	       if(reset = '0') then
+	           	s_clkEnableCounter <= 0;
+			   	s_dispDriverEnable <= '0';
+			   	s_brightControl <= (others => '1');
+	       elsif (s_clkEnableCounter >= REFRESH_RATE_LUT(to_integer(unsigned(refRate)))) then
+	           	s_clkEnableCounter <= 0;
+				s_dispDriverEnable <= '1';
+				s_brightControl <= (others => '0');
+
+			else
+				s_clkEnableCounter <= s_clkEnableCounter + 1;
+				s_dispDriverEnable <= '0';
+				if (s_clkEnableCounter >= BRIGTHNESS_LUT(to_integer(unsigned(refRate)), to_integer(unsigned(brightL)))) then
+					s_brightControl <= (others => '1');
+				end if;
+
+	       end if;
+	   end if;
+	 end process;
      
 end Behavioral;

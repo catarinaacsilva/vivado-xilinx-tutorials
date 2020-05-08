@@ -429,36 +429,13 @@ begin
 
 
 	-- Add user logic here
-	
-	clk_divider : process(S_AXI_ACLK)
-	begin
-	   if (rising_edge(S_AXI_ACLK)) then
-	       if(S_AXI_ARESETN = '0') then
-	           	s_clkEnableCounter <= 0;
-			   	s_dispDriverEnable <= '0';
-			   	s_brightControl <= (others => '1');
-	       elsif (s_clkEnableCounter >= REFRESH_RATE_LUT(to_integer(unsigned(slv_reg2(2 downto 0))))) then
-	           	s_clkEnableCounter <= 0;
-				s_dispDriverEnable <= '1';
-				s_brightControl <= (others => '0');
-
-			else
-				s_clkEnableCounter <= s_clkEnableCounter + 1;
-				s_dispDriverEnable <= '0';
-				if (s_clkEnableCounter >= BRIGTHNESS_LUT(to_integer(unsigned(slv_reg2(2 downto 0))), to_integer(unsigned(slv_reg2(5 downto 3))))) then
-					s_brightControl <= (others => '1');
-				end if;
-
-	       end if;
-	   end if;
-	 end process;
-	   
 
     display_driver : Nexys4DisplayDriver
         port map(clk       => S_AXI_ACLK,
 				 enable    => s_dispDriverEnable,
-				 --refRate   => slv_reg2(2 downto 0),
-				 --brightL   => slv_reg2(2 downto 0),
+				 refRate   => slv_reg2(2 downto 0),
+				 brightL   => slv_reg2(2 downto 0), (5 downto 3) ?
+				 reset 	   => S_AXI_ARESETN,
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
                  digVal1   => slv_reg1(7 downto 4), 
