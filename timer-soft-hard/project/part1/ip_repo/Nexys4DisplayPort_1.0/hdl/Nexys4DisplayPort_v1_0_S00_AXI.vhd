@@ -124,20 +124,21 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
 	signal s_clkEnable: std_logic;
 	
 	component Nexys4DispDriver is
-	   port(   clk       : in std_logic;   
-            digitEn   : in std_logic_vector(7 downto 0);
-            digVal0   : in std_logic_vector(3 downto 0);
-            digVal1   : in std_logic_vector(3 downto 0);
-            digVal2   : in std_logic_vector(3 downto 0);
-            digVal3   : in std_logic_vector(3 downto 0);
-            digVal4   : in std_logic_vector(3 downto 0);
-            digVal5   : in std_logic_vector(3 downto 0);
-            digVal6   : in std_logic_vector(3 downto 0);
-            digVal7   : in std_logic_vector(3 downto 0);
-            decPtEn   : in std_logic_vector(7 downto 0);
-            dispEn_n  : out std_logic_vector(7 downto 0);
-            dispSeg_n : out std_logic_vector(6 downto 0);
-            dispPt_n  : out std_logic);
+	   port(   	clk       : in std_logic;  
+				enable	  : in std_logic;
+				digitEn   : in std_logic_vector(7 downto 0);
+				digVal0   : in std_logic_vector(3 downto 0);
+				digVal1   : in std_logic_vector(3 downto 0);
+				digVal2   : in std_logic_vector(3 downto 0);
+				digVal3   : in std_logic_vector(3 downto 0);
+				digVal4   : in std_logic_vector(3 downto 0);
+				digVal5   : in std_logic_vector(3 downto 0);
+				digVal6   : in std_logic_vector(3 downto 0);
+				digVal7   : in std_logic_vector(3 downto 0);
+				decPtEn   : in std_logic_vector(7 downto 0);
+				dispEn_n  : out std_logic_vector(7 downto 0);
+				dispSeg_n : out std_logic_vector(6 downto 0);
+				dispPt_n  : out std_logic);
     end component Nexys4DispDriver;
 
 begin
@@ -426,7 +427,8 @@ begin
 	   
 
     display_driver : Nexys4DispDriver
-        port map(clk       => S_AXI_ACLK,
+		port map(clk       => S_AXI_ACLK,
+				 enable    => s_clkEnable,
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
                  digVal1   => slv_reg1(7 downto 4), 
