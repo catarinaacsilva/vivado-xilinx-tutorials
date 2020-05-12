@@ -19,6 +19,8 @@ Add the following logic to Nexys4DisplayDriver:
     - Refresh Rate
     - Display Brightness
 
+**TODO**: Add software
+
 ## Authors
 
 * **Catarina Silva** - [catarinaacsilva](https://github.com/catarinaacsilva)
