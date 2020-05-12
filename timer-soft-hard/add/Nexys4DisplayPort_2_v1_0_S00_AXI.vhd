@@ -123,7 +123,6 @@ architecture arch_imp of Nexys4DisplayPort_2_v1_0_S00_AXI is
 	
 	component Nexys4DisplayDriver is
 	   port(clk       : in std_logic;  
-			enable    : in std_logic;
 			refRate   : in std_logic_vector(2 downto 0);
             brightL   : in std_logic_vector(2 downto 0);
             reset     : in std_logic;  
@@ -412,9 +411,8 @@ begin
 
     display_driver : Nexys4DisplayDriver
         port map(clk       => S_AXI_ACLK,
-				 enable    => s_dispDriverEnable,
 				 refRate   => slv_reg2(2 downto 0),
-				 brightL   => slv_reg2(2 downto 0), (5 downto 3) ?
+				 brightL   => slv_reg2(5 downto 3),
 				 reset 	   => S_AXI_ARESETN,
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
@@ -426,7 +424,7 @@ begin
                  digVal6   => slv_reg1(27 downto 24),
                  digVal7   => slv_reg1(31 downto 28),
                  decPtEn   => slv_reg0(15 downto 8),
-                 dispEn_n  => s_dispEn_n,
+                 dispEn_n  => dispEn_n,
                  dispSeg_n => dispSeg_n,
                  dispPt_n  => dispPt_n);
 

@@ -4,7 +4,6 @@ use IEEE.NUMERIC_STD.all;
 
 entity Nexys4DispDriver is
     port(   clk       : in std_logic;
-            enable    : in std_logic; 
             refRate   : in std_logic_vector(2 downto 0);
             brightL   : in std_logic_vector(2 downto 0);
             reset     : in std_logic;
@@ -55,9 +54,9 @@ architecture Behavioral of Nexys4DispDriver is
 begin
 
     -- Counter 3 bits
-    process (clk, enable)
+    process (clk, s_dispDriverEnable)
     begin  
-        if(rising_edge(clk) and enable = '1') then
+        if(rising_edge(clk) and s_dispDriverEnable = '1') then
             s_counter <= s_counter + 1;
         end if;
     end process;
