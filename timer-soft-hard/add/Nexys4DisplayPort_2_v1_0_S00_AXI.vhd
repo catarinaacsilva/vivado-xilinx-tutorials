@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Nexys4DisplayPort_v1_0_S00_AXI is
+entity Nexys4DisplayPort_2_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -16,9 +16,9 @@ entity Nexys4DisplayPort_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-        p_dispEn_n  : out std_logic_vector(7 downto 0);
-        p_dispSeg_n : out std_logic_vector(6 downto 0);
-        p_dispPt_n  : out std_logic;
+        dispEn_n  : out std_logic_vector(7 downto 0);
+        dispSeg_n : out std_logic_vector(6 downto 0);
+        dispPt_n  : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -83,9 +83,9 @@ entity Nexys4DisplayPort_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end Nexys4DisplayPort_v1_0_S00_AXI;
+end Nexys4DisplayPort_2_v1_0_S00_AXI;
 
-architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
+architecture arch_imp of Nexys4DisplayPort_2_v1_0_S00_AXI is
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -119,28 +119,29 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
 	signal reg_data_out	:std_logic_vector(C_S_AXI_DATA_WIDTH-1 downto 0);
 	signal byte_index	: integer;
 	signal aw_en	: std_logic;
-	
-	signal  s_clkCntEnable: unsigned(C_S_AXI_DATA_WIDTH-1 downto 0);
-	signal s_clkEnable: std_logic;
-	
-	component Nexys4DispDriver is
-	   port(   	clk       : in std_logic;  
-				enable	  : in std_logic;
-				digitEn   : in std_logic_vector(7 downto 0);
-				digVal0   : in std_logic_vector(3 downto 0);
-				digVal1   : in std_logic_vector(3 downto 0);
-				digVal2   : in std_logic_vector(3 downto 0);
-				digVal3   : in std_logic_vector(3 downto 0);
-				digVal4   : in std_logic_vector(3 downto 0);
-				digVal5   : in std_logic_vector(3 downto 0);
-				digVal6   : in std_logic_vector(3 downto 0);
-				digVal7   : in std_logic_vector(3 downto 0);
-				decPtEn   : in std_logic_vector(7 downto 0);
-				dispEn_n  : out std_logic_vector(7 downto 0);
-				dispSeg_n : out std_logic_vector(6 downto 0);
-				dispPt_n  : out std_logic);
-    end component Nexys4DispDriver;
 
+	
+	component Nexys4DisplayDriver is
+	   port(clk       : in std_logic;  
+			enable    : in std_logic;
+			refRate   : in std_logic_vector(2 downto 0);
+            brightL   : in std_logic_vector(2 downto 0);
+            reset     : in std_logic;  
+            digitEn   : in std_logic_vector(7 downto 0);
+            digVal0   : in std_logic_vector(3 downto 0);
+            digVal1   : in std_logic_vector(3 downto 0);
+            digVal2   : in std_logic_vector(3 downto 0);
+            digVal3   : in std_logic_vector(3 downto 0);
+            digVal4   : in std_logic_vector(3 downto 0);
+            digVal5   : in std_logic_vector(3 downto 0);
+            digVal6   : in std_logic_vector(3 downto 0);
+            digVal7   : in std_logic_vector(3 downto 0);
+            decPtEn   : in std_logic_vector(7 downto 0);
+            dispEn_n  : out std_logic_vector(7 downto 0);
+            dispSeg_n : out std_logic_vector(6 downto 0);
+            dispPt_n  : out std_logic);
+    end component Nexys4DisplayDriver;
+	
 begin
 	-- I/O Connections assignments
 
@@ -408,27 +409,13 @@ begin
 
 
 	-- Add user logic here
-	
-	clk_divider : process(S_AXI_ACLK)
-	begin
-	   if (rising_edge(S_AXI_ACLK)) then
-	       if(S_AXI_ARESETN = '0') then
-	           s_clkCntEnable <= (others => '0');
-	           s_clkEnable <= '0';
-	       elsif (s_clkCntEnable >= x"0001E847") then --count to 124999 (125000)
-	           s_clkCntEnable <= (others => '0');
-	           s_clkEnable <= '1';
-	       else
-	           s_clkCntEnable <= s_clkCntEnable + 1;
-	           s_clkEnable <= '0';
-	       end if;
-	   end if;
-	 end process;
-	   
 
-    display_driver : Nexys4DispDriver
-		port map(clk       => S_AXI_ACLK,
-				 enable    => s_clkEnable,
+    display_driver : Nexys4DisplayDriver
+        port map(clk       => S_AXI_ACLK,
+				 enable    => s_dispDriverEnable,
+				 refRate   => slv_reg2(2 downto 0),
+				 brightL   => slv_reg2(2 downto 0), (5 downto 3) ?
+				 reset 	   => S_AXI_ARESETN,
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
                  digVal1   => slv_reg1(7 downto 4), 
@@ -439,10 +426,11 @@ begin
                  digVal6   => slv_reg1(27 downto 24),
                  digVal7   => slv_reg1(31 downto 28),
                  decPtEn   => slv_reg0(15 downto 8),
-                 dispEn_n  => p_dispEn_n,
-                 dispSeg_n => p_dispSeg_n,
-                 dispPt_n  => p_dispPt_n);
+                 dispEn_n  => s_dispEn_n,
+                 dispSeg_n => dispSeg_n,
+                 dispPt_n  => dispPt_n);
 
+	
 	-- User logic ends
 
 end arch_imp;
