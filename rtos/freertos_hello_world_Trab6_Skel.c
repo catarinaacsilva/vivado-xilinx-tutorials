@@ -190,7 +190,13 @@ void ConfigDisplayRefreshRate(unsigned char refreshRate)
 
 void ConfigDisplayBrightness(unsigned char brightnessLevel)
 {
-	// Insert your code here...
+	unsigned int displayCtrlReg = XGpio_ReadReg(XPAR_NEXYS4DISPLAYPORT_0_S00_AXI_BASEADDR,
+												DISPLAY_PORT_CONFIG_OFFSET);
+
+	displayCtrlReg &= ~(DISPLAY_BRIGHTNESS_LEVEL_MASK);
+	displayCtrlReg |= (brightnessLevel & DISPLAY_BRIGHTNESS_LEVEL_MAX_VAL) << DISPLAY_REFRESH_RATE_NUM_BITS;
+	
+	XGpio_WriteReg(XPAR_NEXYS4DISPLAYPORT_0_S00_AXI_BASEADDR, DISPLAY_PORT_CONFIG_OFFSET, displayCtrlReg);
 	
 }
 
