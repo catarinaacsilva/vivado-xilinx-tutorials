@@ -163,8 +163,20 @@ void RefreshDisplays(unsigned char digitEnables, const unsigned int digitValues[
 {
 	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
 
-	...
-	
+	static unsigned int digitRefreshIdx = 0; // static variable - is preserved across calls
+
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA_OFFSET,  ~(1 << digitRefreshIdx));
+
+	unsigned int digit = ( !((decPtEnables >> digitRefreshIdx) & 0x01)) << 7;
+	if ((digitEnables >> digitRefreshIdx) & 0x01) {
+		digit = digit + Bin2Hex(digitValues[digitRefreshIdx]);
+	}
+	else {
+		digit = digit + 0x7F;
+	}
+
+	XGpio_WriteReg(XPAR_AXI_GPIO_DISPLAY_BASEADDR, XGPIO_DATA2_OFFSET, digit);
+
 	digitRefreshIdx++;
 	digitRefreshIdx &= 0x07;
 }
@@ -184,18 +196,125 @@ void ReadButtons(TButtonStatus* pButtonStatus)
 void UpdateStateMachine(TFSMState* pFSMState, TButtonStatus* pButtonStatus,
 						bool zeroFlag, unsigned char* pSetFlags)
 {
-	...
+	switch (*pFSMState) {
+		case Stopped:
+			*pSetFlags = 0x0;
+			if(zeroFlag == 1) {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0001);
+			}else {
+				XGpio_WriteReg(XPAR_AXI_GPIO_LEDS_BASEADDR, XGPIO_DATA_OFFSET, 0x0000);
+			}
+			if((DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed)) && (zeroFlag == 0)) {
+				*pFSMState = Started;
+			} else if (DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetLSSec;
+			} else {
+				*pFSMState = Stopped;
+			}
+		break;
+
+		case Started:
+			*pSetFlags = 0x0;
+			if ((DetectAndClearRisingEdge(&(pButtonStatus->startPrevious), pButtonStatus->startPressed)) || (zeroFlag == 1)) {
+				*pFSMState = Stopped;
+			} else {
+				*pFSMState = Started;
+			}
+		break;
+
+		case SetLSSec:
+			*pSetFlags = 0x1;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetMSSec;
+			} else {
+				*pFSMState = SetLSSec;
+			}
+		break;
+
+		case SetMSSec:
+			*pSetFlags = 0x2;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetLSMin;
+			} else {
+				*pFSMState = SetMSSec;
+			}
+		break;
+
+		case SetLSMin:
+			*pSetFlags = 0x4;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = SetMSMin;
+			} else {
+				*pFSMState = SetLSMin;
+			}
+		break;
+
+		case SetMSMin:
+			*pSetFlags = 0x8;
+			if(DetectAndClearRisingEdge(&(pButtonStatus->setPrevious), pButtonStatus->setPressed)) {
+				*pFSMState = Stopped;
+			} else {
+				*pFSMState = SetMSMin;
+			}
+		break;
+		default:
+			*pSetFlags = 0x0; 	
+			*pFSMState = Stopped;
+			break;
+	}
 }
 
 void SetCountDownTimer(TFSMState fsmState, const TButtonStatus* pButtonStatus,
 					   TTimerValue* pTimerValue)
 {
-	...
+	switch(fsmState){
+		case SetLSSec:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->secLSValue), 10);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->secLSValue), 10);
+			break;
+		case SetMSSec:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->secMSValue), 6);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->secMSValue), 6);
+			break;
+		case SetLSMin:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->minLSValue), 10);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->minLSValue), 10);
+			break;
+		case SetMSMin:
+			if(pButtonStatus->upPressed)
+				ModularInc(&(pTimerValue->minMSValue), 6);
+			else if (pButtonStatus->downPressed)
+				ModularDec(&(pTimerValue->minMSValue), 6);
+			break;
+		default:
+			break;
+	}
+
 }
 
 void DecCountDownTimer(TFSMState fsmState, TTimerValue* pTimerValue)
 {
-	...
+	if (fsmState == Started) {													
+		bool count = ModularDec(&pTimerValue->secLSValue, 10);		
+		if (count) {
+			count = ModularDec(&pTimerValue->secMSValue, 6);		
+			if (count) {
+				count = ModularDec(&pTimerValue->minLSValue, 10);	
+				if (count) {
+					ModularDec(&pTimerValue->minMSValue, 6); 
+				}
+				else return;
+			}
+			else return;
+		}
+		else return;
+	}
 }
 
 static void SwTimerCallback(TimerHandle_t phTimer)
