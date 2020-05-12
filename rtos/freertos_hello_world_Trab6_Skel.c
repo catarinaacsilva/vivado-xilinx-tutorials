@@ -380,16 +380,33 @@ static void SwTimerCallback(TimerHandle_t phTimer)
 	{
 		// Put here operations that must be performed at 8Hz rate
 		// Read push buttons
-		
+		ReadButtons(&buttonStatus);
 		
 		// Update state machine
+		UpdateStateMachine(&fsmState, &buttonStatus, zeroFlag, &setFlags);
 		
+		if ((setFlags == 0x0) || (blink2HzStat))
+		{
+			digitEnables = 0x3C; // All digits active
+		}
+		else
+		{
+			digitEnables = (~(setFlags << 2)) & 0x3C; // Setting digit inactive
+		}
+
+		if (DetectAndClearRisingEdge(&(buttonStatus.brightPrevious), buttonStatus.brightPressed)){
+			dispBrightness = dispBrightness + 1;
+			if (dispBrightness > 7) {
+				dispBrightness = 0;
+			}
+		}
 	}
 
 	if (swTmrEventCount % (250 / SW_TIMER_MILISECS_VAL) == 0) // 4Hz = 1/250 msecs
 	{
 		// Put here operations that must be performed at 4Hz rate
 		// Switch digit set 2Hz blink status
+		blink2HzStat = !blink2HzStat;
 		
 	}
 
@@ -397,20 +414,21 @@ static void SwTimerCallback(TimerHandle_t phTimer)
 	{
 		// Put here operations that must be performed at 2Hz rate
 		// Switch point 1Hz blink status
-		
+		blink1HzStat = !blink1HzStat;
+		decPtEnables = (blink1HzStat ? 0x10 : 0x00);
 
 		// Adjust display brightness
-		
+		ConfigDisplayBrightness(dispBrightness);
 
 		// Digit set increment/decrement
-		
+		SetCountDownTimer(fsmState, &buttonStatus, &timerValue);
 	}
 
 	if (swTmrEventCount == (1000 / SW_TIMER_MILISECS_VAL)) // 1Hz = 1/1000 msecs
 	{
 		// Put here operations that must be performed at 1Hz rate
 		// Count down timer normal operation
-		
+		DecCountDownTimer(fsmState, &timerValue);
 
 		// Reset hwTmrEventCount every second
 		swTmrEventCount = 1;
