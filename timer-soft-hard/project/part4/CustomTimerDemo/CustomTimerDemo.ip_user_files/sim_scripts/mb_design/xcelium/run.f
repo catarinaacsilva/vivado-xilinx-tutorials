@@ -126,9 +126,9 @@
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
   "../../../bd/mb_design/ip/mb_design_fit_timer_0_0/sim/mb_design_fit_timer_0_0.vhd" \
-  "../../../bd/mb_design/ipshared/e8cc/src/Nexys4DispDriver.vhd" \
-  "../../../bd/mb_design/ipshared/e8cc/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd" \
-  "../../../bd/mb_design/ipshared/e8cc/hdl/Nexys4DisplayPort_v1_0.vhd" \
+  "../../../bd/mb_design/ipshared/624d/src/Nexys4DispDriver.vhd" \
+  "../../../bd/mb_design/ipshared/624d/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd" \
+  "../../../bd/mb_design/ipshared/624d/hdl/Nexys4DisplayPort_v1_0.vhd" \
   "../../../bd/mb_design/ip/mb_design_Nexys4DisplayPort_0_0/sim/mb_design_Nexys4DisplayPort_0_0.vhd" \
   "../../../bd/mb_design/sim/mb_design.vhd" \
 -endlib

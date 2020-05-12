@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity Nexys4DisplayPort_v1_0_S00_AXI is
+entity Nexys4DisplayPort_2_v1_0_S00_AXI is
 	generic (
 		-- Users to add parameters here
 
@@ -16,9 +16,9 @@ entity Nexys4DisplayPort_v1_0_S00_AXI is
 	);
 	port (
 		-- Users to add ports here
-        p_dispEn_n  : out std_logic_vector(7 downto 0);
-        p_dispSeg_n : out std_logic_vector(6 downto 0);
-        p_dispPt_n  : out std_logic;
+        dispEn_n  : out std_logic_vector(7 downto 0);
+        dispSeg_n : out std_logic_vector(6 downto 0);
+        dispPt_n  : out std_logic;
 		-- User ports ends
 		-- Do not modify the ports beyond this line
 
@@ -83,9 +83,9 @@ entity Nexys4DisplayPort_v1_0_S00_AXI is
     		-- accept the read data and response information.
 		S_AXI_RREADY	: in std_logic
 	);
-end Nexys4DisplayPort_v1_0_S00_AXI;
+end Nexys4DisplayPort_2_v1_0_S00_AXI;
 
-architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
+architecture arch_imp of Nexys4DisplayPort_2_v1_0_S00_AXI is
 
 	-- AXI4LITE signals
 	signal axi_awaddr	: std_logic_vector(C_S_AXI_ADDR_WIDTH-1 downto 0);
@@ -121,8 +121,11 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
 	signal aw_en	: std_logic;
 
 	
-	component Nexys4DispDriver is
-	   port(   clk       : in std_logic;   
+	component Nexys4DisplayDriver is
+	   port(clk       : in std_logic;  
+			refRate   : in std_logic_vector(2 downto 0);
+            brightL   : in std_logic_vector(2 downto 0);
+            reset     : in std_logic;  
             digitEn   : in std_logic_vector(7 downto 0);
             digVal0   : in std_logic_vector(3 downto 0);
             digVal1   : in std_logic_vector(3 downto 0);
@@ -136,15 +139,8 @@ architecture arch_imp of Nexys4DisplayPort_v1_0_S00_AXI is
             dispEn_n  : out std_logic_vector(7 downto 0);
             dispSeg_n : out std_logic_vector(6 downto 0);
             dispPt_n  : out std_logic);
-    end component Nexys4DispDriver;
-
-    type TRefreshRateLUT is array (0 to 7) of integer;
-    constant REFRESH_RATE_LUT : TRefreshRateLUT (0 to 7) := (1999999, 999999, 499999, 249999, 124999, 62499, 31249, 15624);
-    -- constant ENABLE_COUNTER_MAX : integer := 124999 - 1;
-    -- subtype TEnableCounter is integer range 0 to ENABLE_COUNTER_MAX;
-    signal s_clkEnableCounter : integer;
-    signal s_dispDriverEnable : std_logic;
-    
+    end component Nexys4DisplayDriver;
+	
 begin
 	-- I/O Connections assignments
 
@@ -412,26 +408,12 @@ begin
 
 
 	-- Add user logic here
-	
-	clk_divider : process(S_AXI_ACLK)
-	begin
-	   if (rising_edge(S_AXI_ACLK)) then
-	       if(S_AXI_ARESETN = '0') then
-	           s_clkEnableCounter <= 0;
-	           s_dispDriverEnable <= '0';
-	       elsif (s_clkEnableCounter = REFRESH_RATE_LUT(to_integer(unsigned(slv_reg2(2 downto 0))))) then
-	           s_clkEnableCounter <= 0;
-	           s_dispDriverEnable <= '1';
-	       else
-	           s_clkEnableCounter <= s_clkEnableCounter + 1;
-	           s_dispDriverEnable <= '0';
-	       end if;
-	   end if;
-	 end process;
-	   
 
-    display_driver : Nexys4DispDriver
+    display_driver : Nexys4DisplayDriver
         port map(clk       => S_AXI_ACLK,
+				 refRate   => slv_reg2(2 downto 0),
+				 brightL   => slv_reg2(5 downto 3),
+				 reset 	   => S_AXI_ARESETN,
                  digitEn   => slv_reg0(7 downto 0), 
                  digVal0   => slv_reg1(3 downto 0),
                  digVal1   => slv_reg1(7 downto 4), 
@@ -442,10 +424,11 @@ begin
                  digVal6   => slv_reg1(27 downto 24),
                  digVal7   => slv_reg1(31 downto 28),
                  decPtEn   => slv_reg0(15 downto 8),
-                 dispEn_n  => p_dispEn_n,
-                 dispSeg_n => p_dispSeg_n,
-                 dispPt_n  => p_dispPt_n);
+                 dispEn_n  => dispEn_n,
+                 dispSeg_n => dispSeg_n,
+                 dispPt_n  => dispPt_n);
 
+	
 	-- User logic ends
 
 end arch_imp;
