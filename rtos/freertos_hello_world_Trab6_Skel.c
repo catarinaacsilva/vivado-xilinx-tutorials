@@ -42,25 +42,25 @@
 #define SW_TIMER_ID			1
 
 // Complete these constants
-#define SW_TIMER_MILISECS_VAL	
+#define SW_TIMER_MILISECS_VAL  125UL	
 // Requires configTICK_RATE_HZ to be set at least to ??? (??? ms FreeRTOS tick),
 // in the file "mb_design_wrapper\microblaze_0\freertos10_xilinx_domain\bsp\
 //				microblaze_0\libsrc\freertos10_xilinx_v1_4\src\FreeRTOSConfig.h"
 
 // Display Port Register Offsets
-#define DISPLAY_PORT_ENABLE_OFFSET			
-#define DISPLAY_PORT_DATA_OFFSET			
-#define DISPLAY_PORT_CONFIG_OFFSET			
+#define DISPLAY_PORT_ENABLE_OFFSET		XGPIO_DATA_OFFSET + 0	
+#define DISPLAY_PORT_DATA_OFFSET		XGPIO_DATA_OFFSET + 4	
+#define DISPLAY_PORT_CONFIG_OFFSET		XGPIO_DATA_OFFSET + 8	
 
 // Display refresh rate constants
-#define DISPLAY_REFRESH_RATE_NUM_BITS		
-#define DISPLAY_REFRESH_RATE_MAX_VAL		
-#define DISPLAY_REFRESH_RATE_MASK			
+#define DISPLAY_REFRESH_RATE_NUM_BITS	3	
+#define DISPLAY_REFRESH_RATE_MAX_VAL	0x07	
+#define DISPLAY_REFRESH_RATE_MASK		0x07	
 
 // Display brightness level constants
-#define DISPLAY_BRIGHTNESS_LEVEL_NUM_BITS	
-#define DISPLAY_BRIGHTNESS_LEVEL_MAX_VAL	
-#define DISPLAY_BRIGHTNESS_LEVEL_MASK		
+#define DISPLAY_BRIGHTNESS_LEVEL_NUM_BITS	3
+#define DISPLAY_BRIGHTNESS_LEVEL_MAX_VAL	0x07
+#define DISPLAY_BRIGHTNESS_LEVEL_MASK
 
 /******************************** Data types *********************************/
 
