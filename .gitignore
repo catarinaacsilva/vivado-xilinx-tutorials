@@ -1,12 +1,10 @@
 *.sim
-*.srcs
 compile_simlib
 *.wdf
 *.xml
 
 *.runs
 *.sim
-*.srcs
 Nexys4DispDriver.ip_user_files/
 *.bit
 *.log
