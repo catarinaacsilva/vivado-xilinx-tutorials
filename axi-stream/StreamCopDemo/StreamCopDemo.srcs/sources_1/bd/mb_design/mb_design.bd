@@ -1296,6 +1296,18 @@
           "microblaze_0_axi_periph/M00_AXI",
           "microblaze_0_axi_intc/s_axi"
         ]
+      },
+      "myipReverseEndianess_0_M00_AXIS": {
+        "interface_ports": [
+          "myipReverseEndianess_0/M00_AXIS",
+          "microblaze_0/S0_AXIS"
+        ]
+      },
+      "microblaze_0_M0_AXIS": {
+        "interface_ports": [
+          "myipReverseEndianess_0/S00_AXIS",
+          "microblaze_0/M0_AXIS"
+        ]
       }
     },
     "nets": {
@@ -1328,7 +1340,9 @@
           "microblaze_0_axi_periph/M05_ACLK",
           "axi_uartlite_0/s_axi_aclk",
           "microblaze_0_axi_periph/M06_ACLK",
-          "fit_timer_0/Clk"
+          "fit_timer_0/Clk",
+          "myipReverseEndianess_0/m00_axis_aclk",
+          "myipReverseEndianess_0/s00_axis_aclk"
         ]
       },
       "clk_wiz_1_locked": {
@@ -1368,7 +1382,9 @@
           "axi_timer_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M05_ARESETN",
           "axi_uartlite_0/s_axi_aresetn",
-          "microblaze_0_axi_periph/M06_ARESETN"
+          "microblaze_0_axi_periph/M06_ARESETN",
+          "myipReverseEndianess_0/m00_axis_aresetn",
+          "myipReverseEndianess_0/s00_axis_aresetn"
         ]
       },
       "mdm_1_debug_sys_rst": {
