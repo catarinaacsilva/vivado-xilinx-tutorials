@@ -182,6 +182,10 @@ vcom -work fit_timer_v2_0_10 -64 -93 \
 
 vcom -work xil_defaultlib -64 -93 \
 "../../../bd/mb_design/ip/mb_design_fit_timer_0_0/sim/mb_design_fit_timer_0_0.vhd" \
+"../../../bd/mb_design/ipshared/90b2/hdl/ReverseEndianessCop_v1_0.vhd" \
+"../../../bd/mb_design/ipshared/90b2/hdl/ReverseEndianessCop_v1_0_S00_AXIS.vhd" \
+"../../../bd/mb_design/ipshared/90b2/hdl/ReverseEndianessCop_v1_0_M00_AXIS.vhd" \
+"../../../bd/mb_design/ip/mb_design_ReverseEndianessCop_0_0/sim/mb_design_ReverseEndianessCop_0_0.vhd" \
 "../../../bd/mb_design/sim/mb_design.vhd" \
 
 vlog -work xil_defaultlib \

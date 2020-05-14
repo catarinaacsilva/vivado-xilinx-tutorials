@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri Mar 27 00:34:57 2020
-// Host        : ASRO-NUC running 64-bit major release  (build 9200)
+// Date        : Thu May 14 19:20:39 2020
+// Host        : GreatAtuin running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
-//               c:/Users/asroliveira/CloudStation/CR/Nexys4DefaultPlatform/Nexys4DefaultPlatform.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_0/mb_design_microblaze_0_0_stub.v
+//               C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/StreamCopDemo/StreamCopDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_0/mb_design_microblaze_0_0_stub.v
 // Design      : mb_design_microblaze_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1
@@ -22,8 +22,9 @@ module mb_design_microblaze_0_0(Clk, Reset, Interrupt, Interrupt_Address,
   M_AXI_DP_ARADDR, M_AXI_DP_ARPROT, M_AXI_DP_ARVALID, M_AXI_DP_ARREADY, M_AXI_DP_RDATA, 
   M_AXI_DP_RRESP, M_AXI_DP_RVALID, M_AXI_DP_RREADY, Dbg_Clk, Dbg_TDI, Dbg_TDO, Dbg_Reg_En, 
   Dbg_Shift, Dbg_Capture, Dbg_Update, Dbg_Trig_In, Dbg_Trig_Ack_In, Dbg_Trig_Out, 
-  Dbg_Trig_Ack_Out, Debug_Rst, Dbg_Disable)
-/* synthesis syn_black_box black_box_pad_pin="Clk,Reset,Interrupt,Interrupt_Address[0:31],Interrupt_Ack[0:1],Instr_Addr[0:31],Instr[0:31],IFetch,I_AS,IReady,IWAIT,ICE,IUE,Data_Addr[0:31],Data_Read[0:31],Data_Write[0:31],D_AS,Read_Strobe,Write_Strobe,DReady,DWait,DCE,DUE,Byte_Enable[0:3],M_AXI_DP_AWADDR[31:0],M_AXI_DP_AWPROT[2:0],M_AXI_DP_AWVALID,M_AXI_DP_AWREADY,M_AXI_DP_WDATA[31:0],M_AXI_DP_WSTRB[3:0],M_AXI_DP_WVALID,M_AXI_DP_WREADY,M_AXI_DP_BRESP[1:0],M_AXI_DP_BVALID,M_AXI_DP_BREADY,M_AXI_DP_ARADDR[31:0],M_AXI_DP_ARPROT[2:0],M_AXI_DP_ARVALID,M_AXI_DP_ARREADY,M_AXI_DP_RDATA[31:0],M_AXI_DP_RRESP[1:0],M_AXI_DP_RVALID,M_AXI_DP_RREADY,Dbg_Clk,Dbg_TDI,Dbg_TDO,Dbg_Reg_En[0:7],Dbg_Shift,Dbg_Capture,Dbg_Update,Dbg_Trig_In[0:7],Dbg_Trig_Ack_In[0:7],Dbg_Trig_Out[0:7],Dbg_Trig_Ack_Out[0:7],Debug_Rst,Dbg_Disable" */;
+  Dbg_Trig_Ack_Out, Debug_Rst, Dbg_Disable, M0_AXIS_TLAST, M0_AXIS_TDATA, M0_AXIS_TVALID, 
+  M0_AXIS_TREADY, S0_AXIS_TLAST, S0_AXIS_TDATA, S0_AXIS_TVALID, S0_AXIS_TREADY)
+/* synthesis syn_black_box black_box_pad_pin="Clk,Reset,Interrupt,Interrupt_Address[0:31],Interrupt_Ack[0:1],Instr_Addr[0:31],Instr[0:31],IFetch,I_AS,IReady,IWAIT,ICE,IUE,Data_Addr[0:31],Data_Read[0:31],Data_Write[0:31],D_AS,Read_Strobe,Write_Strobe,DReady,DWait,DCE,DUE,Byte_Enable[0:3],M_AXI_DP_AWADDR[31:0],M_AXI_DP_AWPROT[2:0],M_AXI_DP_AWVALID,M_AXI_DP_AWREADY,M_AXI_DP_WDATA[31:0],M_AXI_DP_WSTRB[3:0],M_AXI_DP_WVALID,M_AXI_DP_WREADY,M_AXI_DP_BRESP[1:0],M_AXI_DP_BVALID,M_AXI_DP_BREADY,M_AXI_DP_ARADDR[31:0],M_AXI_DP_ARPROT[2:0],M_AXI_DP_ARVALID,M_AXI_DP_ARREADY,M_AXI_DP_RDATA[31:0],M_AXI_DP_RRESP[1:0],M_AXI_DP_RVALID,M_AXI_DP_RREADY,Dbg_Clk,Dbg_TDI,Dbg_TDO,Dbg_Reg_En[0:7],Dbg_Shift,Dbg_Capture,Dbg_Update,Dbg_Trig_In[0:7],Dbg_Trig_Ack_In[0:7],Dbg_Trig_Out[0:7],Dbg_Trig_Ack_Out[0:7],Debug_Rst,Dbg_Disable,M0_AXIS_TLAST,M0_AXIS_TDATA[31:0],M0_AXIS_TVALID,M0_AXIS_TREADY,S0_AXIS_TLAST,S0_AXIS_TDATA[31:0],S0_AXIS_TVALID,S0_AXIS_TREADY" */;
   input Clk;
   input Reset;
   input Interrupt;
@@ -80,4 +81,12 @@ module mb_design_microblaze_0_0(Clk, Reset, Interrupt, Interrupt_Address,
   output [0:7]Dbg_Trig_Ack_Out;
   input Debug_Rst;
   input Dbg_Disable;
+  output M0_AXIS_TLAST;
+  output [31:0]M0_AXIS_TDATA;
+  output M0_AXIS_TVALID;
+  input M0_AXIS_TREADY;
+  input S0_AXIS_TLAST;
+  input [31:0]S0_AXIS_TDATA;
+  input S0_AXIS_TVALID;
+  output S0_AXIS_TREADY;
 endmodule
