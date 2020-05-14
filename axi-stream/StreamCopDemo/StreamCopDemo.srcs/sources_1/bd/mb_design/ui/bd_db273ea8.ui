@@ -1,7 +1,7 @@
 {
    "ActiveEmotionalView":"Default View",
-   "Default View_ScaleFactor":"1.13397",
-   "Default View_TopLeft":"780,272",
+   "Default View_ScaleFactor":"0.400917",
+   "Default View_TopLeft":"-200,0",
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
@@ -28,7 +28,7 @@ preplace inst axi_gpio_display -pg 1 -lvl 8 -x 2400 -y 670 -defaultsOSRD
 preplace inst axi_uartlite_0 -pg 1 -lvl 8 -x 2400 -y 370 -defaultsOSRD
 preplace inst axi_timer_0 -pg 1 -lvl 8 -x 2400 -y 840 -defaultsOSRD
 preplace inst fit_timer_0 -pg 1 -lvl 3 -x 690 -y 140 -defaultsOSRD
-preplace inst myipReverseEndianess_0 -pg 1 -lvl 5 -x 1200 -y 550 -defaultsOSRD
+preplace inst ReverseEndianessCop_0 -pg 1 -lvl 5 -x 1200 -y 550 -defaultsOSRD
 preplace netloc microblaze_0_intr 1 4 1 1050 130n
 preplace netloc microblaze_0_Clk 1 1 7 200 260 600 260 NJ 260 1040 420 1340 410 1890 410 2250
 preplace netloc clk_wiz_1_locked 1 1 1 210 190n
@@ -62,8 +62,8 @@ preplace netloc microblaze_0_axi_periph_M05_AXI 1 7 1 2200 710n
 preplace netloc microblaze_0_axi_periph_M04_AXI 1 7 1 2220 170n
 preplace netloc microblaze_0_axi_periph_M03_AXI 1 7 1 2210 670n
 preplace netloc microblaze_0_axi_periph_M06_AXI 1 7 1 2280 350n
+preplace netloc ReverseEndianessCop_0_M00_AXIS 1 5 1 1370 290n
 preplace netloc microblaze_0_M0_AXIS 1 4 3 1060 440 NJ 440 1860
-preplace netloc myipReverseEndianess_0_M00_AXIS 1 5 1 1370 290n
 levelinfo -pg 1 0 110 390 690 910 1200 1620 2050 2400 2550
 pagesize -pg 1 -db -bbox -sgen -120 0 2770 1090
 "

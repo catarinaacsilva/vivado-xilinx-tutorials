@@ -1,13 +1,6 @@
-*.sim
-compile_simlib
-*.wdf
 *.xml
 
-*.bit
 *.log
-.metadata
-.analytics
 *.cache
 *.backup.jou
 *.jou
-*.str

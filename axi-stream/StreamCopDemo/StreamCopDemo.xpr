@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/StreamCopDemo/StreamCopDemo.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="c4063ac1e88a4f7d833e6212c4c748f0"/>
+    <Option Name="Id" Val="4d43457020ad43cc8ddea7c1eb7e2202"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -22,7 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/myipReverseEndianessCop_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ReverseEndianessCop_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../timer-soft-hard/project/part1/ip_repo"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
