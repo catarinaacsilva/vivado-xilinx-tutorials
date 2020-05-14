@@ -3,9 +3,6 @@ compile_simlib
 *.wdf
 *.xml
 
-*.runs
-*.sim
-Nexys4DispDriver.ip_user_files/
 *.bit
 *.log
 .metadata
