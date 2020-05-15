@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="StreamCopDemoApp" location="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/StreamCopDemo/StreamCopDemoApp" platform="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/StreamCopDemo/mb_design_wrapper/export/mb_design_wrapper/mb_design_wrapper.xpfm" platformUID="xilinx:nexys4::0.0(custom)" systemProject="StreamCopDemoApp_system" sysConfig="mb_design_wrapper" runtime="cpp" cpu="standalone_domain" cpuInstance="microblaze_0" os="standalone" mssSignature="282f45e26d671dde9e0af941501b967c">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.1478099210">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.1141534457" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>
