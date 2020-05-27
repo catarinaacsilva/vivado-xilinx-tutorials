@@ -3125,3 +3125,11 @@ WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/mb_design_axi_dma_0_0_synth_1/mb_design_axi_dma_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_design_axi_dma_0_0, cache-ID = feb6f77f3b5aa658
+INFO: [Coretcl 2-1174] Renamed 133 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1122.645 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/mb_design_axi_dma_0_0_synth_1/mb_design_axi_dma_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mb_design_axi_dma_0_0_utilization_synth.rpt -pb mb_design_axi_dma_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 27 17:36:38 2020...

@@ -1,0 +1,724 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Wed May 27 17:38:15 2020
+# Process ID: 4212
+# Current directory: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1
+# Command line: vivado.exe -log mb_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_design_wrapper.tcl
+# Log file: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/mb_design_wrapper.vds
+# Journal file: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source mb_design_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.cache/ip 
+Command: synth_design -top mb_design_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 2808 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 870.320 ; gain = 235.074
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mb_design_wrapper' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:37]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_0' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:269]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_1' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:276]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_10' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:283]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_11' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:290]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_12' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:297]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_13' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:304]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_14' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:311]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_15' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:318]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_2' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:325]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_3' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:332]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_4' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:339]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_5' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:346]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_6' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:353]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_7' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:360]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_8' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:367]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'cellular_ram_dq_iobuf_9' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:374]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_0' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:381]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_1' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:388]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_2' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:395]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_3' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:402]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_4' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:409]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_5' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:416]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_6' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:423]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'dual_seven_seg_led_disp_tri_iobuf_7' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:430]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_0' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:437]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_1' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:444]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_10' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:451]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_11' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:458]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_12' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:465]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_13' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:472]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_14' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:479]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_15' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:486]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_2' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:493]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_3' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:500]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_4' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:507]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_5' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:514]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_6' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:521]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_7' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:528]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_8' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:535]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_9' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:542]
+INFO: [Synth 8-3491] module 'mb_design' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:5831' bound to instance 'mb_design_i' of component 'mb_design' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:549]
+INFO: [Synth 8-638] synthesizing module 'mb_design' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:5866]
+WARNING: [Synth 8-5640] Port 'axi_dma_tstvec' is missing in component declaration [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6223]
+INFO: [Synth 8-3491] module 'mb_design_axi_dma_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_dma_0_0_stub.vhdl:5' bound to instance 'axi_dma_0' of component 'mb_design_axi_dma_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6676]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_dma_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_dma_0_0_stub.vhdl:75]
+INFO: [Synth 8-3491] module 'mb_design_axi_emc_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_emc_0_0_stub.vhdl:5' bound to instance 'axi_emc_0' of component 'mb_design_axi_emc_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6742]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_emc_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_emc_0_0_stub.vhdl:62]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_buttons' of component 'mb_design_axi_gpio_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6797]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_3_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_3_0_stub.vhdl:5' bound to instance 'axi_gpio_display' of component 'mb_design_axi_gpio_3_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6821]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_3_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_3_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_2_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_leds' of component 'mb_design_axi_gpio_2_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6849]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_2_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_2_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_1_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_switches' of component 'mb_design_axi_gpio_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6874]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_gpio_1_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'mb_design_axi_timer_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_timer_0_0_stub.vhdl:5' bound to instance 'axi_timer_0' of component 'mb_design_axi_timer_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6898]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_timer_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_timer_0_0_stub.vhdl:37]
+INFO: [Synth 8-3491] module 'mb_design_axi_uartlite_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'mb_design_axi_uartlite_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6927]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_uartlite_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axi_uartlite_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'mb_design_axis_data_fifo_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axis_data_fifo_0_0_stub.vhdl:5' bound to instance 'axis_data_fifo_0' of component 'mb_design_axis_data_fifo_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6952]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axis_data_fifo_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_axis_data_fifo_0_0_stub.vhdl:23]
+INFO: [Synth 8-3491] module 'mb_design_clk_wiz_1_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_clk_wiz_1_0_stub.vhdl:5' bound to instance 'clk_wiz_1' of component 'mb_design_clk_wiz_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6967]
+INFO: [Synth 8-638] synthesizing module 'mb_design_clk_wiz_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_clk_wiz_1_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'mb_design_fit_timer_0_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_fit_timer_0_0_stub.vhdl:5' bound to instance 'fit_timer_0' of component 'mb_design_fit_timer_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6974]
+INFO: [Synth 8-638] synthesizing module 'mb_design_fit_timer_0_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_fit_timer_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'mb_design_mdm_1_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_mdm_1_0_stub.vhdl:5' bound to instance 'mdm_1' of component 'mb_design_mdm_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6980]
+INFO: [Synth 8-638] synthesizing module 'mb_design_mdm_1_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_mdm_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_microblaze_0_1_stub.vhdl:5' bound to instance 'microblaze_0' of component 'mb_design_microblaze_0_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:6993]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_microblaze_0_1_stub.vhdl:63]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_axi_intc_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_microblaze_0_axi_intc_0_stub.vhdl:5' bound to instance 'microblaze_0_axi_intc' of component 'mb_design_microblaze_0_axi_intc_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:7079]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_axi_intc_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_microblaze_0_axi_intc_0_stub.vhdl:36]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_axi_periph_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3836]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_7XQVZK' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:75]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_0_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:247]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_0_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_7XQVZK' (2#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:75]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1KGGRVS' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:372]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_1_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:544]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_1_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1KGGRVS' (3#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:372]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_SWOCXT' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:669]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_2' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_2_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_2' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:841]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_2' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_2_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_SWOCXT' (4#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:669]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1H7VOBD' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:966]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_3' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_3_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_3' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1138]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_3' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_3_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1H7VOBD' (5#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:966]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1W8QG7M' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1263]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_4' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_4_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_4' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1435]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_4' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_4_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1W8QG7M' (6#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1263]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_9GBDFU' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1560]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_5' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_5_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_5' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1732]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_5' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_5_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_9GBDFU' (7#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1560]
+INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_ZVBXPF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1857]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_6' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_6_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_6' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2029]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_6' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_6_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_ZVBXPF' (8#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1857]
+INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_O1I4VV' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2164]
+INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_O1I4VV' (9#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2164]
+INFO: [Synth 8-638] synthesizing module 'm08_couplers_imp_5W1MNP' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2324]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_7' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_7_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_7' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2495]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_7' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_7_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 'm08_couplers_imp_5W1MNP' (10#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2324]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_10TEBL8' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3178]
+INFO: [Synth 8-3491] module 'mb_design_auto_pc_8' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_8_stub.vhdl:5' bound to instance 'auto_pc' of component 'mb_design_auto_pc_8' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3350]
+INFO: [Synth 8-638] synthesizing module 'mb_design_auto_pc_8' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_auto_pc_8_stub.vhdl:67]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_10TEBL8' (11#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3178]
+INFO: [Synth 8-638] synthesizing module 's01_couplers_imp_N4AVSK' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3449]
+INFO: [Synth 8-256] done synthesizing module 's01_couplers_imp_N4AVSK' (12#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3449]
+INFO: [Synth 8-638] synthesizing module 's02_couplers_imp_1ULGU71' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3536]
+INFO: [Synth 8-256] done synthesizing module 's02_couplers_imp_1ULGU71' (13#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3536]
+INFO: [Synth 8-3491] module 'mb_design_xbar_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'mb_design_xbar_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:5407]
+INFO: [Synth 8-638] synthesizing module 'mb_design_xbar_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_xbar_0_stub.vhdl:85]
+INFO: [Synth 8-256] done synthesizing module 'mb_design_microblaze_0_axi_periph_0' (14#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3836]
+INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_UIMIJC' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2585]
+INFO: [Synth 8-3491] module 'mb_design_dlmb_bram_if_cntlr_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_dlmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'mb_design_dlmb_bram_if_cntlr_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2799]
+INFO: [Synth 8-638] synthesizing module 'mb_design_dlmb_bram_if_cntlr_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_dlmb_bram_if_cntlr_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'mb_design_dlmb_v10_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_dlmb_v10_1_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'mb_design_dlmb_v10_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2853]
+INFO: [Synth 8-638] synthesizing module 'mb_design_dlmb_v10_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_dlmb_v10_1_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'mb_design_ilmb_bram_if_cntlr_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_ilmb_bram_if_cntlr_1_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'mb_design_ilmb_bram_if_cntlr_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2881]
+INFO: [Synth 8-638] synthesizing module 'mb_design_ilmb_bram_if_cntlr_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_ilmb_bram_if_cntlr_1_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'mb_design_ilmb_v10_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_ilmb_v10_1_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'mb_design_ilmb_v10_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2935]
+INFO: [Synth 8-638] synthesizing module 'mb_design_ilmb_v10_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_ilmb_v10_1_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'mb_design_lmb_bram_1' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_lmb_bram_1_stub.vhdl:5' bound to instance 'lmb_bram' of component 'mb_design_lmb_bram_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2963]
+INFO: [Synth 8-638] synthesizing module 'mb_design_lmb_bram_1' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_lmb_bram_1_stub.vhdl:27]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_UIMIJC' (15#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2585]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_xlconcat_0' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58' bound to instance 'microblaze_0_xlconcat' of component 'mb_design_microblaze_0_xlconcat_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:7375]
+INFO: [Synth 8-6157] synthesizing module 'mb_design_microblaze_0_xlconcat_0' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 7 - type: integer 
+	Parameter NUM_PORTS bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (16#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mb_design_microblaze_0_xlconcat_0' (17#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58]
+INFO: [Synth 8-3491] module 'mb_design_rst_clk_wiz_1_100M_0' declared at 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_rst_clk_wiz_1_100M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_1_100M' of component 'mb_design_rst_clk_wiz_1_100M_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:7386]
+INFO: [Synth 8-638] synthesizing module 'mb_design_rst_clk_wiz_1_100M_0' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/.Xil/Vivado-4212-GreatAtuin/realtime/mb_design_rst_clk_wiz_1_100M_0_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'mb_design' (18#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:5866]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_0' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:710]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_1' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:717]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_2' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:724]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_3' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:731]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_4' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:738]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_5' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:745]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_6' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:752]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'seven_seg_led_an_tri_iobuf_7' of component 'IOBUF' [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:759]
+INFO: [Synth 8-256] done synthesizing module 'mb_design_wrapper' (19#1) [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:37]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
+WARNING: [Synth 8-3331] design s02_couplers_imp_1ULGU71 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s02_couplers_imp_1ULGU71 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s02_couplers_imp_1ULGU71 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s02_couplers_imp_1ULGU71 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design s01_couplers_imp_N4AVSK has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_N4AVSK has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s01_couplers_imp_N4AVSK has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s01_couplers_imp_N4AVSK has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m08_couplers_imp_5W1MNP has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m08_couplers_imp_5W1MNP has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M08_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M08_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S01_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S01_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S02_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S02_ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 957.926 ; gain = 322.680
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 957.926 ; gain = 322.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 957.926 ; gain = 322.680
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 957.926 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0/mb_design_xbar_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0/mb_design_xbar_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_intc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_intc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_0/mb_design_mdm_1_0/mb_design_mdm_1_0_in_context.xdc] for cell 'mb_design_i/mdm_1'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_0/mb_design_mdm_1_0/mb_design_mdm_1_0_in_context.xdc] for cell 'mb_design_i/mdm_1'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc] for cell 'mb_design_i/clk_wiz_1'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc] for cell 'mb_design_i/clk_wiz_1'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'mb_design_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'mb_design_i/rst_clk_wiz_1_100M'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_buttons'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_buttons'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_switches'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_switches'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_leds'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_leds'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_3_0/mb_design_axi_gpio_3_0/mb_design_axi_gpio_3_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_display'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_3_0/mb_design_axi_gpio_3_0/mb_design_axi_gpio_3_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_display'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0_in_context.xdc] for cell 'mb_design_i/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0_in_context.xdc] for cell 'mb_design_i/axi_uartlite_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0_in_context.xdc] for cell 'mb_design_i/axi_timer_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0_in_context.xdc] for cell 'mb_design_i/axi_timer_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0_in_context.xdc] for cell 'mb_design_i/fit_timer_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0_in_context.xdc] for cell 'mb_design_i/fit_timer_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_emc_0_0/mb_design_axi_emc_0_0/mb_design_axi_emc_0_0_in_context.xdc] for cell 'mb_design_i/axi_emc_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_emc_0_0/mb_design_axi_emc_0_0/mb_design_axi_emc_0_0_in_context.xdc] for cell 'mb_design_i/axi_emc_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1/mb_design_microblaze_0_1_in_context.xdc] for cell 'mb_design_i/microblaze_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1/mb_design_microblaze_0_1_in_context.xdc] for cell 'mb_design_i/microblaze_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1/mb_design_dlmb_v10_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1/mb_design_dlmb_v10_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_1/mb_design_ilmb_v10_1/mb_design_dlmb_v10_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1/mb_design_dlmb_bram_if_cntlr_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_1/mb_design_lmb_bram_1/mb_design_lmb_bram_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_1/mb_design_lmb_bram_1/mb_design_lmb_bram_1_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0_in_context.xdc] for cell 'mb_design_i/axi_dma_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0_in_context.xdc] for cell 'mb_design_i/axi_dma_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axis_data_fifo_0_0/mb_design_axis_data_fifo_0_0/mb_design_axis_data_fifo_0_0_in_context.xdc] for cell 'mb_design_i/axis_data_fifo_0'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axis_data_fifo_0_0/mb_design_axis_data_fifo_0_0/mb_design_axis_data_fifo_0_0_in_context.xdc] for cell 'mb_design_i/axis_data_fifo_0'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_8/mb_design_auto_pc_8/mb_design_auto_pc_8_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/s00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_8/mb_design_auto_pc_8/mb_design_auto_pc_8_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/s00_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_0/mb_design_auto_pc_0/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m00_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_0/mb_design_auto_pc_0/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m00_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_1/mb_design_auto_pc_1/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m01_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_1/mb_design_auto_pc_1/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m01_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_2/mb_design_auto_pc_2/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m02_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_2/mb_design_auto_pc_2/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m02_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_3/mb_design_auto_pc_3/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m03_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_3/mb_design_auto_pc_3/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m03_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_4/mb_design_auto_pc_4/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m04_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_4/mb_design_auto_pc_4/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m04_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_5/mb_design_auto_pc_5/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m05_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_5/mb_design_auto_pc_5/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m05_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_6/mb_design_auto_pc_6/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m06_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_6/mb_design_auto_pc_6/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m06_couplers/auto_pc'
+Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_7/mb_design_auto_pc_7/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m08_couplers/auto_pc'
+Finished Parsing XDC File [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_auto_pc_7/mb_design_auto_pc_7/mb_design_auto_pc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/m08_couplers/auto_pc'
+Parsing XDC File [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1024.414 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 48 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 48 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.098 . Memory (MB): peak = 1024.414 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mb_design_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for mb_design_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_intc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_xlconcat. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/mdm_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/clk_wiz_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_buttons. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_switches. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_leds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_display. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_uartlite_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_timer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/fit_timer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_emc_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_dma_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axis_data_fifo_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/s00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m00_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m01_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m02_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m03_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m04_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m05_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m06_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/m08_couplers/auto_pc. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M08_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M08_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S01_ACLK
+INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:26 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |mb_design_xbar_0                  |         1|
+|2     |mb_design_auto_pc_0               |         1|
+|3     |mb_design_auto_pc_1               |         1|
+|4     |mb_design_auto_pc_2               |         1|
+|5     |mb_design_auto_pc_3               |         1|
+|6     |mb_design_auto_pc_4               |         1|
+|7     |mb_design_auto_pc_5               |         1|
+|8     |mb_design_auto_pc_6               |         1|
+|9     |mb_design_auto_pc_7               |         1|
+|10    |mb_design_auto_pc_8               |         1|
+|11    |mb_design_axi_dma_0_0             |         1|
+|12    |mb_design_axi_emc_0_0             |         1|
+|13    |mb_design_axi_gpio_0_0            |         1|
+|14    |mb_design_axi_gpio_3_0            |         1|
+|15    |mb_design_axi_gpio_2_0            |         1|
+|16    |mb_design_axi_gpio_1_0            |         1|
+|17    |mb_design_axi_timer_0_0           |         1|
+|18    |mb_design_axi_uartlite_0_0        |         1|
+|19    |mb_design_axis_data_fifo_0_0      |         1|
+|20    |mb_design_clk_wiz_1_0             |         1|
+|21    |mb_design_fit_timer_0_0           |         1|
+|22    |mb_design_mdm_1_0                 |         1|
+|23    |mb_design_microblaze_0_1          |         1|
+|24    |mb_design_microblaze_0_axi_intc_0 |         1|
+|25    |mb_design_rst_clk_wiz_1_100M_0    |         1|
+|26    |mb_design_dlmb_bram_if_cntlr_1    |         1|
+|27    |mb_design_dlmb_v10_1              |         1|
+|28    |mb_design_ilmb_bram_if_cntlr_1    |         1|
+|29    |mb_design_ilmb_v10_1              |         1|
+|30    |mb_design_lmb_bram_1              |         1|
++------+----------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------------------+------+
+|      |Cell                                      |Count |
++------+------------------------------------------+------+
+|1     |mb_design_auto_pc_0_bbox_14               |     1|
+|2     |mb_design_auto_pc_1_bbox_15               |     1|
+|3     |mb_design_auto_pc_2_bbox_16               |     1|
+|4     |mb_design_auto_pc_3_bbox_17               |     1|
+|5     |mb_design_auto_pc_4_bbox_18               |     1|
+|6     |mb_design_auto_pc_5_bbox_19               |     1|
+|7     |mb_design_auto_pc_6_bbox_20               |     1|
+|8     |mb_design_auto_pc_7_bbox_21               |     1|
+|9     |mb_design_auto_pc_8_bbox_22               |     1|
+|10    |mb_design_axi_dma_0_0_bbox_0              |     1|
+|11    |mb_design_axi_emc_0_0_bbox_1              |     1|
+|12    |mb_design_axi_gpio_0_0_bbox_2             |     1|
+|13    |mb_design_axi_gpio_1_0_bbox_5             |     1|
+|14    |mb_design_axi_gpio_2_0_bbox_4             |     1|
+|15    |mb_design_axi_gpio_3_0_bbox_3             |     1|
+|16    |mb_design_axi_timer_0_0_bbox_6            |     1|
+|17    |mb_design_axi_uartlite_0_0_bbox_7         |     1|
+|18    |mb_design_axis_data_fifo_0_0_bbox_8       |     1|
+|19    |mb_design_clk_wiz_1_0_bbox_9              |     1|
+|20    |mb_design_dlmb_bram_if_cntlr_1_bbox_24    |     1|
+|21    |mb_design_dlmb_v10_1_bbox_25              |     1|
+|22    |mb_design_fit_timer_0_0_bbox_10           |     1|
+|23    |mb_design_ilmb_bram_if_cntlr_1_bbox_26    |     1|
+|24    |mb_design_ilmb_v10_1_bbox_27              |     1|
+|25    |mb_design_lmb_bram_1_bbox_28              |     1|
+|26    |mb_design_mdm_1_0_bbox_11                 |     1|
+|27    |mb_design_microblaze_0_1_bbox_12          |     1|
+|28    |mb_design_microblaze_0_axi_intc_0_bbox_13 |     1|
+|29    |mb_design_rst_clk_wiz_1_100M_0_bbox_29    |     1|
+|30    |mb_design_xbar_0_bbox_23                  |     1|
+|31    |IBUF                                      |    24|
+|32    |IOBUF                                     |    48|
+|33    |OBUF                                      |    31|
++------+------------------------------------------+------+
+
+Report Instance Areas: 
++------+------------------------------+-------------------------------------+------+
+|      |Instance                      |Module                               |Cells |
++------+------------------------------+-------------------------------------+------+
+|1     |top                           |                                     |  4698|
+|2     |  mb_design_i                 |mb_design                            |  4595|
+|3     |    microblaze_0_axi_periph   |mb_design_microblaze_0_axi_periph_0  |  3043|
+|4     |      m00_couplers            |m00_couplers_imp_7XQVZK              |   153|
+|5     |      m01_couplers            |m01_couplers_imp_1KGGRVS             |   153|
+|6     |      m02_couplers            |m02_couplers_imp_SWOCXT              |   153|
+|7     |      m03_couplers            |m03_couplers_imp_1H7VOBD             |   153|
+|8     |      m04_couplers            |m04_couplers_imp_1W8QG7M             |   153|
+|9     |      m05_couplers            |m05_couplers_imp_9GBDFU              |   153|
+|10    |      m06_couplers            |m06_couplers_imp_ZVBXPF              |   153|
+|11    |      m08_couplers            |m08_couplers_imp_5W1MNP              |   153|
+|12    |      s00_couplers            |s00_couplers_imp_10TEBL8             |   205|
+|13    |    microblaze_0_xlconcat     |mb_design_microblaze_0_xlconcat_0    |     0|
+|14    |    microblaze_0_local_memory |microblaze_0_local_memory_imp_UIMIJC |   496|
++------+------------------------------+-------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 24 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:27 . Memory (MB): peak = 1036.340 ; gain = 322.680
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1036.340 ; gain = 401.094
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.113 . Memory (MB): peak = 1036.340 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 48 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1050.664 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 48 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 48 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+165 Infos, 103 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1050.664 ; gain = 729.504
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1050.664 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.runs/synth_1/mb_design_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mb_design_wrapper_utilization_synth.rpt -pb mb_design_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Wed May 27 17:39:03 2020...
