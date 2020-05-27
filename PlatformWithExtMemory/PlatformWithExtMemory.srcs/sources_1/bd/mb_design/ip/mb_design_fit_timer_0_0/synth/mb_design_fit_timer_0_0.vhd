@@ -85,7 +85,7 @@ ARCHITECTURE mb_design_fit_timer_0_0_arch OF mb_design_fit_timer_0_0 IS
   ATTRIBUTE CHECK_LICENSE_TYPE : STRING;
   ATTRIBUTE CHECK_LICENSE_TYPE OF mb_design_fit_timer_0_0_arch : ARCHITECTURE IS "mb_design_fit_timer_0_0,fit_timer,{}";
   ATTRIBUTE CORE_GENERATION_INFO : STRING;
-  ATTRIBUTE CORE_GENERATION_INFO OF mb_design_fit_timer_0_0_arch: ARCHITECTURE IS "mb_design_fit_timer_0_0,fit_timer,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=fit_timer,x_ipVersion=2.0,x_ipCoreRevision=10,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_NO_CLOCKS=100000,C_INACCURACY=0,C_EXT_RESET_HIGH=1}";
+  ATTRIBUTE CORE_GENERATION_INFO OF mb_design_fit_timer_0_0_arch: ARCHITECTURE IS "mb_design_fit_timer_0_0,fit_timer,{x_ipProduct=Vivado 2019.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=fit_timer,x_ipVersion=2.0,x_ipCoreRevision=10,x_ipLanguage=VHDL,x_ipSimLanguage=MIXED,C_FAMILY=artix7,C_NO_CLOCKS=125000,C_INACCURACY=0,C_EXT_RESET_HIGH=1}";
   ATTRIBUTE X_INTERFACE_INFO : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER : STRING;
   ATTRIBUTE X_INTERFACE_PARAMETER OF Interrupt: SIGNAL IS "XIL_INTERFACENAME INTERRUPT.Interrupt, SENSITIVITY LEVEL_HIGH, SUGGESTED_PRIORITY HIGH, PortWidth 1";
@@ -98,7 +98,7 @@ BEGIN
   U0 : fit_timer
     GENERIC MAP (
       C_FAMILY => "artix7",
-      C_NO_CLOCKS => 100000,
+      C_NO_CLOCKS => 125000,
       C_INACCURACY => 0,
       C_EXT_RESET_HIGH => 1
     )

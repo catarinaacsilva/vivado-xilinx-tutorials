@@ -2,17 +2,13 @@ vlib work
 vlib riviera
 
 vlib riviera/xpm
-vlib riviera/microblaze_v11_0_2
-vlib riviera/xil_defaultlib
-vlib riviera/lmb_v10_v3_0_10
-vlib riviera/lmb_bram_if_cntlr_v4_0_17
-vlib riviera/blk_mem_gen_v8_4_4
 vlib riviera/generic_baseblocks_v2_1_0
 vlib riviera/axi_infrastructure_v1_1_0
 vlib riviera/axi_register_slice_v2_1_20
 vlib riviera/fifo_generator_v13_2_5
 vlib riviera/axi_data_fifo_v2_1_19
 vlib riviera/axi_crossbar_v2_1_21
+vlib riviera/xil_defaultlib
 vlib riviera/axi_lite_ipif_v3_0_4
 vlib riviera/axi_intc_v4_1_14
 vlib riviera/xlconcat_v2_1_3
@@ -26,19 +22,22 @@ vlib riviera/lib_srl_fifo_v1_0_2
 vlib riviera/axi_uartlite_v2_0_24
 vlib riviera/axi_timer_v2_0_22
 vlib riviera/fit_timer_v2_0_10
+vlib riviera/emc_common_v3_0_5
+vlib riviera/axi_emc_v3_0_20
+vlib riviera/microblaze_v11_0_2
+vlib riviera/lmb_v10_v3_0_10
+vlib riviera/lmb_bram_if_cntlr_v4_0_17
+vlib riviera/blk_mem_gen_v8_4_4
+vlib riviera/axi_protocol_converter_v2_1_20
 
 vmap xpm riviera/xpm
-vmap microblaze_v11_0_2 riviera/microblaze_v11_0_2
-vmap xil_defaultlib riviera/xil_defaultlib
-vmap lmb_v10_v3_0_10 riviera/lmb_v10_v3_0_10
-vmap lmb_bram_if_cntlr_v4_0_17 riviera/lmb_bram_if_cntlr_v4_0_17
-vmap blk_mem_gen_v8_4_4 riviera/blk_mem_gen_v8_4_4
 vmap generic_baseblocks_v2_1_0 riviera/generic_baseblocks_v2_1_0
 vmap axi_infrastructure_v1_1_0 riviera/axi_infrastructure_v1_1_0
 vmap axi_register_slice_v2_1_20 riviera/axi_register_slice_v2_1_20
 vmap fifo_generator_v13_2_5 riviera/fifo_generator_v13_2_5
 vmap axi_data_fifo_v2_1_19 riviera/axi_data_fifo_v2_1_19
 vmap axi_crossbar_v2_1_21 riviera/axi_crossbar_v2_1_21
+vmap xil_defaultlib riviera/xil_defaultlib
 vmap axi_lite_ipif_v3_0_4 riviera/axi_lite_ipif_v3_0_4
 vmap axi_intc_v4_1_14 riviera/axi_intc_v4_1_14
 vmap xlconcat_v2_1_3 riviera/xlconcat_v2_1_3
@@ -52,6 +51,13 @@ vmap lib_srl_fifo_v1_0_2 riviera/lib_srl_fifo_v1_0_2
 vmap axi_uartlite_v2_0_24 riviera/axi_uartlite_v2_0_24
 vmap axi_timer_v2_0_22 riviera/axi_timer_v2_0_22
 vmap fit_timer_v2_0_10 riviera/fit_timer_v2_0_10
+vmap emc_common_v3_0_5 riviera/emc_common_v3_0_5
+vmap axi_emc_v3_0_20 riviera/axi_emc_v3_0_20
+vmap microblaze_v11_0_2 riviera/microblaze_v11_0_2
+vmap lmb_v10_v3_0_10 riviera/lmb_v10_v3_0_10
+vmap lmb_bram_if_cntlr_v4_0_17 riviera/lmb_bram_if_cntlr_v4_0_17
+vmap blk_mem_gen_v8_4_4 riviera/blk_mem_gen_v8_4_4
+vmap axi_protocol_converter_v2_1_20 riviera/axi_protocol_converter_v2_1_20
 
 vlog -work xpm  -sv2k12 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
 "C:/Xilinx/Vivado/2019.2/data/ip/xpm/xpm_cdc/hdl/xpm_cdc.sv" \
@@ -59,32 +65,6 @@ vlog -work xpm  -sv2k12 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_
 
 vcom -work xpm -93 \
 "C:/Xilinx/Vivado/2019.2/data/ip/xpm/xpm_VCOMP.vhd" \
-
-vcom -work microblaze_v11_0_2 -93 \
-"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/f871/hdl/microblaze_v11_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/mb_design/ip/mb_design_microblaze_0_0/sim/mb_design_microblaze_0_0.vhd" \
-
-vcom -work lmb_v10_v3_0_10 -93 \
-"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2e88/hdl/lmb_v10_v3_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/mb_design/ip/mb_design_dlmb_v10_0/sim/mb_design_dlmb_v10_0.vhd" \
-"../../../bd/mb_design/ip/mb_design_ilmb_v10_0/sim/mb_design_ilmb_v10_0.vhd" \
-
-vcom -work lmb_bram_if_cntlr_v4_0_17 -93 \
-"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/db6f/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd" \
-
-vcom -work xil_defaultlib -93 \
-"../../../bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_0/sim/mb_design_dlmb_bram_if_cntlr_0.vhd" \
-"../../../bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_0/sim/mb_design_ilmb_bram_if_cntlr_0.vhd" \
-
-vlog -work blk_mem_gen_v8_4_4  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
-"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
-
-vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
-"../../../bd/mb_design/ip/mb_design_lmb_bram_0/sim/mb_design_lmb_bram_0.v" \
 
 vlog -work generic_baseblocks_v2_1_0  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
 "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
@@ -183,6 +163,54 @@ vcom -work fit_timer_v2_0_10 -93 \
 vcom -work xil_defaultlib -93 \
 "../../../bd/mb_design/ip/mb_design_fit_timer_0_0/sim/mb_design_fit_timer_0_0.vhd" \
 "../../../bd/mb_design/sim/mb_design.vhd" \
+
+vcom -work emc_common_v3_0_5 -93 \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ea80/hdl/emc_common_v3_0_vh_rfs.vhd" \
+
+vcom -work axi_emc_v3_0_20 -93 \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/d985/hdl/axi_emc_v3_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/mb_design/ip/mb_design_axi_emc_0_0/sim/mb_design_axi_emc_0_0.vhd" \
+
+vcom -work microblaze_v11_0_2 -93 \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/f871/hdl/microblaze_v11_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/mb_design/ip/mb_design_microblaze_0_1/sim/mb_design_microblaze_0_1.vhd" \
+
+vcom -work lmb_v10_v3_0_10 -93 \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2e88/hdl/lmb_v10_v3_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/mb_design/ip/mb_design_dlmb_v10_1/sim/mb_design_dlmb_v10_1.vhd" \
+"../../../bd/mb_design/ip/mb_design_ilmb_v10_1/sim/mb_design_ilmb_v10_1.vhd" \
+
+vcom -work lmb_bram_if_cntlr_v4_0_17 -93 \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/db6f/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd" \
+
+vcom -work xil_defaultlib -93 \
+"../../../bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/sim/mb_design_dlmb_bram_if_cntlr_1.vhd" \
+"../../../bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/sim/mb_design_ilmb_bram_if_cntlr_1.vhd" \
+
+vlog -work blk_mem_gen_v8_4_4  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
+"../../../bd/mb_design/ip/mb_design_lmb_bram_1/sim/mb_design_lmb_bram_1.v" \
+
+vlog -work axi_protocol_converter_v2_1_20  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
+"../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+
+vlog -work xil_defaultlib  -v2k5 "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ec67/hdl" "+incdir+../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/4fba" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_7/sim/mb_design_auto_pc_7.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_0/sim/mb_design_auto_pc_0.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_1/sim/mb_design_auto_pc_1.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_2/sim/mb_design_auto_pc_2.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_3/sim/mb_design_auto_pc_3.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_4/sim/mb_design_auto_pc_4.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_5/sim/mb_design_auto_pc_5.v" \
+"../../../bd/mb_design/ip/mb_design_auto_pc_6/sim/mb_design_auto_pc_6.v" \
 
 vlog -work xil_defaultlib \
 "glbl.v"

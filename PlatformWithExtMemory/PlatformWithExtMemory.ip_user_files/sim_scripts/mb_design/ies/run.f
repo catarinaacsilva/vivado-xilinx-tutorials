@@ -5,32 +5,6 @@
 -makelib ies_lib/xpm \
   "C:/Xilinx/Vivado/2019.2/data/ip/xpm/xpm_VCOMP.vhd" \
 -endlib
--makelib ies_lib/microblaze_v11_0_2 \
-  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/f871/hdl/microblaze_v11_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/mb_design/ip/mb_design_microblaze_0_0/sim/mb_design_microblaze_0_0.vhd" \
--endlib
--makelib ies_lib/lmb_v10_v3_0_10 \
-  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2e88/hdl/lmb_v10_v3_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/mb_design/ip/mb_design_dlmb_v10_0/sim/mb_design_dlmb_v10_0.vhd" \
-  "../../../bd/mb_design/ip/mb_design_ilmb_v10_0/sim/mb_design_ilmb_v10_0.vhd" \
--endlib
--makelib ies_lib/lmb_bram_if_cntlr_v4_0_17 \
-  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/db6f/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_0/sim/mb_design_dlmb_bram_if_cntlr_0.vhd" \
-  "../../../bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_0/sim/mb_design_ilmb_bram_if_cntlr_0.vhd" \
--endlib
--makelib ies_lib/blk_mem_gen_v8_4_4 \
-  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
--endlib
--makelib ies_lib/xil_defaultlib \
-  "../../../bd/mb_design/ip/mb_design_lmb_bram_0/sim/mb_design_lmb_bram_0.v" \
--endlib
 -makelib ies_lib/generic_baseblocks_v2_1_0 \
   "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/b752/hdl/generic_baseblocks_v2_1_vl_rfs.v" \
 -endlib
@@ -128,6 +102,54 @@
 -makelib ies_lib/xil_defaultlib \
   "../../../bd/mb_design/ip/mb_design_fit_timer_0_0/sim/mb_design_fit_timer_0_0.vhd" \
   "../../../bd/mb_design/sim/mb_design.vhd" \
+-endlib
+-makelib ies_lib/emc_common_v3_0_5 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/ea80/hdl/emc_common_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/axi_emc_v3_0_20 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/d985/hdl/axi_emc_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_axi_emc_0_0/sim/mb_design_axi_emc_0_0.vhd" \
+-endlib
+-makelib ies_lib/microblaze_v11_0_2 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/f871/hdl/microblaze_v11_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_microblaze_0_1/sim/mb_design_microblaze_0_1.vhd" \
+-endlib
+-makelib ies_lib/lmb_v10_v3_0_10 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2e88/hdl/lmb_v10_v3_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_dlmb_v10_1/sim/mb_design_dlmb_v10_1.vhd" \
+  "../../../bd/mb_design/ip/mb_design_ilmb_v10_1/sim/mb_design_ilmb_v10_1.vhd" \
+-endlib
+-makelib ies_lib/lmb_bram_if_cntlr_v4_0_17 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/db6f/hdl/lmb_bram_if_cntlr_v4_0_vh_rfs.vhd" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_1/sim/mb_design_dlmb_bram_if_cntlr_1.vhd" \
+  "../../../bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_1/sim/mb_design_ilmb_bram_if_cntlr_1.vhd" \
+-endlib
+-makelib ies_lib/blk_mem_gen_v8_4_4 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/2985/simulation/blk_mem_gen_v8_4.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_lmb_bram_1/sim/mb_design_lmb_bram_1.v" \
+-endlib
+-makelib ies_lib/axi_protocol_converter_v2_1_20 \
+  "../../../../PlatformWithExtMemory.srcs/sources_1/bd/mb_design/ipshared/c4a6/hdl/axi_protocol_converter_v2_1_vl_rfs.v" \
+-endlib
+-makelib ies_lib/xil_defaultlib \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_7/sim/mb_design_auto_pc_7.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_0/sim/mb_design_auto_pc_0.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_1/sim/mb_design_auto_pc_1.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_2/sim/mb_design_auto_pc_2.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_3/sim/mb_design_auto_pc_3.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_4/sim/mb_design_auto_pc_4.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_5/sim/mb_design_auto_pc_5.v" \
+  "../../../bd/mb_design/ip/mb_design_auto_pc_6/sim/mb_design_auto_pc_6.v" \
 -endlib
 -makelib ies_lib/xil_defaultlib \
   glbl.v
