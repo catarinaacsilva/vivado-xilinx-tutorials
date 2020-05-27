@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DMADemo/DMADemo.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/dma/example1/DmaDemo/DmaDemo.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="9cf203ea055a46ffbee1cccbc3a2c126"/>
+    <Option Name="Id" Val="1387d336087f42b6b0ea7d67b2075edb"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
