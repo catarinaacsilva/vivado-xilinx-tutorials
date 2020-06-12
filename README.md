@@ -20,6 +20,26 @@ The idea is to learn more about that and provides some ways to implement project
 
 Each directory is a different project with new challenges.
 
+## Important steps when finish a project
+
+**On Vivado:**
+
+- Generate Output Products
+- Create HDL Wrapper
+- Synthesis
+- Implementation
+- Generate Bitstream
+- Export Hardware (Include bitstream)
+
+ 
+
+**On Vitis:**
+
+- Update Hardware Specification
+- Hardware platform build
+- Save all the files (.c, .ld, etc…)
+- Application build
+
 ## Notes
 
 - The XDC constraint file assigns the physical IO locations on FPGA to the pins located on the board. It is necessary, to each project, uncomment the lines corresponding to used pins. Sometimes, should be necessary rename the used ports (in each line, after get_ports) according to the top level signal names in the project.
