@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity PopulationCounter_v1_0_S00_AXIS is
+entity PopulationCounterCop_v1_0_S00_AXIS is
 	generic (
 		-- Users to add parameters here
       
@@ -36,9 +36,9 @@ entity PopulationCounter_v1_0_S00_AXIS is
 		-- Data is in valid
 		S_AXIS_TVALID	: in std_logic
 	);
-end PopulationCounter_v1_0_S00_AXIS;
+end PopulationCounterCop_v1_0_S00_AXIS;
 
-architecture arch_imp of PopulationCounter_v1_0_S00_AXIS is
+architecture arch_imp of PopulationCounterCop_v1_0_S00_AXIS is
 	component PopulationCount is
       generic(N    : positive := 4);
       port(dataIn  : in  std_logic_vector(N-1 downto 0);

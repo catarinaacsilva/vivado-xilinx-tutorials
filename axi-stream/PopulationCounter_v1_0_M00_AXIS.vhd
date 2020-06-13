@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity PopulationCounter_v1_0_M00_AXIS is
+entity PopulationCounterCop_v1_0_M00_AXIS is
 	generic (
 		-- Users to add parameters here
 		-- User parameters ends
@@ -36,9 +36,9 @@ entity PopulationCounter_v1_0_M00_AXIS is
 		-- TREADY indicates that the slave can accept a transfer in the current cycle.
 		M_AXIS_TREADY	: in std_logic
 	);
-end PopulationCounter_v1_0_M00_AXIS;
+end PopulationCounterCop_v1_0_M00_AXIS;
 
-architecture implementation of PopulationCounter_v1_0_M00_AXIS is
+architecture implementation of PopulationCounterCop_v1_0_M00_AXIS is
 
 begin
     M_AXIS_TVALID <= validData;
