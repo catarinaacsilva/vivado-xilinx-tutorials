@@ -6,6 +6,7 @@
   </configuration>
   <configuration name="Release" id="xilinx.gnu.mb.exe.release.173715682" dirty="true">
     <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
   </configuration>
   <template appTemplateName="hello_world"/>
 </sdkproject:SdkProject>
