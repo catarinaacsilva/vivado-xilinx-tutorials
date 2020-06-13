@@ -39,7 +39,8 @@
       "axi_uartlite_0": "",
       "axi_timer_0": "",
       "fit_timer_0": "",
-      "ReverseEndianessCop_0": ""
+      "ReverseEndianessCop_0": "",
+      "PopulationCountCop_0": ""
     },
     "interface_ports": {
       "push_buttons_5bits": {
@@ -105,7 +106,7 @@
             "value": "1"
           },
           "C_FSL_LINKS": {
-            "value": "1"
+            "value": "2"
           },
           "C_I_LMB": {
             "value": "1"
@@ -1186,6 +1187,10 @@
       "ReverseEndianessCop_0": {
         "vlnv": "xilinx.com:user:ReverseEndianessCop:1.0",
         "xci_name": "mb_design_ReverseEndianessCop_0_0"
+      },
+      "PopulationCountCop_0": {
+        "vlnv": "xilinx.com:user:PopulationCountCop:1.0",
+        "xci_name": "mb_design_PopulationCountCop_0_0"
       }
     },
     "interface_nets": {
@@ -1308,6 +1313,18 @@
           "microblaze_0_axi_periph/M04_AXI",
           "axi_gpio_switches/S_AXI"
         ]
+      },
+      "PopulationCountCop_0_M00_AXIS": {
+        "interface_ports": [
+          "PopulationCountCop_0/M00_AXIS",
+          "microblaze_0/S1_AXIS"
+        ]
+      },
+      "microblaze_0_M1_AXIS": {
+        "interface_ports": [
+          "PopulationCountCop_0/S00_AXIS",
+          "microblaze_0/M1_AXIS"
+        ]
       }
     },
     "nets": {
@@ -1342,7 +1359,9 @@
           "microblaze_0_axi_periph/M06_ACLK",
           "fit_timer_0/Clk",
           "ReverseEndianessCop_0/s00_axis_aclk",
-          "ReverseEndianessCop_0/m00_axis_aclk"
+          "ReverseEndianessCop_0/m00_axis_aclk",
+          "PopulationCountCop_0/m00_axis_aclk",
+          "PopulationCountCop_0/s00_axis_aclk"
         ]
       },
       "clk_wiz_1_locked": {
@@ -1384,7 +1403,9 @@
           "axi_uartlite_0/s_axi_aresetn",
           "microblaze_0_axi_periph/M06_ARESETN",
           "ReverseEndianessCop_0/s00_axis_aresetn",
-          "ReverseEndianessCop_0/m00_axis_aresetn"
+          "ReverseEndianessCop_0/m00_axis_aresetn",
+          "PopulationCountCop_0/m00_axis_aresetn",
+          "PopulationCountCop_0/s00_axis_aresetn"
         ]
       },
       "mdm_1_debug_sys_rst": {
