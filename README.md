@@ -31,7 +31,7 @@ Each directory is a different project with new challenges.
 - Generate Bitstream
 - Export Hardware (Include bitstream)
 
- 
+
 
 **On Vitis:**
 
