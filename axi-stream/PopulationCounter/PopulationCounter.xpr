@@ -3,10 +3,10 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/PopulationCountDemo/PopulationCountDemo.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/PopulationCounter/PopulationCounter.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="64ff6a7a122645809f9e2e3b6e1c6c49"/>
+    <Option Name="Id" Val="ef2af885186941c09c6d3ca89e978dd3"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -22,7 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/PopulationCountCop_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/PopulationCounterCop_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../timer-soft-hard/project/part1/ip_repo"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/ReverseEndianessCop_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>

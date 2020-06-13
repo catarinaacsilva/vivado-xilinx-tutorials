@@ -2,7 +2,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity PopulationCounter_v1_0 is
+entity PopulationCounterCop_v1_0 is
 	generic (
 		-- Users to add parameters here
 
@@ -42,12 +42,12 @@ entity PopulationCounter_v1_0 is
 		m00_axis_tlast	: out std_logic;
 		m00_axis_tready	: in std_logic
 	);
-end PopulationCounter_v1_0;
+end PopulationCounterCop_v1_0;
 
-architecture arch_imp of PopulationCounter_v1_0 is
+architecture arch_imp of PopulationCounterCop_v1_0 is
 
 	-- component declaration
-	component PopulationCounter_v1_0_S00_AXIS is
+	component PopulationCounterCop_v1_0_S00_AXIS is
 		generic (
 		C_S_AXIS_TDATA_WIDTH	: integer	:= 32
 		);
@@ -63,9 +63,9 @@ architecture arch_imp of PopulationCounter_v1_0 is
         popCounter      : out std_logic_vector(C_S_AXIS_TDATA_WIDTH-1 downto 0);
         readEnabled     : in  std_logic	
 		);
-	end component PopulationCounter_v1_0_S00_AXIS;
+	end component PopulationCounterCop_v1_0_S00_AXIS;
 
-	component PopulationCounter_v1_0_M00_AXIS is
+	component PopulationCounterCop_v1_0_M00_AXIS is
 		generic (
 		C_M_AXIS_TDATA_WIDTH	: integer	:= 32;
 		C_M_START_COUNT	: integer	:= 32
@@ -82,7 +82,7 @@ architecture arch_imp of PopulationCounter_v1_0 is
         popCounter      : in  std_logic_vector(C_M_AXIS_TDATA_WIDTH-1 downto 0);
         readEnabled     : out std_logic
 		);
-	end component PopulationCounter_v1_0_M00_AXIS;
+	end component PopulationCounterCop_v1_0_M00_AXIS;
     
     signal s_validData    : std_logic;
     signal s_popCounter   : std_logic_vector(C_M00_AXIS_TDATA_WIDTH-1 downto 0); 
@@ -91,7 +91,7 @@ architecture arch_imp of PopulationCounter_v1_0 is
 begin
 
 -- Instantiation of Axi Bus Interface S00_AXIS
-PopulationCounter_v1_0_S00_AXIS_inst : PopulationCounter_v1_0_S00_AXIS
+PopulationCounterCop_v1_0_S00_AXIS_inst : PopulationCounterCop_v1_0_S00_AXIS
 	generic map (
 		C_S_AXIS_TDATA_WIDTH	=> C_S00_AXIS_TDATA_WIDTH
 	)
@@ -109,7 +109,7 @@ PopulationCounter_v1_0_S00_AXIS_inst : PopulationCounter_v1_0_S00_AXIS
 	);
 
 -- Instantiation of Axi Bus Interface M00_AXIS
-PopulationCounter_v1_0_M00_AXIS_inst : PopulationCounter_v1_0_M00_AXIS
+PopulationCounterCop_v1_0_M00_AXIS_inst : PopulationCounterCop_v1_0_M00_AXIS
 	generic map (
 		C_M_AXIS_TDATA_WIDTH	=> C_M00_AXIS_TDATA_WIDTH,
 		C_M_START_COUNT	=> C_M00_AXIS_START_COUNT
