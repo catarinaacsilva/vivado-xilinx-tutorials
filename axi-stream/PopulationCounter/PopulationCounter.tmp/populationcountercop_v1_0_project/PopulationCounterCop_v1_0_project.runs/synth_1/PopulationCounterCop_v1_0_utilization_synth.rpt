@@ -1,13 +1,13 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Jun 14 00:41:46 2020
+| Date         : Sun Jun 14 11:30:03 2020
 | Host         : GreatAtuin running 64-bit major release  (build 9200)
-| Command      : report_utilization -file mb_design_PopulationCounterCop_0_0_utilization_synth.rpt -pb mb_design_PopulationCounterCop_0_0_utilization_synth.pb
-| Design       : mb_design_PopulationCounterCop_0_0
+| Command      : report_utilization -file PopulationCounterCop_v1_0_utilization_synth.rpt -pb PopulationCounterCop_v1_0_utilization_synth.pb
+| Design       : PopulationCounterCop_v1_0
 | Device       : 7a100tcsg324-1
 | Design State : Synthesized
----------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------
 
 Utilization Design Information
 
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    0 |     0 |       210 |  0.00 |
+| Bonded IOB                  |   75 |     0 |       210 | 35.71 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -112,7 +112,7 @@ Table of Contents
 +------------+------+-------+-----------+-------+
 |  Site Type | Used | Fixed | Available | Util% |
 +------------+------+-------+-----------+-------+
-| BUFGCTRL   |    0 |     0 |        32 |  0.00 |
+| BUFGCTRL   |    1 |     0 |        32 |  3.13 |
 | BUFIO      |    0 |     0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |         6 |  0.00 |
@@ -146,6 +146,8 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| OBUF     |   39 |                  IO |
+| IBUF     |   36 |                  IO |
 | LUT3     |   27 |                 LUT |
 | LUT5     |   19 |                 LUT |
 | LUT6     |    8 |                 LUT |
@@ -153,6 +155,7 @@ Table of Contents
 | LUT4     |    1 |                 LUT |
 | LUT2     |    1 |                 LUT |
 | LUT1     |    1 |                 LUT |
+| BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 
 
