@@ -4,7 +4,7 @@ This repository provides some project example or tutorials about use Vivado 2019
 
 The idea is to learn more about that and provides some ways to implement projects like this.
 
-
+Apply to Reconfigurable Computing.
 
 ## Requirements
 
@@ -20,6 +20,21 @@ The idea is to learn more about that and provides some ways to implement project
 
 Each directory is a different project with new challenges.
 
+- **initial_project**: First project with the Xilinx Vivado IDE and the Digilent Nexys 4 kit
+- **hardwareInferred**: Implementation of some simple examples just on hardware
+- **nexys4DispDriver**: Implementation of a module to control the 7-segment displays of the Digilent Nexys 4 kit
+- **timer-Hardware**: Implementation of countdown timer with countdown entirely in hardware
+- **timer-software**: Software implementation of a countdown timer
+- **timer-soft-hard**: Implementation in software and specialized hardware of a countdown timer
+- **rtos** : Software implementation to be performed on an RTOS and specialized hardware of a countdown timer
+- **axi-stream**: Implementation of specialized hardware coprocessors with AXI stream interfaces to accelerate "reverse endianess" and "population count" operations
+- **dma**: Use of DMA transfers between memory and a coprocessor / peripheral with AXI4 stream interface
+- **MultiClkDomainDemo**: Systems with multiple clock domains
+
+
+- **nexys4DefaultPlatform**: Auxiliar default platform
+- **PlatformWithExtMemory**: Auxiliar platform with external memory
+
 ## Important steps when finish a project
 
 **On Vivado:**
@@ -30,8 +45,6 @@ Each directory is a different project with new challenges.
 - Implementation
 - Generate Bitstream
 - Export Hardware (Include bitstream)
-
-
 
 **On Vitis:**
 
