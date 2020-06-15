@@ -1,0 +1,18 @@
+timestamp=[2020-06-09 12:12:25], mode=WORKBENCH_START, duration=0:00:07.695, duration_ms=7695, data={}
+timestamp=[2020-06-09 12:12:26], mode=WORKBENCH_UI_INIT, duration=0:00:01.245, duration_ms=1245, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2020-06-09 12:17:23], mode=WORKBENCH_START, duration=0:00:05.875, duration_ms=5875, data={}
+timestamp=[2020-06-09 12:17:25], mode=WORKBENCH_UI_INIT, duration=0:00:01.995, duration_ms=1995, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2020-06-09 12:31:32], mode=WORKBENCH_START, duration=0:00:07.212, duration_ms=7212, data={}
+timestamp=[2020-06-09 12:31:34], mode=WORKBENCH_UI_INIT, duration=0:00:01.699, duration_ms=1699, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2020-06-09 13:01:58], mode=WORKBENCH_START, duration=0:00:06.815, duration_ms=6815, data={}
+timestamp=[2020-06-09 13:01:59], mode=WORKBENCH_UI_INIT, duration=0:00:01.726, duration_ms=1726, data={editors_count=0, platform_editors_count=0, projects_count=1, platform_projects_count=0, active_platform_editor=false, projects=RemoteSystemsTempFiles}
+timestamp=[2020-06-09 13:02:52], mode=APP_CREATION, duration=0:00:19.431, duration_ms=19431, data={name=VGADMASwApp, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=mb_design_wrapper, application_type=application}
+timestamp=[2020-06-09 13:06:37], mode=PLATFORM_GENERATION, duration=0:00:14.545, duration_ms=14545, data={name=mb_design_wrapper}
+timestamp=[2020-06-09 13:34:07], mode=PLATFORM_GENERATION, duration=0:00:02.585, duration_ms=2585, data={name=mb_design_wrapper}
+timestamp=[2020-06-10 11:39:18], mode=WORKBENCH_START, duration=0:00:15.235, duration_ms=15235, data={}
+timestamp=[2020-06-10 11:39:20], mode=WORKBENCH_UI_INIT, duration=0:00:02.059, duration_ms=2059, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=RemoteSystemsTempFiles,VGADMASwApp,VGADMASwApp_system,mb_design_wrapper}
+timestamp=[2020-06-10 11:40:25], mode=PLATFORM_GENERATION, duration=0:00:03.751, duration_ms=3751, data={name=mb_design_wrapper}
+timestamp=[2020-06-10 12:00:13], mode=PLATFORM_GENERATION, duration=0:00:03.503, duration_ms=3503, data={name=mb_design_wrapper}
+timestamp=[2020-06-10 12:05:20], mode=PLATFORM_GENERATION, duration=0:00:02.680, duration_ms=2680, data={name=mb_design_wrapper}
+timestamp=[2020-06-10 12:05:41], mode=PLATFORM_GENERATION, duration=0:00:14.973, duration_ms=14973, data={name=mb_design_wrapper}
+timestamp=[2020-06-10 12:06:03], mode=PLATFORM_GENERATION, duration=0:00:02.303, duration_ms=2303, data={name=mb_design_wrapper}

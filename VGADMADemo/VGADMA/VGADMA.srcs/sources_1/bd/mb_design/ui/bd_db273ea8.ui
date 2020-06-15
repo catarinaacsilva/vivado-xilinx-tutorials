@@ -1,0 +1,114 @@
+{
+   "ActiveEmotionalView":"Default View",
+   "Color Coded_ScaleFactor":"0.387692",
+   "Color Coded_TopLeft":"-248,0",
+   "Default View_ScaleFactor":"0.336",
+   "Default View_TopLeft":"-426,0",
+   "Display-PortTypeClock":"true",
+   "Display-PortTypeInterrupt":"true",
+   "Display-PortTypeOthers":"true",
+   "Display-PortTypeReset":"true",
+   "ExpandedHierarchyInLayout":"",
+   "Grouping and No Loops_ScaleFactor":"0.406452",
+   "Grouping and No Loops_TopLeft":"-153,0",
+   "Interfaces View_Layers":"/reset_1:false|/rst_clk_wiz_1_100M_bus_struct_reset:false|/microblaze_0_Clk:false|/sys_clock_1:false|/rst_clk_wiz_1_100M_mb_reset:false|/axi_gpio_buttons_ip2intc_irpt:false|/rst_clk_wiz_1_100M_peripheral_aresetn:false|/rst_clk_wiz_1_100M_peripheral_reset:false|/axi_gpio_switches_ip2intc_irpt:false|/axi_uartlite_0_interrupt:false|/mdm_1_debug_sys_rst:false|/fit_timer_0_Interrupt:false|/axi_timer_0_interrupt:false|",
+   "Interfaces View_ScaleFactor":"0.681081",
+   "Interfaces View_TopLeft":"-22,0",
+   "No Loops_ScaleFactor":"0.4",
+   "No Loops_TopLeft":"-198,0",
+   "Reduced Jogs_Layers":"/reset_1:true|/rst_clk_wiz_1_100M_bus_struct_reset:true|/microblaze_0_Clk:true|/sys_clock_1:true|/rst_clk_wiz_1_100M_mb_reset:true|/axi_gpio_buttons_ip2intc_irpt:true|/rst_clk_wiz_1_100M_peripheral_aresetn:true|/rst_clk_wiz_1_100M_peripheral_reset:true|/axi_gpio_switches_ip2intc_irpt:true|/axi_uartlite_0_interrupt:true|/mdm_1_debug_sys_rst:true|/fit_timer_0_Interrupt:true|/axi_timer_0_interrupt:true|",
+   "Reduced Jogs_ScaleFactor":"0.357447",
+   "Reduced Jogs_TopLeft":"-772,0",
+   "guistr":"# # String gsaved with Nlview 7.0.21  2019-05-29 bk=1.5064 VDI=41 GEI=36 GUI=JA:9.0 non-TLS
+#  -string -flagsOSRD
+preplace port push_buttons_5bits -pg 1 -lvl 9 -x 2690 -y 510 -defaultsOSRD
+preplace port seven_seg_led_an -pg 1 -lvl 9 -x 2690 -y 70 -defaultsOSRD
+preplace port led_16bits -pg 1 -lvl 9 -x 2690 -y 220 -defaultsOSRD
+preplace port dip_switches_16bits -pg 1 -lvl 9 -x 2690 -y 670 -defaultsOSRD
+preplace port usb_uart -pg 1 -lvl 9 -x 2690 -y 1040 -defaultsOSRD
+preplace port dual_seven_seg_led_disp -pg 1 -lvl 9 -x 2690 -y 90 -defaultsOSRD
+preplace port cellular_ram -pg 1 -lvl 9 -x 2690 -y 370 -defaultsOSRD
+preplace port reset -pg 1 -lvl 0 -x 0 -y 1290 -defaultsOSRD
+preplace port sys_clock -pg 1 -lvl 0 -x 0 -y 1380 -defaultsOSRD
+preplace port Hsync -pg 1 -lvl 9 -x 2690 -y 1250 -defaultsOSRD
+preplace port Vsync -pg 1 -lvl 9 -x 2690 -y 1270 -defaultsOSRD
+preplace portBus vgaRed -pg 1 -lvl 9 -x 2690 -y 1190 -defaultsOSRD
+preplace portBus vgaGreen -pg 1 -lvl 9 -x 2690 -y 1210 -defaultsOSRD
+preplace portBus vgaBlue -pg 1 -lvl 9 -x 2690 -y 1230 -defaultsOSRD
+preplace inst microblaze_0_axi_periph -pg 1 -lvl 7 -x 2120 -y 590 -defaultsOSRD
+preplace inst microblaze_0_axi_intc -pg 1 -lvl 5 -x 1220 -y 1070 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 26 25 23 24} -defaultsOSRD
+preplace inst microblaze_0_xlconcat -pg 1 -lvl 4 -x 940 -y 880 -defaultsOSRD
+preplace inst mdm_1 -pg 1 -lvl 5 -x 1220 -y 1270 -defaultsOSRD
+preplace inst clk_wiz_1 -pg 1 -lvl 1 -x 110 -y 1370 -defaultsOSRD
+preplace inst rst_clk_wiz_1_100M -pg 1 -lvl 2 -x 400 -y 1260 -swap {2 0 1 3 4 7 9 6 5 8} -defaultsOSRD
+preplace inst axi_gpio_buttons -pg 1 -lvl 8 -x 2520 -y 520 -defaultsOSRD
+preplace inst axi_gpio_switches -pg 1 -lvl 8 -x 2520 -y 680 -defaultsOSRD
+preplace inst axi_gpio_leds -pg 1 -lvl 8 -x 2520 -y 220 -defaultsOSRD
+preplace inst axi_gpio_display -pg 1 -lvl 8 -x 2520 -y 80 -defaultsOSRD
+preplace inst axi_uartlite_0 -pg 1 -lvl 8 -x 2520 -y 1050 -defaultsOSRD
+preplace inst axi_timer_0 -pg 1 -lvl 8 -x 2520 -y 850 -defaultsOSRD
+preplace inst fit_timer_0 -pg 1 -lvl 3 -x 700 -y 1120 -defaultsOSRD
+preplace inst axi_emc_0 -pg 1 -lvl 8 -x 2520 -y 370 -swap {0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 52 51} -defaultsOSRD
+preplace inst microblaze_0 -pg 1 -lvl 6 -x 1630 -y 860 -defaultsOSRD
+preplace inst microblaze_0_local_memory -pg 1 -lvl 7 -x 2120 -y 1060 -defaultsOSRD
+preplace inst axis_data_fifo_0 -pg 1 -lvl 7 -x 2120 -y 1210 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 7 -x 2120 -y 1400 -defaultsOSRD
+preplace inst axi_dma_0 -pg 1 -lvl 6 -x 1630 -y 1090 -defaultsOSRD
+preplace inst VGAController_0 -pg 1 -lvl 8 -x 2520 -y 1230 -defaultsOSRD
+preplace netloc microblaze_0_intr 1 4 1 1050 880n
+preplace netloc clk_wiz_1_locked 1 1 6 210 1440 NJ 1440 NJ 1440 NJ 1440 NJ 1440 NJ
+preplace netloc rst_clk_wiz_1_100M_mb_reset 1 2 4 590J 1050 NJ 1050 1070 890 N
+preplace netloc mdm_1_debug_sys_rst 1 1 5 220 1150 610J 1190 NJ 1190 NJ 1190 1340
+preplace netloc reset_1 1 0 7 20 1220 210 1160 570J 1200 NJ 1200 NJ 1200 NJ 1200 1880J
+preplace netloc sys_clock_1 1 0 1 NJ 1380
+preplace netloc rst_clk_wiz_1_100M_peripheral_reset 1 2 1 600 1130n
+preplace netloc fit_timer_0_Interrupt 1 3 1 790 830n
+preplace netloc axi_timer_0_interrupt 1 3 6 800 1010 1080J 960 1350J 970 NJ 970 NJ 970 2660
+preplace netloc axi_gpio_switches_ip2intc_irpt 1 3 6 830 1000 1060J 950 NJ 950 NJ 950 2300J 960 2670
+preplace netloc axi_gpio_buttons_ip2intc_irpt 1 3 6 810 240 NJ 240 NJ 240 NJ 240 2350J 600 2670
+preplace netloc axi_uartlite_0_interrupt 1 3 6 820 760 NJ 760 NJ 760 1900J 900 2290J 1130 2660
+preplace netloc rst_clk_wiz_1_100M_bus_struct_reset 1 2 5 580J 770 NJ 770 NJ 770 NJ 770 1940
+preplace netloc clk_wiz_1_vga_clk 1 1 7 NJ 1370 NJ 1370 NJ 1370 NJ 1370 NJ 1370 1930 1300 2320
+preplace netloc clk_wiz_1_core_clk 1 1 7 200 1110 610 1040 NJ 1040 1090 930 1380 980 1950 280 2360
+preplace netloc rst_clk_wiz_1_100M_peripheral_aresetn 1 2 6 NJ 1280 810J 1180 1070 1180 1390 1180 1920 250 2370
+preplace netloc axi_dma_0_mm2s_introut 1 3 4 840 990 1040J 940 1370J 960 1870
+preplace netloc VGAController_0_vgaRed 1 8 1 NJ 1190
+preplace netloc VGAController_0_vgaGreen 1 8 1 NJ 1210
+preplace netloc VGAController_0_vgaBlue 1 8 1 NJ 1230
+preplace netloc VGAController_0_Hsync 1 8 1 NJ 1250
+preplace netloc VGAController_0_Vsync 1 8 1 NJ 1270
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 7 1 2370 1250n
+preplace netloc microblaze_0_axi_periph_M01_AXI 1 7 1 2330 500n
+preplace netloc axi_dma_0_M_AXI_MM2S 1 6 1 1910 360n
+preplace netloc axi_dma_0_M_AXIS_MM2S 1 6 1 1930 1080n
+preplace netloc microblaze_0_interrupt 1 5 1 1340 830n
+preplace netloc microblaze_0_debug 1 5 1 1360 850n
+preplace netloc axi_uartlite_0_UART 1 8 1 NJ 1040
+preplace netloc microblaze_0_axi_periph_M08_AXI 1 5 3 1390 260 NJ 260 2300
+preplace netloc axi_gpio_display_GPIO2 1 8 1 NJ 90
+preplace netloc microblaze_0_axi_periph_M02_AXI 1 7 1 2310 60n
+preplace netloc axi_gpio_leds_GPIO 1 8 1 NJ 220
+preplace netloc microblaze_0_axi_periph_M05_AXI 1 7 1 2350 610n
+preplace netloc axi_gpio_display_GPIO 1 8 1 NJ 70
+preplace netloc axi_gpio_buttons_GPIO 1 8 1 NJ 510
+preplace netloc microblaze_0_axi_periph_M03_AXI 1 7 1 2320 200n
+preplace netloc microblaze_0_axi_periph_M07_AXI 1 7 1 2340 340n
+preplace netloc axi_gpio_switches_GPIO 1 8 1 NJ 670
+preplace netloc microblaze_0_ilmb_1 1 6 1 1890 860n
+preplace netloc axi_emc_0_EMC_INTF 1 8 1 NJ 370
+preplace netloc microblaze_0_axi_dp 1 6 1 1870 340n
+preplace netloc microblaze_0_axi_periph_M04_AXI 1 7 1 2380 590n
+preplace netloc microblaze_0_axi_periph_M06_AXI 1 7 1 2320 630n
+preplace netloc microblaze_0_dlmb_1 1 6 1 1880 840n
+preplace netloc microblaze_0_intc_axi 1 4 4 1100 270 NJ 270 NJ 270 2290
+preplace netloc axis_data_fifo_0_M_AXIS 1 7 1 N 1210
+levelinfo -pg 1 0 110 400 700 940 1220 1630 2120 2520 2690
+pagesize -pg 1 -db -bbox -sgen -120 0 2910 1500
+"
+}
+{
+   "da_axi4_cnt":"15",
+   "da_board_cnt":"12",
+   "da_clkrst_cnt":"121",
+   "da_mb_cnt":"2"
+}
