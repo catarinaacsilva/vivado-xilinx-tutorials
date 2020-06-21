@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Sun Jun 21 19:26:15 2020
+--Date        : Sun Jun 21 19:40:11 2020
 --Host        : GreatAtuin running 64-bit major release  (build 9200)
 --Command     : generate_target mb_design_wrapper.bd
 --Design      : mb_design_wrapper
@@ -16,12 +16,10 @@ entity mb_design_wrapper is
     an : out STD_LOGIC_VECTOR ( 7 downto 0 );
     dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     dp : out STD_LOGIC;
-    dual_seven_seg_led_disp_tri_io : inout STD_LOGIC_VECTOR ( 7 downto 0 );
     led_16bits_tri_io : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     reset : in STD_LOGIC;
     seg : out STD_LOGIC_VECTOR ( 6 downto 0 );
-    seven_seg_led_an_tri_io : inout STD_LOGIC_VECTOR ( 7 downto 0 );
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC
@@ -33,14 +31,8 @@ architecture STRUCTURE of mb_design_wrapper is
   port (
     reset : in STD_LOGIC;
     sys_clock : in STD_LOGIC;
-    dual_seven_seg_led_disp_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    dual_seven_seg_led_disp_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    dual_seven_seg_led_disp_tri_t : out STD_LOGIC_VECTOR ( 7 downto 0 );
     push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
-    seven_seg_led_an_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
-    seven_seg_led_an_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
-    seven_seg_led_an_tri_t : out STD_LOGIC_VECTOR ( 7 downto 0 );
     usb_uart_rxd : in STD_LOGIC;
     usb_uart_txd : out STD_LOGIC;
     led_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
@@ -59,38 +51,6 @@ architecture STRUCTURE of mb_design_wrapper is
     IO : inout STD_LOGIC
   );
   end component IOBUF;
-  signal dual_seven_seg_led_disp_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal dual_seven_seg_led_disp_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal dual_seven_seg_led_disp_tri_i_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal dual_seven_seg_led_disp_tri_i_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal dual_seven_seg_led_disp_tri_i_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal dual_seven_seg_led_disp_tri_i_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal dual_seven_seg_led_disp_tri_i_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal dual_seven_seg_led_disp_tri_i_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal dual_seven_seg_led_disp_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal dual_seven_seg_led_disp_tri_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal dual_seven_seg_led_disp_tri_io_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal dual_seven_seg_led_disp_tri_io_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal dual_seven_seg_led_disp_tri_io_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal dual_seven_seg_led_disp_tri_io_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal dual_seven_seg_led_disp_tri_io_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal dual_seven_seg_led_disp_tri_io_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal dual_seven_seg_led_disp_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal dual_seven_seg_led_disp_tri_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal dual_seven_seg_led_disp_tri_o_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal dual_seven_seg_led_disp_tri_o_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal dual_seven_seg_led_disp_tri_o_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal dual_seven_seg_led_disp_tri_o_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal dual_seven_seg_led_disp_tri_o_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal dual_seven_seg_led_disp_tri_o_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal dual_seven_seg_led_disp_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal dual_seven_seg_led_disp_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal dual_seven_seg_led_disp_tri_t_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal dual_seven_seg_led_disp_tri_t_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal dual_seven_seg_led_disp_tri_t_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal dual_seven_seg_led_disp_tri_t_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal dual_seven_seg_led_disp_tri_t_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal dual_seven_seg_led_disp_tri_t_7 : STD_LOGIC_VECTOR ( 7 to 7 );
   signal led_16bits_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
   signal led_16bits_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
   signal led_16bits_tri_i_10 : STD_LOGIC_VECTOR ( 10 to 10 );
@@ -155,95 +115,7 @@ architecture STRUCTURE of mb_design_wrapper is
   signal led_16bits_tri_t_7 : STD_LOGIC_VECTOR ( 7 to 7 );
   signal led_16bits_tri_t_8 : STD_LOGIC_VECTOR ( 8 to 8 );
   signal led_16bits_tri_t_9 : STD_LOGIC_VECTOR ( 9 to 9 );
-  signal seven_seg_led_an_tri_i_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal seven_seg_led_an_tri_i_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal seven_seg_led_an_tri_i_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal seven_seg_led_an_tri_i_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal seven_seg_led_an_tri_i_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal seven_seg_led_an_tri_i_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal seven_seg_led_an_tri_i_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal seven_seg_led_an_tri_i_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal seven_seg_led_an_tri_io_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal seven_seg_led_an_tri_io_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal seven_seg_led_an_tri_io_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal seven_seg_led_an_tri_io_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal seven_seg_led_an_tri_io_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal seven_seg_led_an_tri_io_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal seven_seg_led_an_tri_io_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal seven_seg_led_an_tri_io_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal seven_seg_led_an_tri_o_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal seven_seg_led_an_tri_o_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal seven_seg_led_an_tri_o_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal seven_seg_led_an_tri_o_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal seven_seg_led_an_tri_o_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal seven_seg_led_an_tri_o_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal seven_seg_led_an_tri_o_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal seven_seg_led_an_tri_o_7 : STD_LOGIC_VECTOR ( 7 to 7 );
-  signal seven_seg_led_an_tri_t_0 : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal seven_seg_led_an_tri_t_1 : STD_LOGIC_VECTOR ( 1 to 1 );
-  signal seven_seg_led_an_tri_t_2 : STD_LOGIC_VECTOR ( 2 to 2 );
-  signal seven_seg_led_an_tri_t_3 : STD_LOGIC_VECTOR ( 3 to 3 );
-  signal seven_seg_led_an_tri_t_4 : STD_LOGIC_VECTOR ( 4 to 4 );
-  signal seven_seg_led_an_tri_t_5 : STD_LOGIC_VECTOR ( 5 to 5 );
-  signal seven_seg_led_an_tri_t_6 : STD_LOGIC_VECTOR ( 6 to 6 );
-  signal seven_seg_led_an_tri_t_7 : STD_LOGIC_VECTOR ( 7 to 7 );
 begin
-dual_seven_seg_led_disp_tri_iobuf_0: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_0(0),
-      IO => dual_seven_seg_led_disp_tri_io(0),
-      O => dual_seven_seg_led_disp_tri_i_0(0),
-      T => dual_seven_seg_led_disp_tri_t_0(0)
-    );
-dual_seven_seg_led_disp_tri_iobuf_1: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_1(1),
-      IO => dual_seven_seg_led_disp_tri_io(1),
-      O => dual_seven_seg_led_disp_tri_i_1(1),
-      T => dual_seven_seg_led_disp_tri_t_1(1)
-    );
-dual_seven_seg_led_disp_tri_iobuf_2: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_2(2),
-      IO => dual_seven_seg_led_disp_tri_io(2),
-      O => dual_seven_seg_led_disp_tri_i_2(2),
-      T => dual_seven_seg_led_disp_tri_t_2(2)
-    );
-dual_seven_seg_led_disp_tri_iobuf_3: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_3(3),
-      IO => dual_seven_seg_led_disp_tri_io(3),
-      O => dual_seven_seg_led_disp_tri_i_3(3),
-      T => dual_seven_seg_led_disp_tri_t_3(3)
-    );
-dual_seven_seg_led_disp_tri_iobuf_4: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_4(4),
-      IO => dual_seven_seg_led_disp_tri_io(4),
-      O => dual_seven_seg_led_disp_tri_i_4(4),
-      T => dual_seven_seg_led_disp_tri_t_4(4)
-    );
-dual_seven_seg_led_disp_tri_iobuf_5: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_5(5),
-      IO => dual_seven_seg_led_disp_tri_io(5),
-      O => dual_seven_seg_led_disp_tri_i_5(5),
-      T => dual_seven_seg_led_disp_tri_t_5(5)
-    );
-dual_seven_seg_led_disp_tri_iobuf_6: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_6(6),
-      IO => dual_seven_seg_led_disp_tri_io(6),
-      O => dual_seven_seg_led_disp_tri_i_6(6),
-      T => dual_seven_seg_led_disp_tri_t_6(6)
-    );
-dual_seven_seg_led_disp_tri_iobuf_7: component IOBUF
-     port map (
-      I => dual_seven_seg_led_disp_tri_o_7(7),
-      IO => dual_seven_seg_led_disp_tri_io(7),
-      O => dual_seven_seg_led_disp_tri_i_7(7),
-      T => dual_seven_seg_led_disp_tri_t_7(7)
-    );
 led_16bits_tri_iobuf_0: component IOBUF
      port map (
       I => led_16bits_tri_o_0(0),
@@ -361,30 +233,6 @@ mb_design_i: component mb_design
       an(7 downto 0) => an(7 downto 0),
       dip_switches_16bits_tri_i(15 downto 0) => dip_switches_16bits_tri_i(15 downto 0),
       dp => dp,
-      dual_seven_seg_led_disp_tri_i(7) => dual_seven_seg_led_disp_tri_i_7(7),
-      dual_seven_seg_led_disp_tri_i(6) => dual_seven_seg_led_disp_tri_i_6(6),
-      dual_seven_seg_led_disp_tri_i(5) => dual_seven_seg_led_disp_tri_i_5(5),
-      dual_seven_seg_led_disp_tri_i(4) => dual_seven_seg_led_disp_tri_i_4(4),
-      dual_seven_seg_led_disp_tri_i(3) => dual_seven_seg_led_disp_tri_i_3(3),
-      dual_seven_seg_led_disp_tri_i(2) => dual_seven_seg_led_disp_tri_i_2(2),
-      dual_seven_seg_led_disp_tri_i(1) => dual_seven_seg_led_disp_tri_i_1(1),
-      dual_seven_seg_led_disp_tri_i(0) => dual_seven_seg_led_disp_tri_i_0(0),
-      dual_seven_seg_led_disp_tri_o(7) => dual_seven_seg_led_disp_tri_o_7(7),
-      dual_seven_seg_led_disp_tri_o(6) => dual_seven_seg_led_disp_tri_o_6(6),
-      dual_seven_seg_led_disp_tri_o(5) => dual_seven_seg_led_disp_tri_o_5(5),
-      dual_seven_seg_led_disp_tri_o(4) => dual_seven_seg_led_disp_tri_o_4(4),
-      dual_seven_seg_led_disp_tri_o(3) => dual_seven_seg_led_disp_tri_o_3(3),
-      dual_seven_seg_led_disp_tri_o(2) => dual_seven_seg_led_disp_tri_o_2(2),
-      dual_seven_seg_led_disp_tri_o(1) => dual_seven_seg_led_disp_tri_o_1(1),
-      dual_seven_seg_led_disp_tri_o(0) => dual_seven_seg_led_disp_tri_o_0(0),
-      dual_seven_seg_led_disp_tri_t(7) => dual_seven_seg_led_disp_tri_t_7(7),
-      dual_seven_seg_led_disp_tri_t(6) => dual_seven_seg_led_disp_tri_t_6(6),
-      dual_seven_seg_led_disp_tri_t(5) => dual_seven_seg_led_disp_tri_t_5(5),
-      dual_seven_seg_led_disp_tri_t(4) => dual_seven_seg_led_disp_tri_t_4(4),
-      dual_seven_seg_led_disp_tri_t(3) => dual_seven_seg_led_disp_tri_t_3(3),
-      dual_seven_seg_led_disp_tri_t(2) => dual_seven_seg_led_disp_tri_t_2(2),
-      dual_seven_seg_led_disp_tri_t(1) => dual_seven_seg_led_disp_tri_t_1(1),
-      dual_seven_seg_led_disp_tri_t(0) => dual_seven_seg_led_disp_tri_t_0(0),
       led_16bits_tri_i(15) => led_16bits_tri_i_15(15),
       led_16bits_tri_i(14) => led_16bits_tri_i_14(14),
       led_16bits_tri_i(13) => led_16bits_tri_i_13(13),
@@ -436,88 +284,8 @@ mb_design_i: component mb_design
       push_buttons_5bits_tri_i(4 downto 0) => push_buttons_5bits_tri_i(4 downto 0),
       reset => reset,
       seg(6 downto 0) => seg(6 downto 0),
-      seven_seg_led_an_tri_i(7) => seven_seg_led_an_tri_i_7(7),
-      seven_seg_led_an_tri_i(6) => seven_seg_led_an_tri_i_6(6),
-      seven_seg_led_an_tri_i(5) => seven_seg_led_an_tri_i_5(5),
-      seven_seg_led_an_tri_i(4) => seven_seg_led_an_tri_i_4(4),
-      seven_seg_led_an_tri_i(3) => seven_seg_led_an_tri_i_3(3),
-      seven_seg_led_an_tri_i(2) => seven_seg_led_an_tri_i_2(2),
-      seven_seg_led_an_tri_i(1) => seven_seg_led_an_tri_i_1(1),
-      seven_seg_led_an_tri_i(0) => seven_seg_led_an_tri_i_0(0),
-      seven_seg_led_an_tri_o(7) => seven_seg_led_an_tri_o_7(7),
-      seven_seg_led_an_tri_o(6) => seven_seg_led_an_tri_o_6(6),
-      seven_seg_led_an_tri_o(5) => seven_seg_led_an_tri_o_5(5),
-      seven_seg_led_an_tri_o(4) => seven_seg_led_an_tri_o_4(4),
-      seven_seg_led_an_tri_o(3) => seven_seg_led_an_tri_o_3(3),
-      seven_seg_led_an_tri_o(2) => seven_seg_led_an_tri_o_2(2),
-      seven_seg_led_an_tri_o(1) => seven_seg_led_an_tri_o_1(1),
-      seven_seg_led_an_tri_o(0) => seven_seg_led_an_tri_o_0(0),
-      seven_seg_led_an_tri_t(7) => seven_seg_led_an_tri_t_7(7),
-      seven_seg_led_an_tri_t(6) => seven_seg_led_an_tri_t_6(6),
-      seven_seg_led_an_tri_t(5) => seven_seg_led_an_tri_t_5(5),
-      seven_seg_led_an_tri_t(4) => seven_seg_led_an_tri_t_4(4),
-      seven_seg_led_an_tri_t(3) => seven_seg_led_an_tri_t_3(3),
-      seven_seg_led_an_tri_t(2) => seven_seg_led_an_tri_t_2(2),
-      seven_seg_led_an_tri_t(1) => seven_seg_led_an_tri_t_1(1),
-      seven_seg_led_an_tri_t(0) => seven_seg_led_an_tri_t_0(0),
       sys_clock => sys_clock,
       usb_uart_rxd => usb_uart_rxd,
       usb_uart_txd => usb_uart_txd
-    );
-seven_seg_led_an_tri_iobuf_0: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_0(0),
-      IO => seven_seg_led_an_tri_io(0),
-      O => seven_seg_led_an_tri_i_0(0),
-      T => seven_seg_led_an_tri_t_0(0)
-    );
-seven_seg_led_an_tri_iobuf_1: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_1(1),
-      IO => seven_seg_led_an_tri_io(1),
-      O => seven_seg_led_an_tri_i_1(1),
-      T => seven_seg_led_an_tri_t_1(1)
-    );
-seven_seg_led_an_tri_iobuf_2: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_2(2),
-      IO => seven_seg_led_an_tri_io(2),
-      O => seven_seg_led_an_tri_i_2(2),
-      T => seven_seg_led_an_tri_t_2(2)
-    );
-seven_seg_led_an_tri_iobuf_3: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_3(3),
-      IO => seven_seg_led_an_tri_io(3),
-      O => seven_seg_led_an_tri_i_3(3),
-      T => seven_seg_led_an_tri_t_3(3)
-    );
-seven_seg_led_an_tri_iobuf_4: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_4(4),
-      IO => seven_seg_led_an_tri_io(4),
-      O => seven_seg_led_an_tri_i_4(4),
-      T => seven_seg_led_an_tri_t_4(4)
-    );
-seven_seg_led_an_tri_iobuf_5: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_5(5),
-      IO => seven_seg_led_an_tri_io(5),
-      O => seven_seg_led_an_tri_i_5(5),
-      T => seven_seg_led_an_tri_t_5(5)
-    );
-seven_seg_led_an_tri_iobuf_6: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_6(6),
-      IO => seven_seg_led_an_tri_io(6),
-      O => seven_seg_led_an_tri_i_6(6),
-      T => seven_seg_led_an_tri_t_6(6)
-    );
-seven_seg_led_an_tri_iobuf_7: component IOBUF
-     port map (
-      I => seven_seg_led_an_tri_o_7(7),
-      IO => seven_seg_led_an_tri_io(7),
-      O => seven_seg_led_an_tri_i_7(7),
-      T => seven_seg_led_an_tri_t_7(7)
     );
 end STRUCTURE;

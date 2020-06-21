@@ -6,7 +6,7 @@
 <Project Version="7" Minor="44" Path="c:/users/catar/desktop/git/vivado-xilinx-tutorials/timer-soft-hard/project/part1/customtimerdemo/customtimerdemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
-    <Option Name="Id" Val="fed0dfe292a244b399c0296af56f97d3"/>
+    <Option Name="Id" Val="fafebb83abc44408bc5bdd98c3c5ba82"/>
     <Option Name="Part" Val="xc7a100tcsg324-1"/>
     <Option Name="CompiledLibDir" Val="$PCACHEDIR/compile_simlib"/>
     <Option Name="CompiledLibDirXSim" Val=""/>
@@ -61,20 +61,6 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PPRDIR/../../../../../../../../../../../Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo/Nexys4DisplayPort_1.0/src/Nexys4DispDriver.vhd">
-        <FileInfo>
-          <Attr Name="Library" Val=""/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PPRDIR/../../../../../../../../../../../Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd">
-        <FileInfo>
-          <Attr Name="Library" Val=""/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PPRDIR/../../../../../../../../../../../Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0.vhd">
         <FileInfo>
           <Attr Name="Library" Val=""/>

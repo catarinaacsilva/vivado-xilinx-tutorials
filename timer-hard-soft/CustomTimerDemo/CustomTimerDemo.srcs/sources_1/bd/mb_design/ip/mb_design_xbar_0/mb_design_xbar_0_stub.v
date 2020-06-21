@@ -1,7 +1,7 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Sun Jun 21 18:12:15 2020
+// Date        : Sun Jun 21 19:33:23 2020
 // Host        : GreatAtuin running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0_stub.v

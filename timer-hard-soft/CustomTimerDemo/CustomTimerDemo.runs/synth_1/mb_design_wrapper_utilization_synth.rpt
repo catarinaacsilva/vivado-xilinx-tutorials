@@ -1,7 +1,7 @@
 Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-| Date         : Sun Jun 21 19:28:07 2020
+| Date         : Sun Jun 21 20:01:27 2020
 | Host         : GreatAtuin running 64-bit major release  (build 9200)
 | Command      : report_utilization -file mb_design_wrapper_utilization_synth.rpt -pb mb_design_wrapper_utilization_synth.pb
 | Design       : mb_design_wrapper
@@ -90,7 +90,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |   72 |     0 |       210 | 34.29 |
+| Bonded IOB                  |   56 |     0 |       210 | 26.67 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         6 |  0.00 |
 | PHASER_REF                  |    0 |     0 |         6 |  0.00 |
@@ -146,9 +146,9 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| IBUF     |   55 |                  IO |
-| OBUFT    |   32 |                  IO |
+| IBUF     |   39 |                  IO |
 | OBUF     |   17 |                  IO |
+| OBUFT    |   16 |                  IO |
 +----------+------+---------------------+
 
 
@@ -172,7 +172,6 @@ Table of Contents
 | mb_design_clk_wiz_1_0             |    1 |
 | mb_design_axi_uartlite_0_0        |    1 |
 | mb_design_axi_timer_0_0           |    1 |
-| mb_design_axi_gpio_3_0            |    1 |
 | mb_design_axi_gpio_2_0            |    1 |
 | mb_design_axi_gpio_1_0            |    1 |
 | mb_design_axi_gpio_0_0            |    1 |
