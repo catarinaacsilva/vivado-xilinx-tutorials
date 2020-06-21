@@ -1,0 +1,630 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Fri May  8 11:10:22 2020
+# Process ID: 9364
+# Current directory: C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1
+# Command line: vivado.exe -log mb_design_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_design_wrapper.tcl
+# Log file: C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/mb_design_wrapper.vds
+# Journal file: C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source mb_design_wrapper.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Nextcloud/windowsToLinux/project/part1/ip_repo/Nexys4DisplayPort_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.cache/ip 
+Command: synth_design -top mb_design_wrapper -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 9964 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 864.031 ; gain = 234.484
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'mb_design_wrapper' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:29]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_0' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:119]
+INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: TRUE - type: string 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (1#1) [C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_1' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:126]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_10' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:133]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_11' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:140]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_12' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:147]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_13' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:154]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_14' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:161]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_15' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:168]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_2' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:175]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_3' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:182]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_4' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:189]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_5' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:196]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_6' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:203]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_7' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:210]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_8' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:217]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2019.2/scripts/rt/data/unisim_comp.v:36196' bound to instance 'led_16bits_tri_iobuf_9' of component 'IOBUF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:224]
+INFO: [Synth 8-3491] module 'mb_design' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2811' bound to instance 'mb_design_i' of component 'mb_design' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:231]
+INFO: [Synth 8-638] synthesizing module 'mb_design' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2832]
+INFO: [Synth 8-3491] module 'mb_design_Nexys4DisplayPort_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_Nexys4DisplayPort_0_0_stub.vhdl:5' bound to instance 'Nexys4DisplayPort_0' of component 'mb_design_Nexys4DisplayPort_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3378]
+INFO: [Synth 8-638] synthesizing module 'mb_design_Nexys4DisplayPort_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_Nexys4DisplayPort_0_0_stub.vhdl:35]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_0_0_stub.vhdl:5' bound to instance 'axi_gpio_buttons' of component 'mb_design_axi_gpio_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3405]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_0_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_2_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_2_0_stub.vhdl:5' bound to instance 'axi_gpio_leds' of component 'mb_design_axi_gpio_2_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3429]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_2_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_2_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'mb_design_axi_gpio_1_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_1_0_stub.vhdl:5' bound to instance 'axi_gpio_switches' of component 'mb_design_axi_gpio_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3454]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_gpio_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_gpio_1_0_stub.vhdl:32]
+INFO: [Synth 8-3491] module 'mb_design_axi_timer_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_timer_0_0_stub.vhdl:5' bound to instance 'axi_timer_0' of component 'mb_design_axi_timer_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3478]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_timer_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_timer_0_0_stub.vhdl:37]
+INFO: [Synth 8-3491] module 'mb_design_axi_uartlite_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_uartlite_0_0_stub.vhdl:5' bound to instance 'axi_uartlite_0' of component 'mb_design_axi_uartlite_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3507]
+INFO: [Synth 8-638] synthesizing module 'mb_design_axi_uartlite_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_axi_uartlite_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'mb_design_clk_wiz_1_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_clk_wiz_1_0_stub.vhdl:5' bound to instance 'clk_wiz_1' of component 'mb_design_clk_wiz_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3532]
+INFO: [Synth 8-638] synthesizing module 'mb_design_clk_wiz_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_clk_wiz_1_0_stub.vhdl:15]
+INFO: [Synth 8-3491] module 'mb_design_fit_timer_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_fit_timer_0_0_stub.vhdl:5' bound to instance 'fit_timer_0' of component 'mb_design_fit_timer_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3539]
+INFO: [Synth 8-638] synthesizing module 'mb_design_fit_timer_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_fit_timer_0_0_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'mb_design_mdm_1_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_mdm_1_0_stub.vhdl:5' bound to instance 'mdm_1' of component 'mb_design_mdm_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3545]
+INFO: [Synth 8-638] synthesizing module 'mb_design_mdm_1_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_mdm_1_0_stub.vhdl:21]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_microblaze_0_0_stub.vhdl:5' bound to instance 'microblaze_0' of component 'mb_design_microblaze_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3558]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_microblaze_0_0_stub.vhdl:67]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_axi_intc_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_microblaze_0_axi_intc_0_stub.vhdl:5' bound to instance 'microblaze_0_axi_intc' of component 'mb_design_microblaze_0_axi_intc_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3648]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_axi_intc_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_microblaze_0_axi_intc_0_stub.vhdl:36]
+INFO: [Synth 8-638] synthesizing module 'mb_design_microblaze_0_axi_periph_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1695]
+INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_7XQVZK' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:57]
+INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_7XQVZK' (2#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:57]
+INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_1KGGRVS' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:158]
+INFO: [Synth 8-256] done synthesizing module 'm01_couplers_imp_1KGGRVS' (3#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'm02_couplers_imp_SWOCXT' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:263]
+INFO: [Synth 8-256] done synthesizing module 'm02_couplers_imp_SWOCXT' (4#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:263]
+INFO: [Synth 8-638] synthesizing module 'm03_couplers_imp_1H7VOBD' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:370]
+INFO: [Synth 8-256] done synthesizing module 'm03_couplers_imp_1H7VOBD' (5#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:370]
+INFO: [Synth 8-638] synthesizing module 'm04_couplers_imp_1W8QG7M' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:471]
+INFO: [Synth 8-256] done synthesizing module 'm04_couplers_imp_1W8QG7M' (6#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:471]
+INFO: [Synth 8-638] synthesizing module 'm05_couplers_imp_9GBDFU' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:572]
+INFO: [Synth 8-256] done synthesizing module 'm05_couplers_imp_9GBDFU' (7#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:572]
+INFO: [Synth 8-638] synthesizing module 'm06_couplers_imp_ZVBXPF' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:673]
+INFO: [Synth 8-256] done synthesizing module 'm06_couplers_imp_ZVBXPF' (8#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:673]
+INFO: [Synth 8-638] synthesizing module 'm07_couplers_imp_O1I4VV' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:778]
+INFO: [Synth 8-256] done synthesizing module 'm07_couplers_imp_O1I4VV' (9#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:778]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_10TEBL8' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1447]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_10TEBL8' (10#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1447]
+INFO: [Synth 8-3491] module 'mb_design_xbar_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_xbar_0_stub.vhdl:5' bound to instance 'xbar' of component 'mb_design_xbar_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2605]
+INFO: [Synth 8-638] synthesizing module 'mb_design_xbar_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_xbar_0_stub.vhdl:51]
+INFO: [Synth 8-256] done synthesizing module 'mb_design_microblaze_0_axi_periph_0' (11#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1695]
+INFO: [Synth 8-638] synthesizing module 'microblaze_0_local_memory_imp_UIMIJC' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:868]
+INFO: [Synth 8-3491] module 'mb_design_dlmb_bram_if_cntlr_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_dlmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'dlmb_bram_if_cntlr' of component 'mb_design_dlmb_bram_if_cntlr_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1082]
+INFO: [Synth 8-638] synthesizing module 'mb_design_dlmb_bram_if_cntlr_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_dlmb_bram_if_cntlr_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'mb_design_dlmb_v10_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_dlmb_v10_0_stub.vhdl:5' bound to instance 'dlmb_v10' of component 'mb_design_dlmb_v10_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1136]
+INFO: [Synth 8-638] synthesizing module 'mb_design_dlmb_v10_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_dlmb_v10_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'mb_design_ilmb_bram_if_cntlr_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_ilmb_bram_if_cntlr_0_stub.vhdl:5' bound to instance 'ilmb_bram_if_cntlr' of component 'mb_design_ilmb_bram_if_cntlr_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1164]
+INFO: [Synth 8-638] synthesizing module 'mb_design_ilmb_bram_if_cntlr_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_ilmb_bram_if_cntlr_0_stub.vhdl:31]
+INFO: [Synth 8-3491] module 'mb_design_ilmb_v10_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_ilmb_v10_0_stub.vhdl:5' bound to instance 'ilmb_v10' of component 'mb_design_ilmb_v10_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1218]
+INFO: [Synth 8-638] synthesizing module 'mb_design_ilmb_v10_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_ilmb_v10_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'mb_design_lmb_bram_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_lmb_bram_0_stub.vhdl:5' bound to instance 'lmb_bram' of component 'mb_design_lmb_bram_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:1246]
+INFO: [Synth 8-638] synthesizing module 'mb_design_lmb_bram_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_lmb_bram_0_stub.vhdl:27]
+INFO: [Synth 8-256] done synthesizing module 'microblaze_0_local_memory_imp_UIMIJC' (12#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:868]
+INFO: [Synth 8-3491] module 'mb_design_microblaze_0_xlconcat_0' declared at 'c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58' bound to instance 'microblaze_0_xlconcat' of component 'mb_design_microblaze_0_xlconcat_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3883]
+INFO: [Synth 8-6157] synthesizing module 'mb_design_microblaze_0_xlconcat_0' [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58]
+INFO: [Synth 8-6157] synthesizing module 'xlconcat_v2_1_3_xlconcat' [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+	Parameter IN0_WIDTH bound to: 1 - type: integer 
+	Parameter IN1_WIDTH bound to: 1 - type: integer 
+	Parameter IN2_WIDTH bound to: 1 - type: integer 
+	Parameter IN3_WIDTH bound to: 1 - type: integer 
+	Parameter IN4_WIDTH bound to: 1 - type: integer 
+	Parameter IN5_WIDTH bound to: 1 - type: integer 
+	Parameter IN6_WIDTH bound to: 1 - type: integer 
+	Parameter IN7_WIDTH bound to: 1 - type: integer 
+	Parameter IN8_WIDTH bound to: 1 - type: integer 
+	Parameter IN9_WIDTH bound to: 1 - type: integer 
+	Parameter IN10_WIDTH bound to: 1 - type: integer 
+	Parameter IN11_WIDTH bound to: 1 - type: integer 
+	Parameter IN12_WIDTH bound to: 1 - type: integer 
+	Parameter IN13_WIDTH bound to: 1 - type: integer 
+	Parameter IN14_WIDTH bound to: 1 - type: integer 
+	Parameter IN15_WIDTH bound to: 1 - type: integer 
+	Parameter IN16_WIDTH bound to: 1 - type: integer 
+	Parameter IN17_WIDTH bound to: 1 - type: integer 
+	Parameter IN18_WIDTH bound to: 1 - type: integer 
+	Parameter IN19_WIDTH bound to: 1 - type: integer 
+	Parameter IN20_WIDTH bound to: 1 - type: integer 
+	Parameter IN21_WIDTH bound to: 1 - type: integer 
+	Parameter IN22_WIDTH bound to: 1 - type: integer 
+	Parameter IN23_WIDTH bound to: 1 - type: integer 
+	Parameter IN24_WIDTH bound to: 1 - type: integer 
+	Parameter IN25_WIDTH bound to: 1 - type: integer 
+	Parameter IN26_WIDTH bound to: 1 - type: integer 
+	Parameter IN27_WIDTH bound to: 1 - type: integer 
+	Parameter IN28_WIDTH bound to: 1 - type: integer 
+	Parameter IN29_WIDTH bound to: 1 - type: integer 
+	Parameter IN30_WIDTH bound to: 1 - type: integer 
+	Parameter IN31_WIDTH bound to: 1 - type: integer 
+	Parameter dout_width bound to: 5 - type: integer 
+	Parameter NUM_PORTS bound to: 5 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'xlconcat_v2_1_3_xlconcat' (13#1) [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ipshared/442e/hdl/xlconcat_v2_1_vl_rfs.v:14]
+INFO: [Synth 8-6155] done synthesizing module 'mb_design_microblaze_0_xlconcat_0' (14#1) [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_xlconcat_0/synth/mb_design_microblaze_0_xlconcat_0.v:58]
+INFO: [Synth 8-3491] module 'mb_design_rst_clk_wiz_1_100M_0' declared at 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_rst_clk_wiz_1_100M_0_stub.vhdl:5' bound to instance 'rst_clk_wiz_1_100M' of component 'mb_design_rst_clk_wiz_1_100M_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:3892]
+INFO: [Synth 8-638] synthesizing module 'mb_design_rst_clk_wiz_1_100M_0' [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/.Xil/Vivado-9364-GreatAtuin/realtime/mb_design_rst_clk_wiz_1_100M_0_stub.vhdl:21]
+INFO: [Synth 8-256] done synthesizing module 'mb_design' (15#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd:2832]
+INFO: [Synth 8-256] done synthesizing module 'mb_design_wrapper' (16#1) [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd:29]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In5[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In6[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In7[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In8[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In9[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In10[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In11[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In12[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In13[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In14[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In15[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In16[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In17[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In18[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In19[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In20[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In21[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In22[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In23[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In24[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In25[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In26[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In27[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In28[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In29[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In30[0]
+WARNING: [Synth 8-3331] design xlconcat_v2_1_3_xlconcat has unconnected port In31[0]
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design s00_couplers_imp_10TEBL8 has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m07_couplers_imp_O1I4VV has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m06_couplers_imp_ZVBXPF has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m05_couplers_imp_9GBDFU has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m04_couplers_imp_1W8QG7M has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m03_couplers_imp_1H7VOBD has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m02_couplers_imp_SWOCXT has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m01_couplers_imp_1KGGRVS has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port M_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port M_ARESETN
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port S_ACLK
+WARNING: [Synth 8-3331] design m00_couplers_imp_7XQVZK has unconnected port S_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 944.605 ; gain = 315.059
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 944.828 ; gain = 315.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 944.828 ; gain = 315.281
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.064 . Memory (MB): peak = 955.320 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_0/mb_design_microblaze_0_0/mb_design_microblaze_0_0_in_context.xdc] for cell 'mb_design_i/microblaze_0'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_0/mb_design_microblaze_0_0/mb_design_microblaze_0_0_in_context.xdc] for cell 'mb_design_i/microblaze_0'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_0/mb_design_dlmb_v10_0/mb_design_dlmb_v10_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_v10_0/mb_design_dlmb_v10_0/mb_design_dlmb_v10_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_0/mb_design_ilmb_v10_0/mb_design_dlmb_v10_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_v10_0/mb_design_ilmb_v10_0/mb_design_dlmb_v10_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_0/mb_design_dlmb_bram_if_cntlr_0/mb_design_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_dlmb_bram_if_cntlr_0/mb_design_dlmb_bram_if_cntlr_0/mb_design_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_0/mb_design_ilmb_bram_if_cntlr_0/mb_design_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_ilmb_bram_if_cntlr_0/mb_design_ilmb_bram_if_cntlr_0/mb_design_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_0/mb_design_lmb_bram_0/mb_design_lmb_bram_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_lmb_bram_0/mb_design_lmb_bram_0/mb_design_lmb_bram_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0/mb_design_xbar_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/xbar'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_xbar_0/mb_design_xbar_0/mb_design_xbar_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_periph/xbar'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_intc'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_in_context.xdc] for cell 'mb_design_i/microblaze_0_axi_intc'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_0/mb_design_mdm_1_0/mb_design_mdm_1_0_in_context.xdc] for cell 'mb_design_i/mdm_1'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_mdm_1_0/mb_design_mdm_1_0/mb_design_mdm_1_0_in_context.xdc] for cell 'mb_design_i/mdm_1'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc] for cell 'mb_design_i/clk_wiz_1'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc] for cell 'mb_design_i/clk_wiz_1'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'mb_design_i/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0/mb_design_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'mb_design_i/rst_clk_wiz_1_100M'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_buttons'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0/mb_design_axi_gpio_0_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_buttons'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_switches'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0/mb_design_axi_gpio_1_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_switches'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_leds'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0/mb_design_axi_gpio_2_0_in_context.xdc] for cell 'mb_design_i/axi_gpio_leds'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0_in_context.xdc] for cell 'mb_design_i/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0/mb_design_axi_uartlite_0_0_in_context.xdc] for cell 'mb_design_i/axi_uartlite_0'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0_in_context.xdc] for cell 'mb_design_i/axi_timer_0'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0/mb_design_axi_timer_0_0_in_context.xdc] for cell 'mb_design_i/axi_timer_0'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0_in_context.xdc] for cell 'mb_design_i/fit_timer_0'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0/mb_design_fit_timer_0_0_in_context.xdc] for cell 'mb_design_i/fit_timer_0'
+Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0_in_context.xdc] for cell 'mb_design_i/Nexys4DisplayPort_0'
+Finished Parsing XDC File [c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0_in_context.xdc] for cell 'mb_design_i/Nexys4DisplayPort_0'
+Parsing XDC File [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:8]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:9]
+WARNING: [Vivado 12-584] No ports matched 'clk'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:10]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:14]
+WARNING: [Vivado 12-584] No ports matched 'sw[0]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:15]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'sw[1]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:20]
+WARNING: [Vivado 12-584] No ports matched 'sw[2]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:21]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:23]
+WARNING: [Vivado 12-584] No ports matched 'sw[3]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:24]
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:26]
+WARNING: [Vivado 12-584] No ports matched 'sw[4]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:27]
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:29]
+WARNING: [Vivado 12-584] No ports matched 'sw[5]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:30]
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:32]
+WARNING: [Vivado 12-584] No ports matched 'sw[6]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:33]
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:35]
+WARNING: [Vivado 12-584] No ports matched 'sw[7]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:36]
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:38]
+WARNING: [Vivado 12-584] No ports matched 'sw[8]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:39]
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:41]
+WARNING: [Vivado 12-584] No ports matched 'sw[9]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:42]
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:44]
+WARNING: [Vivado 12-584] No ports matched 'sw[10]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'sw[11]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:50]
+WARNING: [Vivado 12-584] No ports matched 'sw[12]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'sw[13]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'sw[14]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:57]
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:59]
+WARNING: [Vivado 12-584] No ports matched 'sw[15]'. [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc:60]
+Finished Parsing XDC File [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/mb_design_wrapper_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/constrs_1/imports/part1/Nexys4_Master.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/mb_design_wrapper_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/mb_design_wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1023.082 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1023.082 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'mb_design_i/microblaze_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sys_clock. (constraint file  c:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ip/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0/mb_design_clk_wiz_1_0_in_context.xdc, line 4).
+Applied set_property DONT_TOUCH = true for mb_design_i. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/dlmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/ilmb_v10. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/dlmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/ilmb_bram_if_cntlr. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_local_memory/lmb_bram. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph/xbar. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_periph. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_axi_intc. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/microblaze_0_xlconcat. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/mdm_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/clk_wiz_1. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/rst_clk_wiz_1_100M. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_buttons. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_switches. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_gpio_leds. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_uartlite_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/axi_timer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/fit_timer_0. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for mb_design_i/Nexys4DisplayPort_0. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M00_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M01_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M02_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M03_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M04_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M05_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M06_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port M07_ARESETN
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ACLK
+WARNING: [Synth 8-3331] design mb_design_microblaze_0_axi_periph_0 has unconnected port S00_ARESETN
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+----------------------------------+----------+
+|      |BlackBox name                     |Instances |
++------+----------------------------------+----------+
+|1     |mb_design_xbar_0                  |         1|
+|2     |mb_design_Nexys4DisplayPort_0_0   |         1|
+|3     |mb_design_axi_gpio_0_0            |         1|
+|4     |mb_design_axi_gpio_2_0            |         1|
+|5     |mb_design_axi_gpio_1_0            |         1|
+|6     |mb_design_axi_timer_0_0           |         1|
+|7     |mb_design_axi_uartlite_0_0        |         1|
+|8     |mb_design_clk_wiz_1_0             |         1|
+|9     |mb_design_fit_timer_0_0           |         1|
+|10    |mb_design_mdm_1_0                 |         1|
+|11    |mb_design_microblaze_0_0          |         1|
+|12    |mb_design_microblaze_0_axi_intc_0 |         1|
+|13    |mb_design_rst_clk_wiz_1_100M_0    |         1|
+|14    |mb_design_dlmb_bram_if_cntlr_0    |         1|
+|15    |mb_design_dlmb_v10_0              |         1|
+|16    |mb_design_ilmb_bram_if_cntlr_0    |         1|
+|17    |mb_design_ilmb_v10_0              |         1|
+|18    |mb_design_lmb_bram_0              |         1|
++------+----------------------------------+----------+
+
+Report Cell Usage: 
++------+------------------------------------------+------+
+|      |Cell                                      |Count |
++------+------------------------------------------+------+
+|1     |mb_design_Nexys4DisplayPort_0_0_bbox_0    |     1|
+|2     |mb_design_axi_gpio_0_0_bbox_1             |     1|
+|3     |mb_design_axi_gpio_1_0_bbox_3             |     1|
+|4     |mb_design_axi_gpio_2_0_bbox_2             |     1|
+|5     |mb_design_axi_timer_0_0_bbox_4            |     1|
+|6     |mb_design_axi_uartlite_0_0_bbox_5         |     1|
+|7     |mb_design_clk_wiz_1_0_bbox_6              |     1|
+|8     |mb_design_dlmb_bram_if_cntlr_0_bbox_12    |     1|
+|9     |mb_design_dlmb_v10_0_bbox_13              |     1|
+|10    |mb_design_fit_timer_0_0_bbox_7            |     1|
+|11    |mb_design_ilmb_bram_if_cntlr_0_bbox_14    |     1|
+|12    |mb_design_ilmb_v10_0_bbox_15              |     1|
+|13    |mb_design_lmb_bram_0_bbox_16              |     1|
+|14    |mb_design_mdm_1_0_bbox_8                  |     1|
+|15    |mb_design_microblaze_0_0_bbox_9           |     1|
+|16    |mb_design_microblaze_0_axi_intc_0_bbox_10 |     1|
+|17    |mb_design_rst_clk_wiz_1_100M_0_bbox_17    |     1|
+|18    |mb_design_xbar_0_bbox_11                  |     1|
+|19    |IBUF                                      |    23|
+|20    |IOBUF                                     |    16|
+|21    |OBUF                                      |    17|
++------+------------------------------------------+------+
+
+Report Instance Areas: 
++------+------------------------------+-------------------------------------+------+
+|      |Instance                      |Module                               |Cells |
++------+------------------------------+-------------------------------------+------+
+|1     |top                           |                                     |  2116|
+|2     |  mb_design_i                 |mb_design                            |  2060|
+|3     |    microblaze_0_axi_periph   |mb_design_microblaze_0_axi_periph_0  |   929|
+|4     |    microblaze_0_xlconcat     |mb_design_microblaze_0_xlconcat_0    |     0|
+|5     |    microblaze_0_local_memory |microblaze_0_local_memory_imp_UIMIJC |   496|
++------+------------------------------+-------------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:27 . Memory (MB): peak = 1023.082 ; gain = 315.281
+Synthesis Optimization Complete : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1023.082 ; gain = 393.535
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1023.082 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1036.520 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 16 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+103 Infos, 137 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:34 ; elapsed = 00:00:37 . Memory (MB): peak = 1036.520 ; gain = 712.734
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1036.520 ; gain = 0.000
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Nextcloud/windowsToLinux/project/part1/CustomTimerDemo/CustomTimerDemo.runs/synth_1/mb_design_wrapper.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file mb_design_wrapper_utilization_synth.rpt -pb mb_design_wrapper_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri May  8 11:11:09 2020...

@@ -1,0 +1,10 @@
+
+
+OPTION psf_version = 2.1;
+
+BEGIN DRIVER CustomPeriphIPCore
+	OPTION supported_peripherals = (CustomPeriphIPCore);
+	OPTION copyfiles = all;
+	OPTION VERSION = 1.0;
+	OPTION NAME = CustomPeriphIPCore;
+END DRIVER
