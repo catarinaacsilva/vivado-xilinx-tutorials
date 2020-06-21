@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/interrupt/CustomTimerDemo/CustomTimerDemo.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="2ff6a246a13b4f1ea9f5e10f3cd44538"/>
@@ -22,7 +22,7 @@
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
     <Option Name="ProjectType" Val="Default"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/Nexys4DisplayPort_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../ip_repo/Nexys4DisplayPort_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -63,17 +63,17 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/bd/mb_design/mb_design.bd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../../../Nexys4DefaultPlatform.ori/Nexys4DefaultPlatform.ori/Nexys4DefaultPlatform.srcs/sources_1/bd/mb_design/mb_design.bd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../../../Nexys4DefaultPlatform.ori/Nexys4DefaultPlatform.ori/Nexys4DefaultPlatform.srcs/sources_1/bd/mb_design/mb_design.bd"/>
           <Attr Name="ImportTime" Val="1589474160"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0.xci">
-          <Proxy FileSetName="mb_design_Nexys4DisplayPort_0_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_xbar_0/mb_design_xbar_0.xci">
           <Proxy FileSetName="mb_design_xbar_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_Nexys4DisplayPort_0_0/mb_design_Nexys4DisplayPort_0_0.xci">
+          <Proxy FileSetName="mb_design_Nexys4DisplayPort_0_0"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd">
@@ -92,7 +92,7 @@
       <Filter Type="Constrs"/>
       <File Path="$PSRCDIR/constrs_1/imports/Nexys4DispDriver-pulseGenerator/Nexys4_Master.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../nexys4DispDriver/Nexys4DispDriver-pulseGenerator/Nexys4_Master.xdc"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../../nexys4DispDriver/Nexys4DispDriver-pulseGenerator/Nexys4_Master.xdc"/>
           <Attr Name="ImportTime" Val="1588808470"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
