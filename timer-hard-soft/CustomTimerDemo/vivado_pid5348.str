@@ -911,3 +911,170 @@ dismissDialog("Critical Messages"); // a (cr)
 // TclEventType: RUN_COMPLETED
 // TclEventType: RUN_STATUS_CHANGE
 // TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 202 seconds
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[mb_design]", 0, true); // i (O, cr) - Node
+selectTree(PAResourceQtoS.SystemTreeView_SYSTEM_TREE, "[mb_design]", 0, true, false, false, false, true, false); // i (O, cr) - Popup Trigger - Node
+selectTab((HResource) null, (HResource) null, "Sources", 0); // aL (aI, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design (mb_design.bd)]", 1, true, false, false, false, true, false); // B (F, cr) - Popup Trigger - Node
+selectMenuItem(PAResourceCommand.PACommandNames_CREATE_TOP_HDL, "Create HDL Wrapper..."); // ai (ao, cr)
+// Run Command: PAResourceCommand.PACommandNames_CREATE_TOP_HDL
+// a (cr): Create HDL Wrapper: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (a)
+dismissDialog("Create HDL Wrapper"); // a (cr)
+// Tcl Message: make_wrapper -files [get_files C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/mb_design.bd] -top 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Elapsed time: 11 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Program and Debug, Generate Bitstream]", 19, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_BITGEN
+// A (cr): No Implementation Results Available: addNotify
+selectButton(RDIResource.BaseDialog_YES, "Yes"); // a (A)
+// bB (cr):  Resetting Runs : addNotify
+// f (cr): Launch Runs: addNotify
+dismissDialog("No Implementation Results Available"); // A (cr)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+dismissDialog("Launch Runs"); // f (cr)
+// Tcl Message: launch_runs impl_1 -to_step write_bitstream -jobs 4 
+// bB (cr):  Generate Bitstream : addNotify
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Jun 21 18:15:16 2020] Launched synth_1... Run output will be captured here: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.runs/synth_1/runme.log [Sun Jun 21 18:15:16 2020] Launched impl_1... Run output will be captured here: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.runs/impl_1/runme.log 
+dismissDialog("Generate Bitstream"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// Elapsed time: 170 seconds
+selectButton(PAResourceQtoS.SyntheticaStateMonitor_CANCEL, "Cancel"); // h (Q, cr)
+// aW (cr): Cancel Implementation: addNotify
+selectButton(PAResourceQtoS.StateMonitor_RESET_RUN, "Reset Run"); // a (aW)
+// bB (cr):  Resetting Runs : addNotify
+// TclEventType: RUN_MODIFY
+dismissDialog("Cancel Implementation"); // aW (cr)
+// TclEventType: RUN_RESET
+// Tcl Message: reset_run impl_1 
+// TclEventType: RUN_FAILED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_RESET
+// TclEventType: RUN_MODIFY
+dismissDialog("Resetting Runs"); // bB (cr)
+// WARNING: HEventQueue.dispatchEvent() is taking  3553 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,020 MB. GUI used memory: 108 MB. Current time: 6/21/20, 6:40:53 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,020 MB. GUI used memory: 105 MB. Current time: 6/21/20, 7:10:53 PM BST
+// Elapsed time: 3890 seconds
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 907, 202, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_PORT, "Create Port..."); // ai (ao, Popup.HeavyWeightWindow)
+// ba (cr): Create Port: addNotify
+// Elapsed time: 29 seconds
+setText(PAResourceAtoD.CreateRSBPortDialog_PORT_NAME, "dp"); // ac (Q, ba)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ba)
+dismissDialog("Create Port"); // ba (cr)
+// Tcl Message: startgroup 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: create_bd_port -dir O dp 
+// TclEventType: RSB_CONNECTION_CHANGE
+// bB (cr):  Create Port : addNotify
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: connect_bd_net [get_bd_pins /Nexys4DisplayPort_0/dispPt_n] [get_bd_ports dp] 
+// Tcl Message: endgroup 
+dismissDialog("Create Port"); // bB (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 884, 197, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // af (ao, Popup.HeavyWeightWindow)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 871, 183, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 975, 180, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_PORT, "Create Port..."); // ai (ao, Popup.HeavyWeightWindow)
+// ba (cr): Create Port: addNotify
+// Elapsed time: 13 seconds
+setText(PAResourceAtoD.CreateRSBPortDialog_PORT_NAME, "dispSeg_n[6..0]"); // ac (Q, ba)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ba)
+// HOptionPane Error: 'The name 'dispSeg_n[6..0]' contains illegal characters. (Vivado)'
+selectButton("OptionPane.button", "OK"); // JButton (A, H)
+setText(PAResourceAtoD.CreateRSBPortDialog_PORT_NAME, "dispSeg_n"); // ac (Q, ba)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ba)
+dismissDialog("Create Port"); // ba (cr)
+// Tcl Message: startgroup 
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: create_bd_port -dir O -from 6 -to 0 dispSeg_n 
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: connect_bd_net [get_bd_pins /Nexys4DisplayPort_0/dispSeg_n] [get_bd_ports dispSeg_n] 
+// bB (cr):  Create Port : addNotify
+// Tcl Message: endgroup 
+dismissDialog("Create Port"); // bB (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 973, 155, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, cr)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_PORT, "Create Port..."); // ai (ao, cr)
+// ba (cr): Create Port: addNotify
+// Elapsed time: 10 seconds
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (ba)
+dismissDialog("Create Port"); // ba (cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: delete_bd_objs [get_bd_nets Nexys4DisplayPort_0_dispSeg_n] [get_bd_ports dispSeg_n] 
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 976, 172, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_PORT, "Create Port..."); // ai (ao, Popup.HeavyWeightWindow)
+// ba (cr): Create Port: addNotify
+// Elapsed time: 10 seconds
+setText(PAResourceAtoD.CreateRSBPortDialog_PORT_NAME, "seg"); // ac (Q, ba)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ba)
+dismissDialog("Create Port"); // ba (cr)
+// Tcl Message: startgroup 
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: create_bd_port -dir O -from 6 -to 0 seg 
+// TclEventType: RSB_CONNECTION_CHANGE
+// bB (cr):  Create Port : addNotify
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: connect_bd_net [get_bd_pins /Nexys4DisplayPort_0/dispSeg_n] [get_bd_ports seg] 
+// Tcl Message: endgroup 
+dismissDialog("Create Port"); // bB (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 974, 147, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, cr)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, cr)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_PORT, "Create Port..."); // ai (ao, cr)
+// ba (cr): Create Port: addNotify
+setText(PAResourceAtoD.CreateRSBPortDialog_PORT_NAME, "an"); // ac (Q, ba)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (ba)
+dismissDialog("Create Port"); // ba (cr)
+// Tcl Message: startgroup 
+// TclEventType: RSB_ADD_OBJECT
+// Tcl Message: create_bd_port -dir O -from 7 -to 0 an 
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: connect_bd_net [get_bd_pins /Nexys4DisplayPort_0/dispEn_n] [get_bd_ports an] 
+// bB (cr):  Create Port : addNotify
+// Tcl Message: endgroup 
+dismissDialog("Create Port"); // bB (cr)
+selectButton(PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, "save_rsb_design"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: save_bd_design 
+// Tcl Message: Wrote  : <C:\Users\catar\Desktop\git\vivado-xilinx-tutorials\timer-hard-soft\CustomTimerDemo\CustomTimerDemo.srcs\sources_1\bd\mb_design\mb_design.bd>  Wrote  : <C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ui/bd_db273ea8.ui>  
