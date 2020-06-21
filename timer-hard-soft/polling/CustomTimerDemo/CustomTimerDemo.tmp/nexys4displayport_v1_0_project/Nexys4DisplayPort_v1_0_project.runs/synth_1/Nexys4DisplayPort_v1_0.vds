@@ -1,0 +1,69 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun Jun 21 22:46:47 2020
+# Process ID: 5532
+# Current directory: c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1
+# Command line: vivado.exe -log Nexys4DisplayPort_v1_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Nexys4DisplayPort_v1_0.tcl
+# Log file: c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1/Nexys4DisplayPort_v1_0.vds
+# Journal file: c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Nexys4DisplayPort_v1_0.tcl -notrace
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
+WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
+Current IP cache path is c:/users/catar/desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/customtimerdemo/customtimerdemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.cache/ip 
+Command: synth_design -top Nexys4DisplayPort_v1_0 -part xc7a100tcsg324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5136 
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 560.543 ; gain = 246.559
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'Nexys4DisplayPort_v1_0' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0.vhd:53]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'Nexys4DisplayPort_v1_0_S00_AXI' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:5' bound to instance 'Nexys4DisplayPort_v1_0_S00_AXI_inst' of component 'Nexys4DisplayPort_v1_0_S00_AXI' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0.vhd:93]
+INFO: [Synth 8-638] synthesizing module 'Nexys4DisplayPort_v1_0_S00_AXI' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:88]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:249]
+INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:379]
+INFO: [Synth 8-3491] module 'Nexys4DispDriver' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/src/Nexys4DispDriver.vhd:13' bound to instance 'display_driver' of component 'Nexys4DispDriver' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:431]
+INFO: [Synth 8-638] synthesizing module 'Nexys4DispDriver' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/src/Nexys4DispDriver.vhd:32]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4DispDriver' (1#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/src/Nexys4DispDriver.vhd:32]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:247]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4DisplayPort_v1_0_S00_AXI' (2#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0_S00_AXI.vhd:88]
+INFO: [Synth 8-256] done synthesizing module 'Nexys4DisplayPort_v1_0' (3#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0/hdl/Nexys4DisplayPort_v1_0.vhd:53]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design Nexys4DisplayPort_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 632.379 ; gain = 318.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 632.379 ; gain = 318.395
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 632.379 ; gain = 318.395
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 632.379 ; gain = 318.395
+---------------------------------------------------------------------------------
+ERROR: [Synth 8-729] Failed to open 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1/.Xil/Vivado-5532-GreatAtuin//incrSyn/3563164958/u/g//global_name.straps.rtd': No such file or directory
+ERROR: [Synth 8-787] cannot access rtd files in 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1/.Xil/Vivado-5532-GreatAtuin/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.
+ERROR: [Synth 8-787] cannot access rtd files in 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/polling/CustomTimerDemo/CustomTimerDemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1/.Xil/Vivado-5532-GreatAtuin/realtime/tmp//', this is a FATAL ERROR! Please make sure the directory is readable and writable by the program and do not delete files from this directory while the program is running.
