@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Sun Jun 21 18:11:10 2020
+--Date        : Sun Jun 21 19:26:15 2020
 --Host        : GreatAtuin running 64-bit major release  (build 9200)
 --Command     : generate_target mb_design_wrapper.bd
 --Design      : mb_design_wrapper
@@ -13,11 +13,14 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity mb_design_wrapper is
   port (
+    an : out STD_LOGIC_VECTOR ( 7 downto 0 );
     dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    dp : out STD_LOGIC;
     dual_seven_seg_led_disp_tri_io : inout STD_LOGIC_VECTOR ( 7 downto 0 );
     led_16bits_tri_io : inout STD_LOGIC_VECTOR ( 15 downto 0 );
     push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     reset : in STD_LOGIC;
+    seg : out STD_LOGIC_VECTOR ( 6 downto 0 );
     seven_seg_led_an_tri_io : inout STD_LOGIC_VECTOR ( 7 downto 0 );
     sys_clock : in STD_LOGIC;
     usb_uart_rxd : in STD_LOGIC;
@@ -42,7 +45,10 @@ architecture STRUCTURE of mb_design_wrapper is
     usb_uart_txd : out STD_LOGIC;
     led_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
     led_16bits_tri_o : out STD_LOGIC_VECTOR ( 15 downto 0 );
-    led_16bits_tri_t : out STD_LOGIC_VECTOR ( 15 downto 0 )
+    led_16bits_tri_t : out STD_LOGIC_VECTOR ( 15 downto 0 );
+    dp : out STD_LOGIC;
+    seg : out STD_LOGIC_VECTOR ( 6 downto 0 );
+    an : out STD_LOGIC_VECTOR ( 7 downto 0 )
   );
   end component mb_design;
   component IOBUF is
@@ -352,7 +358,9 @@ led_16bits_tri_iobuf_9: component IOBUF
     );
 mb_design_i: component mb_design
      port map (
+      an(7 downto 0) => an(7 downto 0),
       dip_switches_16bits_tri_i(15 downto 0) => dip_switches_16bits_tri_i(15 downto 0),
+      dp => dp,
       dual_seven_seg_led_disp_tri_i(7) => dual_seven_seg_led_disp_tri_i_7(7),
       dual_seven_seg_led_disp_tri_i(6) => dual_seven_seg_led_disp_tri_i_6(6),
       dual_seven_seg_led_disp_tri_i(5) => dual_seven_seg_led_disp_tri_i_5(5),
@@ -427,6 +435,7 @@ mb_design_i: component mb_design
       led_16bits_tri_t(0) => led_16bits_tri_t_0(0),
       push_buttons_5bits_tri_i(4 downto 0) => push_buttons_5bits_tri_i(4 downto 0),
       reset => reset,
+      seg(6 downto 0) => seg(6 downto 0),
       seven_seg_led_an_tri_i(7) => seven_seg_led_an_tri_i_7(7),
       seven_seg_led_an_tri_i(6) => seven_seg_led_an_tri_i_6(6),
       seven_seg_led_an_tri_i(5) => seven_seg_led_an_tri_i_5(5),

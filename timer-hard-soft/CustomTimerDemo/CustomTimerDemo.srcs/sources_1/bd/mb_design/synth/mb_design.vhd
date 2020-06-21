@@ -1,7 +1,7 @@
 --Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
---Date        : Sun Jun 21 18:11:10 2020
+--Date        : Sun Jun 21 19:26:14 2020
 --Host        : GreatAtuin running 64-bit major release  (build 9200)
 --Command     : generate_target mb_design.bd
 --Design      : mb_design
@@ -2751,7 +2751,9 @@ library UNISIM;
 use UNISIM.VCOMPONENTS.ALL;
 entity mb_design is
   port (
+    an : out STD_LOGIC_VECTOR ( 7 downto 0 );
     dip_switches_16bits_tri_i : in STD_LOGIC_VECTOR ( 15 downto 0 );
+    dp : out STD_LOGIC;
     dual_seven_seg_led_disp_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     dual_seven_seg_led_disp_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     dual_seven_seg_led_disp_tri_t : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -2760,6 +2762,7 @@ entity mb_design is
     led_16bits_tri_t : out STD_LOGIC_VECTOR ( 15 downto 0 );
     push_buttons_5bits_tri_i : in STD_LOGIC_VECTOR ( 4 downto 0 );
     reset : in STD_LOGIC;
+    seg : out STD_LOGIC_VECTOR ( 6 downto 0 );
     seven_seg_led_an_tri_i : in STD_LOGIC_VECTOR ( 7 downto 0 );
     seven_seg_led_an_tri_o : out STD_LOGIC_VECTOR ( 7 downto 0 );
     seven_seg_led_an_tri_t : out STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -3105,6 +3108,9 @@ architecture STRUCTURE of mb_design is
     s00_axi_rready : in STD_LOGIC
   );
   end component mb_design_Nexys4DisplayPort_0_0;
+  signal Nexys4DisplayPort_0_dispEn_n : STD_LOGIC_VECTOR ( 7 downto 0 );
+  signal Nexys4DisplayPort_0_dispPt_n : STD_LOGIC;
+  signal Nexys4DisplayPort_0_dispSeg_n : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal axi_gpio_buttons_GPIO_TRI_I : STD_LOGIC_VECTOR ( 4 downto 0 );
   signal axi_gpio_buttons_ip2intc_irpt : STD_LOGIC;
   signal axi_gpio_display_GPIO2_TRI_I : STD_LOGIC_VECTOR ( 7 downto 0 );
@@ -3321,9 +3327,6 @@ architecture STRUCTURE of mb_design is
   signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_peripheral_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal sys_clock_1 : STD_LOGIC;
-  signal NLW_Nexys4DisplayPort_0_dispPt_n_UNCONNECTED : STD_LOGIC;
-  signal NLW_Nexys4DisplayPort_0_dispEn_n_UNCONNECTED : STD_LOGIC_VECTOR ( 7 downto 0 );
-  signal NLW_Nexys4DisplayPort_0_dispSeg_n_UNCONNECTED : STD_LOGIC_VECTOR ( 6 downto 0 );
   signal NLW_axi_timer_0_generateout0_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_generateout1_UNCONNECTED : STD_LOGIC;
   signal NLW_axi_timer_0_pwm0_UNCONNECTED : STD_LOGIC;
@@ -3354,26 +3357,29 @@ architecture STRUCTURE of mb_design is
   attribute X_INTERFACE_INFO of seven_seg_led_an_tri_o : signal is "xilinx.com:interface:gpio:1.0 seven_seg_led_an TRI_O";
   attribute X_INTERFACE_INFO of seven_seg_led_an_tri_t : signal is "xilinx.com:interface:gpio:1.0 seven_seg_led_an TRI_T";
 begin
+  an(7 downto 0) <= Nexys4DisplayPort_0_dispEn_n(7 downto 0);
   axi_gpio_buttons_GPIO_TRI_I(4 downto 0) <= push_buttons_5bits_tri_i(4 downto 0);
   axi_gpio_display_GPIO2_TRI_I(7 downto 0) <= dual_seven_seg_led_disp_tri_i(7 downto 0);
   axi_gpio_display_GPIO_TRI_I(7 downto 0) <= seven_seg_led_an_tri_i(7 downto 0);
   axi_gpio_leds_GPIO_TRI_I(15 downto 0) <= led_16bits_tri_i(15 downto 0);
   axi_gpio_switches_GPIO_TRI_I(15 downto 0) <= dip_switches_16bits_tri_i(15 downto 0);
   axi_uartlite_0_UART_RxD <= usb_uart_rxd;
+  dp <= Nexys4DisplayPort_0_dispPt_n;
   dual_seven_seg_led_disp_tri_o(7 downto 0) <= axi_gpio_display_GPIO2_TRI_O(7 downto 0);
   dual_seven_seg_led_disp_tri_t(7 downto 0) <= axi_gpio_display_GPIO2_TRI_T(7 downto 0);
   led_16bits_tri_o(15 downto 0) <= axi_gpio_leds_GPIO_TRI_O(15 downto 0);
   led_16bits_tri_t(15 downto 0) <= axi_gpio_leds_GPIO_TRI_T(15 downto 0);
   reset_1 <= reset;
+  seg(6 downto 0) <= Nexys4DisplayPort_0_dispSeg_n(6 downto 0);
   seven_seg_led_an_tri_o(7 downto 0) <= axi_gpio_display_GPIO_TRI_O(7 downto 0);
   seven_seg_led_an_tri_t(7 downto 0) <= axi_gpio_display_GPIO_TRI_T(7 downto 0);
   sys_clock_1 <= sys_clock;
   usb_uart_txd <= axi_uartlite_0_UART_TxD;
 Nexys4DisplayPort_0: component mb_design_Nexys4DisplayPort_0_0
      port map (
-      dispEn_n(7 downto 0) => NLW_Nexys4DisplayPort_0_dispEn_n_UNCONNECTED(7 downto 0),
-      dispPt_n => NLW_Nexys4DisplayPort_0_dispPt_n_UNCONNECTED,
-      dispSeg_n(6 downto 0) => NLW_Nexys4DisplayPort_0_dispSeg_n_UNCONNECTED(6 downto 0),
+      dispEn_n(7 downto 0) => Nexys4DisplayPort_0_dispEn_n(7 downto 0),
+      dispPt_n => Nexys4DisplayPort_0_dispPt_n,
+      dispSeg_n(6 downto 0) => Nexys4DisplayPort_0_dispSeg_n(6 downto 0),
       s00_axi_aclk => microblaze_0_Clk,
       s00_axi_araddr(3 downto 0) => microblaze_0_axi_periph_M07_AXI_ARADDR(3 downto 0),
       s00_axi_aresetn => rst_clk_wiz_1_100M_peripheral_aresetn(0),

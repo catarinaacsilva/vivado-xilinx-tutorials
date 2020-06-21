@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun 21 18:11:11 2020" VIVADOVERSION="2019.2">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Sun Jun 21 19:26:15 2020" VIVADOVERSION="2019.2">
 
   <SYSTEMINFO ARCH="artix7" BOARD="digilentinc.com:nexys4:part0:1.1" DEVICE="7a100t" NAME="mb_design" PACKAGE="csg324" SPEEDGRADE="-1"/>
 
@@ -80,6 +80,21 @@
         <CONNECTION INSTANCE="axi_gpio_leds" PORT="gpio_io_t"/>
       </CONNECTIONS>
     </PORT>
+    <PORT DIR="O" NAME="dp" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispPt_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Nexys4DisplayPort_0" PORT="dispPt_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="6" NAME="seg" RIGHT="0" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispSeg_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Nexys4DisplayPort_0" PORT="dispSeg_n"/>
+      </CONNECTIONS>
+    </PORT>
+    <PORT DIR="O" LEFT="7" NAME="an" RIGHT="0" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispEn_n">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="Nexys4DisplayPort_0" PORT="dispEn_n"/>
+      </CONNECTIONS>
+    </PORT>
   </EXTERNALPORTS>
 
   <EXTERNALINTERFACES>
@@ -137,9 +152,21 @@
         <PARAMETER NAME="C_S00_AXI_HIGHADDR" VALUE="0x44A0FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="O" LEFT="7" NAME="dispEn_n" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" LEFT="6" NAME="dispSeg_n" RIGHT="0" SIGIS="undef"/>
-        <PORT DIR="O" NAME="dispPt_n" SIGIS="undef"/>
+        <PORT DIR="O" LEFT="7" NAME="dispEn_n" RIGHT="0" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispEn_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="an"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" LEFT="6" NAME="dispSeg_n" RIGHT="0" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispSeg_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="seg"/>
+          </CONNECTIONS>
+        </PORT>
+        <PORT DIR="O" NAME="dispPt_n" SIGIS="undef" SIGNAME="Nexys4DisplayPort_0_dispPt_n">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="dp"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT CLKFREQUENCY="100000000" DIR="I" NAME="s00_axi_aclk" SIGIS="clk" SIGNAME="clk_wiz_1_clk_out1">
           <CONNECTIONS>
             <CONNECTION INSTANCE="clk_wiz_1" PORT="clk_out1"/>

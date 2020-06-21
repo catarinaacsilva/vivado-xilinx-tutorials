@@ -255,10 +255,13 @@ proc create_root_design { parentCell } {
 
 
   # Create ports
+  set an [ create_bd_port -dir O -from 7 -to 0 an ]
+  set dp [ create_bd_port -dir O dp ]
   set reset [ create_bd_port -dir I -type rst reset ]
   set_property -dict [ list \
    CONFIG.POLARITY {ACTIVE_LOW} \
  ] $reset
+  set seg [ create_bd_port -dir O -from 6 -to 0 seg ]
   set sys_clock [ create_bd_port -dir I -type clk -freq_hz 100000000 sys_clock ]
   set_property -dict [ list \
    CONFIG.PHASE {0.000} \
@@ -393,6 +396,9 @@ proc create_root_design { parentCell } {
   connect_bd_intf_net -intf_net microblaze_0_interrupt [get_bd_intf_pins microblaze_0/INTERRUPT] [get_bd_intf_pins microblaze_0_axi_intc/interrupt]
 
   # Create port connections
+  connect_bd_net -net Nexys4DisplayPort_0_dispEn_n [get_bd_ports an] [get_bd_pins Nexys4DisplayPort_0/dispEn_n]
+  connect_bd_net -net Nexys4DisplayPort_0_dispPt_n [get_bd_ports dp] [get_bd_pins Nexys4DisplayPort_0/dispPt_n]
+  connect_bd_net -net Nexys4DisplayPort_0_dispSeg_n [get_bd_ports seg] [get_bd_pins Nexys4DisplayPort_0/dispSeg_n]
   connect_bd_net -net axi_gpio_buttons_ip2intc_irpt [get_bd_pins axi_gpio_buttons/ip2intc_irpt] [get_bd_pins microblaze_0_xlconcat/In3]
   connect_bd_net -net axi_gpio_switches_ip2intc_irpt [get_bd_pins axi_gpio_switches/ip2intc_irpt] [get_bd_pins microblaze_0_xlconcat/In2]
   connect_bd_net -net axi_timer_0_interrupt [get_bd_pins axi_timer_0/interrupt] [get_bd_pins microblaze_0_xlconcat/In1]
