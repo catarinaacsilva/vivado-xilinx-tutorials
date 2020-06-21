@@ -390,3 +390,524 @@ dismissDialog("Add Sources"); // c (cr)
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4DispDriver(Behavioral) (Nexys4DispDriver.vhd)]", 3, false); // B (F, cr)
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4DispDriver(Behavioral) (Nexys4DispDriver.vhd)]", 3, false); // B (F, cr)
 selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Nexys4DispDriver(Behavioral) (Nexys4DispDriver.vhd)]", 3, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 27 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 2); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0.vhd", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DispDriver.vhd", 3); // i (h, cr)
+selectCodeEditor("Nexys4DispDriver.vhd", 84, 334); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DispDriver.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DispDriver.vhd", 382, 345); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0.vhd", 1); // i (h, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 85, 100); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 104, 111); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 261, 100); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 83, 149); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 86, 164); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 249, 163); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 284, 209); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 311, 293); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 84, 340); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 75, 366); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 266, 368); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 377, 349); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 376, 330); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 374, 322); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 377, 362); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 123, 264); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 241, 287); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 257, 302); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,012 MB. GUI used memory: 99 MB. Current time: 6/21/20, 5:30:19 PM BST
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 2); // i (h, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 205, 345); // ch (w, cr)
+// Elapsed time: 73 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0.vhd", 1); // i (h, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 122, 240); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 54, 259); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 87, 285); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 86, 298); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 341, 304); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 340, 304); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 137, 59); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 401, 96); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 367, 76); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 87, 92); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 81, 109); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 129, 77); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 138, 68); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 128, 94); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 141, 113); // ch (w, cr)
+// Elapsed time: 19 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 230, 112); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 136, 106); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 251, 155); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Nexys4DisplayPort_v1_0.vhd", 336, 114); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 2); // i (h, cr)
+// Elapsed time: 117 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 506, 83); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 150 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 147, 341); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 88, 361); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 69, 343); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 357, 168); // ch (w, cr)
+// Elapsed time: 51 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 101, 304); // ch (w, cr)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "number"); // l (aP, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 209, 324); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 228, 249); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aH, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 17 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 225, 315); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 225, 315, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 23 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 255, 318); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 233, 316); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 210, 335); // ch (w, cr)
+// Elapsed time: 23 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 231, 182); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 152, 178); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 152, 178, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 197, 209); // ch (w, cr)
+// Elapsed time: 45 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 25, 305); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 265, 313); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 224, 312); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 104, 307); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 101, 308); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 178, 308); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 178, 307, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 177, 312); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 181, 325); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 159, 313); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 243, 306); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 262, 304); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 269, 311); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 343, 309); // ch (w, cr)
+// Elapsed time: 11 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 416, 312); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 144, 328); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 229, 330); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 287, 332); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 288, 302); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 326, 321); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 325, 324, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 319, 333); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 179, 313); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 179, 313, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 349, 336); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 501, 333); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 108, 346); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 140, 352); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 140, 352, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 101, 346); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 192, 346); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 229, 346); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 297, 354); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 293, 362, false, false, false, true, false); // ch (w, cr) - Popup Trigger
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 163, 325); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 163, 325, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 242, 342); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 249, 366); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 103, 358); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 103, 358, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 139, 370); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 321, 366); // ch (w, cr)
+// Elapsed time: 18 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 151, 176); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 151, 176, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 16 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 142, 194); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 142, 194, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 26 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 179, 225); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 247, 267); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 165, 193); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 165, 192, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 201, 224); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 183, 187); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 183, 186, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 185, 200); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 185, 200, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 13 seconds
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "TEnableCounter"); // l (aP, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 125, 63); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 125, 62, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 270, 68); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 220, 310); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 133, 249); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 133, 249, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 142, 284); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 109, 251); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 189, 259); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 276, 246); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 107, 244); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 105, 297); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 108, 263); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 107, 314); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 559, 278); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 102, 301); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 100, 350); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 257, 349); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 154, 347); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 154, 347, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 253, 346); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 104, 365); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 261, 366); // ch (w, cr)
+// Elapsed time: 103 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 180, 298); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 180, 298, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 166, 277); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 166, 277, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+// Elapsed time: 30 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 323, 277); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 323, 277, false, false, false, false, true); // ch (w, cr) - Double Click
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 448 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 487, 221); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 502, 280); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 417, 354); // ch (w, cr)
+// Elapsed time: 33 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 420, 235); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 262, 177); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,020 MB. GUI used memory: 101 MB. Current time: 6/21/20, 6:00:20 PM BST
+// Elapsed time: 287 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 302, 242); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 291, 234); // ch (w, cr)
+// Elapsed time: 48 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 177, 148); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 177, 148, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 237, 350); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 237, 350, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 302, 319); // ch (w, cr)
+// Elapsed time: 35 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 146, 211); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 149, 195); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 149, 195, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 14 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 211, 230); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 457, 241); // ch (w, cr)
+// Elapsed time: 17 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 194, 252); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 193, 252, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 252, 386); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 252, 386, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+// Elapsed time: 85 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 214, 315); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 213, 311); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 207, 331); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 209, 338); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 309, 360); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 212, 345); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 286, 345); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 207, 353); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 209, 346); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 237, 344); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 247, 344); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 310, 355); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 315, 322); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 233, 311); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 233, 312, false, false, false, false, true); // ch (w, cr) - Double Click
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aP, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 230, 316); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 230, 316, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 276, 317); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 436, 287); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 430, 347); // ch (w, cr)
+// Elapsed time: 74 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 93, 257); // ch (w, cr)
+typeControlKey((HResource) null, "Nexys4DisplayPort_v1_0_S00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 387, 350); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 104 seconds
+selectCodeEditor("Nexys4DisplayPort_v1_0_S00_AXI.vhd", 313, 197); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - Nexys4DisplayPort", 0); // i (h, cr)
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "File Groups", 2); // ar (O, cr)
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from File Groups Wizard"); // h (M, cr)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes files [ipx::current_core] 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Customization Parameters", 3); // ar (O, cr)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectButton(PAResourceItoN.MessageBanner_CHANGES_DETECTED_IN_VIVADO_PROJECT_THAT, "Merge changes from Customization Parameters Wizard"); // h (M, cr)
+// TclEventType: PACKAGER_COMPONENT_RESET
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: ipx::merge_project_changes hdl_parameters [ipx::current_core] 
+// Tcl Message: INFO: [IP_Flow 19-3166] Bus Interface 'S00_AXI': References existing memory map 'S00_AXI'. 
+selectList(PAResourceOtoP.PackagerStepsPanel_PACKAGER_STEPS_LIST, "Review and Package", 7); // ar (O, cr)
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Synthesis, Run Synthesis]", 15, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_RUN_SYNTHESIS
+// al (cr): Save Project: addNotify
+selectButton(PAResourceQtoS.SaveProjectUtils_SAVE, "Save"); // a (al)
+// f (cr): Launch Runs: addNotify
+dismissDialog("Save Project"); // al (cr)
+// TclEventType: FILE_SET_CHANGE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (f)
+// bB (cr):  Starting Design Runs : addNotify
+dismissDialog("Launch Runs"); // f (cr)
+// TclEventType: RUN_LAUNCH
+// TclEventType: RUN_MODIFY
+// Tcl Message: launch_runs synth_1 -jobs 4 
+// Tcl Message: [Sun Jun 21 18:09:25 2020] Launched synth_1... Run output will be captured here: c:/users/catar/desktop/git/vivado-xilinx-tutorials/timer-hard-soft/customtimerdemo/customtimerdemo.tmp/nexys4displayport_v1_0_project/Nexys4DisplayPort_v1_0_project.runs/synth_1/runme.log 
+// 'k' command handler elapsed time: 11 seconds
+// [GUI Memory]: 170 MB (+5970kb) [00:47:58]
+dismissDialog("Starting Design Runs"); // bB (cr)
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// aj (cr): Synthesis Completed: addNotify
+// Elapsed time: 80 seconds
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (aj)
+// Run Command: PAResourceCommand.PACommandNames_RUN_IMPLEMENTATION
+// f (cr): Launch Runs: addNotify
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (f)
+dismissDialog("Launch Runs"); // f (cr)
+selectButton(PAResourceQtoS.ReviewContentPanel_RE_PACKAGE_IP, "Re-Package IP"); // a (c, cr)
+// TclEventType: PACKAGER_OBJECT_CHANGE
+// Tcl Message: set_property core_revision 2 [ipx::current_core] 
+// Tcl Message: ipx::update_source_project_archive -component [ipx::current_core] 
+// Tcl Message: ipx::create_xgui_files [ipx::current_core] 
+// Tcl Message: ipx::update_checksums [ipx::current_core] 
+// Tcl Message: ipx::save_core [ipx::current_core] 
+// TclEventType: FILE_SET_CHANGE
+// bB (cr):  Package IP : addNotify
+selectButton("OptionPane.button", "Yes"); // JButton (A, G)
+// Tcl Message: ipx::move_temp_component_back -component [ipx::current_core] 
+// TclEventType: PROJECT_CLOSE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,020 MB. GUI used memory: 103 MB. Current time: 6/21/20, 6:10:51 PM BST
+// Tcl Message: close_project -delete 
+dismissDialog("Package IP"); // bB (cr)
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: RSB_LOCK_CHANGE
+// TclEventType: IP_LOCK_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// Tcl Message: update_ip_catalog -rebuild -repo_path c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0 
+// Tcl Message: INFO: [IP_Flow 19-725] Reloaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/ip_repo/Nexys4DisplayPort_1.0' 
+selectButton(PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN, "save_rsb_design"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_SAVE_RSB_DESIGN
+// TclEventType: RSB_SAVE_DIAGRAM
+// bB (cr):  Save Design : addNotify
+// Tcl Message: save_bd_design 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: Wrote  : <C:\Users\catar\Desktop\git\vivado-xilinx-tutorials\timer-hard-soft\CustomTimerDemo\CustomTimerDemo.srcs\sources_1\bd\mb_design\mb_design.bd>  Wrote  : <C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ui/bd_db273ea8.ui>  
+dismissDialog("Save Design"); // bB (cr)
+selectButton(PAResourceQtoS.SystemTab_REPORT_IP_STATUS, "Report IP Status"); // h (ds, cr)
+// Run Command: PAResourceCommand.PACommandNames_REPORT_IP_STATUS
+// Tcl Command: 'report_ip_status -name ip_status '
+// TclEventType: IP_SUMMARY_RESULTS
+// Tcl Message: report_ip_status -name ip_status  
+selectButton(PAResourceItoN.IPStatusSectionPanel_UPGRADE_SELECTED, "Upgrade Selected"); // a (g, cr)
+// Run Command: PAResourceCommand.PACommandNames_UPGRADE_IP
+// TclEventType: RSB_OPEN_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// bB (cr):  Upgrade IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: upgrade_ip -vlnv xilinx.com:user:Nexys4DisplayPort:1.0 [get_ips  mb_design_Nexys4DisplayPort_0_0] -log ip_upgrade.log 
+// Tcl Message: Upgrading 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/mb_design.bd' 
+// Tcl Message: INFO: [IP_Flow 19-3422] Upgraded mb_design_Nexys4DisplayPort_0_0 (Nexys4DisplayPort_v1.0 1.0) from revision 1 to revision 2 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: FILESET_UPDATE_IP
+// TclEventType: IP_UPGRADE_COMPLETE
+// Tcl Message: Wrote  : <C:\Users\catar\Desktop\git\vivado-xilinx-tutorials\timer-hard-soft\CustomTimerDemo\CustomTimerDemo.srcs\sources_1\bd\mb_design\mb_design.bd>  Wrote  : <C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/ui/bd_db273ea8.ui>  
+// Tcl Message: INFO: [Coretcl 2-1525] Wrote upgrade log to 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/ip_upgrade.log'. 
+// Tcl Message: export_ip_user_files -of_objects [get_ips mb_design_Nexys4DisplayPort_0_0] -no_script -sync -force -quiet 
+// a (cr): Critical Messages: addNotify
+// aI (cr): Generate Output Products: addNotify
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectButton(PAResourceQtoS.SimpleOutputProductDialog_GENERATE_OUTPUT_PRODUCTS_IMMEDIATELY, "Generate"); // a (aI)
+// bB (cr):  Managing Output Products : addNotify
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: generate_target all [get_files  C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// Tcl Message: INFO: [xilinx.com:ip:axi_intc:4.1-1] /microblaze_0_axi_intc: The AXI INTC core has been configured to operate with synchronous clocks. 
+// Tcl Message: Wrote  : <C:\Users\catar\Desktop\git\vivado-xilinx-tutorials\timer-hard-soft\CustomTimerDemo\CustomTimerDemo.srcs\sources_1\bd\mb_design\mb_design.bd>  
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SAVE_DIAGRAM
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: VHDL Output written to : C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.vhd VHDL Output written to : C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/sim/mb_design.vhd VHDL Output written to : C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd 
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: Exporting to file C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hw_handoff/mb_design.hwh Generated Block Design Tcl file C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/hw_handoff/mb_design_bd.tcl Generated Hardware Definition File C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/synth/mb_design.hwdef 
+// Tcl Message: generate_target: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1148.234 ; gain = 139.629 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_xbar_0] } 
+// Tcl Message: catch { config_ip_cache -export [get_ips -all mb_design_Nexys4DisplayPort_0_0] } 
+// Tcl Message: export_ip_user_files -of_objects [get_files C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/mb_design.bd] -no_script -sync -force -quiet 
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_NEW
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_ADD
+// Tcl Message: create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.srcs/sources_1/bd/mb_design/mb_design.bd] 
+// TclEventType: RUN_ADD
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_LAUNCH
+// Tcl Message: launch_runs -jobs 4 {mb_design_xbar_0_synth_1 mb_design_Nexys4DisplayPort_0_0_synth_1} 
+// TclEventType: RUN_MODIFY
+// Tcl Message: [Sun Jun 21 18:11:13 2020] Launched mb_design_xbar_0_synth_1, mb_design_Nexys4DisplayPort_0_0_synth_1... Run output will be captured here: mb_design_xbar_0_synth_1: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.runs/mb_design_xbar_0_synth_1/runme.log mb_design_Nexys4DisplayPort_0_0_synth_1: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/timer-hard-soft/CustomTimerDemo/CustomTimerDemo.runs/mb_design_Nexys4DisplayPort_0_0_synth_1/runme.log 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_UNLOAD_CORE
+// WARNING: HEventQueue.dispatchEvent() is taking  1242 ms.
+// Elapsed time: 27 seconds
+selectButton("OptionPane.button", "OK"); // JButton (A, G)
+selectButton(PAResourceAtoD.CmdMsgDialog_OK, "OK"); // f (a)
+dismissDialog("Critical Messages"); // a (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_STEP_COMPLETED
