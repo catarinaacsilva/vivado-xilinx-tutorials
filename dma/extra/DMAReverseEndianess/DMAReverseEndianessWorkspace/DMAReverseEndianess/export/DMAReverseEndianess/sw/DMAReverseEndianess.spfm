@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdx:platform sdx:vendor="xilinx.com"
+              sdx:library="sdx"
+              sdx:name="DMAReverseEndianess"
+              sdx:version="1.0"
+              sdx:schemaVersion="1.0"
+              xmlns:sdx="http://www.xilinx.com/sdx">
+    <sdx:description>
+DMAReverseEndianess
+    </sdx:description>
+    <sdx:systemConfigurations sdx:defaultConfiguration="DMAReverseEndianess">
+        <sdx:configuration sdx:name="DMAReverseEndianess"
+                           sdx:displayName="DMAReverseEndianess"
+                           sdx:defaultProcessorGroup="standalone_domain"
+                           sdx:runtimes="cpp">
+            <sdx:description>DMAReverseEndianess</sdx:description>
+            <sdx:bootImages sdx:default="standard">
+                <sdx:image sdx:name="standard"
+                            sdx:bif="DMAReverseEndianess/boot/DMAReverseEndianess.bif"
+                            sdx:readme="DMAReverseEndianess/boot/generic.readme"
+                            />
+            </sdx:bootImages>
+            <sdx:processorGroup sdx:name="standalone_domain"
+                                sdx:displayName="standalone on microblaze_0"
+                                sdx:cpuType="microblaze_0"
+                                sdx:cpuInstance="microblaze_0">
+                <sdx:os sdx:name="standalone"
+                        sdx:displayName="standalone"
+                        sdx:bspLibraryPaths="DMAReverseEndianess/standalone_domain/bsplib/lib"
+                        sdx:bspIncludePaths="DMAReverseEndianess/standalone_domain/bspinclude/include"
+                        sdx:bspConfig="DMAReverseEndianess/standalone_domain/system.mss"
+                />
+            </sdx:processorGroup>
+        </sdx:configuration>
+    </sdx:systemConfigurations>
+</sdx:platform>
