@@ -1,0 +1,751 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 35204
+License: Customer
+
+Current time: 	Mon Jun 29 19:38:27 BST 2020
+Time zone: 	Greenwich Mean Time (Europe/London)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 4
+
+Screen size: 1920x1013
+Screen resolution (DPI): 100
+Available screens: 1
+Available disk space: 330 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	C:/Xilinx/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	catar
+User home directory: C:/Users/catar
+User working directory: C:/Users/catar/Desktop/test/Md5Demo
+User country: 	PT
+User language: 	pt
+User locale: 	pt_PT
+
+RDI_BASEROOT: C:/Xilinx/Vivado
+HDI_APPROOT: C:/Xilinx/Vivado/2019.2
+RDI_DATADIR: C:/Xilinx/Vivado/2019.2/data
+RDI_BINDIR: C:/Xilinx/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/catar/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/catar/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/catar/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	C:/Xilinx/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/catar/Desktop/test/Md5Demo/vivado.log
+Vivado journal file location: 	C:/Users/catar/Desktop/test/Md5Demo/vivado.jou
+Engine tmp dir: 	C:/Users/catar/Desktop/test/Md5Demo/.Xil/Vivado-35204-GreatAtuin
+
+Xilinx Environment Variables
+----------------------------
+XILINX: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: C:/Xilinx/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: C:/Xilinx/Vivado/2019.2
+XILINX_SDK: C:/Xilinx/Vitis/2019.2
+XILINX_VITIS: C:/Xilinx/Vitis/2019.2
+XILINX_VIVADO: C:/Xilinx/Vivado/2019.2
+XILINX_VIVADO_HLS: C:/Xilinx/Vivado/2019.2
+
+
+GUI allocated memory:	186 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 699 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\catar\Desktop\test\Md5Demo\Md5Demo.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_COMPLETED
+// TclEventType: RUN_STATUS_CHANGE
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 709 MB. GUI used memory: 49 MB. Current time: 6/29/20, 7:38:29 PM BST
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 65 MB (+65199kb) [00:00:14]
+// [Engine Memory]: 710 MB (+592890kb) [00:00:14]
+// [GUI Memory]: 71 MB (+3407kb) [00:00:14]
+// [GUI Memory]: 93 MB (+19158kb) [00:00:16]
+// [Engine Memory]: 765 MB (+20853kb) [00:00:16]
+// [GUI Memory]: 100 MB (+2895kb) [00:00:16]
+// [GUI Memory]: 108 MB (+2576kb) [00:00:16]
+// WARNING: HEventQueue.dispatchEvent() is taking  3483 ms.
+// Tcl Message: open_project C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'C:/Users/catar/Desktop/git/md5-hardware/Md5Demo' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [filemgmt 56-1] IP Repository Path: Directory not found as 'C:/Users/catar/Desktop/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0'; using path 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0' instead. INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0'. INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// WARNING: HEventQueue.dispatchEvent() is taking  1574 ms.
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:10 . Memory (MB): peak = 794.035 ; gain = 149.379 
+// Project name: Md5Demo; location: C:/Users/catar/Desktop/test/Md5Demo; part: xc7a100tcsg324-1
+// [GUI Memory]: 114 MB (+514kb) [00:00:20]
+// [Engine Memory]: 1,007 MB (+213368kb) [00:00:20]
+dismissDialog("Open Project"); // bB (cr)
+// [Engine Memory]: 1,083 MB (+26608kb) [00:00:21]
+// [GUI Memory]: 131 MB (+11618kb) [00:00:25]
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper(STRUCTURE) (mb_design_wrapper.vhd)]", 1); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper(STRUCTURE) (mb_design_wrapper.vhd), mb_design_i : mb_design (mb_design.bd)]", 2, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, mb_design_wrapper(STRUCTURE) (mb_design_wrapper.vhd), mb_design_i : mb_design (mb_design.bd)]", 2, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// bB (cr):  Open Block Design : addNotify
+// TclEventType: LOAD_FEATURE
+// Tcl Message: open_bd_design {C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/mb_design.bd} 
+// TclEventType: RSB_CHANGE_CURRENT_DIAGRAM
+// TclEventType: LOAD_FEATURE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_OPEN_DIAGRAM
+// HMemoryUtils.trashcanNow. Engine heap size: 1,118 MB. GUI used memory: 68 MB. Current time: 6/29/20, 7:38:49 PM BST
+// TclEventType: RSB_OPEN_DIAGRAM
+// WARNING: HEventQueue.dispatchEvent() is taking  2548 ms.
+// TclEventType: RSB_CONNECTION_CHANGE
+// Elapsed time: 10 seconds
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+// TclEventType: RSB_LOCK_CHANGE
+// Tcl Message: open_bd_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:10 . Memory (MB): peak = 1448.344 ; gain = 8.633 
+dismissDialog("Open Block Design"); // bB (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // af (cr)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // ai (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// I (cr): Settings: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1871 ms.
+expandTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP]", 6); // L (E, I)
+selectTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP, Repository]", 7, false); // L (E, I)
+dismissDialog("Settings"); // I (cr)
+// [GUI Memory]: 142 MB (+5608kb) [00:00:59]
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 274, 268, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SelectMenu_HIGHLIGHT, "Highlight"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(RDIResourceCommand.RDICommands_PROPERTIES, "Block Properties..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: RDIResourceCommand.RDICommands_PROPERTIES
+// [GUI Memory]: 160 MB (+11274kb) [00:01:13]
+selectMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_PROJECT, "Project"); // af (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_FILE, "File"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // aa (q, cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_EDIT, "Edit"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // aa (q, cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+selectMenu(RDIResourceCommand.RDICommands_CUSTOM_COMMANDS, "Custom Commands"); // af (cr)
+selectMenuItem(RDIResourceCommand.RDICommands_SETTINGS, "Settings..."); // ai (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+// Run Command: RDIResourceCommand.RDICommands_SETTINGS
+// I (cr): Settings: addNotify
+// Elapsed time: 11 seconds
+dismissDialog("Settings"); // I (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 270, 265, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_ADD_MODULE, "Add Module..."); // ai (ao, Popup.HeavyWeightWindow)
+// ci (cr): Add Module: addNotify
+dismissDialog("Add Module"); // ci (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 297, 275, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC, "Customize Block..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (cr): Re-customize IP: addNotify
+selectButton(PAResourceAtoD.CustomizeCoreDialog_IP_LOCATION, "IP Location"); // E (f, r)
+selectButton(PAResourceAtoD.CustomizeCoreDialog_DOCUMENTATION, "Documentation"); // E (f, r)
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a (r)
+dismissDialog("Re-customize IP"); // r (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 292, 309, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_SETTINGS, "IP Settings..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_IP_SETTINGS
+// I (cr): Settings: addNotify
+expandTree(PAResourceQtoS.SettingsDialog_PROJECT_TREE, "[projectRoot, IP]", 6); // L (E, I)
+// [GUI Memory]: 170 MB (+1493kb) [00:02:23]
+dismissDialog("Settings"); // I (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 292, 279, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceQtoS.SystemBuilderMenu_CREATE_INTERFACE_PORT, "Create Interface Port..."); // ai (ao, Popup.HeavyWeightWindow)
+// bB (cr):  Create Interface Port : addNotify
+// aL (cr): Create Interface Port: addNotify
+// Elapsed time: 34 seconds
+setText("PAResourceAtoD.CreateRSBInterfaceDialog_TABLE_SEARCH_FIELD", (String) null); // OverlayTextField (I, aL)
+dismissDialog("Create Interface Port"); // aL (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 278, 309, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC, "Customize Block..."); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (cr): Re-customize IP: addNotify
+dismissDialog("Re-customize IP"); // r (cr)
+// Elapsed time: 14 seconds
+selectMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // af (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, "Open Block Design"); // af (cr)
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // aa (cr)
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // aa (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, "Open Block Design"); // af (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, "Open Block Design"); // af (cr)
+selectMenu(PAResourceCommand.PACommandNames_SIMULATION_RUN, "Run Simulation"); // aa (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_OPEN_BLOCK_DESIGN, "Open Block Design"); // af (cr)
+selectMenu(PAResourceItoN.MainMenuMgr_SETTINGS, "Settings"); // af (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_FLOW, "Flow"); // aa (q, cr)
+selectMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+selectMenuItem(PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD, "Create and Package New IP..."); // ai (cr)
+dismissMenu(PAResourceItoN.MainMenuMgr_TOOLS, "Tools"); // aa (q, cr)
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER_WIZARD
+// Q (cr): Create and Package New IP: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectRadioButton(PAResourceItoN.NewIpWizard_CREATE_NEW_AXI4_IP_CREATE_AXI4, "Create a new AXI4 peripheral. Create an AXI4 IP, driver, software test application, IP Integrator AXI4 VIP simulation and debug demonstration design."); // b (a, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// Elapsed time: 29 seconds
+setText(PAResourceItoN.NewIpWizard_NAME_MYIP, "MD5HF"); // ac (Q)
+// Elapsed time: 11 seconds
+setText(PAResourceItoN.NewIpWizard_DESCRIPTION_MY_NEW_AXI_IP, "MD5 Hash Function"); // ac (Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+// Elapsed time: 11 seconds
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_TYPE, "Stream", 2); // e (E, Q)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_MODE, "Slave", 1); // e (E, Q)
+selectButton(PAResourceItoN.NewIpWizard_ADD_NEW_INTERFACE, (String) null); // k (f, Q)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_TYPE, "Lite", 0); // e (E, Q)
+selectComboBox(PAResourceItoN.NewIpWizard_INTERFACE_MODE, "Master", 0); // e (E, Q)
+selectButton("NEXT", "Next >"); // JButton (j, Q)
+selectButton("FINISH", "Finish"); // JButton (j, Q)
+// 'q' command handler elapsed time: 72 seconds
+dismissDialog("Create and Package New IP"); // Q (cr)
+// Tcl Message: create_peripheral xilinx.com user MD5HF 1.0 -dir C:/Users/catar/Desktop/test/Md5Demo/../ip_repo 
+// Tcl Message: add_peripheral_interface S00_AXIS -interface_mode slave -axi_type stream [ipx::find_open_core xilinx.com:user:MD5HF:1.0] 
+// Tcl Message: add_peripheral_interface M00_AXI -interface_mode master -axi_type lite [ipx::find_open_core xilinx.com:user:MD5HF:1.0] 
+// TclEventType: PACKAGER_OBJECT_ADD
+// Tcl Message: generate_peripheral -bfm_example_design -debug_hw_example_design [ipx::find_open_core xilinx.com:user:MD5HF:1.0] 
+// Tcl Message: write_peripheral [ipx::find_open_core xilinx.com:user:MD5HF:1.0] 
+// TclEventType: FILE_SET_CHANGE
+// bB (cr):  Create Peripheral IP : addNotify
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: set_property  ip_repo_paths  {C:/Users/catar/Desktop/test/Md5Demo/../ip_repo/MD5HF_1.0 C:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0 C:/Users/catar/Desktop/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0} [current_project] 
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PROJECT_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// Tcl Message: update_ip_catalog -rebuild 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0'. 
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: BDCELL_LOCK_CHANGE
+// TclEventType: CREATE_IP_CATALOG
+// [Engine Memory]: 1,152 MB (+16046kb) [00:05:02]
+// WARNING: HEventQueue.dispatchEvent() is taking  1113 ms.
+// [Engine Memory]: 1,446 MB (+247068kb) [00:05:04]
+dismissDialog("Create Peripheral IP"); // bB (cr)
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // E (f, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 102 MB. Current time: 6/29/20, 7:43:25 PM BST
+selectButton(PAResourceQtoS.SystemBuilderView_ADD_IP, "System_RSB_ADD_IP"); // E (f, cr)
+setText("PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE_SEARCH_FIELD", "md5"); // OverlayTextField (ay, ResizableWindow)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "MD5HF_v1.0", 1, "MD5HF_v1.0", 0, false); // L (O, ResizableWindow)
+expandTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "MD5HF_v1.0", 1); // L (O, ResizableWindow)
+selectTreeTable(PAResourceAtoD.CoreTreeTablePanel_CORE_TREE_TABLE, "MD5HF_v1.0", 1, "MD5HF_v1.0", 0, false, false, false, false, false, true); // L (O, ResizableWindow) - Double Click
+// Tcl Message: startgroup 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_ADD_OBJECT
+// bB (cr):  Add IP : addNotify
+// Tcl Message: create_bd_cell -type ip -vlnv xilinx.com:user:MD5HF:1.0 MD5HF_0 
+// Tcl Message: endgroup 
+dismissDialog("Add IP"); // bB (cr)
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: RUN_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: FILE_SET_DELETE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// bB (cr):  Confirm Delete : addNotify
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: delete_bd_objs [get_bd_intf_nets Md5HashFunction_0_M00_AXIS] [get_bd_intf_nets axis_data_fifo_0_M_AXIS] [get_bd_cells Md5HashFunction_0] 
+// Elapsed time: 13 seconds
+dismissDialog("Confirm Delete"); // bB (cr)
+// Elapsed time: 10 seconds
+selectButton(PAResourceCommand.PACommandNames_ZOOM_OUT, "System_zoom_out"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_OUT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_OUT
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_OUT
+selectButton(PAResourceCommand.PACommandNames_ZOOM_IN, "System_zoom_in"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+selectButton(PAResourceCommand.PACommandNames_ZOOM_IN, "System_zoom_in"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Tcl Command: 'set_property location {4 1012 874} [get_bd_cells MD5HF_0]'
+// TclEventType: RSB_CANVAS_LOCATION
+// Tcl Message: set_property location {4 1012 874} [get_bd_cells MD5HF_0] 
+// TclEventType: RSB_CONNECTION_CHANGE
+// Tcl Message: connect_bd_intf_net [get_bd_intf_pins MD5HF_0/S00_AXIS] [get_bd_intf_pins axis_data_fifo_0/M_AXIS] 
+// Elapsed time: 12 seconds
+selectButton(PAResourceQtoS.RSBApplyAutomationBar_RUN_CONNECTION_AUTOMATION, "Run Connection Automation"); // h (cu, cr)
+// w (cr): Run Connection Automation: addNotify
+selectCheckBoxTree(PAResourceAtoD.ApplyRSBMultiAutomationDialog_CHECKBOX_TREE, "[All Automation (2 out of 2 selected)]", 0, true, true, ui.utils.TriState.True); // K (O, w) - Node
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (w)
+dismissDialog("Run Connection Automation"); // w (cr)
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// bB (cr):  Run Connection Automation : addNotify
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: startgroup 
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {/clk_wiz_1/clk_out1 (100 MHz)} Clk_xbar {/clk_wiz_1/clk_out1 (100 MHz)} Master {/MD5HF_0/M00_AXI} Slave {/microblaze_0_axi_intc/s_axi} ddr_seg {Auto} intc_ip {/microblaze_0_axi_periph} master_apm {0}}  [get_bd_intf_pins MD5HF_0/M00_AXI] 
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: REPORT_IP_STATUS_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: XGUI_UPDATE_GUI_ELEMENT
+// TclEventType: RSB_CONNECTION_CHANGE
+// TclEventType: XGUI_RESET_GUI_ELEMENT
+// Tcl Message: apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/clk_wiz_1/clk_out1 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins MD5HF_0/s00_axis_aclk] 
+// Tcl Message: endgroup 
+dismissDialog("Run Connection Automation"); // bB (cr)
+selectButton(PAResourceCommand.PACommandNames_REGENERATE_LAYOUT, "System_regenerate_rsb_layout"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_REGENERATE_LAYOUT
+// Tcl Command: 'regenerate_bd_layout'
+// TclEventType: RSB_LAYOUT_STATE
+// TclEventType: RSB_REGENERATE_LAYOUT
+// Tcl Message: regenerate_bd_layout 
+selectButton(PAResourceCommand.PACommandNames_ZOOM_IN, "System_zoom_in"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Run Command: PAResourceCommand.PACommandNames_ZOOM_IN
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (cr): Re-customize IP: addNotify
+selectCheckBox((HResource) null, "Enable Write Channel", false); // g (o, r): FALSE
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (r)
+dismissDialog("Re-customize IP"); // r (cr)
+// Tcl Command: 'set_property -dict [list CONFIG.c_include_s2mm {0}] [get_bd_cells axi_dma_0]'
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: RSB_PROPERTY_CHANGE
+// TclEventType: RSB_SCRIPT_TASK
+// TclEventType: RSB_REMOVE_OBJECT
+// TclEventType: RSB_SCRIPT_TASK
+// Tcl Message: startgroup 
+// Tcl Message: set_property -dict [list CONFIG.c_include_s2mm {0}] [get_bd_cells axi_dma_0] 
+// Tcl Message: delete_bd_objs [get_bd_nets axi_dma_0_s2mm_introut] [get_bd_intf_nets axi_dma_0_M_AXI_S2MM] 
+// Tcl Message: endgroup 
+// Run Command: PAResourceCommand.PACommandNames_CUSTOMIZE_RSB_BLOC
+// r (cr): Re-customize IP: addNotify
+dismissDialog("Re-customize IP"); // r (cr)
+selectView(PAResourceOtoP.PAViews_SYSTEM, "System", 666, 188, 1224, 471, false, false, false, true, false); // go (i, cr) - Popup Trigger
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_EXPAND_COLLAPSE, "Expand/Collapse"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_PINNING, "Pinning"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderView_ORIENTATION, "Orientation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenu(PAResourceQtoS.SystemBuilderMenu_IP_DOCUMENTATION, "IP Documentation"); // af (ao, Popup.HeavyWeightWindow)
+selectMenuItem(PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER, "Edit in IP Packager"); // ai (ao, Popup.HeavyWeightWindow)
+// Run Command: PAResourceCommand.PACommandNames_EDIT_IN_IP_PACKAGER
+// k (cr): Edit in IP Packager: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (k)
+// bB (cr):  Edit in IP Packager : addNotify
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_ADD
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: ipx::edit_ip_in_project -upgrade true -name MD5HF_v1_0_project -directory C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.tmp/MD5HF_v1_0_project c:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0/component.xml 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// WARNING: HEventQueue.dispatchEvent() is taking  2328 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'. 
+// TclEventType: FILE_SET_OPTIONS_CHANGE
+// TclEventType: RSB_BITABEN_IPREPODATA_REFRESH
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_CURRENT_CORE
+// Run Command: PAResourceCommand.PACommandNames_IP_PACKAGER
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0'. INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0'. 
+// Tcl Message: INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0'. INFO: [IP_Flow 19-795] Syncing license key meta-data 
+// TclEventType: PACKAGER_MESSAGE_RESET
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// Tcl Message: ipx::edit_ip_in_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2111.977 ; gain = 0.000 
+// 'i' command handler elapsed time: 7 seconds
+dismissDialog("Edit in IP Packager"); // bB (cr)
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// Tcl Message: update_compile_order -fileset sources_1 
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MD5HF_v1_0(arch_imp) (MD5HF_v1_0.vhd)]", 1); // B (F, cr)
+// [GUI Memory]: 179 MB (+808kb) [00:06:47]
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MD5HF_v1_0(arch_imp) (MD5HF_v1_0.vhd), MD5HF_v1_0_M00_AXI_inst : MD5HF_v1_0_M00_AXI(implementation) (MD5HF_v1_0_M00_AXI.vhd)]", 3, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MD5HF_v1_0(arch_imp) (MD5HF_v1_0.vhd), MD5HF_v1_0_M00_AXI_inst : MD5HF_v1_0_M00_AXI(implementation) (MD5HF_v1_0_M00_AXI.vhd)]", 3, false, false, false, false, false, true); // B (F, cr) - Double Click
+// Elapsed time: 38 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 317, 286); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 317, 286, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 317, 285); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 424, 337); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 299, 347); // ch (w, cr)
+// Elapsed time: 32 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 647, 199); // ch (w, cr)
+// Elapsed time: 32 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 678, 165); // ch (w, cr)
+// Elapsed time: 44 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // E (f, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files"); // a (E, c)
+// Elapsed time: 21 seconds
+String[] filenames31467 = {"C:/Users/catar/Desktop/test/md5.vhd", "C:/Users/catar/Desktop/test/register.vhd"};
+setFileChooser(filenames31467);
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 26 seconds
+dismissDialog("Add Sources"); // c (cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files -norecurse -copy_to c:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0/src {C:/Users/catar/Desktop/test/register.vhd C:/Users/catar/Desktop/test/md5.vhd} 
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 10 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Package IP - MD5HF", 1); // i (h, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 2); // i (h, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MD5HF_v1_0(arch_imp) (MD5HF_v1_0.vhd)]", 1, true); // B (F, cr) - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, MD5HF_v1_0(arch_imp) (MD5HF_v1_0.vhd)]", 1, true, false, false, false, false, true); // B (F, cr) - Double Click - Node
+// Elapsed time: 73 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 304, 316); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 288, 226); // ch (w, cr)
+// [GUI Memory]: 191 MB (+3011kb) [00:11:26]
+// Elapsed time: 16 seconds
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 328, 228); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 294, 179); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 398, 264); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 398, 264, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 408, 294); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 408, 294, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 389, 333); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 341, 252); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 284, 286); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 280, 391); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 292, 344); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 32 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 197, 367); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 435, 347); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 458, 353); // ch (w, cr)
+// Elapsed time: 15 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 249, 282); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 315, 373); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 290, 332); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 332, 344); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 348, 421); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 330, 73); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 405, 284); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 405, 284, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 413, 317); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 416, 353); // ch (w, cr)
+typeControlKey(null, null, 'z');
+selectCodeEditor("MD5HF_v1_0.vhd", 362, 74); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 362, 74, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 425, 283); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 425, 283, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 401, 324); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 151, 295); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 151, 295, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 396, 271); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 396, 271, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("MD5HF_v1_0.vhd", 403, 285); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 403, 285, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 417, 315); // ch (w, cr)
+// Elapsed time: 39 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 217, 277); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 386, 107); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 386, 107, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 382, 199); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 382, 199, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 394, 224); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 394, 224, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 491, 275); // ch (w, cr)
+// Elapsed time: 25 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 304, 250); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 431, 231); // ch (w, cr)
+// Elapsed time: 14 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 295, 327); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 294, 365); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 149, 354); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 178, 354); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 202, 348); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+// Elapsed time: 23 seconds
+selectCodeEditor("MD5HF_v1_0.vhd", 242, 96); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 242, 95, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 157, 313); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 157, 313, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 344, 344); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 194, 127); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 194, 127, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 145, 280); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 145, 280, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0.vhd", 364, 282); // ch (w, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+// Elapsed time: 12 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 2); // i (h, cr)
+// Elapsed time: 21 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 123, 132); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 53, 158); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 572, 162); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 49, 119); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 80, 186); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 79, 173); // ch (w, cr)
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 61, 177); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 603, 207); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 120, 163); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 120, 163, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 11 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 124, 201); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 121, 157); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 121, 157, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'c'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 378, 280); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 378, 280, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 398, 313); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 398, 313, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'v'); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 603, 306); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 241, 299); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 23, 73); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 20, 60); // ch (w, cr)
+// Elapsed time: 50 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 103, 107); // ch (w, cr)
+typeControlKey(null, null, 'z');
+// Elapsed time: 14 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 281, 417); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 348, 353); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 230, 312); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 230, 312, false, false, false, false, true); // ch (w, cr) - Double Click
+// Elapsed time: 43 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 176, 162); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 176, 161, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'c'); // ch (w, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "INIT_WRITE"); // l (aP, cr)
+// Elapsed time: 16 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 136, 290); // ch (w, cr)
+// Elapsed time: 26 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 195, 369); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 294, 409); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 272, 295); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 1, 198); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 330, 238); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 20, 211); // ch (w, cr)
+// Elapsed time: 44 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 227, 324); // ch (w, cr)
+// Elapsed time: 48 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 130, 262); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 130, 262, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 382, 194); // ch (w, cr)
+selectButton(RDIResource.HCodeEditor_CLOSE, (String) null); // k (aH, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 374, 179); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 192, 226); // ch (w, cr)
+selectCodeEditor("MD5HF_v1_0_M00_AXI.vhd", 192, 226, false, false, false, false, true); // ch (w, cr) - Double Click
+typeControlKey((HResource) null, "MD5HF_v1_0_M00_AXI.vhd", 'c'); // ch (w, cr)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2", true); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+applyEnter(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, "clogb2"); // l (aP, cr)
+setText(RDIResource.HCodeEditor_SEARCH_TEXT_COMBO_BOX, (String) null); // l (aP, cr)
+// TclEventType: PACKAGER_MESSAGE_UPDATE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 116 MB. Current time: 6/29/20, 8:13:25 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 107 MB. Current time: 6/29/20, 8:43:25 PM BST
+// WARNING: HEventQueue.dispatchEvent() is taking  1350 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 106 MB. Current time: 6/29/20, 9:13:27 PM BST
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 106 MB. Current time: 6/29/20, 9:43:27 PM BST
+// Elapsed time: 6116 seconds
+closeMainWindow("MD5HF_v1_0_project - [c:/users/catar/desktop/test/md5demo/md5demo.tmp/md5hf_v1_0_project/MD5HF_v1_0_project.xpr] - Vivado 2019.2"); // cr
+// Run Command: PAResourceCommand.PACommandNames_CLOSE_PROJECT
+// A (cr): Close Project: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bB (cr):  Close Project : addNotify
+// TclEventType: PROJECT_CLOSE
+dismissDialog("Close Project"); // A (cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 1,457 MB. GUI used memory: 102 MB. Current time: 6/29/20, 9:43:51 PM BST
+// Tcl Message: close_project 
+dismissDialog("Close Project"); // bB (cr)
