@@ -1,5 +1,0 @@
-timestamp=[2020-05-26 15:12:07], mode=WORKBENCH_START, duration=0:00:07.515, duration_ms=7515, data={}
-timestamp=[2020-05-26 15:12:08], mode=WORKBENCH_UI_INIT, duration=0:00:01.121, duration_ms=1121, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
-timestamp=[2020-05-26 15:25:03], mode=APP_CREATION, duration=0:00:15.521, duration_ms=15521, data={name=DMADemoApp, project_type=sdk, os=standalone, processor=microblaze, runtime=cpp, platform=DMADemo, application_type=application}
-timestamp=[2020-05-26 15:26:07], mode=APP_CREATION, duration=0:00:01.579, duration_ms=1579, data={name=xaxidma_example_simple_poll_1, project_type=sdk, os=standalone, processor=microblaze_0, runtime=C/C++, platform=DMADemo, application_type=application}
-timestamp=[2020-05-26 15:30:07], mode=PLATFORM_GENERATION, duration=0:00:17.175, duration_ms=17175, data={name=DMADemo}
