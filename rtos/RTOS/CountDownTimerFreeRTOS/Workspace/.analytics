@@ -1,0 +1,8 @@
+timestamp=[2020-05-06 18:43:24], mode=WORKBENCH_START, duration=0:00:08.563, duration_ms=8563, data={}
+timestamp=[2020-05-06 18:43:25], mode=WORKBENCH_UI_INIT, duration=0:00:01.503, duration_ms=1503, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2020-05-06 18:44:34], mode=APP_CREATION, duration=0:00:14.963, duration_ms=14963, data={name=CountDownTimerRTOSApp, project_type=sdk, os=freertos10_xilinx, processor=microblaze, runtime=cpp, platform=CountDownTimerFreeRTOS, application_type=application}
+timestamp=[2020-05-06 18:45:00], mode=PLATFORM_GENERATION, duration=0:00:22.687, duration_ms=22687, data={name=CountDownTimerFreeRTOS}
+timestamp=[2020-05-07 09:31:41], mode=WORKBENCH_START, duration=0:00:12.170, duration_ms=12170, data={}
+timestamp=[2020-05-07 09:31:43], mode=WORKBENCH_UI_INIT, duration=0:00:01.340, duration_ms=1340, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=CountDownTimerFreeRTOS,CountDownTimerRTOSApp,CountDownTimerRTOSApp_system,RemoteSystemsTempFiles}
+timestamp=[2020-05-07 10:52:05], mode=PLATFORM_GENERATION, duration=0:00:24.587, duration_ms=24587, data={name=CountDownTimerFreeRTOS}
+timestamp=[2020-05-07 12:44:37], mode=PLATFORM_GENERATION, duration=0:00:03.339, duration_ms=3339, data={name=CountDownTimerFreeRTOS}

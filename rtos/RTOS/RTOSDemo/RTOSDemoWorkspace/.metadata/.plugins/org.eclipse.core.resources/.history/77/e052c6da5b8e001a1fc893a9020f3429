@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="RTOSDemoApp" location="C:/Users/Pedro/Desktop/RTOSDemo/RTOSDemoWorkspace/RTOSDemoApp" platform="C:/Users/Pedro/Desktop/RTOSDemo/RTOSDemoWorkspace/RTOSDemo/export/RTOSDemo/RTOSDemo.xpfm" platformUID="xilinx:nexys4::0.0(custom)" systemProject="RTOSDemoApp_system" sysConfig="RTOSDemo" runtime="cpp" cpu="freertos10_xilinx_domain" cpuInstance="microblaze_0" os="freertos10_xilinx" mssSignature="4d9f3f987be025936556f4c95418cf7a">
+  <configuration name="Debug" id="xilinx.gnu.mb.exe.debug.768337875">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.mb.exe.release.504633548" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="freertos_hello_world"/>
+</sdkproject:SdkProject>

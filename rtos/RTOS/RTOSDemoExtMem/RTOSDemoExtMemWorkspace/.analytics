@@ -1,0 +1,5 @@
+timestamp=[2020-05-05 17:56:56], mode=WORKBENCH_START, duration=0:00:06.475, duration_ms=6475, data={}
+timestamp=[2020-05-05 17:56:57], mode=WORKBENCH_UI_INIT, duration=0:00:01.080, duration_ms=1080, data={editors_count=0, platform_editors_count=0, projects_count=0, platform_projects_count=0, active_platform_editor=false, projects=}
+timestamp=[2020-05-05 17:57:35], mode=APP_CREATION, duration=0:00:11.398, duration_ms=11398, data={name=RTOSDemoExtMemApp, project_type=sdk, os=freertos10_xilinx, processor=microblaze, runtime=cpp, platform=RTOSDemoExtMem, application_type=application}
+timestamp=[2020-05-05 17:58:24], mode=PLATFORM_GENERATION, duration=0:00:17.749, duration_ms=17749, data={name=RTOSDemoExtMem}
+timestamp=[2020-05-05 18:04:23], mode=PLATFORM_GENERATION, duration=0:00:17.019, duration_ms=17019, data={name=RTOSDemoExtMem}
