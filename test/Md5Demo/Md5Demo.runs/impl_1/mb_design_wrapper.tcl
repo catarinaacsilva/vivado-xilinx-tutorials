@@ -60,7 +60,6 @@ proc step_failed { step } {
   close $ch
 }
 
-set_msg_config -id {Common 17-41} -limit 10000000
 
 start_step init_design
 set ACTIVE_STEP init_design
@@ -71,22 +70,22 @@ set rc [catch {
   set_property board_part digilentinc.com:nexys4:part0:1.1 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
-  set_property webtalk.parent_dir C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.cache/wt [current_project]
-  set_property parent.project_path C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.xpr [current_project]
+  set_property webtalk.parent_dir C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.cache/wt [current_project]
+  set_property parent.project_path C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.xpr [current_project]
   set_property ip_repo_paths {
-  C:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0
-  C:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0
-  C:/Users/catar/Desktop/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo
+  C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/ip_repo/MD5HF_1.0
+  C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/ip_repo/Md5HashFunction_1.0
+  C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo
   C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0
 } [current_project]
   update_ip_catalog
-  set_property ip_output_repo C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.cache/ip [current_project]
+  set_property ip_output_repo C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  add_files -quiet C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/synth_1/mb_design_wrapper.dcp
+  add_files -quiet C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/synth_1/mb_design_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/mb_design.bd
+  add_files C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/mb_design.bd
   set_param project.isImplRun false
   set_param project.isImplRun true
   link_design -top mb_design_wrapper -part xc7a100tcsg324-1
@@ -179,26 +178,6 @@ if {$rc} {
   return -code error $RESULT
 } else {
   end_step route_design
-  unset ACTIVE_STEP 
-}
-
-start_step write_bitstream
-set ACTIVE_STEP write_bitstream
-set rc [catch {
-  create_msg_db write_bitstream.pb
-  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
-  catch { write_mem_info -force mb_design_wrapper.mmi }
-  catch { write_bmm -force mb_design_wrapper_bd.bmm }
-  write_bitstream -force mb_design_wrapper.bit 
-  catch {write_debug_probes -quiet -force mb_design_wrapper}
-  catch {file copy -force mb_design_wrapper.ltx debug_nets.ltx}
-  close_msg_db -file write_bitstream.pb
-} RESULT]
-if {$rc} {
-  step_failed write_bitstream
-  return -code error $RESULT
-} else {
-  end_step write_bitstream
   unset ACTIVE_STEP 
 }
 

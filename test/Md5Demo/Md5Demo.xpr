@@ -3,7 +3,7 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
-<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.xpr">
+<Project Version="7" Minor="44" Path="C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.xpr">
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="5053282d3e2143c5aec4ad52840bd5aa"/>
@@ -25,7 +25,7 @@
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/MD5HF_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../ip_repo/Md5HashFunction_1.0"/>
     <Option Name="IPRepoPath" Val="$PPRDIR/../../vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo"/>
-    <Option Name="IPRepoPath" Val="$PPRDIR/../../git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0"/>
+    <Option Name="IPRepoPath" Val="$PPRDIR/../../axi-stream/ip_repo/ReverseEndianessCop_1.0"/>
     <Option Name="IPOutputRepo" Val="$PCACHEDIR/ip"/>
     <Option Name="IPCachePermission" Val="read"/>
     <Option Name="IPCachePermission" Val="write"/>
@@ -42,13 +42,13 @@
     <Option Name="WTVcsLaunchSim" Val="0"/>
     <Option Name="WTRivieraLaunchSim" Val="0"/>
     <Option Name="WTActivehdlLaunchSim" Val="0"/>
-    <Option Name="WTXSimExportSim" Val="10"/>
-    <Option Name="WTModelSimExportSim" Val="10"/>
-    <Option Name="WTQuestaExportSim" Val="10"/>
-    <Option Name="WTIesExportSim" Val="10"/>
-    <Option Name="WTVcsExportSim" Val="10"/>
-    <Option Name="WTRivieraExportSim" Val="10"/>
-    <Option Name="WTActivehdlExportSim" Val="10"/>
+    <Option Name="WTXSimExportSim" Val="18"/>
+    <Option Name="WTModelSimExportSim" Val="18"/>
+    <Option Name="WTQuestaExportSim" Val="18"/>
+    <Option Name="WTIesExportSim" Val="18"/>
+    <Option Name="WTVcsExportSim" Val="18"/>
+    <Option Name="WTRivieraExportSim" Val="18"/>
+    <Option Name="WTActivehdlExportSim" Val="18"/>
     <Option Name="GenerateIPUpgradeLog" Val="TRUE"/>
     <Option Name="XSimRadix" Val="hex"/>
     <Option Name="XSimTimeUnit" Val="ns"/>
@@ -66,32 +66,32 @@
       <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sources_1/bd/mb_design/mb_design.bd">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../../git/vivado-xilinx-tutorials/PlatformWithExtMemory/PlatformWithExtMemory.srcs/sources_1/bd/mb_design/mb_design.bd"/>
+          <Attr Name="ImportPath" Val="$PPRDIR/../../PlatformWithExtMemory/PlatformWithExtMemory.srcs/sources_1/bd/mb_design/mb_design.bd"/>
           <Attr Name="ImportTime" Val="1590588401"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
-        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0.xci">
-          <Proxy FileSetName="mb_design_microblaze_0_axi_intc_0"/>
-        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_xbar_0/mb_design_xbar_0.xci">
           <Proxy FileSetName="mb_design_xbar_0"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1.xci">
-          <Proxy FileSetName="mb_design_microblaze_0_1"/>
-        </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0.xci">
-          <Proxy FileSetName="mb_design_axi_dma_0_0"/>
+        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0.xci">
+          <Proxy FileSetName="mb_design_microblaze_0_axi_intc_0"/>
         </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_axis_data_fifo_0_0/mb_design_axis_data_fifo_0_0.xci">
           <Proxy FileSetName="mb_design_axis_data_fifo_0_0"/>
         </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_MD5HF_0_0/mb_design_MD5HF_0_0.xci">
+          <Proxy FileSetName="mb_design_MD5HF_0_0"/>
+        </CompFileExtendedInfo>
         <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_ilmb_bram_if_cntlr_1/mb_design_ilmb_bram_if_cntlr_1.xci">
           <Proxy FileSetName="mb_design_ilmb_bram_if_cntlr_1"/>
         </CompFileExtendedInfo>
-        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_MD5HF_0_0/mb_design_MD5HF_0_0.xci">
-          <Proxy FileSetName="mb_design_MD5HF_0_0"/>
+        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_axi_dma_0_0/mb_design_axi_dma_0_0.xci">
+          <Proxy FileSetName="mb_design_axi_dma_0_0"/>
+        </CompFileExtendedInfo>
+        <CompFileExtendedInfo CompFileName="mb_design.bd" FileRelPathName="ip/mb_design_microblaze_0_1/mb_design_microblaze_0_1.xci">
+          <Proxy FileSetName="mb_design_microblaze_0_1"/>
         </CompFileExtendedInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/bd/mb_design/hdl/mb_design_wrapper.vhd">

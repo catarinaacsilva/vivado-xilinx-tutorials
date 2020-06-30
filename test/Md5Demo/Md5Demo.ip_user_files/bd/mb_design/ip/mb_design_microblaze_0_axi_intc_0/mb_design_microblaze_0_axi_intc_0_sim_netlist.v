@@ -1,10 +1,10 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2019.2 (win64) Build 2708876 Wed Nov  6 21:40:23 MST 2019
-// Date        : Fri Jun 12 13:42:03 2020
+// Date        : Tue Jun 30 15:37:03 2020
 // Host        : GreatAtuin running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
-//               C:/Users/catar/Desktop/git/cr-hashfunction/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_sim_netlist.v
+//               C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_microblaze_0_axi_intc_0/mb_design_microblaze_0_axi_intc_0_sim_netlist.v
 // Design      : mb_design_microblaze_0_axi_intc_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
@@ -94,7 +94,7 @@ module mb_design_microblaze_0_axi_intc_0
   wire [1:0]NLW_U0_processor_ack_out_UNCONNECTED;
 
   (* C_ADDR_WIDTH = "32" *) 
-  (* C_ASYNC_INTR = "-128" *) 
+  (* C_ASYNC_INTR = "-64" *) 
   (* C_CASCADE_MASTER = "0" *) 
   (* C_DISABLE_SYNCHRONIZERS = "1" *) 
   (* C_ENABLE_ASYNC = "0" *) 
@@ -1486,7 +1486,7 @@ module mb_design_microblaze_0_axi_intc_0_address_decoder
         .O(ip2bus_wrack_reg));
 endmodule
 
-(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "-128" *) (* C_CASCADE_MASTER = "0" *) 
+(* C_ADDR_WIDTH = "32" *) (* C_ASYNC_INTR = "-64" *) (* C_CASCADE_MASTER = "0" *) 
 (* C_DISABLE_SYNCHRONIZERS = "1" *) (* C_ENABLE_ASYNC = "0" *) (* C_EN_CASCADE_MODE = "0" *) 
 (* C_FAMILY = "artix7" *) (* C_HAS_CIE = "1" *) (* C_HAS_FAST = "1" *) 
 (* C_HAS_ILR = "0" *) (* C_HAS_IPR = "1" *) (* C_HAS_IVR = "1" *) 
@@ -2488,6 +2488,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
   wire [31:0]interrupt_address;
   wire [6:0]intr;
   wire intr_d1;
+  (* async_reg = "true" *) wire [0:1]intr_ff;
   wire [5:0]ipr;
   wire irq;
   wire irq_gen;
@@ -2643,7 +2644,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .I4(ack_or),
         .I5(first_ack),
         .O(current_state__0[0]));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'h00880F00)) 
     \FSM_sequential_IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.current_state[1]_i_1 
@@ -2720,6 +2721,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(\INTR_DETECT_GEN[1].LVL_DETECT_GEN.hw_intr[1]_i_1_n_0 ),
         .Q(hw_intr[1]),
         .R(1'b0));
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h00E0)) 
     \INTR_DETECT_GEN[2].LVL_DETECT_GEN.hw_intr[2]_i_1 
@@ -2734,7 +2736,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(\INTR_DETECT_GEN[2].LVL_DETECT_GEN.hw_intr[2]_i_1_n_0 ),
         .Q(hw_intr[2]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT4 #(
     .INIT(16'h00E0)) 
     \INTR_DETECT_GEN[3].LVL_DETECT_GEN.hw_intr[3]_i_1 
@@ -2771,7 +2773,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(intr[4]),
         .Q(intr_d1),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT4 #(
     .INIT(16'h00E0)) 
     \INTR_DETECT_GEN[5].LVL_DETECT_GEN.hw_intr[5]_i_1 
@@ -2786,12 +2788,31 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(\INTR_DETECT_GEN[5].LVL_DETECT_GEN.hw_intr[5]_i_1_n_0 ),
         .Q(hw_intr[5]),
         .R(1'b0));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \INTR_DETECT_GEN[6].ASYNC_GEN.intr_ff_reg[0] 
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(intr[6]),
+        .Q(intr_ff[0]),
+        .R(1'b0));
+  (* ASYNC_REG *) 
+  (* KEEP = "yes" *) 
+  FDRE #(
+    .INIT(1'b0)) 
+    \INTR_DETECT_GEN[6].ASYNC_GEN.intr_ff_reg[1] 
+       (.C(s_axi_aclk),
+        .CE(1'b1),
+        .D(intr_ff[0]),
+        .Q(intr_ff[1]),
+        .R(1'b0));
   LUT4 #(
     .INIT(16'h00E0)) 
     \INTR_DETECT_GEN[6].LVL_DETECT_GEN.hw_intr[6]_i_1 
        (.I0(hw_intr[6]),
-        .I1(intr[6]),
+        .I1(intr_ff[1]),
         .I2(s_axi_aresetn),
         .I3(p_6_in),
         .O(\INTR_DETECT_GEN[6].LVL_DETECT_GEN.hw_intr[6]_i_1_n_0 ));
@@ -2807,14 +2828,14 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
        (.I0(\REG_GEN[0].ier_reg_n_0_[0] ),
         .I1(\REG_GEN[0].isr_reg_n_0_[0] ),
         .O(\IPR_GEN.ipr[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \IPR_GEN.ipr[1]_i_1 
        (.I0(p_0_in28_in),
         .I1(p_1_in29_in),
         .O(\IPR_GEN.ipr[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \IPR_GEN.ipr[2]_i_1 
@@ -2839,7 +2860,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
        (.I0(p_0_in20_in),
         .I1(p_1_in21_in),
         .O(\IPR_GEN.ipr[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT2 #(
     .INIT(4'h8)) 
     \IPR_GEN.ipr[6]_i_1 
@@ -2905,7 +2926,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(Irq_i),
         .Q(irq),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT2 #(
     .INIT(4'h1)) 
     \IRQ_LEVEL_GEN.IRQ_LEVEL_FAST_ON_AXI_CLK_GEN.in_idle_i_1 
@@ -2926,7 +2947,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .ivar_index_axi_clk(ivar_index_axi_clk),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_wdata(s_axi_wdata));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT3 #(
     .INIT(8'h80)) 
     \IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.idle_and_irq_d1_i_1 
@@ -2988,7 +3009,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(\IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.ivar_index_axi_clk[2]_i_1_n_0 ),
         .Q(ivar_index_axi_clk[2]),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h0080)) 
     \IVAR_INDEX_SYNC_ON_AXI_CLK_GEN.ivar_index_sample_en_i_1 
@@ -3033,7 +3054,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .I4(\IVR_GEN.ivr[1]_i_2_n_0 ),
         .I5(\IVR_GEN.ivr[2]_i_2_n_0 ),
         .O(\IVR_GEN.ivr[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'hF888)) 
     \IVR_GEN.ivr[1]_i_2 
@@ -3052,7 +3073,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .I4(\IVR_GEN.ivr[2]_i_2_n_0 ),
         .I5(s_axi_aresetn),
         .O(\IVR_GEN.ivr[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT4 #(
     .INIT(16'hF888)) 
     \IVR_GEN.ivr[2]_i_2 
@@ -3276,7 +3297,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .I4(hw_intr[2]),
         .I5(\REG_GEN[2].IAR_FAST_MODE_GEN.iar_reg0 ),
         .O(\REG_GEN[2].isr[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \REG_GEN[2].isr[2]_i_2 
@@ -3486,7 +3507,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .I4(hw_intr[5]),
         .I5(\REG_GEN[5].IAR_FAST_MODE_GEN.iar_reg0 ),
         .O(\REG_GEN[5].isr[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT2 #(
     .INIT(4'hB)) 
     \REG_GEN[5].isr[5]_i_2 
@@ -3635,7 +3656,7 @@ module mb_design_microblaze_0_axi_intc_0_intc_core
         .D(ack_or_i),
         .Q(ack_or),
         .R(SR));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'hFFF8F8F8)) 
     irq_gen_i_1

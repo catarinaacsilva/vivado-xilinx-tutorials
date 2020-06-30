@@ -163,11 +163,11 @@
   "../../../bd/mb_design/ip/mb_design_axis_data_fifo_0_0/sim/mb_design_axis_data_fifo_0_0.v" \
 -endlib
 -makelib xcelium_lib/xil_defaultlib \
-  "../../../bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd" \
-  "../../../bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd" \
-  "../../../bd/mb_design/ipshared/3880/src/md5.vhd" \
-  "../../../bd/mb_design/ipshared/3880/src/register.vhd" \
-  "../../../bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd" \
+  "../../../bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd" \
+  "../../../bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd" \
+  "../../../bd/mb_design/ipshared/5f3c/src/md5.vhd" \
+  "../../../bd/mb_design/ipshared/5f3c/src/register.vhd" \
+  "../../../bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd" \
   "../../../bd/mb_design/ip/mb_design_MD5HF_0_0/sim/mb_design_MD5HF_0_0.vhd" \
 -endlib
 -makelib xcelium_lib/axi_protocol_converter_v2_1_20 \

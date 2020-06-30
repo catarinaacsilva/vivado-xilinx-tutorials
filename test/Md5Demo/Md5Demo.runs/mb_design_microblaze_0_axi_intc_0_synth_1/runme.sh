@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/catar/Desktop/git/cr-hashfunction/Md5Demo/Md5Demo.runs/mb_design_microblaze_0_axi_intc_0_synth_1'
+HD_PWD='C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_microblaze_0_axi_intc_0_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

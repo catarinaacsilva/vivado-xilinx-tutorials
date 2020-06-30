@@ -54,8 +54,6 @@
 
 create_clock -period 10 -name m_axi_mm2s_aclk [get_ports m_axi_mm2s_aclk]
 
-create_clock -period 10 -name m_axi_s2mm_aclk [get_ports m_axi_s2mm_aclk]
-
 create_clock -period 10 -name s_axi_lite_aclk [get_ports s_axi_lite_aclk]
 
 

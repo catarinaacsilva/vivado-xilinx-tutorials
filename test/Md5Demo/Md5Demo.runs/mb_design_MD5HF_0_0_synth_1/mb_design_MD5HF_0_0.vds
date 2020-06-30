@@ -2,18 +2,18 @@
 # Vivado v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Tue Jun 30 15:07:08 2020
-# Process ID: 4168
-# Current directory: C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1
+# Start of session at: Tue Jun 30 16:52:39 2020
+# Process ID: 18348
+# Current directory: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1
 # Command line: vivado.exe -log mb_design_MD5HF_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source mb_design_MD5HF_0_0.tcl
-# Log file: C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.vds
-# Journal file: C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1\vivado.jou
+# Log file: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.vds
+# Journal file: C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1\vivado.jou
 #-----------------------------------------------------------
 source mb_design_MD5HF_0_0.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/MD5HF_1.0'.
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/test/ip_repo/Md5HashFunction_1.0'.
-WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/catar/Desktop/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo'; Can't find the specified path.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/ip_repo/MD5HF_1.0'.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/ip_repo/Md5HashFunction_1.0'.
+WARNING: [IP_Flow 19-2248] Failed to load user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/vivado-xilinx-tutorials/timer-soft-hard/project/part1/ip_repo'; Can't find the specified path.
 If this directory should no longer be in your list of user repositories, go to the IP Settings dialog and remove it.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/axi-stream/ip_repo/ReverseEndianessCop_1.0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2019.2/data/ip'.
@@ -23,169 +23,108 @@ Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 15396 
+INFO: Helper process launched with PID 132 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 839.887 ; gain = 234.789
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 840.160 ; gain = 233.895
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'mb_design_MD5HF_0_0' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:89]
+INFO: [Synth 8-638] synthesizing module 'mb_design_MD5HF_0_0' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:89]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'MD5HF_v1_0' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:5' bound to instance 'U0' of component 'MD5HF_v1_0' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:173]
-INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:61]
+INFO: [Synth 8-3491] module 'MD5HF_v1_0' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:5' bound to instance 'U0' of component 'MD5HF_v1_0' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:173]
+INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:61]
 	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
 	Parameter C_S00_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
-INFO: [Synth 8-3491] module 'MD5HF_v1_0_S00_AXI' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:5' bound to instance 'MD5HF_v1_0_S00_AXI_inst' of component 'MD5HF_v1_0_S00_AXI' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:147]
-INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0_S00_AXI' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:89]
+INFO: [Synth 8-3491] module 'MD5HF_v1_0_S00_AXI' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:5' bound to instance 'MD5HF_v1_0_S00_AXI_inst' of component 'MD5HF_v1_0_S00_AXI' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:147]
+INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0_S00_AXI' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:89]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:246]
+INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:376]
+WARNING: [Synth 8-614] signal 's_slvReg' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:371]
 	Parameter k bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:4' bound to instance 'register_dataIn' of component 'RegisterP' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:144]
-INFO: [Synth 8-638] synthesizing module 'RegisterP' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:13]
+INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:4' bound to instance 'register_dataIn' of component 'RegisterP' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:410]
+INFO: [Synth 8-638] synthesizing module 'RegisterP' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:13]
 	Parameter k bound to: 32 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterP' (1#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:13]
-WARNING: [Synth 8-614] signal 's_done' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:161]
-WARNING: [Synth 8-614] signal 'S_AXI_ARESETN' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:161]
-WARNING: [Synth 8-614] signal 'S_AXI_BREADY' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:161]
-WARNING: [Synth 8-3848] Net S_AXI_AWREADY in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:41]
-WARNING: [Synth 8-3848] Net S_AXI_WREADY in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:53]
-WARNING: [Synth 8-3848] Net S_AXI_BRESP in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:56]
-WARNING: [Synth 8-3848] Net s_done in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:133]
-WARNING: [Synth 8-3848] Net S_AXI_ARREADY in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:74]
-WARNING: [Synth 8-3848] Net S_AXI_RDATA in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:76]
-WARNING: [Synth 8-3848] Net S_AXI_RRESP in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:79]
-WARNING: [Synth 8-3848] Net S_AXI_RVALID in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:82]
-INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0_S00_AXI' (2#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXI.vhd:89]
+INFO: [Synth 8-256] done synthesizing module 'RegisterP' (1#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:13]
+WARNING: [Synth 8-614] signal 'done' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:428]
+WARNING: [Synth 8-614] signal 'S_AXI_ARESETN' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:428]
+WARNING: [Synth 8-614] signal 'S_AXI_BREADY' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:428]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:239]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:244]
+WARNING: [Synth 8-3848] Net dataOutMaster in module/entity MD5HF_v1_0_S00_AXI does not have driver. [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:21]
+INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0_S00_AXI' (2#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:89]
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'MD5HF_v1_0_S00_AXIS' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:5' bound to instance 'MD5HF_v1_0_S00_AXIS_inst' of component 'MD5HF_v1_0_S00_AXIS' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:181]
-INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0_S00_AXIS' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:42]
+INFO: [Synth 8-3491] module 'MD5HF_v1_0_S00_AXIS' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:5' bound to instance 'MD5HF_v1_0_S00_AXIS_inst' of component 'MD5HF_v1_0_S00_AXIS' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:181]
+INFO: [Synth 8-638] synthesizing module 'MD5HF_v1_0_S00_AXIS' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:42]
 	Parameter C_S_AXIS_TDATA_WIDTH bound to: 32 - type: integer 
 	Parameter k bound to: 1 - type: integer 
-INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:4' bound to instance 'register_last' of component 'RegisterP' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:80]
-INFO: [Synth 8-638] synthesizing module 'RegisterP__parameterized1' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:13]
+INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:4' bound to instance 'register_last' of component 'RegisterP' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:80]
+INFO: [Synth 8-638] synthesizing module 'RegisterP__parameterized1' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:13]
 	Parameter k bound to: 1 - type: integer 
-INFO: [Synth 8-256] done synthesizing module 'RegisterP__parameterized1' (2#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:13]
+INFO: [Synth 8-256] done synthesizing module 'RegisterP__parameterized1' (2#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:13]
 	Parameter k bound to: 32 - type: integer 
-INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/register.vhd:4' bound to instance 'register_dataIn' of component 'RegisterP' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:99]
-WARNING: [Synth 8-614] signal 'S_AXIS_TVALID' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
-WARNING: [Synth 8-614] signal 'S_AXIS_ARESETN' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
-WARNING: [Synth 8-614] signal 's_idle' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
-WARNING: [Synth 8-614] signal 's_tlastdelayed' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
-INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0_S00_AXIS' (3#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0_S00_AXIS.vhd:42]
-INFO: [Synth 8-3491] module 'MD5' declared at 'c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:7' bound to instance 'md5_comp' of component 'md5' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:204]
-INFO: [Synth 8-638] synthesizing module 'MD5' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:18]
-INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:134]
-WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:130]
-INFO: [Synth 8-6054] Found Dynamic range expression with variable size [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:229]
-INFO: [Synth 8-256] done synthesizing module 'MD5' (4#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:18]
-INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0' (5#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/hdl/MD5HF_v1_0.vhd:61]
-INFO: [Synth 8-256] done synthesizing module 'mb_design_MD5HF_0_0' (6#1) [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:89]
+INFO: [Synth 8-3491] module 'RegisterP' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/register.vhd:4' bound to instance 'register_dataIn' of component 'RegisterP' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:99]
+WARNING: [Synth 8-614] signal 'S_AXIS_TVALID' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
+WARNING: [Synth 8-614] signal 'S_AXIS_ARESETN' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
+WARNING: [Synth 8-614] signal 's_idle' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
+WARNING: [Synth 8-614] signal 's_tlastdelayed' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:119]
+INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0_S00_AXIS' (3#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXIS.vhd:42]
+INFO: [Synth 8-3491] module 'MD5' declared at 'c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:7' bound to instance 'md5_comp' of component 'md5' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:204]
+INFO: [Synth 8-638] synthesizing module 'MD5' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:18]
+INFO: [Synth 8-226] default block is never used [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:134]
+WARNING: [Synth 8-614] signal 'enable' is read in the process but is not in the sensitivity list [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:130]
+INFO: [Synth 8-6054] Found Dynamic range expression with variable size [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:229]
+INFO: [Synth 8-256] done synthesizing module 'MD5' (4#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:18]
+INFO: [Synth 8-256] done synthesizing module 'MD5HF_v1_0' (5#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0.vhd:61]
+INFO: [Synth 8-256] done synthesizing module 'mb_design_MD5HF_0_0' (6#1) [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ip/mb_design_MD5HF_0_0/synth/mb_design_MD5HF_0_0.vhd:89]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[3]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[2]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[1]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXIS has unconnected port S_AXIS_TSTRB[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWREADY
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WREADY
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_BRESP[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_BRESP[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARREADY
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[31]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[30]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[29]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[28]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[27]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[26]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[25]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[24]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[23]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[22]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[21]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[20]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[19]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[18]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[17]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[16]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[15]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[14]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[13]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[12]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[11]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[10]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[9]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[8]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[7]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[6]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[5]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[4]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[3]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[2]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RDATA[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RRESP[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RRESP[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RVALID
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port done
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[3]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[2]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWADDR[0]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[31]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[30]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[29]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[28]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[27]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[26]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[25]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[24]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[23]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[22]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[21]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[20]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[19]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[18]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[17]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[16]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[15]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[14]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[13]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[12]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[11]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[10]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[9]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[8]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[7]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[6]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[5]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[4]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[3]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[2]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[1]
+WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port dataOutMaster[0]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWPROT[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_AWVALID
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[31]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[30]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[29]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[28]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[27]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[26]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[25]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[24]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[23]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[22]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[21]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[20]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[19]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[18]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[17]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[16]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[15]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[14]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[13]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[12]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[11]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[10]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[9]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[8]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[7]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[6]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[5]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[4]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[3]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[2]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WDATA[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[3]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[2]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WSTRB[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_WVALID
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_BREADY
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[3]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[2]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[1]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARADDR[0]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[2]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARPROT[0]
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_ARVALID
-WARNING: [Synth 8-3331] design MD5HF_v1_0_S00_AXI has unconnected port S_AXI_RREADY
-INFO: [Common 17-14] Message 'Synth 8-3331' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 917.305 ; gain = 312.207
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 917.855 ; gain = 311.590
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -198,43 +137,43 @@ Report Check Netlist:
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 917.305 ; gain = 312.207
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 917.855 ; gain = 311.590
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 917.305 ; gain = 312.207
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 917.855 ; gain = 311.590
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.094 . Memory (MB): peak = 917.305 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.095 . Memory (MB): peak = 917.855 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1019.648 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1026.168 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.084 . Memory (MB): peak = 1021.633 ; gain = 1.984
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.088 . Memory (MB): peak = 1028.230 ; gain = 2.063
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'MD5HF_v1_0_S00_AXIS'
-INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:124]
+INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:124]
 INFO: [Synth 8-5544] ROM "message_length" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "An" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
 INFO: [Synth 8-5544] ROM "jCounter_n" won't be mapped to Block RAM because address size (4) smaller than threshold (5)
@@ -252,7 +191,7 @@ INFO: [Synth 8-5544] ROM "iCounter" won't be mapped to Block RAM because address
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'MD5HF_v1_0_S00_AXIS'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -262,7 +201,7 @@ Report RTL Partitions:
 |1     |MD5__GB0        |           1|     41134|
 |2     |muxpart__16_MD5 |           1|     15809|
 |3     |MD5__GB2        |           1|     11463|
-|4     |MD5HF_v1_0__GC0 |           1|        92|
+|4     |MD5HF_v1_0__GC0 |           1|       778|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -278,16 +217,17 @@ Detailed RTL Component Info :
 	   2 Input     32 Bit         XORs := 1     
 +---Registers : 
 	              512 Bit    Registers := 1     
-	               32 Bit    Registers := 14    
+	               32 Bit    Registers := 18    
 	               31 Bit    Registers := 6     
-	                4 Bit    Registers := 1     
-	                1 Bit    Registers := 3     
+	                4 Bit    Registers := 3     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
 +---Muxes : 
 	   2 Input    512 Bit        Muxes := 3     
 	  13 Input    512 Bit        Muxes := 1     
 	  13 Input     32 Bit        Muxes := 4     
-	   2 Input     32 Bit        Muxes := 2     
-	   4 Input     32 Bit        Muxes := 4     
+	   2 Input     32 Bit        Muxes := 5     
+	   4 Input     32 Bit        Muxes := 8     
 	   2 Input      4 Bit        Muxes := 2     
 	   2 Input      3 Bit        Muxes := 1     
 	  13 Input      2 Bit        Muxes := 3     
@@ -296,7 +236,7 @@ Detailed RTL Component Info :
 	  16 Input      1 Bit        Muxes := 2     
 	  13 Input      1 Bit        Muxes := 9     
 	  17 Input      1 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 7     
 	   4 Input      1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -341,9 +281,14 @@ Detailed RTL Component Info :
 Module MD5HF_v1_0_S00_AXI 
 Detailed RTL Component Info : 
 +---Registers : 
-	                1 Bit    Registers := 1     
+	               32 Bit    Registers := 4     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 5     
 +---Muxes : 
-	   2 Input      1 Bit        Muxes := 1     
+	   2 Input     32 Bit        Muxes := 3     
+	   4 Input     32 Bit        Muxes := 4     
+	   2 Input      1 Bit        Muxes := 6     
 Module RegisterP__parameterized1 
 Detailed RTL Component Info : 
 +---Registers : 
@@ -374,9 +319,9 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 Warning: Parallel synthesis criteria is not met 
-INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:122]
-INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:122]
-INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/3880/src/md5.vhd:122]
+INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:122]
+INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:122]
+INFO: [Synth 8-4471] merging register 'jCounter_n_reg[30:0]' into 'jCounter_n_reg[30:0]' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/src/md5.vhd:122]
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (md5_compi_0/i_1/\data_counter_reg[0] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (md5_compi_0/i_1/\data_counter_reg[1] )
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (md5_compi_0/i_1/\data_counter_reg[2] )
@@ -387,8 +332,12 @@ INFO: [Synth 8-3886] merging instance 'md5_compi_1/g_reg[3]' (FDE) to 'md5_compi
 INFO: [Synth 8-3886] merging instance 'md5_compi_1/g_reg[2]' (FDE) to 'md5_compi_1/g_reg[0]'
 INFO: [Synth 8-3886] merging instance 'md5_compi_1/g_reg[1]' (FDE) to 'md5_compi_1/g_reg[0]'
 INFO: [Synth 8-3333] propagating constant 0 across sequential element (md5_compi_1/\g_reg[0] )
+INFO: [Synth 8-3886] merging instance 'U0i_2/MD5HF_v1_0_S00_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'U0i_2/MD5HF_v1_0_S00_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0i_2/\MD5HF_v1_0_S00_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0i_2/MD5HF_v1_0_S00_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'U0i_2/MD5HF_v1_0_S00_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (U0i_2/\MD5HF_v1_0_S00_AXI_inst/axi_bresp_reg[1] )
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP and Shift Register Reporting
@@ -412,36 +361,36 @@ Report RTL Partitions:
 +------+----------------+------------+----------+
 |      |RTL Partition   |Replication |Instances |
 +------+----------------+------------+----------+
-|1     |MD5__GB0        |           1|       214|
+|1     |MD5__GB0        |           1|       219|
 |2     |MD5__GB2        |           1|       250|
-|3     |MD5HF_v1_0__GC0 |           1|        56|
+|3     |MD5HF_v1_0__GC0 |           1|       511|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Timing Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
 +------+----------------+------------+----------+
 |      |RTL Partition   |Replication |Instances |
 +------+----------------+------------+----------+
-|1     |MD5__GB0        |           1|       214|
+|1     |MD5__GB0        |           1|       219|
 |2     |MD5__GB2        |           1|       250|
-|3     |MD5HF_v1_0__GC0 |           1|        56|
+|3     |MD5HF_v1_0__GC0 |           1|       511|
 +------+----------------+------------+----------+
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1021.633 ; gain = 416.535
+Finished Technology Mapping : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -465,13 +414,13 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished IO Insertion : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -479,36 +428,38 @@ Report RTL Partitions:
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s00_axi_bvalid with 1st driver pin 'U0/MD5HF_v1_0_S00_AXI_inst/state_reg/Q' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:422]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin s00_axi_bvalid with 2nd driver pin 'U0/MD5HF_v1_0_S00_AXI_inst/axi_bvalid_reg/Q' [c:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.srcs/sources_1/bd/mb_design/ipshared/5f3c/hdl/MD5HF_v1_0_S00_AXI.vhd:149]
 
 Report Check Netlist: 
 +------+------------------+-------+---------+-------+------------------+
 |      |Item              |Errors |Warnings |Status |Description       |
 +------+------------------+-------+---------+-------+------------------+
-|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
+|1     |multi_driven_nets |      0|        1|Failed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -525,58 +476,60 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |CARRY4 |    28|
-|2     |LUT1   |     4|
-|3     |LUT2   |     9|
-|4     |LUT3   |     7|
-|5     |LUT4   |    35|
+|2     |LUT1   |     5|
+|3     |LUT2   |    10|
+|4     |LUT3   |     8|
+|5     |LUT4   |    53|
 |6     |LUT5   |     5|
-|7     |LUT6   |    18|
-|8     |FDCE   |    71|
-|9     |FDRE   |   120|
+|7     |LUT6   |    55|
+|8     |FDCE   |   103|
+|9     |FDRE   |   256|
+|10    |FDSE   |     3|
 +------+-------+------+
 
 Report Instance Areas: 
 +------+-----------------------------+--------------------------+------+
 |      |Instance                     |Module                    |Cells |
 +------+-----------------------------+--------------------------+------+
-|1     |top                          |                          |   297|
-|2     |  U0                         |MD5HF_v1_0                |   297|
+|1     |top                          |                          |   526|
+|2     |  U0                         |MD5HF_v1_0                |   526|
 |3     |    MD5HF_v1_0_S00_AXIS_inst |MD5HF_v1_0_S00_AXIS       |    40|
-|4     |      register_dataIn        |RegisterP                 |    33|
+|4     |      register_dataIn        |RegisterP_0               |    33|
 |5     |      register_last          |RegisterP__parameterized1 |     1|
-|6     |    MD5HF_v1_0_S00_AXI_inst  |MD5HF_v1_0_S00_AXI        |     2|
-|7     |    md5_comp                 |MD5                       |   255|
+|6     |    MD5HF_v1_0_S00_AXI_inst  |MD5HF_v1_0_S00_AXI        |   229|
+|7     |      register_dataIn        |RegisterP                 |    32|
+|8     |    md5_comp                 |MD5                       |   257|
 +------+-----------------------------+--------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:31 . Memory (MB): peak = 1026.367 ; gain = 316.941
-Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:34 . Memory (MB): peak = 1026.367 ; gain = 421.270
+Synthesis finished with 0 errors, 2 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:32 . Memory (MB): peak = 1028.230 ; gain = 311.590
+Synthesis Optimization Complete : Time (s): cpu = 00:00:33 ; elapsed = 00:00:35 . Memory (MB): peak = 1028.230 ; gain = 421.965
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1038.434 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1038.469 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 28 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1038.434 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1038.469 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-63 Infos, 118 Warnings, 0 Critical Warnings and 0 Errors encountered.
+68 Infos, 56 Warnings, 2 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1038.434 ; gain = 722.895
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1038.434 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:41 . Memory (MB): peak = 1038.469 ; gain = 723.035
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.469 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.dcp' has been generated.
 WARNING: [Common 17-576] 'use_project_ipc' is deprecated. This option is deprecated and no longer used.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_design_MD5HF_0_0, cache-ID = 3161ff3bbdd4ca5c
-INFO: [Coretcl 2-1174] Renamed 6 cell refs.
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1038.434 ; gain = 0.000
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP mb_design_MD5HF_0_0, cache-ID = 040792a0183473af
+INFO: [Coretcl 2-1174] Renamed 7 cell refs.
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1038.469 ; gain = 0.000
 WARNING: [Constraints 18-5210] No constraints selected for write.
 Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
-INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.dcp' has been generated.
+INFO: [Common 17-1381] The checkpoint 'C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/mb_design_MD5HF_0_0_synth_1/mb_design_MD5HF_0_0.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file mb_design_MD5HF_0_0_utilization_synth.rpt -pb mb_design_MD5HF_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Jun 30 15:07:55 2020...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun 30 16:53:27 2020...

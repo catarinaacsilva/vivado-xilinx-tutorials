@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/catar/Desktop/test/Md5Demo/Md5Demo.runs/impl_1'
+HD_PWD='C:/Users/catar/Desktop/git/vivado-xilinx-tutorials/test/Md5Demo/Md5Demo.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
