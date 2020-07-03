@@ -376,13 +376,13 @@ begin
 	    case loc_addr is
 	      when b"00" =>
 	        -- reg_data_out <= slv_reg0;
-	       reg_data_out <= s_slvReg;
+	        reg_data_out <= resRegister(31 downto 0);
 	      when b"01" =>
-	        reg_data_out <= slv_reg1;
+	        reg_data_out <= resRegister(63 downto 32);
 	      when b"10" =>
-	        reg_data_out <= slv_reg2;
+	        reg_data_out <= resRegister(95 downto 0);
 	      when b"11" =>
-	        reg_data_out <= slv_reg3;
+	        reg_data_out <= resRegister(127 downto 0);
 	      when others =>
 	        reg_data_out  <= (others => '0');
 	    end case;
@@ -444,7 +444,7 @@ begin
 			 
 			when OUT_VALID =>
 				--M_AXIS_TVALID <= '1';
-				axi_bvalid <= '1';
+				axi_bvalid <= '1'; --PROBLEMA
 				--if (M_AXIS_TREADY <= '1') then
 			    if (S_AXI_BREADY <= '1') then
 					state_n <= OUT_IDLE;
