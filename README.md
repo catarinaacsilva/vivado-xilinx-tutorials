@@ -16,7 +16,7 @@ Apply to Reconfigurable Computing.
 
 - `xc7a100tcsg324-1`
 
-## Struct of these tutorials
+## Structure of these tutorials
 
 Each directory is a different project with new challenges.
 
